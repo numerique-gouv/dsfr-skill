@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # sync-all.sh
-# Script pour synchroniser tous les composants listés dans components.json
+# Script pour synchroniser tous les composants prioritaires du DSFR
 # Usage: ./sync-all.sh
 
 set -e
@@ -9,6 +9,7 @@ set -e
 # Couleurs
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
 NC='\033[0m'
 
 echo -e "${BLUE}========================================${NC}"
@@ -16,23 +17,31 @@ echo -e "${BLUE}  DSFR Skill - Sync All Components${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo ""
 
-# Vérifier que jq est installé
-if ! command -v jq &> /dev/null; then
-    echo -e "${RED}Error: jq is not installed. Please install it first.${NC}"
-    echo "  brew install jq"
-    exit 1
-fi
+# Liste des composants prioritaires à synchroniser
+PRIORITY_COMPONENTS=(
+    "alert"
+    "badge"
+    "breadcrumb"
+    "button"
+    "card"
+    "checkbox"
+    "footer"
+    "header"
+    "input"
+    "link"
+    "modal"
+    "navigation"
+    "radio"
+    "select"
+)
 
-# Lire la liste des composants prioritaires
-components=$(jq -r '.priority_components[]' components.json)
-
-total=$(echo "$components" | wc -l | tr -d ' ')
+total=${#PRIORITY_COMPONENTS[@]}
 current=0
 
 echo -e "${GREEN}Found $total components to synchronize${NC}"
 echo ""
 
-for component in $components; do
+for component in "${PRIORITY_COMPONENTS[@]}"; do
     ((current++))
     echo -e "${BLUE}[$current/$total] Synchronizing: $component${NC}"
     echo "----------------------------------------"

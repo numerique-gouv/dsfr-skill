@@ -72,6 +72,24 @@ download_file "$DSFR_REPO/$BASE_PATH/accessibility/index.md" "$TEMP_DIR/accessib
 download_file "$DSFR_REPO/$BASE_PATH/code/index.md" "$TEMP_DIR/code-raw.md" "code/index.md"
 download_file "$DSFR_REPO/$BASE_PATH/design/index.md" "$TEMP_DIR/design-raw.md" "design/index.md"
 
+# Fonction pour extraire shortDescription du frontmatter
+extract_short_description() {
+    local file=$1
+    if [ -f "$file" ]; then
+        # Extraire shortDescription du frontmatter YAML
+        awk 'BEGIN{in_fm=0} /^---$/{in_fm=1-in_fm; next} in_fm==1 && /^shortDescription:/{sub(/^shortDescription: */, ""); print; exit}' "$file"
+    fi
+}
+
+# Fonction pour extraire le titre du frontmatter
+extract_title() {
+    local file=$1
+    if [ -f "$file" ]; then
+        # Extraire title du frontmatter YAML
+        awk 'BEGIN{in_fm=0} /^---$/{in_fm=1-in_fm; next} in_fm==1 && /^title:/{sub(/^title: */, ""); print; exit}' "$file"
+    fi
+}
+
 # Fonction pour nettoyer le frontmatter YAML
 clean_frontmatter() {
     local file=$1
@@ -201,10 +219,35 @@ download_images() {
 # Traiter index.md
 if [ -f "$TEMP_DIR/index-raw.md" ]; then
     log_info "Processing index.md..."
+
+    # Extraire les métadonnées avant de nettoyer
+    TITLE=$(extract_title "$TEMP_DIR/index-raw.md")
+    SHORT_DESC=$(extract_short_description "$TEMP_DIR/index-raw.md")
+
+    # Nettoyer
     clean_frontmatter "$TEMP_DIR/index-raw.md"
     clean_dsfr_directives "$TEMP_DIR/index-raw.md"
-    # Mettre à jour les chemins d'images
-    sed 's|!\[\](\./|\!\[\](./assets/|g; s|!\[\](\.\./|\!\[\](./assets/|g' "$TEMP_DIR/index-raw.md" > "$LOCAL_PATH/index.md"
+
+    # Créer le nouveau index.md avec description en haut
+    {
+        echo "# $TITLE"
+        echo ""
+        if [ -n "$SHORT_DESC" ]; then
+            echo "> **$SHORT_DESC**"
+            echo ""
+        fi
+        # Ajouter une section Navigation
+        echo "## Navigation"
+        echo ""
+        echo "- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA"
+        echo "- [Code](./code.md) - Documentation technique et API"
+        echo "- [Design](./design.md) - Spécifications design"
+        echo "- [Exemples](./examples/) - Exemples de code HTML"
+        echo ""
+        # Ajouter le contenu nettoyé (sans le titre h2 qui fait doublon)
+        sed 's|!\[\](\./|\!\[\](./assets/|g; s|!\[\](\.\./|\!\[\](./assets/|g' "$TEMP_DIR/index-raw.md" | sed '/^## /,$!d'
+    } > "$LOCAL_PATH/index.md"
+
     download_images "$TEMP_DIR/index-raw.md"
     log_success "Processed index.md"
 fi

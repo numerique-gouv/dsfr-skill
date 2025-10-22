@@ -82,11 +82,16 @@ Le skill inclut actuellement **15 composants** :
 ```
 dsfr-skill/
 ├── README.md                    # Ce fichier
+├── LICENSE.md                   # Licence Ouverte 2.0 (Etalab)
 ├── plan.md                      # Plan d'implémentation détaillé
 ├── feature.md                   # Spécifications initiales
-├── components.json              # Configuration des composants
-├── sync-component.sh           # Script de synchronisation individuelle
-├── sync-all.sh                 # Script de synchronisation globale
+├── sync-component.sh            # Script de synchronisation individuelle
+├── sync-all.sh                  # Script de synchronisation globale
+├── generate-skill-md.sh         # Script de génération du SKILL.md
+├── ressources/                  # Templates pour génération de SKILL.md
+│   ├── README.md
+│   ├── SKILL_HEADER.md
+│   └── SKILL_FOOTER.md
 └── skills/
     └── dsfr/
         ├── SKILL.md            # Métadonnées du skill
@@ -135,7 +140,7 @@ Ce script va :
 ./sync-all.sh
 ```
 
-Ce script synchronise tous les composants listés dans `components.json`.
+Ce script synchronise tous les composants définis dans le tableau `PRIORITY_COMPONENTS` du script.
 
 ## 🛠️ Structure de chaque composant
 
@@ -194,7 +199,11 @@ Images et ressources visuelles du composant, organisées par catégorie (use/, e
 
 ## 📝 Licence
 
-Ce skill utilise la documentation du Design System Français, qui est sous licence MIT.
+Ce projet est publié sous [Licence Ouverte 2.0 (Etalab-2.0)](LICENSE.md).
+
+La Licence Ouverte 2.0 permet la réutilisation libre et gratuite des informations, y compris à des fins commerciales, sous réserve de mentionner la paternité de l'information (source et date de dernière mise à jour).
+
+Ce skill utilise la documentation du Design System Français du Gouvernement Français.
 
 ## 🤝 Contribution
 
@@ -202,9 +211,10 @@ Les contributions sont les bienvenues ! Pour ajouter de nouveaux composants :
 
 1. Utiliser le script `sync-component.sh` avec le nom du composant
 2. Vérifier que la synchronisation s'est bien passée
-3. Mettre à jour `components.json`
-4. Mettre à jour `SKILL.md` et `VERSION.md`
-5. Créer une pull request
+3. Ajouter le composant dans le tableau `PRIORITY_COMPONENTS` de `sync-all.sh`
+4. Régénérer `SKILL.md` avec `./generate-skill-md.sh`
+5. Mettre à jour `VERSION.md` si nécessaire
+6. Créer une pull request
 
 ## 📧 Support
 
