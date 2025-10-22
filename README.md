@@ -8,6 +8,7 @@ Skill Claude Code fournissant la documentation complète de 15 composants du Des
 - [Utilisation avec Claude Code](#utilisation-avec-claude-code)
 - [Structure du projet](#structure-du-projet)
 - [Composants disponibles](#composants-disponibles)
+- [Composants manquants](#composants-manquants)
 - [Gestion du projet](#gestion-du-projet)
   - [Synchroniser les composants](#synchroniser-les-composants)
   - [Ajouter un nouveau composant](#ajouter-un-nouveau-composant)
@@ -61,6 +62,7 @@ dsfr-skill/
 │
 ├── README.md                    # Ce fichier - guide du projet
 ├── LICENSE.md                   # Licence Ouverte 2.0 (Etalab)
+├── TODO.md                      # Liste des composants manquants (35 composants)
 │
 ├── .claude-plugin/
 │   └── plugin.json              # Métadonnées du plugin Claude Code
@@ -135,6 +137,12 @@ dsfr-skill/
 | **select** | Liste déroulante | 4 docs + 6 exemples + 3 images |
 
 **Total** : 60 fichiers markdown + 63 exemples HTML + ~130 images
+
+## Composants manquants
+
+Le DSFR contient **plus de 50 composants**. Ce skill en documente actuellement **15** (29%).
+
+📋 **Consultez [TODO.md](TODO.md)** pour la liste complète des composants à implémenter, organisée par priorité :
 
 ## Gestion du projet
 
