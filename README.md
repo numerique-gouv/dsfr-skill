@@ -20,23 +20,61 @@ Skill Claude Code fournissant la documentation complète de 15 composants du Des
 
 ## Installation
 
-### Pour utiliser le skill avec Claude Code
+### Option 1 : Via le système de plugins (Recommandée)
 
 ```bash
-cd ~/.config/claude-code/skills  # ou le chemin approprié pour votre OS
-git clone <url-de-ce-depot> dsfr
+# Ajouter le dépôt comme marketplace
+/plugin marketplace add numerique-gouv/dsfr-skill
+
+# Installer le plugin
+/plugin install dsfr@dsfr-skill
 ```
 
-Redémarrer Claude Code ou recharger les skills.
+Vérifiez l'installation en tapant `/help` pour confirmer que le skill est disponible.
 
-### Pour développer ou contribuer
+### Option 2 : Installation manuelle via Git
+
+**Installation globale (disponible partout)** :
 
 ```bash
-git clone <url-de-ce-depot>
+# Naviguer vers le dossier des skills Claude Code
+cd ~/.claude/skills
+
+# Cloner le skill
+git clone https://github.com/numerique-gouv/dsfr-skill.git
+
+# Le skill est maintenant disponible
+```
+
+**Installation spécifique à un projet** :
+
+```bash
+# Installer dans un projet spécifique
+cd /chemin/vers/votre/projet
+mkdir -p .claude/skills
+cd .claude/skills
+git clone https://github.com/numerique-gouv/dsfr-skill.git
+```
+
+### Vérifier l'installation
+
+Dans Claude Code, le skill sera actif si vous pouvez lui poser des questions sur le DSFR :
+```
+"Montre-moi comment créer un bouton avec le DSFR"
+"Quelles sont les règles d'accessibilité pour un accordéon ?"
+"Donne-moi un exemple de modale accessible"
+```
+
+Si le skill est chargé, Claude Code aura accès à toute la documentation et pourra répondre avec des détails précis sur les 15 composants DSFR documentés.
+
+---
+
+**Note pour les contributeurs** : Si vous souhaitez contribuer au projet ou synchroniser les composants, clonez le dépôt dans un dossier de travail :
+```bash
+git clone https://github.com/numerique-gouv/dsfr-skill.git
 cd dsfr-skill
 ```
-
-**Prérequis** : bash, curl, awk, sed (outils Unix standards)
+Prérequis pour la synchronisation : bash, curl, awk, sed (outils Unix standards)
 
 ## Utilisation avec Claude Code
 
@@ -65,7 +103,8 @@ dsfr-skill/
 ├── TODO.md                      # Liste des composants manquants (35 composants)
 │
 ├── .claude-plugin/
-│   └── plugin.json              # Métadonnées du plugin Claude Code
+│   ├── plugin.json              # Métadonnées du plugin Claude Code
+│   └── marketplace.json         # Configuration pour le marketplace de plugins
 │
 ├── ressources/                  # Templates pour génération automatique
 │   ├── README.md                # Documentation du dossier ressources

@@ -1,0 +1,39 @@
+{
+  "name": "dsfr-skill",
+  "owner": {
+    "name": "numerique-gouv",
+    "email": "contact@design.numerique.gouv.fr"
+  },
+  "metadata": {
+    "description": "Documentation complète du Design System Français (DSFR) pour Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "dsfr",
+      "source": "./",
+      "description": "Skill Claude Code fournissant la documentation complète de 15 composants du Design System Français (DSFR) avec exemples HTML, spécifications d'accessibilité RGAA 4.1, et guidelines de design. Aide à créer des interfaces conformes aux standards du gouvernement français.",
+      "version": "1.0.0",
+      "author": {
+        "name": "skelz0r"
+      },
+      "homepage": "https://github.com/numerique-gouv/dsfr-skill",
+      "repository": "https://github.com/numerique-gouv/dsfr-skill",
+      "license": "Etalab-2.0",
+      "keywords": [
+        "claude-skill",
+        "claude-code",
+        "dsfr",
+        "design-system",
+        "accessibilite",
+        "rgaa",
+        "gouvernement-francais",
+        "documentation",
+        "composants",
+        "interface-utilisateur"
+      ],
+      "category": "documentation",
+      "tags": ["dsfr", "design-system", "accessibilite", "rgaa", "documentation", "france"]
+    }
+  ]
+}
