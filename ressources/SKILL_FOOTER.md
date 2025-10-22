@@ -75,27 +75,7 @@
 
 ### Ce qui N'EST PAS dans ce skill
 
-Ce skill contient uniquement 15 composants de base. Le DSFR complet contient plus de 60 composants. Si un utilisateur demande un composant non documenté ici, indiquer qu'il faut consulter la documentation officielle du DSFR.
-
-### Composants NON inclus dans ce skill
-- Tuile (tile)
-- Tag
-- Tableau (table)
-- Onglets (tabs)
-- Stepper
-- Toggle
-- Notice
-- Quote
-- Highlight
-- Pagination
-- Recherche (search)
-- Upload
-- Range
-- Sidemenu
-- Transcription
-- Et environ 40 autres composants...
-
-Pour ces composants, rediriger vers : https://www.systeme-de-design.gouv.fr/composants-et-modeles/
+Ce skill contient 23 composants prioritaires. Le DSFR complet contient plus de 60 composants. Si un utilisateur demande un composant non documenté ici (ex: stepper, sidemenu, quote, highlight, callout, upload, password, range, etc.), indiquer qu'il faut consulter la documentation officielle du DSFR : https://www.systeme-de-design.gouv.fr/composants-et-modeles/
 
 ### Versions et mises à jour
 

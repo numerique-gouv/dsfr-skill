@@ -12,7 +12,7 @@ Le Design System Français (DSFR) est le système de conception de référence d
 
 ## À propos de ce skill
 
-Ce skill contient la documentation complète de 15 composants essentiels du DSFR. Chaque composant est documenté avec :
+Ce skill contient la documentation complète de 23 composants essentiels du DSFR. Chaque composant est documenté avec :
 - Une présentation générale et des règles d'usage
 - Des spécifications d'accessibilité conformes au RGAA 4.1
 - Une documentation technique complète (HTML, CSS, JavaScript)
@@ -23,7 +23,7 @@ Ce skill contient la documentation complète de 15 composants essentiels du DSFR
 
 ### Structure des fichiers
 
-Chaque composant dispose de 5 types de ressources :
+**IMPORTANT :** Chaque composant dispose **systématiquement** de ces 5 fichiers :
 
 1. **index.md** - Vue d'ensemble du composant
    - Présentation et cas d'usage
@@ -58,6 +58,8 @@ Chaque composant dispose de 5 types de ressources :
    - Imports DSFR CSS et JS depuis CDN
    - Code prêt à copier-coller
    - Démonstration de différentes variantes
+
+**Ces fichiers existent toujours.** Dans la liste des composants ci-dessous, seul le chemin vers `index.md` est indiqué. Les 4 autres fichiers sont toujours présents dans le même dossier.
 
 ### Répondre aux demandes utilisateur
 

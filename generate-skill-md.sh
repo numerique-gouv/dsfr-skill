@@ -54,14 +54,9 @@ for component_dir in "$COMPOSANTS_DIR"/*; do
         cat >> "$SKILL_FILE" << COMPONENT
 
 ### $title (\`$component\`)
-**Description** : $description
+$description
 
-**Fichiers disponibles** :
-- [\`composants/$component/index.md\`](composants/$component/index.md) - Présentation générale, quand utiliser, règles éditoriales
-- [\`composants/$component/accessibilite.md\`](composants/$component/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
-- [\`composants/$component/code.md\`](composants/$component/code.md) - Structure HTML, CSS, JavaScript, API
-- [\`composants/$component/design.md\`](composants/$component/design.md) - Anatomie, variantes, états, personnalisation
-- [\`composants/$component/examples/\`](composants/$component/examples/) - Exemples HTML complets et fonctionnels
+**Documentation** : [\`composants/$component/index.md\`](composants/$component/index.md)
 
 COMPONENT
     fi
