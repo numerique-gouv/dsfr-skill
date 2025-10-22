@@ -20,6 +20,19 @@ get_description() {
     fi
 }
 
+# Fonction pour extraire le titre français d'un index.md
+get_title() {
+    local component=$1
+    local index_file="$COMPOSANTS_DIR/$component/index.md"
+
+    if [ -f "$index_file" ]; then
+        # Extraire le titre H1 (première ligne commençant par # )
+        grep -m 1 '^# ' "$index_file" | sed 's/^# //'
+    else
+        echo "$component"
+    fi
+}
+
 # Générer le SKILL.md à partir du header
 cat ressources/SKILL_HEADER.md > "$SKILL_FILE"
 echo "" >> "$SKILL_FILE"
@@ -34,12 +47,13 @@ echo "" >> "$SKILL_FILE"
 for component_dir in "$COMPOSANTS_DIR"/*; do
     if [ -d "$component_dir" ]; then
         component=$(basename "$component_dir")
+        title=$(get_title "$component")
         description=$(get_description "$component")
 
         # Ajouter au SKILL.md
         cat >> "$SKILL_FILE" << COMPONENT
 
-### $component
+### $title (\`$component\`)
 **Description** : $description
 
 **Fichiers disponibles** :

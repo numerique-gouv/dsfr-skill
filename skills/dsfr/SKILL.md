@@ -136,7 +136,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 **15 composants disponibles**
 
 
-### accordion
+### Accordéon (`accordion`)
 **Description** : Masquer ou révéler du contenu textuel
 
 **Fichiers disponibles** :
@@ -147,7 +147,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/accordion/examples/`](composants/accordion/examples/) - Exemples HTML complets et fonctionnels
 
 
-### alert
+### Alerte (`alert`)
 **Description** : Relayer une information importante
 
 **Fichiers disponibles** :
@@ -158,7 +158,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/alert/examples/`](composants/alert/examples/) - Exemples HTML complets et fonctionnels
 
 
-### badge
+### Badge (`badge`)
 **Description** : Affichage d’un statut informatif
 
 **Fichiers disponibles** :
@@ -169,7 +169,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/badge/examples/`](composants/badge/examples/) - Exemples HTML complets et fonctionnels
 
 
-### breadcrumb
+### Fil d'Ariane (`breadcrumb`)
 **Description** : Se repérer dans l’arborescence avec le fil d’Ariane.
 
 **Fichiers disponibles** :
@@ -180,7 +180,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/breadcrumb/examples/`](composants/breadcrumb/examples/) - Exemples HTML complets et fonctionnels
 
 
-### button
+### Bouton (`button`)
 **Description** : Déclenchement d’une action dans l’interface
 
 **Fichiers disponibles** :
@@ -191,7 +191,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/button/examples/`](composants/button/examples/) - Exemples HTML complets et fonctionnels
 
 
-### card
+### Carte (`card`)
 **Description** : Carte cliquable redirigeant vers une page éditoriale avec aperçu.
 
 **Fichiers disponibles** :
@@ -202,7 +202,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/card/examples/`](composants/card/examples/) - Exemples HTML complets et fonctionnels
 
 
-### checkbox
+### Case à cocher (`checkbox`)
 **Description** : Sélection multiple dans une liste
 
 **Fichiers disponibles** :
@@ -213,7 +213,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/checkbox/examples/`](composants/checkbox/examples/) - Exemples HTML complets et fonctionnels
 
 
-### footer
+### Pied de page (`footer`)
 **Description** : Informations complémentaires en bas de page
 
 **Fichiers disponibles** :
@@ -224,7 +224,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/footer/examples/`](composants/footer/examples/) - Exemples HTML complets et fonctionnels
 
 
-### header
+### En-tête (`header`)
 **Description** : Identification du site et accès rapides
 
 **Fichiers disponibles** :
@@ -235,7 +235,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/header/examples/`](composants/header/examples/) - Exemples HTML complets et fonctionnels
 
 
-### input
+### Champ de saisie (`input`)
 **Description** : Saisie de données dans une interface.
 
 **Fichiers disponibles** :
@@ -246,7 +246,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/input/examples/`](composants/input/examples/) - Exemples HTML complets et fonctionnels
 
 
-### link
+### Lien (`link`)
 **Description** : Navigation secondaire vers d’autres contenus
 
 **Fichiers disponibles** :
@@ -257,7 +257,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/link/examples/`](composants/link/examples/) - Exemples HTML complets et fonctionnels
 
 
-### modal
+### Modale (`modal`)
 **Description** : Affichage focalisé d’un contenu secondaire
 
 **Fichiers disponibles** :
@@ -268,7 +268,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/modal/examples/`](composants/modal/examples/) - Exemples HTML complets et fonctionnels
 
 
-### navigation
+### Navigation principale (`navigation`)
 **Description** : Orienter l’usager dans les sections du site.
 
 **Fichiers disponibles** :
@@ -279,7 +279,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/navigation/examples/`](composants/navigation/examples/) - Exemples HTML complets et fonctionnels
 
 
-### radio
+### Bouton radio (`radio`)
 **Description** : Sélection d’une option unique
 
 **Fichiers disponibles** :
@@ -290,7 +290,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/radio/examples/`](composants/radio/examples/) - Exemples HTML complets et fonctionnels
 
 
-### select
+### Liste déroulante (`select`)
 **Description** : Sélectionner une option dans une liste.
 
 **Fichiers disponibles** :
@@ -306,28 +306,28 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 ### Exemples de questions et approches recommandées
 
 **"Comment créer un bouton ?"**
-1. Consulter `composants/button/code.md` pour la structure HTML
+1. Consulter `composants/button/code.md` pour la structure HTML du composant Bouton (`button`)
 2. Montrer un exemple simple avec les imports DSFR
 3. Mentionner les variantes disponibles (primaire, secondaire, tertiaire)
 
 **"Mon bouton n'est pas accessible, comment le corriger ?"**
-1. Consulter `composants/button/accessibilite.md`
+1. Consulter `composants/button/accessibilite.md` du composant Bouton (`button`)
 2. Vérifier les attributs ARIA requis
 3. Vérifier les interactions clavier
 4. Proposer les corrections nécessaires
 
 **"Quelle est la différence entre un bouton primaire et secondaire ?"**
-1. Consulter `composants/button/index.md` pour la hiérarchie d'usage
+1. Consulter `composants/button/index.md` du composant Bouton (`button`) pour la hiérarchie d'usage
 2. Consulter `composants/button/design.md` pour les différences visuelles
 3. Expliquer les cas d'usage de chaque variante
 
-**"Donne-moi un exemple complet d'accordion"**
-1. Lire un fichier dans `composants/accordion/examples/`
+**"Donne-moi un exemple complet d'accordéon"**
+1. Lire un fichier dans `composants/accordion/examples/` du composant Accordéon (`accordion`)
 2. Présenter le code complet
 3. Expliquer les éléments clés (structure, classes, attributs)
 
 **"Comment personnaliser la couleur d'un badge ?"**
-1. Consulter `composants/badge/design.md` pour les variantes de couleur disponibles
+1. Consulter `composants/badge/design.md` du composant Badge (`badge`) pour les variantes de couleur disponibles
 2. Montrer les classes CSS correspondantes depuis `code.md`
 3. Avertir si une personnalisation n'est pas recommandée par le DSFR
 

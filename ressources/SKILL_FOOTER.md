@@ -4,28 +4,28 @@
 ### Exemples de questions et approches recommandées
 
 **"Comment créer un bouton ?"**
-1. Consulter `composants/button/code.md` pour la structure HTML
+1. Consulter `composants/button/code.md` pour la structure HTML du composant Bouton (`button`)
 2. Montrer un exemple simple avec les imports DSFR
 3. Mentionner les variantes disponibles (primaire, secondaire, tertiaire)
 
 **"Mon bouton n'est pas accessible, comment le corriger ?"**
-1. Consulter `composants/button/accessibilite.md`
+1. Consulter `composants/button/accessibilite.md` du composant Bouton (`button`)
 2. Vérifier les attributs ARIA requis
 3. Vérifier les interactions clavier
 4. Proposer les corrections nécessaires
 
 **"Quelle est la différence entre un bouton primaire et secondaire ?"**
-1. Consulter `composants/button/index.md` pour la hiérarchie d'usage
+1. Consulter `composants/button/index.md` du composant Bouton (`button`) pour la hiérarchie d'usage
 2. Consulter `composants/button/design.md` pour les différences visuelles
 3. Expliquer les cas d'usage de chaque variante
 
-**"Donne-moi un exemple complet d'accordion"**
-1. Lire un fichier dans `composants/accordion/examples/`
+**"Donne-moi un exemple complet d'accordéon"**
+1. Lire un fichier dans `composants/accordion/examples/` du composant Accordéon (`accordion`)
 2. Présenter le code complet
 3. Expliquer les éléments clés (structure, classes, attributs)
 
 **"Comment personnaliser la couleur d'un badge ?"**
-1. Consulter `composants/badge/design.md` pour les variantes de couleur disponibles
+1. Consulter `composants/badge/design.md` du composant Badge (`badge`) pour les variantes de couleur disponibles
 2. Montrer les classes CSS correspondantes depuis `code.md`
 3. Avertir si une personnalisation n'est pas recommandée par le DSFR
 
