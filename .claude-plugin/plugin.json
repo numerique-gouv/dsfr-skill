@@ -1,5 +1,4 @@
 {
-  "$schema": "https://modelcontextprotocol.io/schemas/plugin.json",
   "name": "dsfr",
   "displayName": "Design System Français (DSFR)",
   "version": "1.0.0",
