@@ -1,3 +1,13 @@
+# Navigation principale
+
+> **Orienter l’usager dans les sections du site.**
+
+## Navigation
+
+- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA
+- [Code](./code.md) - Documentation technique et API
+- [Design](./design.md) - Spécifications design
+- [Exemples](./examples/) - Exemples de code HTML
 
 ## Navigation principale
 

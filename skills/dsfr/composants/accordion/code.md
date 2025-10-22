@@ -1,10 +1,19 @@
-# Code de l'Accordéon
 
-Documentation technique du composant Accordéon : structure HTML, CSS, JavaScript et API.
+## Accordéon
 
-## HTML
+L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 
-### Structure du composant
+
+- [Présentation](../index.md)
+- [Démo](../demo/index.md)
+- [Design](../design/index.md)
+- Code
+- [Accessibilité](../accessibility/index.md)
+
+
+### HTML
+
+#### Structure du composant
 
 Le composant **Accordéon** est composé de deux parties : son titre qui contient le bouton d'ouverture, et un bloc de contenu libre refermable, dit "collapse".
 Sa structure est la suivante :
@@ -21,7 +30,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
+```HTML
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
         <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-1">Libellé accordéon</button>
@@ -32,7 +41,7 @@ Sa structure est la suivante :
 </section>
 ```
 
-### Groupe d'accordéons
+#### Groupe d'accordéons
 
 L'accordéon peut être utilisé en groupe de plusieurs éléments, liés ou non entre eux.
 Les accordéons sont disposés à la suite dans un conteneur.
@@ -42,7 +51,7 @@ Les accordéons sont disposés à la suite dans un conteneur.
 
 **Exemple de structure HTML**
 
-```html
+```HTML
 <div class="fr-accordions-group" data-fr-group="true">
   <section class="fr-accordion">
     ...
@@ -53,45 +62,18 @@ Les accordéons sont disposés à la suite dans un conteneur.
 </div>
 ```
 
-## CSS
 
-### Installation du CSS
-
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins.
-
-**Dépendances CSS**
-
-| Dépendance | Obligatoire |
-|------|-----|
-| Core | Oui |
-| Accordéon | Oui |
-
-**Exemple d'imports CSS**
-
-```html
-<link href="dist/core/core.min.css" rel="stylesheet">
-<link href="dist/component/accordion/accordion.min.css" rel="stylesheet">
-```
-
-### Variante de style
-
-Sur l'accordéon, aucune variation ni accentuation n'est possible.
-
-Quand le JavaScript est activé, le bloc refermable (collapse) reçoit la classe `fr-collapse--expanded` lorsque le bouton lié possède l'attribut `aria-expanded="true"`. C'est cette classe qui ouvre le collapse.
-
-## JavaScript
+### JavaScript
 
 Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
 
-### Installation du JavaScript
+#### Installation du JavaScript
 
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```html
+```HTML
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/accordion/accordion.module.min.js"></script>
 ```
@@ -100,7 +82,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```html
+```HTML
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/accordion/accordion.nomodule.min.js"></script>
@@ -108,7 +90,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-### Instances
+#### Instances
 
 Sur l'accordéon, les éléments suivants sont instanciés :
 
@@ -119,7 +101,7 @@ Sur l'accordéon, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-### API
+#### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -134,155 +116,257 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-#### accordion
+##### accordion
 
-**node**
-- **Description** : Renvoie le noeud HTML de l'élément.
-- **Type** : property
-- **Retour** : DOMElement
-- **Exemple** : `dsfr(elem).accordion.node`
+:::fr-table[node]{valign=top multiline=true}
 
-**isEnabled**
-- **Description** : Défini si le fonctionnement de l'accordéon est activé ou non
-- **Type** : property
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).accordion.isEnabled = false`
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).accordion.node` |
 
-#### accordionGroup
 
-**current**
-- **Description** : Retourne l'API du collapse ouvert. Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`.
-- **Type** : property
-- **Retour** : object | null
-- **Exemple** : `dsfr(elem).accordionsGroup.current`
+:::fr-table[isEnabled]{valign=top multiline=true}
 
-**hasFocus**
-- **Description** : Renvoie `true` si le focus est sur un des éléments du groupe.
-- **Type** : property
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).accordionsGroup.hasFocus`
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
 
-**index**
-- **Description** : Retourne ou modifie l'index de l'accordéon courant. Si aucun collapse n'est ouvert, l'index vaut 0.
-- **Type** : property
-- **Retour** : Number
-- **Exemple** : `dsfr(elem).accordionsGroup.index` ou `dsfr(elem).accordionsGroup.index = 2`
 
-**isGrouped**
-- **Description** : Défini si les accordéons du groupe sont liés en eux ou non. Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut.
-- **Type** : property
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).accordionsGroup.isGrouped` ou `dsfr(elem).accordionsGroup.isGrouped = true`
+##### accordionGroup
 
-**length**
-- **Description** : Retourne le nombre d'accordéons dans le groupe.
-- **Type** : property
-- **Retour** : Number
-- **Exemple** : `dsfr(elem).accordionsGroup.length`
+:::fr-table[current]{valign=top multiline=true}
 
-**members**
-- **Description** : Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe.
-- **Type** : property
-- **Retour** : Array
-- **Exemple** : `dsfr(elem).accordionsGroup.members`
+| | |
+|------|-----|
+| **Description** | Retourne l'API du collapse ouvert. <br>_Si aucun collapse n'est ouvert, ou si plusieurs collapses sont ouverts, renvoie `null`._|
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).accordionsGroup.current` |
 
-**node**
-- **Description** : Renvoie le noeud HTML de l'élément.
-- **Type** : property
-- **Retour** : DOMElement
-- **Exemple** : `dsfr(elem).accordionsGroup.node`
 
-#### collapseButton
+:::fr-table[hasFocus]{valign=top multiline=true}
 
-**focus**
-- **Description** : Replace le focus sur le bouton
-- **Type** : function
-- **Arguments** : none
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).collapseButton.focus()`
+| | |
+|------|-----|
+| **Description** | Renvoie `true` si le focus est sur un des éléments du groupe. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
 
-**parent**
-- **Description** : Retourne l'instance du dsfr parente, ici l'accordéon
-- **Type** : property
-- **Retour** : object | null
-- **Exemple** : `dsfr(elem).parent`
 
-**node**
-- **Description** : Renvoie le noeud HTML de l'élément.
-- **Type** : property
-- **Retour** : DOMElement
-- **Exemple** : `dsfr(elem).collapseButton.node`
+:::fr-table[index]{valign=top multiline=true}
 
-#### collapse
+| | |
+|------|-----|
+| **Description** | Retourne ou modifie l'index de l'accordéon courant. <br>_Si aucun collapse n'est ouvert, l'index vaut 0._ |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).accordionsGroup.index` <br> `dsfr(elem).accordionsGroup.index = 2` |
 
-**conceal**
-- **Description** : Ferme le collapse
-- **Type** : function
-- **Arguments** : none
-- **Retour** : none
-- **Exemple** : `dsfr(elem).collapse.conceal()`
 
-**disclose**
-- **Description** : Ouvre le collapse
-- **Type** : function
-- **Arguments** : none
-- **Retour** : none
-- **Exemple** : `dsfr(elem).collapse.disclose()`
+:::fr-table[isGrouped]{valign=top multiline=true}
 
-**isDisclosed**
-- **Description** : Retourne vrai si le collapse est ouvert
-- **Type** : property
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).collapse.isDisclosed`
+| | |
+|------|-----|
+| **Description** | Défini si les accordéons du groupe sont liés en eux ou non. <br>_Si `true`, lorsqu'un accordion est ouvert les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les accordéons sont groupés par défaut._|
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br> `dsfr(elem).accordionsGroup.isGrouped = true` |
 
-**isEnabled**
-- **Description** : Défini si le fonctionnement de l'accordéon est activé ou non
-- **Type** : property
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).collapse.isEnabled = false`
 
-**group**
-- **Description** : Retourne l'API du groupe, ou null s'il n'y a pas de groupe
-- **Type** : property
-- **Retour** : object | null
-- **Exemple** : `dsfr(elem).collapse.group`
+:::fr-table[length]{valign=top multiline=true}
 
-**buttons**
-- **Description** : Retourne un tableau de boutons d'ouverture du collapse
-- **Type** : property
-- **Retour** : Array
-- **Exemple** : `dsfr(elem).collapse.buttons`
+| | |
+|------|-----|
+| **Description** | Retourne le nombre d'accordéons dans le groupe. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).accordionsGroup.length` |
 
-**focus**
-- **Description** : Replace le focus sur le bouton du collapse
-- **Type** : function
-- **Arguments** : none
-- **Retour** : Boolean
-- **Exemple** : `dsfr(elem).collapse.focus()`
 
-**parent**
-- **Description** : Retourne l'instance du dsfr parent, ici l'accordéon
-- **Type** : property
-- **Retour** : object | null
-- **Exemple** : `dsfr(elem).parent`
+:::fr-table[members]{valign=top multiline=true}
 
-**children**
-- **Description** : Renvoie un tableau d'instances enfants
-- **Type** : property
-- **Retour** : Array
-- **Exemple** : `dsfr(elem).children`
+| | |
+|------|-----|
+| **Description** | Renvoie un tableau d'objets correspondant aux collapses des accordéons du groupe. |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).accordionsGroup.members` |
 
-**node**
-- **Description** : Renvoie le noeud HTML de l'élément.
-- **Type** : property
-- **Retour** : DOMElement
-- **Exemple** : `dsfr(elem).collapse.node`
 
-### Événements
+:::fr-table[node]{valign=top multiline=true}
 
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs.
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).accordionsGroup.node` |
+
+
+##### accordion
+
+:::fr-table[isEnabled]{valign=top multiline=true}
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | true \| false |
+| **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
+
+
+##### collapseButton
+
+:::fr-table[focus]{valign=top multiline=true}
+
+| | |
+|:------|:-----|
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapseButton.focus()` |
+
+
+:::fr-table[parent]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne l'instance du dsfr parente, ici l'accordéon |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
+
+
+:::fr-table[node]{valign=top multiline=true}
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapseButton.node` |
+
+
+##### collapse
+
+:::fr-table[concea]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Ferme le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.conceal()` |
+
+
+:::fr-table[disclose]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Ouvre le collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).collapse.disclose()` |
+
+
+:::fr-table[isDisclosed]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne vrai si le collapse est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.isDisclosed` |
+
+
+:::fr-table[isEnabled]{valign=top multiline=true}
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'accordéon est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
+
+
+:::fr-table[group]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).collapse.group` |
+
+
+:::fr-table[buttons]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne un tableau de boutons d'ouverture du collapse |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).collapse.buttons` |
+
+
+:::fr-table[focus]{valign=top multiline=true}
+
+| | |
+|:------|:-----|
+| **Description** | Replace le focus sur le bouton du collapse |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).collapse.focus()` |
+
+
+:::fr-table[parent]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne l'instance du dsfr parent, ici l'accordéon |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).parent` |
+
+
+:::fr-table[children]{valign=top multiline=true}
+
+| | |
+|:-----|:-----|
+| **Description** | Renvoie un tableau d'instances enfants |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).children` |
+
+
+:::fr-table[node]{valign=top multiline=true}
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).collapse.node` |
+
+
+#### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
 
 Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disponibles :
+
+:::fr-table[événements]{valign=top multiline=true caption=false}
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
@@ -290,6 +374,4 @@ Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disp
 | `dsfr.disclose` | Ouverture de l'élément | Collapse | `data-fr-js-collapse` |
 | `dsfr.click` | Click sur le bouton d'ouverture | CollapseButton | `data-fr-js-collapse-button` |
 
-## Exemples
 
-Voir le dossier [examples/](./examples/) pour des exemples de code HTML complets et fonctionnels.
