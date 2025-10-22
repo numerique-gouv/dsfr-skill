@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - select - Example 1</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>select - Example 1</h1>
+    
+    <div class="fr-select-group">
+        <label class="fr-label" for="select-hint">
+            Libellé pour liste déroulante
+            <span class="fr-hint-text">Texte de description additionnel</span>
+        </label>
+        <select class="fr-select" aria-describedby="select-hint-messages" id="select-hint" name="select-hint">
+            <option value="" selected disabled hidden>Sélectionner une option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <div class="fr-messages-group" id="select-hint-messages" aria-live="polite">
+        </div>
+    </div>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

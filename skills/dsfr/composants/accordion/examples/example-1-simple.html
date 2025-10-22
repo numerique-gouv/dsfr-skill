@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - Accordéon Simple</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+  <div class="fr-container fr-mt-4w">
+    <h1>Exemple : Accordéon Simple</h1>
+
+    <section class="fr-accordion">
+      <h3 class="fr-accordion__title">
+        <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-1">Libellé accordéon</button>
+      </h3>
+      <div id="accordion-1" class="fr-collapse">
+        <p>Contenu de l'accordéon. Vous pouvez placer ici n'importe quel contenu HTML : texte, images, listes, etc.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- DSFR JS -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

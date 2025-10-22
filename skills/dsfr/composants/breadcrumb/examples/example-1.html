@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - breadcrumb - Example 1</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>breadcrumb - Example 1</h1>
+    
+    <nav role="navigation" class="fr-breadcrumb" aria-label="vous êtes ici :">
+        <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1">
+            Voir le fil d’Ariane
+        </button>
+        <div class="fr-collapse" id="breadcrumb-1">
+            <ol class="fr-breadcrumb__list">
+                <li>
+                    <a class="fr-breadcrumb__link" href="#/">Accueil</a>
+                </li>
+                <li>
+                    <a class="fr-breadcrumb__link" href="#/segment-1/">Segment 1</a>
+                </li>
+                <li>
+                    <a class="fr-breadcrumb__link" href="#/segment-1/segment-2/">Segment 2</a>
+                </li>
+                <li>
+                    <a class="fr-breadcrumb__link" aria-current="page">Page Actuelle</a>
+                </li>
+            </ol>
+        </div>
+    </nav>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

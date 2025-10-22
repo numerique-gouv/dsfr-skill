@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - Groupe d'Accordéons</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+  <div class="fr-container fr-mt-4w">
+    <h1>Exemple : Groupe d'Accordéons</h1>
+
+    <div class="fr-accordions-group" data-fr-group="true">
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-group-1">Premier accordéon</button>
+        </h3>
+        <div id="accordion-group-1" class="fr-collapse">
+          <p>Contenu du premier accordéon. Dans un groupe avec data-fr-group="true", seul un accordéon peut être ouvert à la fois.</p>
+        </div>
+      </section>
+
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-group-2">Deuxième accordéon</button>
+        </h3>
+        <div id="accordion-group-2" class="fr-collapse">
+          <p>Contenu du deuxième accordéon. L'ouverture de celui-ci fermera automatiquement le premier.</p>
+        </div>
+      </section>
+
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-group-3">Troisième accordéon</button>
+        </h3>
+        <div id="accordion-group-3" class="fr-collapse">
+          <p>Contenu du troisième accordéon.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- DSFR JS -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

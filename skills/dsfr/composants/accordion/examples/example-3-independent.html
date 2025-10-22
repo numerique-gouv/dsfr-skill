@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - Accordéons Indépendants</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+  <div class="fr-container fr-mt-4w">
+    <h1>Exemple : Accordéons Indépendants</h1>
+
+    <div class="fr-accordions-group" data-fr-group="false">
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-indep-1">Accordéon indépendant 1</button>
+        </h3>
+        <div id="accordion-indep-1" class="fr-collapse">
+          <p>Contenu du premier accordéon. Avec data-fr-group="false", plusieurs accordéons peuvent être ouverts simultanément.</p>
+        </div>
+      </section>
+
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-indep-2">Accordéon indépendant 2</button>
+        </h3>
+        <div id="accordion-indep-2" class="fr-collapse">
+          <p>Contenu du deuxième accordéon. Vous pouvez ouvrir celui-ci sans fermer le premier.</p>
+        </div>
+      </section>
+
+      <section class="fr-accordion">
+        <h3 class="fr-accordion__title">
+          <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-indep-3">Accordéon indépendant 3</button>
+        </h3>
+        <div id="accordion-indep-3" class="fr-collapse">
+          <ul>
+            <li>Élément de liste 1</li>
+            <li>Élément de liste 2</li>
+            <li>Élément de liste 3</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- DSFR JS -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

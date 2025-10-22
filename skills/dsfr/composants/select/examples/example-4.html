@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - select - Example 4</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>select - Example 4</h1>
+    
+    <div class="fr-select-group fr-select-group--valid">
+        <label class="fr-label" for="select-valid">
+            Libellé pour liste déroulante
+        </label>
+        <select class="fr-select" aria-describedby="select-valid-messages" id="select-valid" name="select-valid">
+            <option value="" selected disabled hidden>Sélectionner une option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <div class="fr-messages-group" id="select-valid-messages" aria-live="polite">
+            <p class="fr-message fr-message--valid" id="select-valid-message-valid">Texte de validation</p>
+        </div>
+    </div>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

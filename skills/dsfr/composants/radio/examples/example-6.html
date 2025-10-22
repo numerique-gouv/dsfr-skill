@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - radio - Example 6</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>radio - Example 6</h1>
+    
+    <fieldset class="fr-fieldset fr-fieldset--valid" role="group" aria-labelledby="radio-legend radio-messages">
+        <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
+            Légende pour l’ensemble des éléments en succès
+        </legend>
+        <div class="fr-fieldset__element">
+            <div class="fr-radio-group">
+                <input value="1" type="radio" id="radio-1" name="radio">
+                <label class="fr-label" for="radio-1">
+                    Libellé bouton radio 1
+                </label>
+            </div>
+        </div>
+        <div class="fr-fieldset__element">
+            <div class="fr-radio-group">
+                <input value="2" type="radio" id="radio-2" name="radio">
+                <label class="fr-label" for="radio-2">
+                    Libellé bouton radio 2
+                </label>
+            </div>
+        </div>
+        <div class="fr-messages-group" id="radio-messages" aria-live="polite">
+            <p class="fr-message fr-message--error" id="radio-message-error">Texte de succès</p>
+        </div>
+    </fieldset>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - checkbox - Example 2</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>checkbox - Example 2</h1>
+    
+    <fieldset class="fr-fieldset" aria-labelledby="checkboxes-legend checkboxes-messages">
+        <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="checkboxes-legend">
+            Légende pour l’ensemble des éléments
+        </legend>
+        <div class="fr-fieldset__element">
+            <div class="fr-checkbox-group">
+                <input name="checkboxes-1" id="checkboxes-1" type="checkbox">
+                <label class="fr-label" for="checkboxes-1">
+                    Libellé case à cocher
+                </label>
+            </div>
+        </div>
+        <div class="fr-fieldset__element">
+            <div class="fr-checkbox-group">
+                <input checked name="checkboxes-2" id="checkboxes-2" type="checkbox">
+                <label class="fr-label" for="checkboxes-2">
+                    Libellé case à cocher
+                </label>
+            </div>
+        </div>
+        <div class="fr-fieldset__element">
+            <div class="fr-checkbox-group">
+                <input name="checkboxes-3" id="checkboxes-3" type="checkbox">
+                <label class="fr-label" for="checkboxes-3">
+                    Libellé case à cocher
+                </label>
+            </div>
+        </div>
+        <div class="fr-messages-group" id="checkboxes-messages" aria-live="polite">
+        </div>
+    </fieldset>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>
