@@ -133,7 +133,7 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 
 ## Liste des composants disponibles
 
-**15 composants disponibles**
+**23 composants disponibles**
 
 
 ### Accordéon (`accordion`)
@@ -279,6 +279,28 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/navigation/examples/`](composants/navigation/examples/) - Exemples HTML complets et fonctionnels
 
 
+### Bandeau d'information importante (`notice`)
+**Description** : Afficher une alerte temporaire prioritaire.
+
+**Fichiers disponibles** :
+- [`composants/notice/index.md`](composants/notice/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/notice/accessibilite.md`](composants/notice/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/notice/code.md`](composants/notice/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/notice/design.md`](composants/notice/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/notice/examples/`](composants/notice/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Pagination (`pagination`)
+**Description** : Navigation entre plusieurs pages d’une liste
+
+**Fichiers disponibles** :
+- [`composants/pagination/index.md`](composants/pagination/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/pagination/accessibilite.md`](composants/pagination/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/pagination/code.md`](composants/pagination/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/pagination/design.md`](composants/pagination/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/pagination/examples/`](composants/pagination/examples/) - Exemples HTML complets et fonctionnels
+
+
 ### Bouton radio (`radio`)
 **Description** : Sélection d’une option unique
 
@@ -290,6 +312,17 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/radio/examples/`](composants/radio/examples/) - Exemples HTML complets et fonctionnels
 
 
+### Barre de recherche (`search`)
+**Description** : Accès rapide à un contenu par mot clé
+
+**Fichiers disponibles** :
+- [`composants/search/index.md`](composants/search/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/search/accessibilite.md`](composants/search/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/search/code.md`](composants/search/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/search/design.md`](composants/search/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/search/examples/`](composants/search/examples/) - Exemples HTML complets et fonctionnels
+
+
 ### Liste déroulante (`select`)
 **Description** : Sélectionner une option dans une liste.
 
@@ -299,6 +332,61 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 - [`composants/select/code.md`](composants/select/code.md) - Structure HTML, CSS, JavaScript, API
 - [`composants/select/design.md`](composants/select/design.md) - Anatomie, variantes, états, personnalisation
 - [`composants/select/examples/`](composants/select/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Onglet (`tab`)
+**Description** : Structuration de contenu avec des onglets
+
+**Fichiers disponibles** :
+- [`composants/tab/index.md`](composants/tab/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/tab/accessibilite.md`](composants/tab/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/tab/code.md`](composants/tab/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/tab/design.md`](composants/tab/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/tab/examples/`](composants/tab/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Tableau (`table`)
+**Description** : Présentation du composant Tableau pour organiser et comparer des données.
+
+**Fichiers disponibles** :
+- [`composants/table/index.md`](composants/table/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/table/accessibilite.md`](composants/table/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/table/code.md`](composants/table/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/table/design.md`](composants/table/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/table/examples/`](composants/table/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Tag (`tag`)
+**Description** : Le tag sert à classer ou filtrer les contenus.
+
+**Fichiers disponibles** :
+- [`composants/tag/index.md`](composants/tag/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/tag/accessibilite.md`](composants/tag/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/tag/code.md`](composants/tag/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/tag/design.md`](composants/tag/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/tag/examples/`](composants/tag/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Tuile (`tile`)
+**Description** : Rediriger l’usager vers du contenu via des tuiles.
+
+**Fichiers disponibles** :
+- [`composants/tile/index.md`](composants/tile/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/tile/accessibilite.md`](composants/tile/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/tile/code.md`](composants/tile/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/tile/design.md`](composants/tile/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/tile/examples/`](composants/tile/examples/) - Exemples HTML complets et fonctionnels
+
+
+### Interrupteur (`toggle`)
+**Description** : Basculer entre deux états opposés
+
+**Fichiers disponibles** :
+- [`composants/toggle/index.md`](composants/toggle/index.md) - Présentation générale, quand utiliser, règles éditoriales
+- [`composants/toggle/accessibilite.md`](composants/toggle/accessibilite.md) - Interactions clavier, ARIA, RGAA, lecteurs d'écran
+- [`composants/toggle/code.md`](composants/toggle/code.md) - Structure HTML, CSS, JavaScript, API
+- [`composants/toggle/design.md`](composants/toggle/design.md) - Anatomie, variantes, états, personnalisation
+- [`composants/toggle/examples/`](composants/toggle/examples/) - Exemples HTML complets et fonctionnels
 
 
 ## Comment répondre aux questions utilisateur

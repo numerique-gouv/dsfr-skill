@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - pagination - Example 1</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>pagination - Example 1</h1>
+    
+    <nav role="navigation" class="fr-pagination" aria-label="pagination">
+        <ul class="fr-pagination__list">
+            <li>
+                <a class="fr-pagination__link fr-pagination__link--first" title="Première page" aria-disabled="true" role="link">
+                    Première page
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label" title="Page précédente" aria-disabled="true" role="link">
+                    Page précédente
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link" aria-current="page" title="Page 1">
+                    1
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link" href="#" title="Page 2">
+                    2
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 3">
+                    3
+                </a>
+            </li>
+            <li>
+                <span class="fr-pagination__link fr-hidden fr-unhidden-lg">
+                    …
+                </span>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 130">
+                    130
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 131">
+                    131
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link" href="#" title="Page 132">
+                    132
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label" id="pagination-6519" href="#" title="Page suivante">
+                    Page suivante
+                </a>
+            </li>
+            <li>
+                <a class="fr-pagination__link fr-pagination__link--last" href="#" title="Dernière page">
+                    Dernière page
+                </a>
+            </li>
+        </ul>
+    </nav>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>

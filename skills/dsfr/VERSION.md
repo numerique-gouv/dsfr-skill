@@ -9,7 +9,7 @@
 
 ## Composants inclus
 
-**Total : 15 composants**
+**Total : 23 composants**
 
 | Composant | Statut | Description |
 |-----------|--------|-------------|
@@ -26,16 +26,24 @@
 | link | ✅ Complet | Lien : navigation entre les pages |
 | modal | ✅ Complet | Modale : afficher du contenu dans une fenêtre superposée |
 | navigation | ✅ Complet | Navigation : menu de navigation principal |
+| notice | ✅ Complet | Notice : message d'information important |
+| pagination | ✅ Complet | Pagination : navigation entre pages de résultats |
 | radio | ✅ Complet | Bouton radio : sélectionner une seule option parmi plusieurs |
+| search | ✅ Complet | Barre de recherche : rechercher du contenu |
 | select | ✅ Complet | Liste déroulante : sélectionner une option dans une liste |
+| tab | ✅ Complet | Onglet : structurer le contenu en onglets |
+| table | ✅ Complet | Tableau : afficher des données tabulaires |
+| tag | ✅ Complet | Étiquette : catégoriser ou filtrer du contenu |
+| tile | ✅ Complet | Tuile : présenter du contenu cliquable en tuiles |
+| toggle | ✅ Complet | Interrupteur : bouton on/off |
 
 ## Statistiques
 
-- **Composants** : 15
-- **Fichiers markdown** : 60 (4 par composant : index, accessibilité, code, design)
-- **Exemples HTML** : ~60 exemples complets et fonctionnels
-- **Assets** : ~150 images téléchargées localement
-- **Scripts** : 2 scripts bash d'automatisation (sync-component.sh, sync-all.sh)
+- **Composants** : 23
+- **Fichiers markdown** : 92 (4 par composant : index, accessibilité, code, design)
+- **Exemples HTML** : ~100 exemples complets et fonctionnels
+- **Assets** : ~200 images téléchargées localement
+- **Scripts** : 3 scripts bash (sync-component.sh, sync-all.sh, generate-skill-md.sh)
 
 ## Structure de chaque composant
 

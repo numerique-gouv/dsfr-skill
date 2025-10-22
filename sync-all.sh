@@ -19,6 +19,7 @@ echo ""
 
 # Liste des composants prioritaires à synchroniser
 PRIORITY_COMPONENTS=(
+    "accordion"
     "alert"
     "badge"
     "breadcrumb"
@@ -31,8 +32,16 @@ PRIORITY_COMPONENTS=(
     "link"
     "modal"
     "navigation"
+    "notice"
+    "pagination"
     "radio"
+    "search"
     "select"
+    "tab"
+    "table"
+    "tag"
+    "tile"
+    "toggle"
 )
 
 total=${#PRIORITY_COMPONENTS[@]}

@@ -11,7 +11,7 @@ Ce fichier liste tous les composants du DSFR qui ne sont pas encore intégrés d
 
 ## État actuel
 
-**Composants implémentés** : 15/51 (29%)
+**Composants implémentés** : 23/51 (45%)
 
 ---
 
@@ -32,8 +32,16 @@ Ces composants sont déjà disponibles dans le skill :
 11. ✅ **link** - Lien
 12. ✅ **modal** - Modale
 13. ✅ **navigation** - Navigation
-14. ✅ **radio** - Bouton radio
-15. ✅ **select** - Liste déroulante
+14. ✅ **notice** - Notice
+15. ✅ **pagination** - Pagination
+16. ✅ **radio** - Bouton radio
+17. ✅ **search** - Recherche
+18. ✅ **select** - Liste déroulante
+19. ✅ **tab** - Onglets
+20. ✅ **table** - Tableau
+21. ✅ **tag** - Étiquette
+22. ✅ **tile** - Tuile
+23. ✅ **toggle** - Interrupteur
 
 ---
 
@@ -43,37 +51,7 @@ Ces composants ont une documentation complète dans le DSFR et peuvent être ajo
 
 ### Priorité haute (composants fréquemment utilisés)
 
-16. 📝 **tab** - Onglets
-    - Organiser du contenu en onglets
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/tab
-
-17. 📝 **table** - Tableau
-    - Afficher des données tabulaires
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/table
-
-18. 📝 **tag** - Étiquette
-    - Catégoriser ou filtrer du contenu
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/tag
-
-19. 📝 **tile** - Tuile
-    - Présenter du contenu cliquable en tuiles
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/tile
-
-20. 📝 **search** - Recherche
-    - Barre de recherche
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/search
-
-21. 📝 **pagination** - Pagination
-    - Navigation entre pages de résultats
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/pagination
-
-22. 📝 **notice** - Notice
-    - Message d'information important
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/notice
-
-23. 📝 **toggle** - Interrupteur
-    - Bouton on/off
-    - Documentation : https://github.com/GouvernementFR/dsfr/tree/main/src/dsfr/component/toggle
+Tous les composants haute priorité ont été implémentés ! ✅
 
 ### Priorité moyenne
 

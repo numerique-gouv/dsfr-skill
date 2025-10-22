@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSFR - toggle - Example 2</title>
+  <!-- DSFR CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.min.css">
+</head>
+<body>
+      <div class="fr-container fr-mt-4w">
+        <h1>toggle - Example 2</h1>
+    
+    <fieldset class="fr-fieldset" aria-labelledby="toggles-legend toggles-messages">
+        <legend class="fr-fieldset__legend" id="toggles-legend">
+            Légende pour l’ensemble des éléments
+        </legend>
+        <div class="fr-fieldset__element">
+            <ul class="fr-toggle__list">
+                <li>
+                    <div class="fr-toggle">
+                        <input type="checkbox" class="fr-toggle__input" id="toggle-01" aria-describedby="toggle-01-messages">
+                        <label class="fr-toggle__label" for="toggle-01">Libellé de l'interrupteur</label>
+                        <div class="fr-messages-group" id="toggle-01-messages" aria-live="polite">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="fr-toggle">
+                        <input type="checkbox" class="fr-toggle__input" id="toggle-02" aria-describedby="toggle-02-messages">
+                        <label class="fr-toggle__label" for="toggle-02">Libellé de l'interrupteur</label>
+                        <div class="fr-messages-group" id="toggle-02-messages" aria-live="polite">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="fr-toggle">
+                        <input type="checkbox" class="fr-toggle__input" id="toggle-03" aria-describedby="toggle-03-messages">
+                        <label class="fr-toggle__label" for="toggle-03">Libellé de l'interrupteur</label>
+                        <div class="fr-messages-group" id="toggle-03-messages" aria-live="polite">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="fr-messages-group" id="toggles-messages" aria-live="polite">
+        </div>
+    </fieldset>
+      </div>
+    
+      <!-- DSFR JS -->
+      <script type="module" src="https://cdn.jsdelivr.net/npm/@gouvfr/dsfr/dist/dsfr.module.min.js"></script>
+</body>
+</html>
