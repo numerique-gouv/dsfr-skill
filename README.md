@@ -1,6 +1,6 @@
 # DSFR Skill pour Claude Code
 
-Skill Claude Code fournissant la documentation complète de 15 composants du Design System Français (DSFR) avec exemples, spécifications d'accessibilité RGAA et scripts de synchronisation automatisés.
+Skill Claude Code fournissant la documentation complète de 23 composants du Design System Français (DSFR) avec exemples, spécifications d'accessibilité RGAA et scripts de synchronisation automatisés.
 
 ## Table des matières
 
