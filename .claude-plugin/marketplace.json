@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "dsfr",
+      "name": "dsfr-skill",
       "source": "./",
       "description": "Skill Claude Code fournissant la documentation complète de 15 composants du Design System Français (DSFR) avec exemples HTML, spécifications d'accessibilité RGAA 4.1, et guidelines de design. Aide à créer des interfaces conformes aux standards du gouvernement français.",
       "version": "1.0.0",
