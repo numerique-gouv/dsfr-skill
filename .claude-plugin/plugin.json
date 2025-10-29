@@ -3,13 +3,18 @@
   "displayName": "Design System Français (DSFR)",
   "version": "1.0.0",
   "description": "Documentation et accessibilité concernant le Design System Français (DSFR), un ensemble de composants et de bonnes pratiques pour créer des interfaces utilisateur conformes aux standards du gouvernement français.",
-  "author": "skelz0r",
+  "author": {
+    "name": "skelz0r"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/numerique-gouv/dsfr-skill"
   },
   "license": "Etalab-2.0",
   "keywords": [
+    "claude-skill",
+    "claude-code",
+    "model-invoked",
     "design system",
     "DSFR",
     "accessibilité",
