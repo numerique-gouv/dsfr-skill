@@ -1,6 +1,6 @@
 ---
 name: Design System Français (DSFR)
-description: Documentation et accessibilité concernant le Design System Français (DSFR), un ensemble de composants et de bonnes pratiques pour créer des interfaces utilisateur conformes aux standards du gouvernement français.
+description: Documentation et accessibilité concernant le Design System Français (DSFR), un ensemble de composants et de bonnes pratiques pour créer des interfaces utilisateur conformes aux standards du gouvernement français. Use when user wants to implement DSFR components, needs DSFR documentation, asks about French government design system, requires RGAA accessibility guidelines, works with French government websites, or needs HTML/CSS examples for accessible components.
 version: 1.0
 author: skelz0r
 tags: [design system, DSFR, accessibilité, documentation, interface utilisateur, gouvernement français]
