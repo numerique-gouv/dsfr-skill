@@ -27,7 +27,7 @@ Skill Claude Code fournissant la documentation complète de 23 composants du Des
 /plugin marketplace add numerique-gouv/dsfr-skill
 
 # Installer le plugin
-/plugin install dsfr@dsfr-skill
+/plugin install dsfr-skill@dsfr-skill
 ```
 
 Vérifiez l'installation en tapant `/help` pour confirmer que le skill est disponible.
