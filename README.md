@@ -1,11 +1,13 @@
-# DSFR Skill pour Claude Code
+# DSFR Skill pour agents IA
 
-Skill Claude Code fournissant la documentation complète de 23 composants du Design System Français (DSFR) avec exemples, spécifications d'accessibilité RGAA et scripts de synchronisation automatisés.
+Skill DSFR pour agents de développement IA fournissant la documentation complète de 23 composants du Design System Français (DSFR) avec exemples, spécifications d'accessibilité RGAA et scripts de synchronisation automatisés.
+
+Le skill suit le format ouvert `SKILL.md` : il fonctionne avec tout agent compatible (Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot…). Le skill lui-même se trouve dans le dossier `skills/dsfr-skill/` du dépôt.
 
 ## Table des matières
 
 - [Installation](#installation)
-- [Utilisation avec Claude Code](#utilisation-avec-claude-code)
+- [Utilisation](#utilisation)
 - [Structure du projet](#structure-du-projet)
 - [Composants disponibles](#composants-disponibles)
 - [Composants manquants](#composants-manquants)
@@ -20,52 +22,62 @@ Skill Claude Code fournissant la documentation complète de 23 composants du Des
 
 ## Installation
 
-### Option 1 : Via le système de plugins (Recommandée)
+### Claude Code : via le système de plugins
 
 ```bash
-# Ajouter le dépôt comme marketplace
 /plugin marketplace add numerique-gouv/dsfr-skill
-
-# Installer le plugin
 /plugin install dsfr-skill@dsfr-skill
 ```
 
-Vérifiez l'installation en tapant `/help` pour confirmer que le skill est disponible.
+### Tout agent : clone et lien symbolique
 
-### Option 2 : Installation manuelle via Git
-
-**Installation globale (disponible partout)** :
+Clonez le dépôt une fois, puis liez le dossier `skills/dsfr-skill` dans le répertoire de skills de vos agents :
 
 ```bash
-# Naviguer vers le dossier des skills Claude Code
-cd ~/.claude/skills
+git clone https://github.com/numerique-gouv/dsfr-skill.git ~/.local/share/dsfr-skill
 
-# Cloner le skill
-git clone https://github.com/numerique-gouv/dsfr-skill.git
-
-# Le skill est maintenant disponible
+mkdir -p ~/.agents/skills ~/.claude/skills
+ln -s ~/.local/share/dsfr-skill/skills/dsfr-skill ~/.agents/skills/dsfr-skill
+ln -s ~/.local/share/dsfr-skill/skills/dsfr-skill ~/.claude/skills/dsfr-skill
 ```
 
-**Installation spécifique à un projet** :
+Pour mettre à jour le skill dans tous les agents :
 
 ```bash
-# Installer dans un projet spécifique
-cd /chemin/vers/votre/projet
-mkdir -p .claude/skills
-cd .claude/skills
-git clone https://github.com/numerique-gouv/dsfr-skill.git
+git -C ~/.local/share/dsfr-skill pull
 ```
+
+Répertoires lus par chaque agent :
+
+| Agent | Global | Projet |
+|---|---|---|
+| Claude Code | `~/.claude/skills` | `.claude/skills` |
+| Codex CLI | `~/.agents/skills` | `.agents/skills` |
+| Cursor | `~/.agents/skills`, `~/.cursor/skills` | `.agents/skills`, `.cursor/skills` |
+| OpenCode | `~/.agents/skills`, `~/.config/opencode/skills` | `.agents/skills`, `.opencode/skills` |
+| GitHub Copilot | `~/.agents/skills`, `~/.copilot/skills` | `.agents/skills`, `.github/skills` |
+
+Les deux liens `~/.agents/skills` et `~/.claude/skills` suffisent donc à couvrir tous ces agents.
+
+### Installation dans un projet
+
+Pour partager le skill avec les autres contributeurs d'un projet, copiez le dossier plutôt que de créer un lien symbolique (un lien vers votre dossier personnel ne fonctionnerait pas chez eux) :
+
+```bash
+mkdir -p .agents/skills
+cp -R ~/.local/share/dsfr-skill/skills/dsfr-skill .agents/skills/
+```
+
+Utilisez `.claude/skills` à la place de `.agents/skills` pour Claude Code.
 
 ### Vérifier l'installation
 
-Dans Claude Code, le skill sera actif si vous pouvez lui poser des questions sur le DSFR :
+Le skill est actif si votre agent répond avec précision à des questions sur le DSFR :
 ```
 "Montre-moi comment créer un bouton avec le DSFR"
 "Quelles sont les règles d'accessibilité pour un accordéon ?"
 "Donne-moi un exemple de modale accessible"
 ```
-
-Si le skill est chargé, Claude Code aura accès à toute la documentation et pourra répondre avec des détails précis sur les 15 composants DSFR documentés.
 
 ---
 
@@ -76,9 +88,9 @@ cd dsfr-skill
 ```
 Prérequis pour la synchronisation : bash, curl, awk, sed (outils Unix standards)
 
-## Utilisation avec Claude Code
+## Utilisation
 
-Une fois le skill installé, vous pouvez demander à Claude Code :
+Une fois le skill installé, vous pouvez demander à votre agent :
 
 ```
 "Montre-moi comment créer un bouton primaire avec le DSFR"
@@ -87,7 +99,7 @@ Une fois le skill installé, vous pouvez demander à Claude Code :
 "Comment implémenter un fil d'Ariane accessible ?"
 ```
 
-Claude Code aura accès à :
+L'agent aura accès à :
 - Documentation technique complète (HTML, CSS, JavaScript)
 - Guides d'accessibilité RGAA 4.1
 - Spécifications design (variantes, états, anatomie)
@@ -116,7 +128,7 @@ dsfr-skill/
 │   ├── sync-all.sh              # Synchroniser tous les composants
 │   └── generate-skill-md.sh     # Générer SKILL.md depuis templates
 │
-└── skills/dsfr/                 # Contenu du skill (lu par Claude Code)
+└── skills/dsfr-skill/           # Contenu du skill (lu par l'agent)
     │
     ├── SKILL.md                 # Point d'entrée - documentation complète
     ├── VERSION.md               # Informations de version et historique
