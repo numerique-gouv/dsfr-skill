@@ -146,6 +146,7 @@ function check (html) {
   const all = elements(root)
   const textOf = (element) => html.slice(element.contentStart, element.contentEnd).replace(/<[^>]*>/g, '').trim()
   const ids = new Map()
+  const unknownClasses = new Map()
 
   for (const element of all) {
     const id = element.attributes.id
@@ -167,7 +168,7 @@ function check (html) {
     }
 
     for (const name of classesOf(element).filter((name) => name.startsWith('fr-') && !knownClasses.has(name))) {
-      report('avertissement', element, `classe "${name}" absente du CSS DSFR ${dsfrVersion} (inventée, mal orthographiée ou simple point d'accroche JS)`)
+      unknownClasses.set(name, [...(unknownClasses.get(name) || []), element])
     }
 
     if (element.tag === 'img' && element.attributes.alt === undefined) report('erreur', element, '<img> sans attribut alt (alt="" si décorative)')
@@ -206,6 +207,11 @@ function check (html) {
       if (!versioned[1]) report('erreur', element, `CDN DSFR sans version : utiliser @gouvfr/dsfr@${dsfrVersion}`)
       else if (versioned[1] !== `@${dsfrVersion}`) report('avertissement', element, `CDN DSFR en ${versioned[1].slice(1)}, la documentation du skill est en ${dsfrVersion}`)
     }
+  }
+
+  for (const [name, occurrences] of unknownClasses) {
+    const count = occurrences.length > 1 ? ` (${occurrences.length} fois)` : ''
+    report('avertissement', occurrences[0], `classe "${name}" absente du CSS DSFR ${dsfrVersion}${count} : inventée, mal orthographiée ou simple point d'accroche JS`)
   }
 
   const htmlElement = all.find((element) => element.tag === 'html')
