@@ -7,12 +7,14 @@ import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
 import { check, summarize } from '../skills/dsfr-skill/scripts/verifier.mjs'
+import { openBrowser, render } from './navigateur.mjs'
 
 const evalsRoot = dirname(fileURLToPath(import.meta.url))
 const skillRoot = join(evalsRoot, '..', 'skills', 'dsfr-skill')
 const projectSkillDirectories = ['.claude/skills', '.agents/skills']
-const answerFormat = '\n\nRéponds uniquement avec le code HTML, dans un seul bloc ```html.'
+const answerFormat = '\n\nRéponds uniquement avec le code HTML, dans un seul bloc ```html. Il sera servi seul, sans aucun autre fichier à côté.'
 const timeout = Number(process.env.EVAL_TIMEOUT_MS) || 15 * 60 * 1000
+const dsfrVersion = readFileSync(join(skillRoot, 'VERSION.md'), 'utf8').match(/@gouvfr\/dsfr@([\d.]+)/)[1]
 
 const { values: options } = parseArgs({
   options: {
@@ -20,6 +22,7 @@ const { values: options } = parseArgs({
     sorties: { type: 'string', default: join(evalsRoot, 'sorties') },
     cas: { type: 'string' },
     'avec-skill': { type: 'boolean', default: false },
+    navigateur: { type: 'boolean', default: false },
     parallele: { type: 'string', default: '3' }
   }
 })
@@ -144,6 +147,7 @@ async function main () {
   const outputDirectory = resolve(options.sorties)
   mkdirSync(outputDirectory, { recursive: true })
   const exampleClasses = officialExampleClasses()
+  const browser = options.navigateur ? await openBrowser() : null
 
   const results = await inPool(selectedCases(), concurrency(), async (testCase) => {
     const file = join(outputDirectory, `${testCase.id}.html`)
@@ -151,8 +155,13 @@ async function main () {
     if (options.agent) writeFileSync(file, extractHtml(await runAgent(testCase)))
     if (!existsSync(file)) return { id: testCase.id, problems: [`pas de sortie ${file} (lancer avec --agent)`], warnings: [] }
 
-    return evaluate(testCase, readFileSync(file, 'utf8'), exampleClasses)
+    const html = readFileSync(file, 'utf8')
+    const result = evaluate(testCase, html, exampleClasses)
+    if (browser) result.problems.push(...(await render(browser, html, { pageComplete: testCase.pageComplete, version: dsfrVersion })).map((problem) => `navigateur : ${problem}`))
+    return result
   })
+
+  await browser?.close()
 
   for (const result of results) {
     console.log(`${result.problems.length === 0 ? 'OK   ' : 'ÉCHEC'} ${result.id}`)
