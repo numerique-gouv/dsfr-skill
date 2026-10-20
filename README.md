@@ -115,6 +115,8 @@ Le script télécharge le paquet `@gouvfr/dsfr`, qui contient à la fois la docu
 
 Pour modifier les consignes du skill, éditer les templates de `ressources/` puis relancer la synchronisation.
 
+Le workflow `Sync DSFR` fait la même chose chaque lundi (ou à la demande, avec une version au choix) et ouvre une pull request quand le résultat change. Il demande d'autoriser GitHub Actions à créer des pull requests (Settings > Actions > General). Sur les pull requests créées avec le jeton du workflow, le workflow `Check` attend une approbation : cliquer sur « Approve workflows to run » dans la pull request.
+
 ## Licence
 
 [Licence Ouverte 2.0 (Etalab)](LICENSE.md). La documentation et les exemples proviennent du [DSFR](https://github.com/GouvernementFR/dsfr), lui aussi sous Licence Ouverte 2.0 mais dont l'usage est réservé aux sites de l'administration (voir ses [modalités d'utilisation](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md)).

@@ -1,0 +1,44 @@
+name: Sync DSFR
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version de @gouvfr/dsfr (vide pour la dernière publiée)
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Regenerate the skill
+        id: sync
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          node scripts/sync.mjs ${VERSION:+"$VERSION"}
+          node scripts/check-links.mjs
+          echo "version=$(grep -oE '@gouvfr/dsfr@[0-9.]+' skills/dsfr-skill/VERSION.md | cut -d@ -f3)" >> "$GITHUB_OUTPUT"
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: sync/dsfr-${{ steps.sync.outputs.version }}
+          commit-message: |
+            Sync the skill with DSFR ${{ steps.sync.outputs.version }}
+
+            Output of scripts/sync.mjs ${{ steps.sync.outputs.version }}.
+          title: Sync the skill with DSFR ${{ steps.sync.outputs.version }}
+          body: |
+            Régénération automatique de `skills/dsfr-skill` depuis `@gouvfr/dsfr@${{ steps.sync.outputs.version }}`.
+
+            À relire : les règles de `SKILL.md` et `demarrage.md` restent-elles vraies avec cette version (imports, structure du header et du footer, nouvelles classes) ? Lire le [CHANGELOG du DSFR](https://github.com/GouvernementFR/dsfr/blob/main/CHANGELOG.md).
+          delete-branch: true
