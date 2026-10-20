@@ -166,16 +166,22 @@ function patternTopics (documentation, examples, family, targetFamily) {
     const source = join(docRoot, name, '_part', 'doc', 'index.md')
     const target = posix.join('modeles', targetFamily, name)
     const hasDoc = existsSync(source)
+    const exampleFiles = htmlFilesUnder(join(exampleRoot, name))
 
     return {
       kind: targetFamily === 'pages' ? 'page' : 'bloc',
       name,
       directory: target,
-      frontmatter: hasDoc ? parseFrontmatter(readFileSync(source, 'utf8')) : { title: name },
+      frontmatter: hasDoc ? parseFrontmatter(readFileSync(source, 'utf8')) : { title: exampleTitle(exampleFiles[0]) || name },
       pages: hasDoc ? [{ source, target: posix.join(target, 'index.md'), label: 'Présentation' }] : [],
-      exampleFiles: htmlFilesUnder(join(exampleRoot, name))
+      exampleFiles
     }
   })
+}
+
+function exampleTitle (file) {
+  if (!file) return null
+  return decodeEntities(readFileSync(file, 'utf8').match(/<title>([^<]*?)(?: - Système de design)?<\/title>/)?.[1] || '') || null
 }
 
 function subdirectories (directory) {
@@ -501,7 +507,8 @@ function topicLine (topic) {
   const title = topic.frontmatter.title || topic.name
   const summary = topic.frontmatter.shortDescription || topic.frontmatter.description || ''
   const entry = topic.pages.length > 0 ? `${topic.directory}/index.md` : `${topic.directory}/exemples.md`
-  return `- \`${topic.name}\` [${title}](${entry})${summary ? ` : ${summary}` : ''}`
+  const designOnly = topic.kind === 'composant' && !topic.pages.some((page) => page.target.endsWith('code.md'))
+  return `- \`${topic.name}\` [${title}](${entry})${summary ? ` : ${summary}` : ''}${designOnly ? ' *(sans code)*' : ''}`
 }
 
 function writeTemplates (topics, version) {
