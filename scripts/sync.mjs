@@ -473,7 +473,7 @@ function decodeEntities (text) {
 function writeReference (packageRoot, version) {
   const dist = join(packageRoot, 'dist')
   const cssFiles = [join(dist, 'dsfr.css'), join(dist, 'utility', 'utility.css')]
-  const classes = new Set(cssFiles.flatMap((file) => [...readFileSync(file, 'utf8').matchAll(/\.(fr-[a-zA-Z0-9_-]+)/g)].map((match) => match[1])))
+  const classes = new Set(cssFiles.flatMap((file) => [...readFileSync(file, 'utf8').matchAll(/\.(fr-(?:[a-zA-Z0-9_-]|\\@)+)/g)].map((match) => match[1].replace('\\@', '@'))))
 
   writeOutput('reference/classes.txt', [...classes].sort().join('\n'))
 

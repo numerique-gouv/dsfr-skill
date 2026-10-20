@@ -30,6 +30,7 @@ Documentation officielle convertie depuis `@gouvfr/dsfr@{{VERSION}}`. Les classe
 | HTML officiel prêt à adapter | `composants/<nom>/exemples.md` |
 | Grille, couleurs, typographie, espacements, icônes | `fondamentaux/<nom>/` |
 | Pages complètes et blocs de formulaire | `modeles/pages/<nom>/`, `modeles/blocs/<nom>/` |
+| Auditer une page existante | [audit.md](audit.md) et `node scripts/verifier.mjs page.html` |
 
 Les fichiers `exemples.md` sont longs : lister les variantes avec `grep -n '^###' composants/<nom>/exemples.md` puis ne lire que la section utile.
 

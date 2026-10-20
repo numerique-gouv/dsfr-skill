@@ -421,6 +421,9 @@ fr-card__vid
 fr-cell--bottom
 fr-cell--center
 fr-cell--fixed
+fr-cell--fixed@lg
+fr-cell--fixed@md
+fr-cell--fixed@sm
 fr-cell--inline
 fr-cell--multiline
 fr-cell--right
@@ -854,6 +857,7 @@ fr-fieldset__content
 fr-fieldset__element
 fr-fieldset__element--inline
 fr-fieldset__element--inline-grow
+fr-fieldset__element--inline@md
 fr-fieldset__element--number
 fr-fieldset__element--postal
 fr-fieldset__element--year
@@ -4850,7 +4854,8 @@ fr-tile--shadow
 fr-tile--sm
 fr-tile--sm__desc
 fr-tile--sm__detail
-fr-tile--vertical
+fr-tile--vertical@lg
+fr-tile--vertical@md
 fr-tile__body
 fr-tile__content
 fr-tile__desc
