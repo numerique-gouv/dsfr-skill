@@ -11,7 +11,7 @@ CDN, toujours avec la version explicite (la même partout dans la page) :
 
 `utility.min.css` apporte les icônes `fr-icon-*` et les utilitaires de couleur : sans lui, les icônes ne s'affichent pas.
 
-Les pictogrammes et illustrations (`<svg>` avec des `<use href="….svg#artwork-major">`) ne fonctionnent pas depuis le CDN : le navigateur refuse un `<use>` vers une autre origine. Copier `dist/artwork/` sur le site et pointer vers ces fichiers, ou, pour une page autonome, insérer dans la page le contenu du SVG ([fondamentaux/pictogram](fondamentaux/pictogram/index.md)).
+Les pictogrammes et illustrations (`<svg>` avec des `<use href="….svg#artwork-major">`) ne fonctionnent pas depuis le CDN : le navigateur refuse un `<use>` vers une autre origine. Utiliser le dossier `artwork/` du projet s'il existe, sinon copier `dist/artwork/` sur le site et pointer vers ces fichiers, ou, pour une page autonome, insérer dans la page le contenu du SVG ([fondamentaux/pictogram](fondamentaux/pictogram/index.md)).
 
 npm : `npm install @gouvfr/dsfr@1.15.4`, puis les mêmes fichiers depuis `node_modules/@gouvfr/dsfr/dist/`. Pour n'importer que certains composants, chaque composant a ses fichiers dans `dist/component/<nom>/` et liste ses dépendances (« Dépendances CSS ») dans son `code.md`.
 

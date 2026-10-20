@@ -9,12 +9,14 @@ Documentation officielle convertie depuis `@gouvfr/dsfr@{{VERSION}}`. Les classe
 
 Le DSFR est réservé aux sites en .gouv.fr et aux applications de l'État (conditions d'utilisation du DSFR) : pour un autre projet, le signaler avant de l'utiliser.
 
+Dans un projet existant, partir de son intégration du DSFR : version installée (`package.json`, `node_modules/@gouvfr/dsfr`, dossier `dist` copié), chemins des assets (dont `artwork/` pour les pictogrammes), gabarits et composants déjà écrits. Si la version installée n'est pas {{VERSION}}, le signaler : les classes et la structure peuvent différer de cette documentation. Elle prime alors : reprendre le balisage des composants déjà présents dans le projet, et pour un nouveau composant vérifier dans le [CHANGELOG du DSFR](https://github.com/GouvernementFR/dsfr/blob/main/CHANGELOG.md) que ses classes existent dans cette version avant de suivre `exemples.md` ; proposer la montée de version plutôt que de mélanger deux versions.
+
 ## Règles
 
 1. Partir du balisage de `exemples.md` du composant et l'adapter, plutôt que de l'écrire de mémoire.
 2. Ne jamais inventer de classe : toute classe `fr-*` doit figurer dans `reference/classes.txt`, toute icône dans `reference/icones.md`.
 3. Rendre les `id` uniques dans la page : les exemples réutilisent les mêmes. Chaque `aria-controls`, `aria-labelledby`, `aria-describedby` et `for` doit pointer vers un `id` existant.
-4. Versionner le CDN (`@gouvfr/dsfr@{{VERSION}}`), jamais `@gouvfr/dsfr` sans version.
+4. Sans DSFR installé dans le projet, charger le CDN versionné (`@gouvfr/dsfr@{{VERSION}}`), jamais `@gouvfr/dsfr` sans version.
 5. Un seul bouton primaire par groupe d'actions, les autres en secondaire ou tertiaire.
 6. Formulaires : champ dans `fr-input-group`, `<label class="fr-label">` lié par `for`, aide dans un `<span class="fr-hint-text">` à l'intérieur du label, messages dans `fr-messages-group` relié par `aria-describedby`, erreur avec `fr-input-group--error` et `fr-message--error`.
 7. Icônes décoratives en `aria-hidden="true"`. Lien qui ouvre une nouvelle fenêtre : `target="_blank" rel="noopener"` et `title="Libellé - nouvelle fenêtre"`.
