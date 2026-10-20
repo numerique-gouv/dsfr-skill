@@ -113,7 +113,7 @@ function downloadPackage (version) {
 function componentTopics (documentation, examples) {
   const componentsRoot = join(documentation, 'component')
 
-  return readdirSync(componentsRoot, { withFileTypes: true })
+  return sortedEntries(componentsRoot)
     .filter((entry) => entry.isDirectory() && existsSync(join(componentsRoot, entry.name, '_part', 'doc', 'index.md')))
     .map((entry) => {
       const docRoot = join(componentsRoot, entry.name, '_part', 'doc')
@@ -135,7 +135,7 @@ function componentTopics (documentation, examples) {
 function foundationTopics (documentation, examples) {
   const docRoot = join(documentation, 'core', '_part', 'doc')
 
-  return readdirSync(docRoot, { withFileTypes: true })
+  return sortedEntries(docRoot)
     .filter((entry) => entry.isDirectory() && existsSync(join(docRoot, entry.name, 'index.md')))
     .map((entry) => {
       const target = posix.join('fondamentaux', entry.name)
@@ -184,9 +184,13 @@ function exampleTitle (file) {
   return decodeEntities(readFileSync(file, 'utf8').match(/<title>([^<]*?)(?: - Système de design)?<\/title>/)?.[1] || '') || null
 }
 
+function sortedEntries (directory) {
+  return readdirSync(directory, { withFileTypes: true }).sort((first, second) => first.name.localeCompare(second.name, 'en'))
+}
+
 function subdirectories (directory) {
   if (!existsSync(directory)) return []
-  return readdirSync(directory, { withFileTypes: true }).filter((entry) => entry.isDirectory() && entry.name !== '_part').map((entry) => entry.name)
+  return sortedEntries(directory).filter((entry) => entry.isDirectory() && entry.name !== '_part').map((entry) => entry.name)
 }
 
 function htmlFilesUnder (directory) {
