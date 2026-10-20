@@ -141,7 +141,7 @@ function hasClass (element, name) {
 
 function check (html) {
   const findings = []
-  const report = (level, element, message) => findings.push({ level, line: element?.line || 1, message })
+  const report = (level, element, message, details = {}) => findings.push({ level, line: element?.line || 1, message, ...details })
   const { root } = parse(html)
   const all = elements(root)
   const textOf = (element) => html.slice(element.contentStart, element.contentEnd).replace(/<[^>]*>/g, '').trim()
@@ -211,13 +211,18 @@ function check (html) {
 
   for (const [name, occurrences] of unknownClasses) {
     const count = occurrences.length > 1 ? ` (${occurrences.length} fois)` : ''
-    report('avertissement', occurrences[0], `classe "${name}" absente du CSS DSFR ${dsfrVersion}${count} : inventée, mal orthographiée ou simple point d'accroche JS`)
+    report('avertissement', occurrences[0], `classe "${name}" absente du CSS DSFR ${dsfrVersion}${count} : inventée, mal orthographiée ou simple point d'accroche JS`, { className: name })
   }
 
   const htmlElement = all.find((element) => element.tag === 'html')
   if (htmlElement) checkDocument(all, htmlElement, report)
 
   return findings.sort((first, second) => first.line - second.line)
+}
+
+function summarize (html) {
+  const all = elements(parse(html).root)
+  return { classes: new Set(all.flatMap(classesOf)), tags: new Set(all.map((element) => element.tag)), elements: all }
 }
 
 function checkDocument (all, htmlElement, report) {
@@ -263,4 +268,4 @@ function main () {
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) main()
 
-export { check }
+export { check, summarize }
