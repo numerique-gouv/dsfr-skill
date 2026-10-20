@@ -502,7 +502,7 @@ function writeReference (packageRoot, version) {
 
   writeOutput('reference/pictogrammes.md', [
     `# Pictogrammes DSFR ${version}`,
-    `Chemins relatifs à \`dist/\` (CDN : \`https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@${version}/dist/\`). Usage et balisage : [fondamentaux/pictogram](../fondamentaux/pictogram/index.md).`,
+    `Chemins relatifs à \`dist/\`, à servir depuis le site lui-même : un \`<use>\` vers le CDN est bloqué par le navigateur (autre origine). Usage et balisage : [fondamentaux/pictogram](../fondamentaux/pictogram/index.md).`,
     ...pictogramSections
   ].join('\n\n'))
 }
