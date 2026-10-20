@@ -48,7 +48,7 @@ function main () {
     for (const topic of topics) writeTopic(topic, pathMap, version)
 
     writeReference(packageRoot, version)
-    writeSkill(topics, version)
+    writeTemplates(topics, version)
     writeVersion(topics, version)
     removeDeadAnchors()
     installOutput()
@@ -504,17 +504,25 @@ function topicLine (topic) {
   return `- \`${topic.name}\` [${title}](${entry})${summary ? ` : ${summary}` : ''}`
 }
 
-function writeSkill (topics, version) {
-  const template = readFileSync(join(repositoryRoot, 'ressources', 'SKILL.template.md'), 'utf8')
+function writeTemplates (topics, version) {
+  const templates = join(repositoryRoot, 'ressources')
   const listFor = (kind) => topics.filter((topic) => topic.kind === kind).map(topicLine).join('\n')
-  const content = template
-    .replaceAll('{{VERSION}}', version)
-    .replace('{{COMPOSANTS}}', listFor('composant'))
-    .replace('{{FONDAMENTAUX}}', listFor('fondamental'))
-    .replace('{{PAGES}}', listFor('page'))
-    .replace('{{BLOCS}}', listFor('bloc'))
+  const countFor = (kind) => String(topics.filter((topic) => topic.kind === kind).length)
 
-  writeOutput('SKILL.md', content)
+  for (const name of readdirSync(templates).filter((file) => file.endsWith('.template.md'))) {
+    const content = readFileSync(join(templates, name), 'utf8')
+      .replaceAll('{{VERSION}}', version)
+      .replaceAll('{{NOMBRE_COMPOSANTS}}', countFor('composant'))
+      .replace('{{COMPOSANTS}}', listFor('composant'))
+      .replace('{{FONDAMENTAUX}}', listFor('fondamental'))
+      .replace('{{PAGES}}', listFor('page'))
+      .replace('{{BLOCS}}', listFor('bloc'))
+
+    const unknownPlaceholder = content.match(/\{\{[A-Z_]+\}\}/)
+    if (unknownPlaceholder) throw new Error(`${name} : placeholder inconnu ${unknownPlaceholder[0]}`)
+
+    writeOutput(name.replace('.template.md', '.md'), content)
+  }
 }
 
 function writeVersion (topics, version) {
