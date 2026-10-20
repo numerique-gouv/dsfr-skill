@@ -5,15 +5,15 @@
     "email": "contact@design.numerique.gouv.fr"
   },
   "metadata": {
-    "description": "Documentation complète du Design System Français (DSFR) pour Claude Code",
-    "version": "1.0.0"
+    "description": "Documentation du Système de design de l'État (DSFR) pour agents de développement : composants, fondamentaux, modèles de pages et de formulaires, accessibilité RGAA, HTML officiel et vérificateur de pages.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "dsfr-skill",
       "source": "./",
-      "description": "Skill Claude Code fournissant la documentation complète de 23 composants du Design System Français (DSFR) avec exemples HTML, spécifications d'accessibilité RGAA 4.1, et guidelines de design. Aide à créer des interfaces conformes aux standards du gouvernement français.",
-      "version": "1.0.0",
+      "description": "Documentation du Système de design de l'État (DSFR) pour agents de développement : composants, fondamentaux, modèles de pages et de formulaires, accessibilité RGAA, HTML officiel et vérificateur de pages.",
+      "version": "2.0.0",
       "author": {
         "name": "skelz0r"
       },
@@ -34,7 +34,14 @@
         "interface-utilisateur"
       ],
       "category": "documentation",
-      "tags": ["dsfr", "design-system", "accessibilite", "rgaa", "documentation", "france"]
+      "tags": [
+        "dsfr",
+        "design-system",
+        "accessibilite",
+        "rgaa",
+        "documentation",
+        "france"
+      ]
     }
   ]
 }
