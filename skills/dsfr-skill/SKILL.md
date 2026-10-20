@@ -7,6 +7,8 @@ description: Système de design de l'État français (DSFR) 1.15.4 - 51 composan
 
 Documentation officielle convertie depuis `@gouvfr/dsfr@1.15.4`. Les classes et la structure HTML changent d'une version à l'autre : lire le fichier du composant avant d'écrire son HTML, ne pas se fier à sa mémoire.
 
+Le DSFR est réservé aux sites en .gouv.fr et aux applications de l'État (conditions d'utilisation du DSFR) : pour un autre projet, le signaler avant de l'utiliser.
+
 ## Règles
 
 1. Partir du balisage de `exemples.md` du composant et l'adapter, plutôt que de l'écrire de mémoire.
