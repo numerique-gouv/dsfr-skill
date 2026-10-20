@@ -10,6 +10,7 @@ const dsfrVersion = readFileSync(join(skillRoot, 'VERSION.md'), 'utf8').match(/@
 const voidElements = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'])
 const rawTextElements = new Set(['script', 'style', 'textarea', 'title', 'template'])
 const idReferenceAttributes = ['aria-controls', 'aria-labelledby', 'aria-describedby', 'for']
+const publicCdnHosts = new Set(['cdn.jsdelivr.net', 'unpkg.com', 'cdnjs.cloudflare.com'])
 const buttonHierarchyModifiers = ['fr-btn--secondary', 'fr-btn--tertiary', 'fr-btn--tertiary-no-outline', 'fr-btn--close', 'fr-btn--menu', 'fr-btn--display']
 
 function parse (html) {
@@ -105,6 +106,14 @@ function fragmentTarget (href) {
   }
 }
 
+function hostOf (url) {
+  try {
+    return new URL(url, 'https://page.invalid/').hostname
+  } catch {
+    return ''
+  }
+}
+
 function lineAt (text, index) {
   let line = 1
   for (let position = text.indexOf('\n'); position !== -1 && position < index; position = text.indexOf('\n', position + 1)) line++
@@ -147,6 +156,7 @@ function check (html) {
   const textOf = (element) => html.slice(element.contentStart, element.contentEnd).replace(/<[^>]*>/g, '').trim()
   const ids = new Map()
   const unknownClasses = new Map()
+  const absoluteSprites = new Map()
 
   for (const element of all) {
     const id = element.attributes.id
@@ -201,6 +211,12 @@ function check (html) {
       if (primaries.length > 1) report('avertissement', element, `${primaries.length} boutons primaires dans le même groupe`)
     }
 
+    const sprite = element.tag === 'use' && (element.attributes.href ?? element.attributes['xlink:href'] ?? '').trim()
+    if (sprite && /^(?:https?:)?\/\//i.test(sprite)) {
+      const file = sprite.split('#')[0]
+      absoluteSprites.set(file, [...(absoluteSprites.get(file) || []), element])
+    }
+
     for (const url of [element.attributes.href, element.attributes.src].filter(Boolean)) {
       const versioned = url.match(/^(?:https?:)?\/\/[^/]+\/(?:npm\/)?@gouvfr\/dsfr(@[^/]*)?\//i)
       if (!versioned) continue
@@ -212,6 +228,12 @@ function check (html) {
   for (const [name, occurrences] of unknownClasses) {
     const count = occurrences.length > 1 ? ` (${occurrences.length} fois)` : ''
     report('avertissement', occurrences[0], `classe "${name}" absente du CSS DSFR ${dsfrVersion}${count} : inventée, mal orthographiée ou simple point d'accroche JS`, { className: name })
+  }
+
+  for (const [file, occurrences] of absoluteSprites) {
+    const count = occurrences.length > 1 ? ` (${occurrences.length} fois)` : ''
+    if (publicCdnHosts.has(hostOf(file))) report('erreur', occurrences[0], `<use> vers ${file}${count} : un CDN est une autre origine, le navigateur bloque le SVG, le servir depuis le site`)
+    else report('avertissement', occurrences[0], `<use> vers ${file}${count} : bloqué par le navigateur si ce n'est pas l'origine de la page`)
   }
 
   const htmlElement = all.find((element) => element.tag === 'html')

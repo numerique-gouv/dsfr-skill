@@ -10,8 +10,8 @@ node <dossier du skill>/scripts/verifier.mjs page.html
 
 Le script, sans dépendance, signale :
 
-- erreurs : `id` en double, `aria-controls` / `aria-labelledby` / `aria-describedby` / `for` sans cible, lien d'évitement sans cible, champ sans label, `<img>` sans `alt`, modale sans titre lié, champ en erreur sans message, CDN sans version, `<html>` sans `lang` ;
-- avertissements : classe `fr-*` absente du CSS DSFR {{VERSION}}, icônes ou composants interactifs sans CSS utilitaire ou JS du DSFR visibles (ils peuvent être dans un bundle), icône vide sans `aria-hidden`, lien `target="_blank"` sans mention « nouvelle fenêtre », plusieurs boutons primaires dans un groupe, CDN dans une autre version, et pour une page complète : nombre de `<h1>`, liens d'évitement, en-tête, `<main>` et pied de page manquants, `data-fr-theme` écrit à la main.
+- erreurs : `id` en double, `aria-controls` / `aria-labelledby` / `aria-describedby` / `for` sans cible, lien d'évitement sans cible, champ sans label, `<img>` sans `alt`, modale sans titre lié, champ en erreur sans message, pictogramme `<use>` chargé depuis un CDN, CDN sans version, `<html>` sans `lang` ;
+- avertissements : classe `fr-*` absente du CSS DSFR {{VERSION}}, icônes ou composants interactifs sans CSS utilitaire ou JS du DSFR visibles (ils peuvent être dans un bundle), icône vide sans `aria-hidden`, lien `target="_blank"` sans mention « nouvelle fenêtre », `<use>` vers une URL absolue (bloqué si ce n'est pas l'origine de la page), plusieurs boutons primaires dans un groupe, CDN dans une autre version, et pour une page complète : nombre de `<h1>`, liens d'évitement, en-tête, `<main>` et pied de page manquants, `data-fr-theme` écrit à la main.
 
 Sur un fragment, les références vers des `id` hors du fragment ressortent en erreur : les ignorer. Une classe inconnue peut être un simple point d'accroche JS : vérifier dans le `code.md` du composant avant de la déclarer inventée.
 
