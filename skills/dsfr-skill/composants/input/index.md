@@ -1,37 +1,21 @@
 # Champ de saisie
 
-> **Saisie de données dans une interface.**
+> Saisie de données dans une interface.
 
-## Navigation
-
-- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA
-- [Code](./code.md) - Documentation technique et API
-- [Design](./design.md) - Spécifications design
-- [Exemples](./examples/) - Exemples de code HTML
-
-## Champ de saisie
+Voir aussi : [Design](design.md) · [Code](code.md) · [Accessibilité](accessibilite.md) · [Exemples](exemples.md)
 
 Le champ de saisie est un élément d’interaction avec l’interface permettant à l’usager d’entrer du contenu et/ou des données.
 
-
-- Présentation
-- [Démo](./demo/index.md)
-- [Design](./design/index.md)
-- [Code](./code/index.md)
-- [Accessibilité](./accessibility/index.md)
-
-
-
-### Quand utiliser ce composant ?
+## Quand utiliser ce composant ?
 
 Utiliser le champ de saisie pour permettre à un usager de saisir du contenu et/ou des données.
 
 > [!NOTE]
-> N’utiliser pas un champ de saisie pour des **choix fermés**. Préférer plutôt une [liste déroulante](../../../select/_part/doc/index.md), des [boutons radio](../../../radio/_part/doc/index.md) ou des [cases à cocher](../../../checkbox/_part/doc/index.md).
+> N’utiliser pas un champ de saisie pour des **choix fermés**. Préférer plutôt une [liste déroulante](../select/index.md), des [boutons radio](../radio/index.md) ou des [cases à cocher](../checkbox/index.md).
 >
-> Pour les champs de recherche spécifiquement, utiliser la [barre de recherche](../../../search/_part/doc/index.md).
+> Pour les champs de recherche spécifiquement, utiliser la [barre de recherche](../search/index.md).
 
-### Comment utiliser ce composant ?
+## Comment utiliser ce composant ?
 
 - **Placer le libellé au-dessus du champ de saisie**, pour faciliter la lecture.
 - **Ajouter un texte d’aide sous le libellé** afin de faciliter la saisie par l’usager, notamment pour clarifier la nature du contenu attendu. Si un format précis est requis, il faut l’indiquer de la manière la plus claire possible (et y inclure des exemples lorsque c’est possible).
@@ -41,6 +25,6 @@ Utiliser le champ de saisie pour permettre à un usager de saisir du contenu et/
 - **Utiliser un bouton primaire** pour valider un champ de saisie ou un formulaire. Le bouton secondaire sera quant à lui utilisé pour réinitialiser le formulaire ou abandonner la saisie.
 - **Indiquer systématiquement la réussite ou non de la soumission d’un champ** à l’aide d’un message de succès ou d’erreur.
 
-### Règles éditoriales
+## Règles éditoriales
 
 - **Conserver le même libellé pour les champs demandant la même information**.

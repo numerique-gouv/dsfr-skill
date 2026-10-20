@@ -1,38 +1,27 @@
+# Tuile : Code
 
-## Tuile
+## HTML
 
-La tuile est un élément d’interaction avec l’interface permettant de rediriger l’usager vers des pages de contenu.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Tuile** est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Sa structure est la suivante :
 
 - La tuile est un élément HTML `<div>` défini par la classe `fr-tile`.
-- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)).
+- Les Tuiles sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../fondamentaux/grid/index.md)).
 - Son contenu est structuré en plusieurs parties :
   - L'en-tête de la tuile `fr-tile__header`, optionnel, pouvant contenir :
-    - Un pictogramme dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../../../../core/_part/doc/pictogram/index.md)).
+    - Un pictogramme dans un élément `fr-tile__pictogram` (voir [Pictogramme](../../fondamentaux/pictogram/index.md)).
   - Le corps de la tuile `fr-tile__body`, obligatoire, il contient le contenu de la tuile :
     - Un titre, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-tile__title` pouvant contenir un lien ou un simple texte.
     - Une description, optionnelle, `fr-tile__desc`, un élément HTML de type `<p>`.
     - Un texte de détail, optionnel, `fr-tile__detail`, un élément HTML de type `<p>`.
     - Une zone se plaçant avant le contenu `fr-tile__start` qui peut accueillir :
-      - Un badge ou un tag, optionnels, (voir composants [Badge](../../../../badge/_part/doc/code/index.md) et [Tag](../../../../tag/_part/doc/code/index.md)).
+      - Un badge ou un tag, optionnels, (voir composants [Badge](../badge/code.md) et [Tag](../tag/code.md)).
       - Un texte de détail `fr-tile__detail`, optionnel, auquel on peut associer une icône.
 
 **Exemple de structure HTML simple**
 
-```HTML
+```html
 <div class="fr-tile fr-enlarge-link">
     <div class="fr-tile__body">
         <div class="fr-tile__content">
@@ -58,7 +47,7 @@ Le composant **Tuile** est un élément interactif permettant de donner des aper
 </div>
 ```
 
-#### Tuile de téléchargement
+### Tuile de téléchargement
 
 Une variante tuile de téléchargement existe, comme pour les composants Lien et Carte, pour proposer le téléchargement d'un fichier. La tuile de téléchargement est toujours en format horizontale par défaut.
 Cette variante reprend la même structure que la tuile standard à l'exception de certains éléments :
@@ -77,7 +66,7 @@ Cette variante reprend la même structure que la tuile standard à l'exception d
 
 **Exemple de tuile de téléchargement**
 
-```HTML
+```html
 <div class="fr-tile fr-tile--download fr-enlarge-link">
     <div class="fr-tile__body">
         <div class="fr-tile__content">
@@ -100,15 +89,15 @@ Cette variante reprend la même structure que la tuile standard à l'exception d
 </div>
 ```
 
-#### Groupe de Tuiles
+### Groupe de Tuiles
 
 Il n'existe pas à proprement parlé de groupe de Tuiles. Néanmoins, les Tuiles sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
 La grille permet de définir un nombre de colonne pour chaque Tuile, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint).
-Voir page [grille](../../../../../core/_part/doc/index.md) pour plus d'information.
+Voir page grille pour plus d'information.
 
 **Exemple de grille de Tuile**
 
-```HTML
+```html
 <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col-12 fr-col-md-4 fr-col-lg-3">
         <div class="fr-tile fr-enlarge-link">(...)</div>
@@ -122,37 +111,36 @@ Voir page [grille](../../../../../core/_part/doc/index.md) pour plus d'informati
 </div>
 ```
 
-### CSS
+## CSS
 
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top scroll=false}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire |
 |------------|-------------|
 | Core       | Oui         |
 | Tile       | Oui         |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tile/tile.min.css" rel="stylesheet">
 ```
 
-#### Variantes de taille
+### Variantes de taille
 
 La tuile peut avoir différentes tailles qui auront un impact sur la taille du texte, des espacements, du pictogramme, et de l'icône :
 
 - `fr-tile--sm` : Petite tuile.
 - Par défaut : Tuile moyenne.
 
-Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../../../../core/_part/doc/grid/index.md)).
+Par défaut, la tuile prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des Tuiles peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../fondamentaux/grid/index.md)).
 
 Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 
@@ -161,7 +149,7 @@ Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 
 **Exemples de variantes de taille**
 
-```HTML
+```html
 <div class="fr-tile fr-tile--sm fr-enlarge-link">
     <!-- Contenu de la tuile SM -->
 </div>
@@ -170,7 +158,7 @@ Utiliser une taille de Tuile adaptée à la largeur de son conteneur :
 </div>
 ```
 
-#### Variantes de style
+### Variantes de style
 
 La tuile est disponible en plusieurs autres variantes :
 
@@ -181,7 +169,7 @@ La tuile est disponible en plusieurs autres variantes :
 
 **Exemples de variantes de style**
 
-```HTML
+```html
 <div class="fr-tile fr-tile--grey fr-enlarge-link">
     <!-- Contenu de la tuile sur fond gris -->
 </div>
@@ -196,7 +184,7 @@ La tuile est disponible en plusieurs autres variantes :
 </div>
 ```
 
-#### Variantes d'orientation
+### Variantes d'orientation
 
 Les tuiles sont disponibles, par défaut, en format vertical (pictogramme en haut et contenu en bas). Il existe aussi des variantes permettant de passer la tuile en format **horizontal** (pictogramme à gauche et contenu à droite).
 
@@ -206,7 +194,7 @@ Les tuiles sont disponibles, par défaut, en format vertical (pictogramme en hau
 
 **Exemples de tuiles horizontales**
 
-```HTML
+```html
 <div class="fr-tile fr-tile--horizontal fr-enlarge-link">
     <!-- Contenu de la tuile horizontale -->
 </div>
@@ -218,21 +206,59 @@ Les tuiles sont disponibles, par défaut, en format vertical (pictogramme en hau
 </div>
 ```
 
-#### Variantes d'icônes
+### Variantes d'icônes
 
 Par défaut, sur les **tuiles avec lien étendu et non externe**, une icône "arrow-right" apparaît en bas à droite. Dans certains cas, comme pour réduire la taille de la tuile, il peut être utile de **retirer cette icône**. Il suffit pour cela d'ajouter la classe `fr-tile--no-icon` sur la tuile.
 Si le lien est un **lien externe**, l'icône "external-link" reste obligatoire.
 
 **Exemple de retrait d'icône**
 
-```HTML
+```html
 <div class="fr-tile fr-enlarge-link fr-tile--no-icon">
     <!-- Contenu de la tuile -->
 </div>
 ```
 
+---
 
-### Note de version
+## JavaScript
+
+Le composant Tuile **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+Une fonctionnalité disponible dans le core, permet de remplir automatiquement le détail des **Tuiles de téléchargement**.
+Pour instancier le javascript de remplissage automatique du détail sur la Tuile de téléchargement, ajouter l'attribut `data-fr-assess-file` sur le lien du titre.
+Les propriétés de type, poids, et langue sont récupérées depuis le fichier. Le texte de détail est automatiquement remplacé au chargement du JS. Il est conseillé de tout de même remplir les infos connues dans le détail en solution de repli.
+Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la valeur "bytes", pour afficher le poids en Bytes plutôt qu'en Octet.
+
+Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
+
+### Installation du JavaScript
+
+Pour fonctionner, le **remplissage automatique du détail des Tuiles de téléchargement** nécessite l'utilisation de JavaScript.
+Cette fonctionnalité est disponible dans le core.
+
+Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
+
+```html
+<script type="module" src="dist/core/core.module.min.js"></script>
+```
+
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
+
+Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
+```html
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+```
+
+### API
+
+> [!NOTE]
+> L'activation ou la désactivation de la fonction de remplissage automatique du détail des Tuiles de téléchargement (assess-file) n'est pas disponible via l'API JS, elle se fait via l'ajout ou le retrait de l'attribut `data-fr-assess-file` sur le lien.
+
+---
+
+## Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+tile+)
-

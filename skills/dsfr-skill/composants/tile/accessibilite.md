@@ -1,43 +1,32 @@
-
-## Tuile
-
-La tuile est un élément d’interaction avec l’interface permettant de rediriger l’usager vers des pages de contenu.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Tuile : Accessibilité
 
 Le composant **Tuile** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Aucune interaction au clavier spécifique au composant.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Structuration
+### Structuration
 
 - Le niveau de titre dépend du contexte de la page et ne sera pas toujours un `<h3>`.
 - Les éléments description, badges, tags, détails sont situés après le titre dans le code HTML.
 - L’image de la tuile est décorative.
 
-#### Zone cliquable étendue
+### Zone cliquable étendue
 
 - Le lien est placé uniquement sur le titre de la tuile qui doit être explicite.
 - Si aucun autre élément cliquable n’est présent dans la tuile, il est possible d’étendre la zone cliquable du lien à toute la tuile pour améliorer l’expérience utilisateur.
 - L’indication de prise de focus se positionne alors autour de la tuile plutôt qu’autour du lien.
 
-Voir les [règles d’accessibilité du composant Lien](../../../../link/_part/doc/accessibility/index.md#regles-d-accessibilite).
+Voir les [règles d’accessibilité du composant Lien](../link/accessibilite.md#règles-daccessibilité).
 
-### Restitution par les lecteurs d’écran
+## Restitution par les lecteurs d’écran
 
 Aucun test de restitution n’est nécessaire pour le composant Tuile.
 
-### Critères RGAA applicables
+## Critères RGAA applicables
 
 - **Images&nbsp;:** 1.2
 - **Couleurs&nbsp;:** 3.2
@@ -49,3 +38,8 @@ Aucun test de restitution n’est nécessaire pour le composant Tuile.
 - **Navigation&nbsp;:** 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
+---
+
+## Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

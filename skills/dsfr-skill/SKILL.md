@@ -135,146 +135,57 @@ Les composants interactifs utilisent l'API JavaScript du DSFR :
 
 ## Liste des composants disponibles
 
-**23 composants disponibles**
-
-
-### Accordéon (`accordion`)
-Masquer ou révéler du contenu textuel
-
-**Documentation** : [`composants/accordion/index.md`](composants/accordion/index.md)
-
-
-### Alerte (`alert`)
-Relayer une information importante
-
-**Documentation** : [`composants/alert/index.md`](composants/alert/index.md)
-
-
-### Badge (`badge`)
-Affichage d’un statut informatif
-
-**Documentation** : [`composants/badge/index.md`](composants/badge/index.md)
-
-
-### Fil d'Ariane (`breadcrumb`)
-Se repérer dans l’arborescence avec le fil d’Ariane.
-
-**Documentation** : [`composants/breadcrumb/index.md`](composants/breadcrumb/index.md)
-
-
-### Bouton (`button`)
-Déclenchement d’une action dans l’interface
-
-**Documentation** : [`composants/button/index.md`](composants/button/index.md)
-
-
-### Carte (`card`)
-Carte cliquable redirigeant vers une page éditoriale avec aperçu.
-
-**Documentation** : [`composants/card/index.md`](composants/card/index.md)
-
-
-### Case à cocher (`checkbox`)
-Sélection multiple dans une liste
-
-**Documentation** : [`composants/checkbox/index.md`](composants/checkbox/index.md)
-
-
-### Pied de page (`footer`)
-Informations complémentaires en bas de page
-
-**Documentation** : [`composants/footer/index.md`](composants/footer/index.md)
-
-
-### En-tête (`header`)
-Identification du site et accès rapides
-
-**Documentation** : [`composants/header/index.md`](composants/header/index.md)
-
-
-### Champ de saisie (`input`)
-Saisie de données dans une interface.
-
-**Documentation** : [`composants/input/index.md`](composants/input/index.md)
-
-
-### Lien (`link`)
-Navigation secondaire vers d’autres contenus
-
-**Documentation** : [`composants/link/index.md`](composants/link/index.md)
-
-
-### Modale (`modal`)
-Affichage focalisé d’un contenu secondaire
-
-**Documentation** : [`composants/modal/index.md`](composants/modal/index.md)
-
-
-### Navigation principale (`navigation`)
-Orienter l’usager dans les sections du site.
-
-**Documentation** : [`composants/navigation/index.md`](composants/navigation/index.md)
-
-
-### Bandeau d'information importante (`notice`)
-Afficher une alerte temporaire prioritaire.
-
-**Documentation** : [`composants/notice/index.md`](composants/notice/index.md)
-
-
-### Pagination (`pagination`)
-Navigation entre plusieurs pages d’une liste
-
-**Documentation** : [`composants/pagination/index.md`](composants/pagination/index.md)
-
-
-### Bouton radio (`radio`)
-Sélection d’une option unique
-
-**Documentation** : [`composants/radio/index.md`](composants/radio/index.md)
-
-
-### Barre de recherche (`search`)
-Accès rapide à un contenu par mot clé
-
-**Documentation** : [`composants/search/index.md`](composants/search/index.md)
-
-
-### Liste déroulante (`select`)
-Sélectionner une option dans une liste.
-
-**Documentation** : [`composants/select/index.md`](composants/select/index.md)
-
-
-### Onglet (`tab`)
-Structuration de contenu avec des onglets
-
-**Documentation** : [`composants/tab/index.md`](composants/tab/index.md)
-
-
-### Tableau (`table`)
-Présentation du composant Tableau pour organiser et comparer des données.
-
-**Documentation** : [`composants/table/index.md`](composants/table/index.md)
-
-
-### Tag (`tag`)
-Le tag sert à classer ou filtrer les contenus.
-
-**Documentation** : [`composants/tag/index.md`](composants/tag/index.md)
-
-
-### Tuile (`tile`)
-Rediriger l’usager vers du contenu via des tuiles.
-
-**Documentation** : [`composants/tile/index.md`](composants/tile/index.md)
-
-
-### Interrupteur (`toggle`)
-Basculer entre deux états opposés
-
-**Documentation** : [`composants/toggle/index.md`](composants/toggle/index.md)
-
+- `accordion` [Accordéon](composants/accordion/index.md) : Masquer ou révéler du contenu textuel
+- `alert` [Alerte](composants/alert/index.md) : Relayer une information importante
+- `badge` [Badge](composants/badge/index.md) : Affichage d’un statut informatif
+- `breadcrumb` [Fil d'Ariane](composants/breadcrumb/index.md) : Se repérer dans l’arborescence avec le fil d’Ariane.
+- `button` [Bouton](composants/button/index.md) : Déclenchement d’une action dans l’interface
+- `callout` [Mise en avant](composants/callout/index.md) : Mettre en valeur une information secondaire.
+- `card` [Carte](composants/card/index.md) : Carte cliquable redirigeant vers une page éditoriale avec aperçu.
+- `checkbox` [Case à cocher](composants/checkbox/index.md) : Sélection multiple dans une liste
+- `combobox` [Liste déroulante riche](composants/combobox/index.md) : Composant de sélection multiple enrichi avec fonctions de recherche.
+- `composition` [Zone d'expression visuelle](composants/composition/index.md) : Une section riche et impactante pour mettre en avant un message ou une action.
+- `connect` [Boutons FranceConnect et ProConnect](composants/connect/index.md) : Authentification avec FranceConnect et/ou ProConnect
+- `consent` [Gestionnaire de consentement](composants/consent/index.md) : Gérer le consentement des usagers sur les cookies et données personnelles.
+- `content` [Contenu médias](composants/content/index.md) : Structurer visuellement une page avec des contenus média.
+- `display` [Paramètres d'affichage](composants/display/index.md) : Choisir le thème clair ou sombre d’un site.
+- `download` [Téléchargement de fichier](composants/download/index.md) : Composant obsolète remplacé par les variations des composants carte, lien et tuile.
+- `dropdown` [Menu déroulant](composants/dropdown/index.md) : Afficher des actions contextuelles sans encombrer l’interface
+- `follow` [Lettre d'information et réseaux sociaux](composants/follow/index.md) : Inscription à une lettre d’info et accès aux réseaux sociaux.
+- `footer` [Pied de page](composants/footer/index.md) : Informations complémentaires en bas de page
+- `form` [Formulaire](composants/form/index.md) : Gestion de l'agencement des éléments de formulaire.
+- `header` [En-tête](composants/header/index.md) : Identification du site et accès rapides
+- `highlight` [Mise en exergue](composants/highlight/index.md) : Mettre en évidence une information essentielle.
+- `input` [Champ de saisie](composants/input/index.md) : Saisie de données dans une interface.
+- `link` [Lien](composants/link/index.md) : Navigation secondaire vers d’autres contenus
+- `logo` [Bloc marque](composants/logo/index.md) : Élément de la charte graphique de l'État français utilisé pour représenter l'identité visuelle de l'État.
+- `modal` [Modale](composants/modal/index.md) : Affichage focalisé d’un contenu secondaire
+- `navigation` [Navigation principale](composants/navigation/index.md) : Orienter l’usager dans les sections du site.
+- `notice` [Bandeau d'information importante](composants/notice/index.md) : Afficher une alerte temporaire prioritaire.
+- `pagination` [Pagination](composants/pagination/index.md) : Navigation entre plusieurs pages d’une liste
+- `password` [Mot de passe](composants/password/index.md) : Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.
+- `quote` [Citation](composants/quote/index.md) : Citer un texte dans un contenu éditorial.
+- `radio` [Bouton radio](composants/radio/index.md) : Sélection d’une option unique
+- `range` [Curseur](composants/range/index.md) : Sélection d’une valeur sur une échelle
+- `search` [Barre de recherche](composants/search/index.md) : Accès rapide à un contenu par mot clé
+- `segmented` [Contrôle segmenté](composants/segmented/index.md) : Sélection de vues avec un contrôle segmenté.
+- `select` [Liste déroulante](composants/select/index.md) : Sélectionner une option dans une liste.
+- `share` [Partage](composants/share/index.md) : Partager un contenu via différents canaux
+- `sidemenu` [Menu latéral](composants/sidemenu/index.md) : Naviguer entre pages liées avec un menu latéral.
+- `skiplink` [Liens d'évitement](composants/skiplink/index.md) : Accéder rapidement au contenu avec le clavier.
+- `stepper` [Indicateur d’étapes](composants/stepper/index.md) : Suivi d’un parcours en plusieurs étapes
+- `summary` [Sommaire](composants/summary/index.md) : Navigation entre les sections d’une page
+- `tab` [Onglet](composants/tab/index.md) : Structuration de contenu avec des onglets
+- `table` [Tableau](composants/table/index.md) : Présentation du composant Tableau pour organiser et comparer des données.
+- `tabnav` [Navigation tertiaire](composants/tabnav/index.md) : Composant de navigation de 3e niveau en complément du menu latéral
+- `tag` [Tag](composants/tag/index.md) : Le tag sert à classer ou filtrer les contenus.
+- `tile` [Tuile](composants/tile/index.md) : Rediriger l’usager vers du contenu via des tuiles.
+- `toggle` [Interrupteur](composants/toggle/index.md) : Basculer entre deux états opposés
+- `tooltip` [Infobulle](composants/tooltip/index.md) : Afficher une aide contextuelle discrète.
+- `transcription` [Transcription](composants/transcription/index.md) : Affichage de texte lié à un contenu média
+- `translate` [Sélecteur de langues](composants/translate/index.md) : Choisir la langue d’affichage du site.
+- `upload` [Ajout de fichier](composants/upload/index.md) : Sélection et envoi de fichiers
+- `user` [En-tête connectée](composants/user/index.md) : Variante de l’En-tête dédiée aux usagers connectés
 
 ## Comment répondre aux questions utilisateur
 

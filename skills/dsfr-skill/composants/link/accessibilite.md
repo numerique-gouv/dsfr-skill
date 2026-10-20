@@ -1,19 +1,8 @@
-
-## Lien
-
-Le lien est un système de navigation secondaire qui permet à l’usager de se déplacer au sein d’une même page, entre deux pages d’un même site ou vers un site externe.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Lien : Accessibilité
 
 Le composant **Lien** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Lorsque le focus est positionné sur le Lien :
 
@@ -25,45 +14,45 @@ Lorsque le focus est positionné sur le Lien :
 - `Tab`&nbsp;: place le focus sur le prochain élément focalisable.
 - `Maj + Tab`&nbsp;: place le focus sur l'élément focalisable précédent.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Structuration
+### Structuration
 
 - Le lien doit avoir un attribut `href`.
 - Le lien doit avoir un **intitulé accessible**.
 - Si une information complémentaire au lien est présente, la lier au lien avec un `aria-describedby` défini sur l'ID de l'élément contenant l’information.
 
-#### Intitulé du lien
+### Intitulé du lien
 
 - L’intitulé doit être explicite, l’utilisateur doit comprendre la destination ou la fonction du lien.
 - Un lien peut être rendu explicite grâce à son contexte : [RGAA 4 : contexte du lien](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/glossaire/#contexte-du-lien).
 
-##### Lien-icône
+#### Lien-icône
 
 - Un lien avec icône seule doivent avoir un nom accessible pertinent.
 - Un attribut `title` identique à l’intitulé du lien peut être ajouté pour expliciter l’icône.
 
-##### Lien externe
+#### Lien externe
 
 Les **liens externes** qui s’ouvrent dans un nouvel onglet / fenêtre (attribut `target="_blank"`) et qui sont suivis d’une icône doivent également avoir la mention "nouvelle fenêtre" dans un attribut `title` (ex&nbsp;: `title="intitulé du lien - nouvelle fenêtre"`).
 
-##### Lien de téléchargement
+#### Lien de téléchargement
 
 - Le **lien de téléchargement** doit contenir la mention "Télécharger".
 - Indiquer des informations sur le fichier dans la partie détail avec notamment le type ou l'extension du fichier, son poids, et sa langue si différente de la page est une bonne pratique et un critère d’accessibilité de niveau AAA.
 
-##### Groupe de liens
+#### Groupe de liens
 
 Une succession de liens doit être structuré dans une liste `ul` `li`.
 
-##### Lien désactivé
+#### Lien désactivé
 
 Pour **désactiver** un lien&nbsp;:
 
 - retirer l’attribut `href`,
 - ajouter les attributs `role="link"` et `aria-disabled="true"` pour indiquer aux technologies d'assistance qu’il s'agit d'un lien désactivé.
 
-#### Bouton ou lien&nbsp;?
+### Bouton ou lien&nbsp;?
 
 >[!NOTE]
 >Il est nécessaire de distinguer un bouton d’un lien.
@@ -76,3 +65,13 @@ Pour **désactiver** un lien&nbsp;:
 
 **Éviter d’utiliser le style du composant Bouton sur les liens et inversement**.
 
+---
+
+### Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [L’élément a](https://html.spec.whatwg.org/#the-a-element)
+
+#### Ressources
+
+- <a href="https://www.scottohara.me/blog/2021/05/28/disabled-links.html" rel="noopener external" target="_blank" title="article désactiver un lien - Nouvelle fenêtre" rel="noopener external" lang="en">Disabling a link</a>

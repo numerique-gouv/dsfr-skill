@@ -1,30 +1,19 @@
+# Pied de page : Code
 
-## Pied de page
-
-Le pied de page est un élément de navigation secondaire mis à disposition de l’usager pour qu’il poursuive son parcours. Il propose également des éléments d’information complémentaires.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
+## HTML
 
 Le composant **Pied de page** est constitué d'un élément `<footer>` de classe `fr-footer`, avec l'attribut `role="contentinfo"`, et un attribut `id` pour le lier au lien d'évitement "pied de page" via une ancre.
 
 - Un premier bloc, optionnel, de navigation permet d'ajouter des liens de navigations. Il s'agit d'un élément `<div>` de classe `fr-footer__top`.
-  - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une [grille](../../../../../core/_part/doc/index.md) pour structurer les liens en colonnes.
+  - Ce bloc doit contenir un élément `<div>` de classe `fr-container` qui permet de centrer le contenu ainsi qu'une grille pour structurer les liens en colonnes.
   - Utiliser la grille avec espacement entre les colonnes `fr-grid-row--gutters`. Ajouter autant de colonnes que nécessaire pour structurer les liens.
   - Dans chaque colonne ajouter :
-    - Une catégorie de liens, optionnelle, avec un titre `<h3>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
+    - Une catégorie de liens, optionnelle, avec un titre `<h2>`, ou autre niveau d'entête, de classe `fr-footer__top-cat`. Le libellé de la catégorie peut être un lien `<a>`.
     - Une liste de liens, `<ul>` de classe `fr-footer__top-list`, avec des liens `<a>` de classe `fr-footer__top-link`.
 - Puis les blocs suivant, contenu dans un élément `<div>` de classe `fr-container` pour centrer le contenu.
   - Le corps du pied de page, un élément `<div>` de classe `fr-footer__body` contenant :
     - Un bloc marque (voir [Marque de l'état](https://www.info.gouv.fr/marque-de-letat)), un élément `<div>` de classes `fr-footer__brand` et `fr-enlarge-link`.
-      - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../../../../logo/_part/doc/code/index.md) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
+      - Il contient à minima le bloc-marque, il s'agit du composant [bloc-marque de l'état](../logo/code.md) de classe `fr-logo`. Celui-ci doit être inséré dans un lien `<a>` pointant vers la page d'accueil et avec un attribut `title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)"`.
       - Il peut aussi contenir un logo opérateur de l'État, une image (ou SVG) de classe `fr-footer__logo`.
         - Utiliser un attribut `style="width:10rem;"`, avec comme valeur la largeur du logo en fonction de son format (10rem pour du 16:9). Ne pas dépasser 10rem (160px) de largeur et 5.625rem (90px) de hauteur.
         - L'attribut `alt` doit être renseigné avec le nom de l'opérateur.
@@ -48,7 +37,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
 
 **Exemple de structure minimale**
 
-:::fr-accordion[Déplier pour voir le code]{id=footer-structure-minimale}
+**Déplier pour voir le code**
 
 ```html
 <footer class="fr-footer" role="contentinfo">
@@ -107,11 +96,10 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
 </footer>
 ```
 
-
 **Exemple de structure complète**
 Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, et un bloc de logos partenaires, en plus du contenu minimal.
 
-:::fr-accordion[Déplier pour voir le code]{id=footer-structure-complete}
+**Déplier pour voir le code**
 
 ```html
 <footer class="fr-footer" role="contentinfo">
@@ -119,9 +107,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
         <div class="fr-container">
             <div class="fr-grid-row fr-grid-row--start fr-grid-row--gutters">
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -144,9 +132,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -169,9 +157,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -194,9 +182,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -219,9 +207,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -244,9 +232,9 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
                     </ul>
                 </div>
                 <div class="fr-col-12 fr-col-sm-3 fr-col-md-2">
-                    <h3 class="fr-footer__top-cat">
+                    <h2 class="fr-footer__top-cat">
                         Nom de la catégorie
-                    </h3>
+                    </h2>
                     <ul class="fr-footer__top-list">
                         <li>
                             <a href="#" class="fr-footer__top-link">Lien de navigation</a>
@@ -356,9 +344,40 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
 </footer>
 ```
 
+---
 
+## CSS
 
-### JavaScript
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Logo       | Oui         |
+| Footer     | Oui         |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/logo/logo.min.css" rel="stylesheet">
+<link href="dist/component/footer/footer.min.css" rel="stylesheet">
+```
+
+---
+
+## JavaScript
 
 Le composant Pied de page **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
+---
+
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+footer+)

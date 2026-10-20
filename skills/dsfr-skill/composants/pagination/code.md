@@ -1,19 +1,8 @@
+# Pagination : Code
 
-## Pagination
+## HTML
 
-La pagination est un système de navigation qui permet à l’usager de naviguer entre les différentes pages d’une liste d’éléments.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Pagination** permet aux utilisateurs de naviguer entre les différentes pages d’une liste d'éléments.
 
@@ -32,7 +21,7 @@ Sa structure comprend les éléments suivants :
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <nav role="navigation" class="fr-pagination" aria-label="pagination">
     <ul class="fr-pagination__list">
         <li>
@@ -94,31 +83,36 @@ Sa structure comprend les éléments suivants :
 </nav>
 ```
 
-### CSS
+## CSS
 
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top scroll=false}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire |
 |------------|-------------|
 | Core       | Oui         |
 | Pagination | Oui         |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/pagination/pagination.min.css" rel="stylesheet">
 ```
 
+---
 
-### Note de version
+## JavaScript
+
+Le composant Pagination **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+---
+
+## Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+pagination+)
-

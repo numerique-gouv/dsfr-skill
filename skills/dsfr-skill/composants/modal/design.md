@@ -1,50 +1,36 @@
+# Modale : Design
 
-## Modale
+- Une icône
 
-La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
+- Un titre (obligatoire)
 
+- Un bouton “Fermer” (obligatoire)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Une zone de contenu (obligatoire)
 
+- Un overlay (obligatoire, disposé à l’arrière du composant)
 
+- Une zone d’action fixe
 
-![Anatomie du bouton](../_asset/anatomy/anatomy-1.png)
-
-
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Modale avec zone d’action**
 
-
-La modale avec une zone d’action permet de guider l’utilisateur vers des actions attendues. Elle reprend les éléments de la modale simple, auxquels s’ajoute une zone d’action composée soit d’un bouton primaire, soit d’un [groupe de boutons hiérarchisé](../../../../button/_part/doc/design/index.md#variations).
+La modale avec une zone d’action permet de guider l’utilisateur vers des actions attendues. Elle reprend les éléments de la modale simple, auxquels s’ajoute une zone d’action composée soit d’un bouton primaire, soit d’un [groupe de boutons hiérarchisé](../button/design.md#variations).
 
 **Modale alignée en haut en mobile**
 
-
 Une variation permet à la modale d’être alignée en haut de l’écran en mobile plutôt qu’en bas.
 
-### Tailles
+## Tailles
 
 La modale est disponible en trois tailles :
 
 - SM pour small
 
-
 - MD pour medium - taille par défaut
 
-
 - LG pour large
-
 
 - **Adapter la taille de la modale au volume de votre contenu.**
 
@@ -55,13 +41,12 @@ En version mobile, la modale s’affiche sur la quasi totalité de l'écran :
 - 100% de largeur.
 - La hauteur minimale dépend du contenu. 32px de marge laissée en haut de l'écran (ou en bas pour la variante avec modale alignée en haut).
 
-
-### États
+## États
 
 La modale n’est sujette à aucun changement d’état.
 
-### Personnalisation
+## Personnalisation
 
 La modale n’est pas personnalisable.
 
-Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir [la structure du composant](#modale).
+Toutefois, certains éléments sont optionnels et les icônes peuvent être changées - voir la structure du composant.

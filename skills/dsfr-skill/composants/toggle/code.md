@@ -1,19 +1,8 @@
+# Interrupteur : Code
 
-## Interrupteur
+## HTML
 
-L’interrupteur est un élément d’interaction avec l’interface qui permet à l’usager de faire un choix entre deux états opposés (activé / désactivé).
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Interrupteur**, est un élément interactif permettant de basculer entre deux états.
 
@@ -28,7 +17,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```HTML
+```html
 <div class="fr-toggle">
     <input type="checkbox" class="fr-toggle__input" id="toggle" aria-describedby="toggle-messages toggle-hint">
     <label class="fr-toggle__label" for="toggle" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
@@ -38,7 +27,7 @@ Sa structure est la suivante :
 </div>
 ```
 
-#### Groupe d'interrupteurs
+### Groupe d'interrupteurs
 
 Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<fieldset>` avec une légende `<legend>`. Cela permet de structurer les options de manière accessible.
 
@@ -50,9 +39,9 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
 
 **Exemple de groupe d'interrupteurs**
 
-:::fr-accordion[Déplier pour voir le code]{id=toggles-structure}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <fieldset class="fr-fieldset" aria-labelledby="toggles-legend toggles-messages">
     <legend class="fr-fieldset__legend" id="toggles-legend">
         Légende pour l’ensemble des éléments
@@ -90,18 +79,208 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
 </fieldset>
 ```
 
+---
 
+## CSS
 
-### JavaScript
+### Installation du CSS
 
-#### Installation du JavaScript
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Form       | Oui         |
+| Toggle     | Oui         |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
+<link href="dist/component/toggle/toggle.min.css" rel="stylesheet">
+```
+
+### Variante d’interrupteurs avec statut
+
+Il est conseillé d’afficher un statut sous l'interrupteur pour signifier textuellement l'activation et la désactivation du champ. Des attributs placés sur le `label` permettent d'ajouter ces textes, de cette manière ils peuvent être traduits. Utiliser l'attribut `data-fr-checked-label` pour le status "Activer" et `data-fr-unchecked-label` pour le status "Désactivé".
+
+**Exemple de variante d’interrupteur avec statut**
+
+```html
+<div class="fr-toggle">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-status" aria-describedby="toggle-status-messages">
+    <label class="fr-toggle__label" for="toggle-status" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
+    <div class="fr-messages-group" id="toggle-status-messages" aria-live="polite">
+    </div>
+</div>
+```
+
+### Variante d’interrupteurs avec séparateur
+
+Il est possible d’afficher un séparateur horizontal sous l’interrupteur, avec l'utilisation de la classe `fr-toggle--border-bottom`.
+
+**Exemple de variante d’interrupteur avec séparateur**
+
+```html
+<div class="fr-toggle fr-toggle--border-bottom">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-label-left" aria-describedby="toggle-label-left-messages">
+    <label class="fr-toggle__label" for="toggle-label-left">Libellé de l'interrupteur</label>
+    <div class="fr-messages-group" id="toggle-label-left-messages" aria-live="polite">
+    </div>
+</div>
+```
+
+### Variantes d'états
+
+L’interrupteur est disponible en plusieurs variantes d'états :
+
+- L’interrupteur avec **erreur** : défini par la classe `fr-toggle----error`.
+- L’interrupteur avec **succès** : défini par la classe `fr-toggle----valid`.
+- L’interrupteur **désactivé** : défini par l'attribut `disabled` sur l'élément `<input>`.
+
+Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont définis sur le groupe (le fieldset), et non sur chaque interrupteur.
+
+- Groupe en **erreur** : défini par la classe `fr-fieldset--error`.
+- Groupe en **succès** : défini par la classe `fr-fieldset--valid`.
+- Groupe **désactivé** : défini par l'attribut `disabled`.
+
+**Exemples de variantes d'états**
+
+**Déplier pour voir le code**
+
+**Erreur**
+
+```html
+<div class="fr-toggle fr-toggle--error">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-error" aria-describedby="toggle-error-messages">
+    <label class="fr-toggle__label" for="toggle-error">Libellé de l'interrupteur avec erreur</label>
+    <div class="fr-messages-group" id="toggle-error-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="toggle-error-message-error">Texte d’erreur obligatoire</p>
+    </div>
+</div>
+```
+
+**Succès**
+
+```html
+<div class="fr-toggle fr-toggle--valid">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-valid" aria-describedby="toggle-valid-messages">
+    <label class="fr-toggle__label" for="toggle-valid">Libellé de l'interrupteur avec succès</label>
+    <div class="fr-messages-group" id="toggle-valid-messages" aria-live="polite">
+        <p class="fr-message fr-message--valid" id="toggle-valid-message-valid">Texte de validation</p>
+    </div>
+</div>
+```
+
+**Désactivé**
+
+```html
+<div class="fr-toggle">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-disabled" disabled aria-describedby="toggle-disabled-messages">
+    <label class="fr-toggle__label" for="toggle-disabled">Libellé de l'interrupteur désactivé</label>
+    <div class="fr-messages-group" id="toggle-disabled-messages" aria-live="polite">
+    </div>
+</div>
+```
+
+**Exemple de variante d'état au niveau du groupe**
+
+**Déplier pour voir le code**
+
+**Erreur**
+
+```html
+<fieldset class="fr-fieldset fr-fieldset--error" aria-labelledby="toggles-error-legend toggles-error-messages">
+    <legend class="fr-fieldset__legend" id="toggles-error-legend">
+        Légende pour l’ensemble des éléments en erreur
+    </legend>
+    <div class="fr-fieldset__element">
+        <ul class="fr-toggle__list">
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+        </ul>
+    </div>
+    <div class="fr-messages-group" id="toggles-error-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="toggles-error-message-error">Texte d’erreur globale</p>
+    </div>
+</fieldset>
+```
+
+**Succès**
+
+```html
+<fieldset class="fr-fieldset fr-fieldset--valid" aria-labelledby="toggles-valid-legend toggles-valid-messages">
+    <legend class="fr-fieldset__legend" id="toggles-valid-legend">
+        Légende pour l’ensemble des éléments en succès
+    </legend>
+    <div class="fr-fieldset__element">
+        <ul class="fr-toggle__list">
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+        </ul>
+    </div>
+    <div class="fr-messages-group" id="toggles-valid-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="toggles-valid-message-error">Texte de succès global</p>
+    </div>
+</fieldset>
+```
+
+**Désactivé**
+
+```html
+<fieldset class="fr-fieldset" disabled aria-labelledby="toggles-disabled-legend toggles-disabled-messages">
+    <legend class="fr-fieldset__legend" id="toggles-disabled-legend">
+        Légende pour l’ensemble des éléments désactivés
+    </legend>
+    <div class="fr-fieldset__element">
+        <ul class="fr-toggle__list">
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+            <li>
+                <div class="fr-toggle fr-toggle--border-bottom">(...)</div>
+            </li>
+        </ul>
+    </div>
+    <div class="fr-messages-group" id="toggles-disabled-messages" aria-live="polite">
+    </div>
+</fieldset>
+```
+
+---
+
+## JavaScript
+
+### Installation du JavaScript
 
 Pour fonctionner le composant interrupteur nécessite l'utilisation de JavaScript uniquement pour la variante avec état affiché.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/toggle/toggle.module.min.js"></script>
 ```
@@ -110,7 +289,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/toggle/toggle.nomodule.min.js"></script>
@@ -118,7 +297,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-#### Instances
+### Instances
 
 Sur l'interrupteur, les éléments suivants sont instanciés :
 
@@ -127,7 +306,7 @@ Sur l'interrupteur, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés.
 
-#### API
+### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -142,9 +321,9 @@ dsfr(elem).toggleInput.isEnabled;
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-##### toggleInput
+#### toggleInput
 
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
 
 | | |
 |------|-----|
@@ -153,8 +332,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleInput.isEnabled = false` |
 
-
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -163,10 +341,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).toggleInput.node` |
 
+#### toggleStatusLabel
 
-##### toggleStatusLabel
-
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
 
 | | |
 |------|-----|
@@ -175,8 +352,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.isEnabled = false` |
 
-
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -185,8 +361,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.node` |
 
-
-:::fr-table[update]{valign=top multiline=true}
+**update**
 
 | | |
 |:------|:-----|
@@ -196,4 +371,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).toggleStatusLabel.update()` |
 
+---
 
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+toggle+)

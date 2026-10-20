@@ -1,34 +1,18 @@
 # Pagination
 
-> **Navigation entre plusieurs pages d’une liste**
+> Navigation entre plusieurs pages d’une liste
 
-## Navigation
-
-- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA
-- [Code](./code.md) - Documentation technique et API
-- [Design](./design.md) - Spécifications design
-- [Exemples](./examples/) - Exemples de code HTML
-
-## Pagination
+Voir aussi : [Design](design.md) · [Code](code.md) · [Accessibilité](accessibilite.md) · [Exemples](exemples.md)
 
 La pagination est un système de navigation qui permet à l’usager de naviguer entre les différentes pages d’une liste d’éléments.
 
-
-- Présentation
-- [Démo](./demo/index.md)
-- [Design](./design/index.md)
-- [Code](./code/index.md)
-- [Accessibilité](./accessibility/index.md)
-
-
-
-### Quand utiliser ce composant ?
+## Quand utiliser ce composant ?
 
 **Utiliser la pagination lorsqu’une liste d'éléments est trop importante pour être affichée sur une seule page** (plus de 20 éléments). Il est dès lors préférable de la diviser en plusieurs pages, afin de simplifier le parcours de l’usager au sein de cette liste.
 
 Privilégier la pagination au rechargement automatique ou à un bouton “Voir plus” permet également un meilleur référencement de votre site.
 
-### Comment utiliser ce composant ?
+## Comment utiliser ce composant ?
 
 - **Placer systématiquement la pagination en bas de la liste**.
 - **Mettre clairement en avant la page sur laquelle l’usager se trouve** grâce à l’état courant disponible.
@@ -40,6 +24,6 @@ Privilégier la pagination au rechargement automatique ou à un bouton “Voir p
 - **Renvoyer l’usager en haut de page** lorsqu’il change de page à l’aide de la pagination.
 - **Conserver le même fonctionnel de pagination** à travers l’intégralité de votre site.
 
-### Règles éditoriales
+## Règles éditoriales
 
 La pagination n’est régie par aucune règle éditoriale spécifique.

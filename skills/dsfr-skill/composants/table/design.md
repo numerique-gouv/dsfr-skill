@@ -1,60 +1,48 @@
+# Tableau : Design
 
-## Tableau
+- Un titre (obligatoire, qui peut être positionné en haut (par défaut), en bas ou hors écran (balise caption))
 
-Le tableau permet de présenter une liste structurée de données textuelles et/ou numériques dans le but de simplifier l’analyse et la comparaison d’informations pour l’usager.
+- Un bouton de tri par colonne
 
+- Une case à cocher de sélection de colonne
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Une ou plusieurs données (par cellule)
 
+- Une barre d’actions haute (pouvant contenir (uniquement et dans cet ordre) - le nombre de lignes sélectionnées, une barre de recherche, des boutons d’actions liés à la sélection de lignes et un contrôle segmenté)
 
+- Une ligne d’en-tête de colonne (obligatoire)
 
-![Anatomie du tableau](../_asset/anatomy/anatomy-1.png)
+- Plusieurs lignes de corps (obligatoire)
 
+- Des bordures horizontales entre les lignes (obligatoire)
 
+- Une barre d’actions basse (pouvant contenir (uniquement et dans cet ordre) - le nombre total de lignes du tableau, une liste déroulante, une pagination et des boutons d’actions agissants sur tout le tableau)
 
+- Une colonne de sélection de ligne (toujours ferrée à gauche)
 
+- Des bordure verticales entre les colonnes (uniquement obligatoire dans le cas d’un tableau complexe)
 
-
-
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Tableau non scrollable**
 
-
 **Tableau avec retour à la ligne automatique dans les cellules**
-
 
 **Tableau avec largeur de colonnes minimales**
 
-
 **Tableau avec première colonne fixée**
-
 
 **Tableau complexe avec cellules fusionnées**
 
-
 **Tableau avec filtre et différents types de données**
 
-
-### Variantes esthétiques
+## Variantes esthétiques
 
 **Bordures horizontales (par défaut)**
 
-
 **Bordures horizontales et verticales**
 
-
-### Densité
+## Densité
 
 Le tableau prend automatiquement la taille de son conteneur.
 
@@ -66,25 +54,21 @@ Par défaut, la largeur des cellules s’adapte automatiquement à leur contenu.
 
 **SM pour small**
 
-
 **MD pour medium**
-
 
 **LG pour large**
 
-
 Ainsi si la taille des composants intégrés dans les cellules ne change pas, cela vous permet toutefois de varier la densité d’affichage de votre tableau en fonction de son contenu.
 
-### Ligne sélectionnable
-
+## Ligne sélectionnable
 
 > [!NOTE]
 > Les états désactivé, focus et cliqué sont propres aux composants intégrés au sein des cellules.
 
-### Personnalisation
+## Personnalisation
 
 Le tableau n’est pas personnalisable.
 
 Toutefois, l’ensemble des composants imbriqués (icône, pictogramme, tag, badge, bouton, lien, champ de saisie, infobulle, interrupteur et liste déroulante) peuvent être personnalisés selon leurs propres règles de personnalisation.
 
-Par ailleurs, certains éléments sont optionnels - voir [la structure du composant](#tableau).
+Par ailleurs, certains éléments sont optionnels - voir la structure du composant.
