@@ -1,19 +1,8 @@
-
-## Navigation principale
-
-La navigation principale est le système central de navigation au sein d’un site. Elle permet d’orienter l’usager à travers les rubriques principales et secondaires du site.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Navigation principale : Accessibilité
 
 Le composant **Navigation principale** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 - `Entrée` ou `Espace` :
   - Lorsque le focus est placé sur un bouton d'ouverture de sous-section de la navigation principale, et que sa sous-section associée est fermée, ouvre la sous-section.
@@ -22,35 +11,42 @@ Le composant **Navigation principale** est conçu pour être accessible et respe
 - `Tab` : place le focus sur le prochain élément focalisable.
 - `Maj` + `Tab` : place le focus sur l'élément focalisable précédent.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Structuration
+### Structuration
 
 - La navigation principale est structurée dans un élément `nav role="navigation"`.
 - L’attribut `aria-label="Menu principal"` est utilisé pour nommer et donner un contexte explicite à la navigation.
 - Les éléments de la navigation principale sont structurés dans une liste avec les éléments `ul` et `li`.
 
-##### Éléments actifs
+#### Éléments actifs
 
 - Le lien actif dispose d’un attribut `aria-current="page"`.
 - Si une sous-section associée à un bouton d'ouverture de la navigation est active, le bouton a un attribut `aria-current` défini sur "true".
 
-##### Entrée de menu
+#### Entrée de menu
 
 - Les boutons d’ouverture et de fermeture des menus déroulants et mega-menus possèdent&nbsp;:
   - un attribut `aria-expanded` défini à `true`lorsque le sous-menu est affiché, à `false`lorsque la sous-section est fermée.
   - un attribut `aria-controls` défini sur l'ID du bloc refermable associé.
 
-##### Responsive
+#### Responsive
 
 En version mobile, la navigation principale est disponible dans une fenêtre modale à partir du bouton burger «&nbsp;Menu&nbsp;».
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 La navigation principale est suffisamment contrastée en thème clair.
 
+---
 
-### Critères RGAA applicables
+## Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Navigation principale.
+
+---
+
+## Critères RGAA applicables
 
 - **Couleurs** : 3.1, 3.2, 3.3
 - **Liens** : 6.1, 6.2
@@ -60,7 +56,7 @@ La navigation principale est suffisamment contrastée en thème clair.
 - **Navigation** : 12.2, 12.6, 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
-### Références
+## Références
 
 - [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
 - [Élément nav](https://html.spec.whatwg.org/#the-nav-element)

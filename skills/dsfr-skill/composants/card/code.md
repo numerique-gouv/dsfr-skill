@@ -1,41 +1,30 @@
+# Carte : Code
 
-## Carte
+## HTML
 
-La carte est un élément d’interaction avec l’interface permettant de rediriger l’usager vers une page éditoriale donc elle donne un aperçu.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Carte** est un élément interactif permettant de donner des aperçus cliquables d’une page de contenu. Elle fait généralement partie d'une collection ou liste d’aperçus de contenus similaires.
 Sa structure est la suivante :
 
 - La **Carte** est un élément HTML `<div>` défini par la classe `fr-card`.
-- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)).
+- Les cartes sont généralement utilisées au sein d'une **grille**, disponible dans les fondamentaux (voir [grille](../../fondamentaux/grid/index.md)).
 - Son contenu est structuré en deux parties :
   - Le **corps de la carte** `fr-card__body` est obligatoire, il contient le contenu de la carte :
     - Un **bloc de contenu** `fr-card__content`, obligatoire, qui contient les informations propres à la carte :
       - Le **titre** de la carte, obligatoire, un élément HTML avec un niveau d'entête `<hx>` et la classe `fr-card__title` pouvant contenir un lien ou un simple texte. Le zone de clic du lien peut être **étendu** à toute la carte en ajoutant la classe `fr-enlarge-link` sur la carte.
       - Une **description**, optionnelle, `fr-card__desc`, un élément HTML de type `<p>`.
       - Une zone se plaçant **avant** le contenu `fr-card__start` et une zone se plaçant **après** le contenu `fr-card__end` qui peuvent toutes deux accueillir :
-        - Un groupe de badge ou un groupe de tag, optionnels, (voir composants [badge](../../../../badge/_part/doc/code/index.md) et [tag](../../../../tag/_part/doc/code/index.md)).
+        - Un groupe de badge ou un groupe de tag, optionnels, (voir composants [badge](../badge/code.md) et [tag](../tag/code.md)).
         - Un texte de détail `fr-card__detail`, optionnel, auquel on peut associer une icône.
     - Un bloc de **zone d'action**  `fr-card__footer`, optionnel, qui permet l'ajout de boutons ou de liens supplémentaires.
   - **L'entête de la carte** `fr-card__header`, optionnel, pouvant contenir :
     - Une **image** dans un élément `fr-card__img`. L'image doit posséder la classe `fr-responsive-img` pour s'adapter au conteneur.
-    - Un groupe de **badges** ou un groupe de **tags**, optionnels, placé par dessus l'image (voir composants [badge](../../../../badge/_part/doc/code/index.md) et [tag](../../../../tag/_part/doc/code/index.md)).
+    - Un groupe de **badges** ou un groupe de **tags**, optionnels, placé par dessus l'image (voir composants [badge](../badge/code.md) et [tag](../tag/code.md)).
 
 **Exemple de structure HTML simple**
 
-```HTML
+```html
 <div class="fr-grid-row">
     <div class="fr-col fr-col-md-6">
         <div class="fr-card fr-enlarge-link">
@@ -57,9 +46,9 @@ Sa structure est la suivante :
 </div>
 ```
 
-#### Carte de téléchargement
+### Carte de téléchargement
 
-Une variante carte de téléchargement existe, comme pour les composants [Lien](../../../../link/_part/doc/code/index.md) et [Tuile](../../../../tile/_part/doc/code/index.md), pour proposer le téléchargement d'un fichier. La carte de téléchargement est toujours en format horizontale en desktop.
+Une variante carte de téléchargement existe, comme pour les composants [Lien](../link/code.md) et [Tuile](../tile/code.md), pour proposer le téléchargement d'un fichier. La carte de téléchargement est toujours en format horizontale en desktop.
 Cette variante reprend la même structure que la carte standard à l'exception de certains éléments :
 
 - La Carte doit avoir la classe `fr-card--download`.
@@ -76,7 +65,7 @@ Cette variante reprend la même structure que la carte standard à l'exception d
 
 **Exemple de carte de téléchargement**
 
-```HTML
+```html
 <div class="fr-card fr-enlarge-link fr-card--download">
     <div class="fr-card__body">
         <div class="fr-card__content">
@@ -87,10 +76,10 @@ Cette variante reprend la même structure que la carte standard à l'exception d
             <div class="fr-card__start">
                 <ul class="fr-badges-group">
                     <li>
-                        <p class="fr-badge fr-badge--purple-glycine">Libellé badge</p>
+                        <span class="fr-badge fr-badge--purple-glycine">Libellé badge</span>
                     </li>
                     <li>
-                        <p class="fr-badge fr-badge--green-menthe">Libellé badge</p>
+                        <span class="fr-badge fr-badge--green-menthe">Libellé badge</span>
                     </li>
                 </ul>
                 <p class="fr-card__detail fr-icon-info-line">détail (optionnel)</p>
@@ -108,14 +97,14 @@ Cette variante reprend la même structure que la carte standard à l'exception d
 </div>
 ```
 
-#### Groupe de cartes
+### Groupe de cartes
 
 Il n'existe pas à proprement parlé de groupe de carte. Néanmoins, les cartes sont généralement utilisées sous forme d'un ensemble d'élément. Elles peuvent être disposées côte à côte grâce à la **grille** disponible dans les fondamentaux.
-La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint) (Voir [grille](../../../../../core/_part/doc/grid/index.md)).
+La grille permet de définir un nombre de colonne pour chaque carte, sur une base de 12 colonnes, et peut varier en fonction de la taille de l'écran (breakpoint) (Voir [grille](../../fondamentaux/grid/index.md)).
 
 **Exemple de grille de carte**
 
-```HTML
+```html
 <div class="fr-grid-row fr-grid-row--gutters">
     <div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
         <div class="fr-card fr-enlarge-link">(...)</div>
@@ -129,8 +118,145 @@ La grille permet de définir un nombre de colonne pour chaque carte, sur une bas
 </div>
 ```
 
+---
 
-### JavaScript
+## CSS
+
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Card       | Oui         |          |
+| Link       | Oui         |          |
+| Button     | Non         | Uniquement si zone d'action avec boutons |
+| Badge      | Non         | Uniquement si ajout de badge dans la carte |
+| Tag        | Non         | Uniquement si ajout de tag dans la carte |
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/link/link.min.css" rel="stylesheet">
+<link href="dist/component/card/card.min.css" rel="stylesheet">
+```
+
+### Variantes de taille
+
+La carte peut avoir différentes tailles qui auront un impact sur la taille du texte, des espacements, et de l'icône :
+
+- `fr-card--sm` : Petite carte.
+- Par défaut : Carte moyenne.
+- `fr-card--lg` : Grande carte.
+
+Par défaut, la carte prend 100% de la largeur de son conteneur et sa hauteur varie en fonction de son contenu. La largeur des cartes peut être ajustée via le nombre de colonnes de la grille (Voir [grille](../../fondamentaux/grid/index.md)).
+
+Utiliser une taille de carte adaptée à la largeur de son conteneur :
+
+- 3 à 4 colonne pour une carte SM.
+- 4 à 6 colonne pour une carte MD.
+- 6 à 12 colonnes pour une carte LG.
+
+**Exemples de variantes de taille**
+
+```html
+<div class="fr-card fr-card--sm">
+    <!-- Contenu de la carte SM -->
+</div>
+<div class="fr-card">
+    <!-- Contenu de la carte MD -->
+</div>
+<div class="fr-card fr-card--lg">
+    <!-- Contenu de la carte LG -->
+</div>
+```
+
+### Variantes de style
+
+La carte est disponible en plusieurs autres variantes :
+
+- La Carte avec **fond gris** : définie par la classe `fr-card--grey`.
+- La Carte sur **fond transparent** : définie par la classe `fr-card--no-background`.
+- La Carte **sans bordure** : définie par la classe `fr-card--no-border`.
+- La Carte **avec ombre portée** : définie par la classe `fr-card--shadow`.
+
+**Exemples de variantes de style**
+
+```html
+<div class="fr-card fr-card--grey">
+    <!-- Contenu de la carte sur fond gris -->
+</div>
+<div class="fr-card fr-card--no-background">
+    <!-- Contenu de la carte sur fond transparent -->
+</div>
+<div class="fr-card fr-card--no-border">
+    <!-- Contenu de la carte sans bordure -->
+</div>
+<div class="fr-card fr-card--shadow">
+    <!-- Contenu de la carte avec ombre -->
+</div>
+```
+
+### Variantes d'orientation
+
+Les carte sont disponibles, par défaut, en format vertical (image en haut et contenu en bas). Il existe aussi des variantes permettant de passer la carte en format **horizontal** en desktop (image à gauche et contenu à droite). La classe `fr-card--horizontal` passe la carte en format horizontal à partir du breakpoint MD (768px).
+
+Le **ratio image/contenu** de la carte horizontale est par défaut de 40% de la largeur pour l'image, et 60% de la largeur pour le contenu. Il existe des variantes permettant de modifier ce ratio :
+
+- `fr-card--horizontal-half` : passe le ratio image/contenu à 50%/50%.
+- `fr-card--horizontal-tier` : passe le ratio image/contenu à 1 tier / 2 tiers.
+
+**Exemples de carte horizontale**
+
+```html
+<div class="fr-card fr-card--horizontal">
+    <!-- Contenu de la carte horizontale -->
+</div>
+<div class="fr-card fr-card--horizontal fr-card--horizontal-half">
+    <!-- Contenu de la carte horizontale 50/50 -->
+</div>
+<div class="fr-card fr-card--horizontal fr-card--horizontal-tier">
+    <!-- Contenu de la carte horizontale 33/66 -->
+</div>
+```
+
+### Ratio d'images
+
+L'image placée dans la partie "header" de la carte doit avoir la classe `fr-responsive-img` pour s'adapter à la largeur de la carte. Sa hauteur dépend de son ratio largeur/hauteur.
+Le ratio de l'image est par défaut en 16/9ème. Celui-ci peut être modifié en fonction du besoin grâce aux [classes utilitaires de ratio](../../fondamentaux/media/index.md) disponibles dans le core :
+
+- `fr-ratio-32x9` : pour un ratio largeur/hauteur de 32/9.
+- `fr-ratio-3x2` : pour un ratio largeur/hauteur de 3/2.
+- `fr-ratio-4x3` : pour un ratio largeur/hauteur de 4/3.
+- `fr-ratio-1x1` : pour un ratio largeur/hauteur de 1/1, soit carré.
+- `fr-ratio-3x4` : pour un ratio largeur/hauteur de 3/4. (non recommandé)
+- `fr-ratio-3x4` : pour un ratio largeur/hauteur de 2/3. (non recommandé)
+- `fr-ratio-32x9` : pour un ratio largeur/hauteur de 32/9. (non recommandé)
+
+Les ratios avec une hauteur plus grande que la largeur ne sont pas conseillés, car le rendu mobile n'est pas approprié.
+
+Sur les cartes horizontales, la hauteur de l'image de la carte est fixée par celle du contenu. L'image est donc croppée pour conserver 100% de la hauteur de la carte. L'utilisation de classes de ratio n'est ici pas possible.
+
+### Variantes d'icônes
+
+Par défaut, sur les **cartes avec lien étendu et non externe**, une icône "arrow-right" apparaît en bas à droite. Dans certains cas, comme pour réduire la taille de la carte, il peut être utile de **retirer cette icône**. Il suffit pour cela d'ajouter la classe `fr-card--no-icon` sur la carte.
+Si le lien est un **lien externe**, l'icône "external-link" reste obligatoire.
+
+**Exemple de retrait d'icône**
+
+```html
+<div class="fr-card fr-enlarge-link fr-card--no-icon">
+    <!-- Contenu de la carte -->
+</div>
+```
+
+---
+
+## JavaScript
 
 Le composant Carte **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
@@ -141,14 +267,14 @@ Si la page est en Anglais, l'attribut `data-fr-assess-file` doit prendre la vale
 
 Pour fonctionner le fichier à télécharger doit être sur le même cross-domain que le site.
 
-#### Installation du JavaScript
+### Installation du JavaScript
 
 Pour fonctionner, le **remplissage automatique du détail des cartes de téléchargement** nécessite l'utilisation de JavaScript.
 Cette fonctionnalité est disponible dans le core.
 
 Il est donc nécessaire d'importer les fichiers js du core à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 ```
 
@@ -156,13 +282,18 @@ Il est donc nécessaire d'importer les fichiers js du core à la fin de la page 
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 ```
 
-#### API
+### API
 
 > [!NOTE]
 > L'activation ou la désactivation de la fonction de remplissage automatique du détail des cartes de téléchargement (assess-file) n'est pas disponible via l'API JS, elle se fait via l'ajout ou le retrait de l'attribut `data-fr-assess-file` sur le lien.
 
+---
+
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+card+)

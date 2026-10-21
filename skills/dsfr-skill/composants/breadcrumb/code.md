@@ -1,19 +1,8 @@
+# Fil d'Ariane : Code
 
-## Fil d'Ariane
+## HTML
 
-Le fil d’Ariane est un système de navigation secondaire qui permet à l’usager de se situer sur le site qu’il consulte.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Fil d’Ariane** permet aux utilisateurs de comprendre leur position dans la hiérarchie d’un site. Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les éléments suivants :
 
@@ -34,7 +23,7 @@ Le composant **Fil d’Ariane** permet aux utilisateurs de comprendre leur posit
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <nav role="navigation" class="fr-breadcrumb" aria-label="vous êtes ici :">
     <button class="fr-breadcrumb__button" aria-expanded="false" aria-controls="breadcrumb-1">
         Voir le fil d’Ariane
@@ -58,25 +47,55 @@ Le composant **Fil d’Ariane** permet aux utilisateurs de comprendre leur posit
 </nav>
 ```
 
-#### Comportement en mobile
+### Comportement en mobile
 
 - En affichage mobile, seul le bouton avec la classe `fr-breadcrumb__button` est visible par défaut.
 - Lors d’un clic sur ce bouton :
   - L’attribut `aria-expanded` passe de `false` à `true`.
   - La `<div>` avec la classe `fr-collapse` devient visible, affichant le contenu du fil d’Ariane.
 
+---
 
-### JavaScript
+## CSS
+
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Breadcrumb | Oui         |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/breadcrumb/breadcrumb.min.css" rel="stylesheet">
+```
+
+### Variantes de style
+
+- **Affichage par défaut** : Le fil d’Ariane est masqué sur mobile, seul le bouton est visible.
+- **Affichage étendu** : Lorsque l’attribut `aria-expanded` du bouton est à `true`, la classe `fr-collapse--expanded` est ajoutée au conteneur `<div>` pour le rendre visible.
+
+---
+
+## JavaScript
 
 Pour fonctionner le composant fil d’Ariane nécessite l'utilisation de JavaScript.
 
-#### Installation du JavaScript
+### Installation du JavaScript
 
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/breadcrumb/breadcrumb.module.min.js"></script>
 ```
@@ -85,7 +104,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/breadcrumb/breadcrumb.nomodule.min.js"></script>
@@ -93,7 +112,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-#### Instances
+### Instances
 
 Sur le fil d’Ariane, les éléments suivants sont instanciés :
 
@@ -102,7 +121,7 @@ Sur le fil d’Ariane, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-#### API
+### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -117,9 +136,10 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### breadcrumb
+##### breadcrumb
 
-:::fr-table[disclose]{valign=top multiline=true}
+**disclose**
+
 | | |
 |-------|----------------|
 | **Description** | Ouvre le fil d’Ariane. |
@@ -128,8 +148,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Aucun |
 | **Exemple** | dsfr(breadcrumb).breadcrumb.disclose() |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Retourne le noeud HTML de l'élément `<nav>`. |
@@ -137,10 +157,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | dsfr(breadcrumb).breadcrumb.node |
 
+##### collapseButton
 
-###### collapseButton
+**focus**
 
-:::fr-table[focus]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Replace le focus sur le bouton. |
@@ -149,8 +169,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Aucun |
 | **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.focus() |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |-------|----------------|
 | **Description** | Retourne le noeud HTML correspondant au bouton. |
@@ -158,10 +178,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | dsfr(breadcrumbButton).breadcrumbButton.node |
 
+##### collapse
 
-###### collapse
+**conceal**
 
-:::fr-table[conceal]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ferme le collapse |
@@ -170,8 +190,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 
+**disclose**
 
-:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre le collapse |
@@ -180,8 +200,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 
+**isDisclosed**
 
-:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si le collapse est ouvert |
@@ -189,8 +209,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 
+**isEnabled**
 
-:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du collapse est activé ou non |
@@ -198,8 +218,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
+**buttons**
 
-:::fr-table[buttons]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture du collapse |
@@ -207,8 +227,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 
+**focus**
 
-:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton du collapse |
@@ -217,8 +237,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
+**parent**
 
-:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici le breadcrumb |
@@ -226,8 +246,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
 
+**children**
 
-:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -235,8 +255,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -244,14 +264,13 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
 
+### Événements
 
-#### Événements
-
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](../../demarrage.md).
 
 Sur le Fil d’Ariane, en mode mobile les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top multiline=true caption=false}
+**événements**
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
@@ -259,4 +278,8 @@ Sur le Fil d’Ariane, en mode mobile les événements suivants sont disponibles
 | `dsfr.disclose` | Ouverture de l'élément | Collapse | `data-fr-js-collapse` |
 | `dsfr.click` | Click sur le bouton d'ouverture | CollapseButton | `data-fr-js-collapse-button` |
 
+---
 
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+breadcrumb+)

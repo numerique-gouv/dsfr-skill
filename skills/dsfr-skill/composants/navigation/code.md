@@ -1,19 +1,8 @@
+# Navigation principale : Code
 
-## Navigation principale
+## HTML
 
-La navigation principale est le système central de navigation au sein d’un site. Elle permet d’orienter l’usager à travers les rubriques principales et secondaires du site.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Navigation principale** est l'élément central de la navigation au sein du site, il oriente l’utilisateur à travers les grandes sections du site et sur éventuellement plusieurs niveaux de profondeur.
 
@@ -43,7 +32,7 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
       - Le bouton de fermeture du mega-menu, obligatoire, est un élément HTML `<button>` de type `button` défini par les classes `fr-btn` et `fr-btn--close`.
         - Le bouton est lié au bloc refermable via l'attribut `aria-controls`, sa valeur doit correspondre à l'attribut `id` du bloc refermable.
         - Le bouton dispose d'un attribut `title` et un texte explicite pour indiquer son action.
-      - La grille du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../../../../core/_part/doc/grid/index.md)) composée d'une ou plusieurs colonnes comprenant :
+      - La grille du mega-menu, dont la documentation est disponible dans les fondamentaux (voir [grille](../../fondamentaux/grid/index.md)) composée d'une ou plusieurs colonnes comprenant :
         - Des éléments de contexte (nom de la rubrique, texte de présentation, lien vers la home de rubrique), optionnels, définis par la classe `fr-mega-menu__leader`.
         - Des noms des sous catégories, optionnels, pouvant être cliquables, dans un niveau de titre hx et définis par la classe `fr-mega-menu__category`.
         - Une liste de liens directs, obligatoire, dans un élément HTML `<ul>` défini par la classe `fr-mega-menu__list`.
@@ -52,9 +41,9 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 
 **Exemple de structure HTML complet**
 
-:::fr-accordion[Déplier pour voir le code]{id=navigation-complex-structure}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <nav class="fr-nav" role="navigation" aria-label="Menu principal">
     <ul class="fr-nav__list">
         <li class="fr-nav__item">
@@ -172,12 +161,11 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 </nav>
 ```
 
-
 **Exemple de structure HTML avec Liens directs**
 
-:::fr-accordion[Déplier pour voir le code]{id=navigation-liens-directs}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <nav class="fr-nav" role="navigation" aria-label="Menu principal">
       <ul class="fr-nav__list">
         <li class="fr-nav__item">
@@ -196,12 +184,11 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 </nav>
 ```
 
-
 **Exemple de structure HTML avec Menu déroulant**
 
-:::fr-accordion[Déplier pour voir le code]{id=navigation-menu-deroulant}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <nav class="fr-nav" role="navigation" aria-label="Menu principal">
     <ul class="fr-nav__list">
         <li class="fr-nav__item">
@@ -246,12 +233,11 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 </nav>
 ```
 
-
 **Exemple de structure HTML avec Mega menu**
 
-:::fr-accordion[Déplier pour voir le code]{id=navigation-mega-menu}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <nav class="fr-nav" role="navigation" aria-label="Menu principal">
     <ul class="fr-nav__list">
         <li class="fr-nav__item">
@@ -381,16 +367,15 @@ Sa structure est conçue pour s’adapter aux écrans mobiles et comprend les é
 </nav>
 ```
 
+## CSS
 
-### CSS
-
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top multiline=true}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire | Remarque |
 |------------|-------------| ---------|
@@ -398,24 +383,23 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Navigation | Oui         |          |
 | Button     | Non         | Uniquement sur le mega-menu (bouton de fermeture) |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/navigation/navigation.min.css" rel="stylesheet">
 ```
 
-### JavaScript
+## JavaScript
 
-#### Installation du JavaScript
+### Installation du JavaScript
 
 Pour fonctionner le composant navigation nécessite l'utilisation de JavaScript.
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/navigation/navigation.module.min.js"></script>
 ```
@@ -424,7 +408,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.min.js"></script>
@@ -432,7 +416,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-#### Instances
+### Instances
 
 Sur la navigation, les éléments suivants sont instanciés :
 
@@ -443,7 +427,7 @@ Sur la navigation, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés.
 
-#### API
+### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -458,9 +442,10 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-###### navigation
+##### navigation
 
-:::fr-table[current]{valign=top multiline=true}
+**current**
+
 | | |
 |------|-----|
 | **Description** | Retourne l'API de la sous-section ouverte. <br>_Si aucune sous-section n'est ouverte, ou si plusieurs sous-sections sont ouvertes, renvoie `null`._|
@@ -468,8 +453,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).navigation.current` |
 
+**hasFocus**
 
-:::fr-table[hasFocus]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
@@ -477,8 +462,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.hasFocus` |
 
+**index**
 
-:::fr-table[index]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne ou modifie l'index de la sous-section courante. <br>_Si aucune sous-section n'est ouverte, l'index vaut 0._ |
@@ -486,8 +471,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).navigation.index` <br> `dsfr(elem).navigation.index = 2` |
 
+**isGrouped**
 
-:::fr-table[isGrouped]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si les sous-sections du groupe sont liées en eux ou non. <br>_Si `true`, lorsqu'une sous-section est ouverte les autres se referment. Si `false`, il est possible d'en ouvrir plusieurs. Si l'attribut n'est pas défini les sous-sections sont groupées par défaut._|
@@ -495,8 +480,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigation.isGrouped` <br> `dsfr(elem).navigation.isGrouped = true` |
 
+**length**
 
-:::fr-table[length]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Retourne le nombre de sous-sections dans le groupe. |
@@ -504,8 +489,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).navigation.length` |
 
+**members**
 
-:::fr-table[members]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie un tableau d'objets correspondant aux sous-sections du groupe. |
@@ -513,8 +498,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).navigation.members` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -522,10 +507,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).navigation.node` |
 
+##### navigationItem
 
-###### navigationItem
+**isEnabled**
 
-:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
@@ -533,8 +518,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).navigationItem.isEnabled = false` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -542,10 +527,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).navigationItem.node` |
 
+##### collapseButton
 
-###### collapseButton
+**focus**
 
-:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -554,8 +539,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 
+**isEnabled**
 
-:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement du bouton de la navigation est activé ou non |
@@ -563,8 +548,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.isEnabled = false` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -572,10 +557,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
 
+##### collapse
 
-###### collapse
+**conceal**
 
-:::fr-table[conceal]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ferme la sous-section |
@@ -584,8 +569,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 
+**disclose**
 
-:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la sous-section |
@@ -594,8 +579,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 
+**isDisclosed**
 
-:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la sous-section est ouverte |
@@ -603,8 +588,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 
+**isEnabled**
 
-:::fr-table[isEnabled]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la navigation est activé ou non |
@@ -612,8 +597,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
+**group**
 
-:::fr-table[group]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
@@ -621,8 +606,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
 
+**buttons**
 
-:::fr-table[buttons]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne un tableau de boutons d'ouverture de la sous-section |
@@ -630,8 +615,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 
+**focus**
 
-:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton de la sous-section |
@@ -640,8 +625,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
+**parent**
 
-:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parent, ici la navigation |
@@ -649,8 +634,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
 
+**children**
 
-:::fr-table[children]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Renvoie un tableau d'instances enfants |
@@ -658,8 +643,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -667,14 +652,13 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
 
+### Événements
 
-#### Événements
-
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](../../demarrage.md).
 
 Sur chaque menu déroulant de la navigation principale, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top multiline=true caption=false}
+**événements**
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
@@ -682,4 +666,8 @@ Sur chaque menu déroulant de la navigation principale, les événements suivant
 | `dsfr.disclose` | Ouverture de l'élément | Collapse | `data-fr-js-collapse` |
 | `dsfr.click` | Click sur le bouton d'ouverture | CollapseButton | `data-fr-js-collapse-button` |
 
+---
 
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+navigation+)

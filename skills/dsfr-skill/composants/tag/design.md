@@ -1,60 +1,43 @@
+# Tag : Design
 
-## Tag
+- Une icône
 
-Le tag est un élément d’indication ou d’interaction (selon les contextes) permettant de catégoriser, classer, organiser les contenus d’un site à l’aide de mots clés. Il aide les usagers à rechercher et à trouver facilement une information.
+- Un fond de couleur (obligatoire)
 
+- Un libellé (obligatoire)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Une coche (obligatoire, uniquement s'il s'agit d'un tag sélectionnable en état cliqué)
 
+- Une croix (obligatoire, uniquement s'il s'agit d'un tag supprimable)
 
-
-![Anatomie du tag](../_asset/anatomy/anatomy-1.png)
-
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Tag non cliquable**
 
-
 **Tag cliquable**
-
 
 **Tag sélectionnable**
 
-
 **Tag supprimable**
-
 
 > [!NOTE]
 > Cette variation n’autorise pas l’utilisation d’icône, autre que la croix de suppression présente par défaut.
 
 **Groupe de tags**
 
-
 Tous les tags peuvent être utilisés à plusieurs dans des groupes de tags. Dans ce cas-là ils appliquent des espacement préalablement définis par le DSFR.
 
-### Tailles
+## Tailles
 
 Toutes les variations de tags sont disponibles en 2 tailles, pour pouvoir s’adapter au contexte d’affichage :
 
 - SM pour small
 
-
 - MD pour medium - taille par défaut
-
 
 À noter que pour le groupe de tags en taille SM, le padding autour du tag est plus important que lorsqu’il est utilisé seul pour faciliter le clic en mobile.
 
-### États
+## États
 
 Le tag non cliquable est le seul qui n’est sujet à aucun changement d’état.
 
@@ -74,57 +57,30 @@ L’état au clic correspond au comportement constaté par l’usager une fois u
 
 - Tag sélectionnable
 
-### Personnalisation
+## Personnalisation
 
 Seule la couleur des tags cliquables peut être personnalisée, parmi les couleurs illustratives autorisées uniquement.
 
-:::fr-table[Tableau personnalisation design]{valign=top multiline=true caption=false}
+**Tableau personnalisation design**
 
 |  Éléments | Indice thème clair | Indice thème sombre |
 |:-----|:-----|:-----|
 | **Fond** | Indice **925**<br> exemple : `$pink-tuile-925` | Indice **125**<br> exemple : `$pink-tuile-125` |
 | **Texte et icône**| Indice **sun**<br> exemple : `$pink-tuile-sun-425` | Indice **moon**<br> exemple : `$pink-tuile-moon-750` |
 
-
 La personnalisation des tags doit se faire avec parcimonie et avec un objectif précis (permettre d'en faire ressortir un type ou le sens, par exemple).
 
 > [!NOTE]
 > Si vous personnalisez la couleur illustrative des badges, attention à la couleur d’arrière-plan sur laquelle ils sont positionnés à travers l’ensemble du site.
 
+**✅ À faire** : Personnaliser uniquement la couleur des tags cliquables.
 
+**❌ À ne pas faire** : Ne pas proposer les autres variations de tags en couleur.
 
-![](./assets/_asset/custom/do-1.png)
+**✅ À faire** : Associer le tag cliquable à une couleur pour valoriser l’information transmise, ici le type de support.
 
-Personnaliser uniquement la couleur des tags cliquables.
+**❌ À ne pas faire** : Ne pas dépasser une ou deux couleurs de tags par page.
 
+**✅ À faire** : Ajouter une icône au tag au besoin.
 
-
-![](./assets/_asset/custom/dont-1.png)
-
-Ne pas proposer les autres variations de tags en couleur.
-
-
-
-![](./assets/_asset/custom/do-2.png)
-
-Associer le tag cliquable à une couleur pour valoriser l’information transmise, ici le type de support.
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas dépasser une ou deux couleurs de tags par page.
-
-
-
-![](./assets/_asset/custom/do-3.png)
-
-Ajouter une icône au tag au besoin.
-
-
-
-![](./assets/_asset/custom/dont-3.png)
-
-Ne pas cumuler la croix du tag supprimable (icône par défaut) avec une seconde icône.
-
-
+**❌ À ne pas faire** : Ne pas cumuler la croix du tag supprimable (icône par défaut) avec une seconde icône.

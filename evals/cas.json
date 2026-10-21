@@ -1,0 +1,66 @@
+[
+  {
+    "id": "page-connexion",
+    "prompt": "Crée la page de connexion DSFR du service « Mes démarches » : identifiant email, mot de passe, lien mot de passe oublié, bouton Se connecter, et un lien vers la création de compte.",
+    "pageComplete": true,
+    "classesRequises": ["fr-header", "fr-footer", "fr-skiplinks", "fr-input", "fr-password", "fr-password__input", "fr-password__checkbox", "fr-messages-group", "fr-btn"]
+  },
+  {
+    "id": "demarche-etape",
+    "prompt": "Crée la page DSFR de l'étape 2 sur 4 de la démarche « Demande d'aide au logement », intitulée « Votre situation » : un choix unique entre Salarié, Indépendant et Sans emploi, puis un champ « Numéro fiscal » affiché en erreur avec le message « Le numéro fiscal comporte 13 chiffres », et les boutons Précédent et Suivant.",
+    "pageComplete": true,
+    "classesRequises": ["fr-stepper", "fr-stepper__title", "fr-stepper__steps", "fr-fieldset", "fr-fieldset__legend", "fr-radio-group", "fr-input-group--error", "fr-message--error", "fr-messages-group", "fr-btns-group", ["fr-btn--secondary", "fr-btn--tertiary", "fr-btn--tertiary-no-outline"]]
+  },
+  {
+    "id": "tableau-de-bord",
+    "prompt": "Crée la page DSFR « Mes dossiers » du service « Aides au logement » : en-tête avec le nom du service et une navigation principale de 3 entrées dont une avec un sous-menu, puis des onglets « En cours », « Terminés » et « Brouillons ». Dans le premier onglet, un tableau de 3 dossiers (numéro, date, statut) avec le statut en badge : validé, en cours, refusé.",
+    "pageComplete": true,
+    "classesRequises": ["fr-header__service-title", "fr-nav", "fr-nav__btn", "fr-menu", "fr-tabs", "fr-tabs__tab", "fr-tabs__panel--selected", "fr-table", "fr-table__wrapper", "fr-table__container", "fr-table__content", "fr-badge--success", "fr-badge--error"]
+  },
+  {
+    "id": "resultats-recherche",
+    "prompt": "Crée une page DSFR de résultats de recherche : fil d'Ariane, barre de recherche, une colonne de filtres par cases à cocher à gauche et, à droite, 4 résultats en cartes horizontales puis une pagination, le tout dans une grille avec gouttières.",
+    "pageComplete": true,
+    "classesRequises": ["fr-breadcrumb", "fr-search-bar", "fr-checkbox-group", "fr-card--horizontal", "fr-card__title", "fr-pagination", "fr-grid-row--gutters"],
+    "classesInterdites": ["fr-grid-row-gutters"]
+  },
+  {
+    "id": "page-404",
+    "prompt": "Crée la page d'erreur 404 DSFR du site « Mes démarches ».",
+    "pageComplete": true,
+    "classesRequises": ["fr-header", "fr-footer", "fr-skiplinks", "fr-btns-group", "fr-btn"]
+  },
+  {
+    "id": "theme-sombre",
+    "prompt": "Crée la page d'accueil DSFR du service « Mes démarches », toujours affichée en thème sombre quel que soit le réglage de l'usager, avec 3 tuiles vers les démarches les plus utilisées.",
+    "pageComplete": true,
+    "classesRequises": ["fr-header", "fr-footer", "fr-tile"],
+    "attributsRequis": { "html": { "data-fr-scheme": "dark" } }
+  },
+  {
+    "id": "telechargements",
+    "prompt": "Crée la page DSFR « Documents utiles » qui propose de télécharger 3 fichiers PDF, avec leur nom, leur format et leur poids.",
+    "pageComplete": true,
+    "classesRequises": [["fr-card--download", "fr-link--download", "fr-tile--download"]],
+    "classesInterdites": ["fr-download", "fr-download--card", "fr-download__link", "fr-downloads-group"]
+  },
+  {
+    "id": "faq",
+    "prompt": "Crée une page DSFR de FAQ : 3 questions en accordéons groupés, puis un lien vers le formulaire de contact externe https://contact.mes-demarches.gouv.fr qui s'ouvre dans un nouvel onglet.",
+    "pageComplete": true,
+    "classesRequises": ["fr-accordions-group", "fr-accordion", "fr-accordion__title", "fr-accordion__btn", "fr-collapse"]
+  },
+  {
+    "id": "modale-confirmation",
+    "prompt": "Un bouton « Supprimer le dossier » qui ouvre une modale DSFR de confirmation avec les actions Annuler et Supprimer. Fragment HTML seulement.",
+    "pageComplete": false,
+    "classesRequises": ["fr-modal", "fr-modal__title", "fr-modal__footer", "fr-btns-group", ["fr-btn--secondary", "fr-btn--tertiary", "fr-btn--tertiary-no-outline"]]
+  },
+  {
+    "id": "composant-inexistant",
+    "prompt": "Une liste déroulante DSFR avec champ de recherche intégré (combobox) pour choisir une commune. Fragment HTML seulement.",
+    "pageComplete": false,
+    "classesRequises": [["fr-select", "fr-input"]],
+    "classesInterdites": ["fr-combobox", "fr-select--search", "fr-autocomplete"]
+  }
+]

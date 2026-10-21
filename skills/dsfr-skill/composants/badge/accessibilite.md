@@ -1,48 +1,38 @@
-
-# Badge
-
-Le badge est un élément d’indication permettant de valoriser une information liée à un élément précis du site.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Anatomie](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Badge : Accessibilité
 
 Le composant **Badge** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Le composant Badge n’est pas interactif. Il n’y a donc pas d'interaction au clavier associée.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Structuration
+### Structuration
 
 - Par défaut, utiliser un élément `<p>` lorsque le badge est utilisé seul.
-- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `li`…), utiliser un élément `<span>`.
+- Si le badge est utilisé à l’intérieur d’un élément qui possède une sémantique (`<p>`, `<li>`…), utiliser un élément `<span>`.
 - En cas d’utilisation de plusieurs badges à la suite, les structurer dans une liste.
 
-#### Badge système avec icône
+### Badge système avec icône
 
 L’information doit être donnée par le texte du badge. L’icône est purement décorative.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Le composant Badge est suffisamment contrasté en thème clair et en thème sombre dans ses différentes versions.
 
 >[!CAUTION]
 >En cas de personnalisation, la couleur du texte et la couleur du fond doivent être suffisamment contrastées (ratio minimum de 4.5:1).
 
-##### Badge par défaut
+#### Badge par défaut
 
 En thème clair et en thème sombre, le ratio de contraste du composant Badge par défaut est de 9,8:1.
 
-##### Accentuations
+#### Accentuations
 
-:::fr-table[Contrastes des accentuations]{valign=top multiline=true caption=false}
+**Contrastes des accentuations**
+
 | Accentuation |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**green-tilleul-verveine**| 5:1 | 8,91:1|
@@ -63,9 +53,10 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 |**brown-opera** | 5,43:1 |9,01:1|
 |**beige-gris-galet** | 5,22:1 | 9,01:1|
 
-##### Badge système
+#### Badge système
 
-:::fr-table[Contrastes des badges système]{valign=top multiline=true caption=false}
+**Contrastes des badges système**
+
 | Statut |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**Succès**| 4,95:1 | 4,95:1 |
@@ -74,11 +65,23 @@ En thème clair et en thème sombre, le ratio de contraste du composant Badge pa
 |**Information**| 4,93:1| 4,94:1 |
 |**Nouveauté**| 6,25:1| 10,13:1 |
 
+---
 
-### Critères RGAA applicables
+## Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant Badge.
+
+---
+
+## Critères RGAA applicables
 - **Couleurs&nbsp;:** 3.2
 - **Éléments obligatoires&nbsp;** 8.9
 - **Structuration&nbsp;:** 9.3
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.4, 10.5, 10.11, 10.12
 - **Consultation&nbsp;:** 13.9
 
+---
+
+## Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)

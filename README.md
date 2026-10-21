@@ -1,24 +1,8 @@
 # DSFR Skill pour agents IA
 
-Skill DSFR pour agents de développement IA fournissant la documentation complète de 23 composants du Design System Français (DSFR) avec exemples, spécifications d'accessibilité RGAA et scripts de synchronisation automatisés.
+Skill qui donne aux agents de développement (Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot…) la documentation du [Système de design de l'État](https://www.systeme-de-design.gouv.fr/) (DSFR) : tous les composants documentés, les fondamentaux (grille, couleurs, typographie, icônes…), les modèles de pages et de formulaires, les règles d'accessibilité RGAA et le HTML officiel de chaque variante.
 
-Le skill suit le format ouvert `SKILL.md` : il fonctionne avec tout agent compatible (Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot…). Le skill lui-même se trouve dans le dossier `skills/dsfr-skill/` du dépôt.
-
-## Table des matières
-
-- [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Structure du projet](#structure-du-projet)
-- [Composants disponibles](#composants-disponibles)
-- [Composants manquants](#composants-manquants)
-- [Gestion du projet](#gestion-du-projet)
-  - [Synchroniser les composants](#synchroniser-les-composants)
-  - [Ajouter un nouveau composant](#ajouter-un-nouveau-composant)
-  - [Mettre à jour le SKILL.md](#mettre-à-jour-le-skillmd)
-  - [Modifier le contenu du SKILL.md](#modifier-le-contenu-du-skillmd)
-- [Architecture des fichiers](#architecture-des-fichiers)
-- [Scripts disponibles](#scripts-disponibles)
-- [Licence](#licence)
+Le contenu est généré depuis le paquet npm `@gouvfr/dsfr` à une version précise (voir [`VERSION.md`](skills/dsfr-skill/VERSION.md)). Le skill suit le format ouvert `SKILL.md` et se trouve dans [`skills/dsfr-skill/`](skills/dsfr-skill/).
 
 ## Installation
 
@@ -79,466 +63,64 @@ Le skill est actif si votre agent répond avec précision à des questions sur l
 "Donne-moi un exemple de modale accessible"
 ```
 
----
-
-**Note pour les contributeurs** : Si vous souhaitez contribuer au projet ou synchroniser les composants, clonez le dépôt dans un dossier de travail :
-```bash
-git clone https://github.com/numerique-gouv/dsfr-skill.git
-cd dsfr-skill
-```
-Prérequis pour la synchronisation : bash, curl, awk, sed (outils Unix standards)
-
 ## Utilisation
 
-Une fois le skill installé, vous pouvez demander à votre agent :
+Le skill se déclenche dès qu'on parle de DSFR, de RGAA, de site en .gouv.fr ou de classes `fr-*` :
 
 ```
-"Montre-moi comment créer un bouton primaire avec le DSFR"
-"Quelles sont les règles d'accessibilité pour les accordéons ?"
-"Donne-moi un exemple de modal avec le DSFR"
-"Comment implémenter un fil d'Ariane accessible ?"
+"Fais-moi une page de connexion DSFR"
+"Ajoute un formulaire avec gestion des erreurs conforme au DSFR"
+"Audite cette page : respecte-t-elle le DSFR et le RGAA ?"
 ```
 
-L'agent aura accès à :
-- Documentation technique complète (HTML, CSS, JavaScript)
-- Guides d'accessibilité RGAA 4.1
-- Spécifications design (variantes, états, anatomie)
-- Exemples de code HTML complets et fonctionnels
-
-## Structure du projet
-
-```
-dsfr-skill/
-│
-├── README.md                    # Ce fichier - guide du projet
-├── LICENSE.md                   # Licence Ouverte 2.0 (Etalab)
-├── TODO.md                      # Liste des composants manquants (35 composants)
-│
-├── .claude-plugin/
-│   ├── plugin.json              # Métadonnées du plugin Claude Code
-│   └── marketplace.json         # Configuration pour le marketplace de plugins
-│
-├── ressources/                  # Templates pour génération automatique
-│   ├── README.md                # Documentation du dossier ressources
-│   ├── SKILL_HEADER.md          # En-tête du SKILL.md (frontmatter, guide)
-│   └── SKILL_FOOTER.md          # Pied de page (ressources, support)
-│
-├── scripts de synchronisation
-│   ├── sync-component.sh        # Synchroniser un composant individuel
-│   ├── sync-all.sh              # Synchroniser tous les composants
-│   └── generate-skill-md.sh     # Générer SKILL.md depuis templates
-│
-└── skills/dsfr-skill/           # Contenu du skill (lu par l'agent)
-    │
-    ├── SKILL.md                 # Point d'entrée - documentation complète
-    ├── VERSION.md               # Informations de version et historique
-    │
-    └── composants/              # 15 composants documentés
-        │
-        ├── accordion/
-        │   ├── index.md         # Présentation, cas d'usage, règles éditoriales
-        │   ├── accessibilite.md # RGAA, ARIA, interactions clavier
-        │   ├── code.md          # HTML, CSS, JavaScript, API
-        │   ├── design.md        # Variantes, états, anatomie, personnalisation
-        │   ├── examples/        # Fichiers HTML complets et fonctionnels
-        │   │   ├── example-1.html
-        │   │   ├── example-2.html
-        │   │   └── ...
-        │   └── assets/          # Images (do/dont, anatomie, etc.)
-        │       ├── use/
-        │       ├── edit/
-        │       └── ...
-        │
-        ├── alert/
-        ├── badge/
-        ├── breadcrumb/
-        ├── button/
-        ├── card/
-        ├── checkbox/
-        ├── footer/
-        ├── header/
-        ├── input/
-        ├── link/
-        ├── modal/
-        ├── navigation/
-        ├── radio/
-        └── select/
-```
-
-## Composants disponibles
-
-**15 composants** actuellement documentés :
-
-| Composant | Description | Fichiers |
-|-----------|-------------|----------|
-| **accordion** | Masquer ou révéler du contenu textuel | 4 docs + 4 exemples + 9 images |
-| **alert** | Relayer une information importante | 4 docs + 3 exemples + 13 images |
-| **badge** | Affichage d'un statut informatif | 4 docs + 2 exemples + 13 images |
-| **breadcrumb** | Se repérer dans l'arborescence | 4 docs + 3 exemples + 10 images |
-| **button** | Déclenchement d'une action | 4 docs + 4 exemples + 27 images |
-| **card** | Carte cliquable avec aperçu | 4 docs + 5 exemples + 9 images |
-| **checkbox** | Sélection multiple | 4 docs + 2 exemples + 7 images |
-| **footer** | Informations en bas de page | 4 docs + 2 exemples + 3 images |
-| **header** | Identification et navigation | 4 docs + 3 exemples + 5 images |
-| **input** | Saisie de données | 4 docs + 3 exemples + 0 images |
-| **link** | Navigation entre pages | 4 docs + 9 exemples + 9 images |
-| **modal** | Contenu en fenêtre superposée | 4 docs + 3 exemples + 2 images |
-| **navigation** | Menu de navigation principal | 4 docs + 7 exemples + 10 images |
-| **radio** | Sélection unique | 4 docs + 7 exemples + 10 images |
-| **select** | Liste déroulante | 4 docs + 6 exemples + 3 images |
-
-**Total** : 60 fichiers markdown + 63 exemples HTML + ~130 images
-
-## Composants manquants
-
-Le DSFR contient **plus de 50 composants**. Ce skill en documente actuellement **15** (29%).
-
-📋 **Consultez [TODO.md](TODO.md)** pour la liste complète des composants à implémenter, organisée par priorité :
-
-## Gestion du projet
-
-### Synchroniser les composants
-
-#### Synchroniser un seul composant
+Pour auditer une page, l'agent s'appuie sur [`audit.md`](skills/dsfr-skill/audit.md) et sur un vérificateur sans dépendance, utilisable aussi à la main :
 
 ```bash
-./sync-component.sh <nom-du-composant>
-
-# Exemples
-./sync-component.sh button
-./sync-component.sh modal
+node skills/dsfr-skill/scripts/verifier.mjs page.html
 ```
 
-**Ce que fait le script :**
-1. Télécharge les 4 fichiers markdown depuis le dépôt DSFR officiel
-   - `doc/index.md` → `index.md`
-   - `doc/accessibility/index.md` → `accessibilite.md`
-   - `doc/code/index.md` → `code.md`
-   - `doc/design/index.md` → `design.md`
-2. Nettoie le frontmatter YAML
-3. Supprime les directives DSFR spécifiques (`:::dsfr-doc-*`)
-4. Extrait les métadonnées (titre, description)
-5. Crée une navigation vers les autres fichiers dans `index.md`
-6. Extrait les blocs HTML depuis `code.md`
-7. Crée des exemples HTML complets (avec `<!DOCTYPE>`, imports DSFR)
-8. Télécharge toutes les images référencées
-9. Met à jour les chemins d'images (`./assets/`)
+## Contenu du skill
 
-#### Synchroniser tous les composants
+```
+skills/dsfr-skill/
+├── SKILL.md            # Règles, aiguillage et index (généré)
+├── demarrage.md        # Imports, squelette de page, thème, JS, frameworks
+├── audit.md            # Démarche d'audit
+├── composants/<nom>/   # index, design, code, accessibilite, exemples (+ exemples/*.html)
+├── fondamentaux/<nom>/ # grille, couleurs, typographie, espacements, icônes…
+├── modeles/pages/      # connexion, création de compte, erreurs
+├── modeles/blocs/      # blocs de formulaire : nom, adresse, date, email…
+├── reference/          # classes CSS, icônes et pictogrammes existants
+└── scripts/verifier.mjs
+```
+
+Tout le contenu sauf `scripts/` est généré : ne pas le modifier à la main, il serait écrasé à la synchronisation suivante.
+
+## Synchroniser avec une nouvelle version du DSFR
+
+Prérequis : Node 20 ou plus récent et npm.
 
 ```bash
-./sync-all.sh
+node scripts/sync.mjs          # dernière version publiée sur npm
+node scripts/sync.mjs 1.15.4   # version précise
 ```
 
-Synchronise les 15 composants définis dans `PRIORITY_COMPONENTS` du script.
+Le script télécharge le paquet `@gouvfr/dsfr`, qui contient à la fois la documentation markdown (`src/**/_part/doc`) et les pages d'exemple (`example/`), puis :
 
-**Quand synchroniser :**
-- Après une mise à jour du DSFR officiel
-- Pour corriger des problèmes dans la documentation
-- Lors de l'ajout de nouveaux composants
+- convertit les directives propres au site du DSFR (`:::dsfr-doc-*`, `:::fr-table`…) en markdown simple et retire les images ;
+- réécrit les liens internes vers les fichiers générés ;
+- extrait les extraits de code des pages d'exemple avec leur titre dans `exemples.md` ;
+- liste les classes, icônes et pictogrammes de la version dans `reference/` ;
+- génère `SKILL.md`, `demarrage.md` et `audit.md` depuis `ressources/*.template.md` (`{{VERSION}}` et les index y sont remplacés).
 
-### Ajouter un nouveau composant
+Pour modifier les consignes du skill, éditer les templates de `ressources/` puis relancer la synchronisation.
 
-**Étapes complètes :**
+Le workflow `Sync DSFR` fait la même chose chaque lundi (ou à la demande, avec une version au choix) et ouvre une pull request quand le résultat change. Il demande d'autoriser GitHub Actions à créer des pull requests (Settings > Actions > General). Sur les pull requests créées avec le jeton du workflow, le workflow `Check` attend une approbation : cliquer sur « Approve workflows to run » dans la pull request.
 
-1. **Identifier le composant dans le DSFR**
-   - Vérifier qu'il existe dans https://github.com/GouvernementFR/dsfr
-   - Trouver son nom technique (ex: `toggle`, `tag`, `table`)
+## Évals
 
-2. **Synchroniser le composant**
-   ```bash
-   ./sync-component.sh <nom-du-composant>
-   ```
-
-3. **Vérifier la synchronisation**
-   ```bash
-   ls -la skills/dsfr/composants/<nom-du-composant>/
-   # Doit contenir : index.md, accessibilite.md, code.md, design.md, examples/, assets/
-
-   # Vérifier que index.md a la bonne structure
-   head -10 skills/dsfr/composants/<nom-du-composant>/index.md
-   # Doit afficher : titre (H1), description (blockquote), navigation
-   ```
-
-4. **Ajouter aux composants prioritaires**
-
-   Éditer `sync-all.sh` :
-   ```bash
-   PRIORITY_COMPONENTS=(
-       "alert"
-       "badge"
-       # ... autres composants existants
-       "<nom-du-composant>"  # Ajouter ici
-   )
-   ```
-
-5. **Régénérer SKILL.md**
-   ```bash
-   ./generate-skill-md.sh
-   ```
-
-6. **Vérifier que le composant apparaît dans SKILL.md**
-   ```bash
-   grep -A 6 "### <nom-du-composant>" skills/dsfr/SKILL.md
-   ```
-
-7. **Mettre à jour VERSION.md**
-
-   Ajouter une entrée dans l'historique :
-   ```markdown
-   ## 2025-XX-XX - Version X.X.X
-   - Ajout du composant <nom-du-composant>
-   ```
-
-8. **Commit et push**
-   ```bash
-   git add .
-   git commit -m "feat: ajout du composant <nom-du-composant>"
-   git push
-   ```
-
-### Mettre à jour le SKILL.md
-
-Le fichier `SKILL.md` est **généré automatiquement** depuis les templates.
-
-#### Générer/régénérer SKILL.md
-
-```bash
-./generate-skill-md.sh
-```
-
-**Ce que fait le script :**
-1. Charge `ressources/SKILL_HEADER.md` (en-tête, guide d'utilisation)
-2. Compte les composants dans `skills/dsfr/composants/`
-3. Pour chaque composant :
-   - Extrait la description depuis `index.md` (ligne `> **...**`)
-   - Génère la section avec liens vers les fichiers
-4. Ajoute `ressources/SKILL_FOOTER.md` (ressources, support)
-5. Écrit le résultat dans `skills/dsfr/SKILL.md`
-
-**Quand régénérer :**
-- Après ajout d'un nouveau composant
-- Après modification des templates dans `ressources/`
-- Après resynchronisation des composants
-
-### Modifier le contenu du SKILL.md
-
-Le SKILL.md est composé de 3 parties :
-
-#### 1. Header (intro, guide, standards)
-
-**Fichier** : `ressources/SKILL_HEADER.md`
-
-**Contenu** :
-- Frontmatter YAML (name, description, version, tags)
-- Introduction au DSFR
-- Guide d'utilisation de la documentation
-- Structure des fichiers (index, accessibilite, code, design, examples)
-- Standards et conformité (RGAA, ARIA, compatibilité)
-- Architecture technique (imports, classes CSS, JavaScript)
-
-**Pour modifier** :
-```bash
-# Éditer le fichier
-nano ressources/SKILL_HEADER.md  # ou vim, code, etc.
-
-# Régénérer SKILL.md
-./generate-skill-md.sh
-
-# Vérifier le résultat
-head -100 skills/dsfr/SKILL.md
-```
-
-#### 2. Liste des composants (générée automatiquement)
-
-**Générée par** : `generate-skill-md.sh`
-
-**Source des descriptions** : première ligne `> **...**` dans chaque `composants/*/index.md`
-
-**Ne PAS éditer manuellement** - modifier plutôt les `index.md` et resynchroniser :
-```bash
-./sync-component.sh <composant>
-./generate-skill-md.sh
-```
-
-#### 3. Footer (exemples, ressources, notes)
-
-**Fichier** : `ressources/SKILL_FOOTER.md`
-
-**Contenu** :
-- Guide de réponse aux questions utilisateur
-- Exemples de questions et approches
-- Principes à respecter
-- Ressources externes (DSFR, RGAA, outils)
-- Notes importantes (composants non inclus, limites)
-- Support et contribution
-
-**Pour modifier** :
-```bash
-# Éditer le fichier
-nano ressources/SKILL_FOOTER.md  # ou vim, code, etc.
-
-# Régénérer SKILL.md
-./generate-skill-md.sh
-
-# Vérifier le résultat
-tail -100 skills/dsfr/SKILL.md
-```
-
-#### Workflow complet de modification du SKILL.md
-
-```bash
-# 1. Modifier le header si nécessaire
-nano ressources/SKILL_HEADER.md
-
-# 2. Modifier le footer si nécessaire
-nano ressources/SKILL_FOOTER.md
-
-# 3. Régénérer
-./generate-skill-md.sh
-
-# 4. Vérifier
-less skills/dsfr/SKILL.md
-
-# 5. Commit
-git add ressources/ skills/dsfr/SKILL.md
-git commit -m "docs: mise à jour du SKILL.md"
-```
-
-## Architecture des fichiers
-
-### Fichiers de chaque composant
-
-Chaque composant suit la même structure :
-
-#### `index.md` - Présentation générale
-- Titre et description courte
-- Navigation vers autres fichiers
-- Présentation du composant
-- Quand l'utiliser / ne pas l'utiliser
-- Règles éditoriales
-- Exemples visuels (do/don't avec images)
-
-#### `accessibilite.md` - Conformité RGAA
-- Interactions clavier obligatoires
-- Attributs ARIA requis
-- Critères RGAA applicables
-- Tests avec lecteurs d'écran
-- Versions testées (navigateurs, lecteurs)
-
-#### `code.md` - Documentation technique
-- Structure HTML complète
-- Classes CSS (obligatoires et optionnelles)
-- Dépendances JavaScript
-- API JavaScript (`window.dsfr`)
-- Événements personnalisés
-- Exemples de code
-
-#### `design.md` - Spécifications design
-- Anatomie du composant (éléments constitutifs)
-- Variantes disponibles (tailles, couleurs, styles)
-- États visuels (défaut, hover, focus, disabled, error, success)
-- Personnalisation autorisée
-- Guidelines design (espacement, alignement)
-
-#### `examples/` - Exemples HTML
-- Fichiers HTML autonomes (`example-1.html`, `example-2.html`, ...)
-- Structure HTML5 complète avec `<!DOCTYPE>`
-- Imports DSFR CSS et JS depuis CDN
-- Code prêt à copier-coller et tester
-- Un fichier par variante ou cas d'usage
-
-#### `assets/` - Images et ressources
-- Sous-dossiers par catégorie :
-  - `use/` : exemples d'usage
-  - `edit/` : règles éditoriales
-  - `custom/` : personnalisation
-  - `anatomy/` : anatomie du composant
-  - etc.
-- Formats : PNG, SVG, JPG
-
-## Scripts disponibles
-
-### `sync-component.sh`
-
-**Usage** : `./sync-component.sh <nom-du-composant>`
-
-**Description** : Synchronise un composant depuis le dépôt DSFR officiel
-
-**Paramètres** :
-- `<nom-du-composant>` : nom technique du composant (ex: `button`, `modal`)
-
-**Variables d'environnement** :
-- `DSFR_REPO` : URL du dépôt DSFR (par défaut : GitHub raw)
-- `BASE_PATH` : chemin dans le dépôt DSFR
-- `LOCAL_PATH` : destination locale
-
-**Fonctions principales** :
-- `download_file()` : télécharge un fichier
-- `extract_title()` : extrait le titre du frontmatter
-- `extract_short_description()` : extrait la description courte
-- `clean_frontmatter()` : supprime le frontmatter YAML
-- `clean_dsfr_directives()` : supprime les directives `:::dsfr-doc-*`
-- `extract_html_blocks()` : extrait les blocs HTML
-- `create_complete_html()` : crée des fichiers HTML complets
-- `download_images()` : télécharge les images référencées
-
-### `sync-all.sh`
-
-**Usage** : `./sync-all.sh`
-
-**Description** : Synchronise tous les composants définis dans `PRIORITY_COMPONENTS`
-
-**Configuration** :
-```bash
-PRIORITY_COMPONENTS=(
-    "alert"
-    "badge"
-    # ... liste des composants
-)
-```
-
-### `generate-skill-md.sh`
-
-**Usage** : `./generate-skill-md.sh`
-
-**Description** : Génère `skills/dsfr/SKILL.md` depuis les templates
-
-**Sources** :
-- `ressources/SKILL_HEADER.md` : en-tête
-- `skills/dsfr/composants/*/index.md` : descriptions
-- `ressources/SKILL_FOOTER.md` : pied de page
-
-**Fonction principale** :
-- `get_description()` : extrait la description depuis `index.md`
+[`evals/`](evals/) contient 11 prompts types (page de connexion, formulaire en erreur, modale, en-tête avec navigation, composant inexistant…) et un runner qui fait générer le HTML par un agent puis le vérifie. Voir [`evals/README.md`](evals/README.md).
 
 ## Licence
 
-Ce projet est publié sous [Licence Ouverte 2.0 (Etalab-2.0)](LICENSE.md).
-
-**Droits** : réutilisation libre et gratuite, y compris à des fins commerciales.
-
-**Obligation** : mentionner la paternité (source + date de mise à jour).
-
-**Compatibilité** : CC-BY, OGL (UK), ODC-BY.
-
----
-
-## Références
-
-- [Design System Français](https://www.systeme-de-design.gouv.fr/)
-- [DSFR sur GitHub](https://github.com/GouvernementFR/dsfr)
-- [RGAA 4.1.2](https://accessibilite.numerique.gouv.fr/)
-- [Licence Ouverte 2.0](https://github.com/etalab/licence-ouverte/)
-
-## Support
-
-**Questions sur le skill** : ouvrir une issue sur ce dépôt
-
-**Questions sur le DSFR** :
-- [Forum DSFR](https://github.com/GouvernementFR/dsfr/discussions)
-- [Issues DSFR](https://github.com/GouvernementFR/dsfr/issues)
-
----
-
-**Version** : 1.0.0 | **Dernière mise à jour** : 2025-10-22
+[Licence Ouverte 2.0 (Etalab)](LICENSE.md). La documentation et les exemples proviennent du [DSFR](https://github.com/GouvernementFR/dsfr), lui aussi sous Licence Ouverte 2.0 mais dont l'usage est réservé aux sites de l'administration (voir ses [modalités d'utilisation](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md)).

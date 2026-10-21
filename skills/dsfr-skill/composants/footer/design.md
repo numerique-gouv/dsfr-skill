@@ -1,75 +1,55 @@
+# Pied de page : Design
 
-## Pied de page
+- Une bordure supérieure (obligatoire, marquant la séparation entre le corps de la page et le pied de page)
 
-Le pied de page est un élément de navigation secondaire mis à disposition de l’usager pour qu’il poursuive son parcours. Il propose également des éléments d’information complémentaires.
+- Un titre de catégorie
 
+- Un fond gris (obligatoire, dédié au bloc de liens de navigation)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Un logo opérateur (au format vertical ou horizontal)
 
+- Le bloc marque (obligatoire)
 
+- Un libellé “Nos partenaires”
 
-![Anatomie du pied de page](../_asset/anatomy/anatomy-1.png)
+- Un séparateur entre les blocs (obligatoire)
 
+- Une liste de liens liés aux obligations légales (obligatoire, à définir en fonction du site mais incluant a minima “Accessibilité : non/partiellement/totalement conforme”, “Mentions légales” et “Données personnelles et gestions des cookies”)
 
+- Une mention de la licence (obligatoire, “Sauf mention contraire, tous les contenus de ce site sont sous licence etalab-2.0”)
 
+- Un texte de présentation
 
+- Les quatre liens de références de l'écosystème institutionnel (obligatoire)
 
+- Les logos des partenaires additionnels (ferrés à droite)
 
+- Des séparateurs verticaux (obligatoire, entre les liens d’obligations légales)
 
+- Un bouton d’accès aux paramètres d’affichage
 
-
-
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Pied de page en berne**
 
-
 Lors des périodes de deuil national, il est possible d’utiliser la version en berne du footer. La Marianne s’affichera alors dans sa version en berne.
 
-### Tailles
+## Tailles
 
 La largeur du pied de page est de taille fixe et prend les 12 colonnes disponibles de la grille.
 
-### États
+## États
 
 Le pied de page n’est sujet à aucun changement d’état.
 
-### Personnalisation
+## Personnalisation
 
 Le pied de page n’est pas personnalisable.
 
-Toutefois, certains éléments sont optionnels - voir [la structure du composant](#pied-de-page).
+Toutefois, certains éléments sont optionnels - voir la structure du composant.
 
+**✅ À faire** : Considérer que chaque élément du pied de page a une place définie.
 
+**❌ À ne pas faire** : Ne pas modifier le positionnement des éléments du pied de page.
 
-![](./assets/_asset/custom/do-1.png)
-
-Considérer que chaque élément du pied de page a une place définie.
-
-
-
-
-
-![](./assets/_asset/custom/dont-1.png)
-
-Ne pas modifier le positionnement des éléments du pied de page.
-
-
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas modifier les liens obligatoires de l’écosystème de l’Etat.
-
-
+**❌ À ne pas faire** : Ne pas modifier les liens obligatoires de l’écosystème de l’Etat.

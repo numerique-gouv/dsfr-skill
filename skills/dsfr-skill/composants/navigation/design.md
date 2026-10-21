@@ -1,45 +1,37 @@
+# Navigation principale : Design
 
-## Navigation principale
+- Un libellé (obligatoire, de lien direct, de menu déroulant ou d’un méga-menu)
 
-La navigation principale est le système central de navigation au sein d’un site. Elle permet d’orienter l’usager à travers les rubriques principales et secondaires du site.
+- Un chevron (obligatoire, dans le cas du menu déroulant et du mega menu)
 
+- Un fond blanc (obligatoire)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Un bouton “Fermer” (obligatoire, dans le cas du mega menu uniquement)
 
+- Un titre de rubrique du méga menu
 
+- Un texte de description du méga menu
 
-![Anatomie de la navigation principale](../_asset/anatomy/anatomy-1.png)
+- Un lien vers la rubrique du méga menu
 
+- Un titre de catégorie dans le méga menu (pouvant être cliquable)
 
+- Des liens direct vers les pages du site (obligatoire)
 
+- Un séparateur en-dessous du titre de la catégorie (obligatoire)
 
-
-
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Liens directs**
 
-
-- Utiliser les liens directs vers des pages destination pour les sites ou les rubriques qui n’ont pas ou peu de second niveau d’arborescence, en les combinant par exemple avec un [menu latéral](../../../../sidemenu/_part/doc/index.md).
+- Utiliser les liens directs vers des pages destination pour les sites ou les rubriques qui n’ont pas ou peu de second niveau d’arborescence, en les combinant par exemple avec un [menu latéral](../sidemenu/index.md).
 
 **Menu déroulant**
-
 
 - Utiliser les menus déroulant dans le cadre d’une architecture de l’information peu profonde, pour afficher les niveaux secondaires d’une rubrique.
 - Proposer un maximum de 8 liens au sein d’un menu déroulant.
 
 **Mega menu**
-
 
 - Utiliser le mega menu lorsqu’une arborescence est profonde. Il s’agit d’un menu de navigation plus complexe qui donne accès à plusieurs niveaux de profondeur.
 - Proposer un maximum de 8 liens au sein de chaque sous catégorie.
@@ -50,11 +42,11 @@ En version mobile, la navigation principale est accessible depuis le pictogramme
 
 Le système d’overlay permet l’affichage du contenu des différentes variations de menu, précédemment décrites.
 
-### Tailles
+## Tailles
 
 La largeur de la navigation principale est de taille fixe et prend les 12 colonnes disponibles de la grille.
 
-### États
+## États
 
 **État au survol**
 
@@ -68,58 +60,24 @@ L’état au clic correspond au comportement constaté par l’usager après avo
 
 - Menu déroulant ou mega menu
 
-### Personnalisation
+## Personnalisation
 
 La navigation principale n’est pas personnalisable.
 
-Toutefois, certains éléments sont optionnels - voir [la structure du composant](#navigation-principale).
+Toutefois, certains éléments sont optionnels - voir la structure du composant.
 
+**✅ À faire** : Conserver un fond de couleur blanc derrière les entrées de la navigation principale.
 
+**❌ À ne pas faire** : Ne pas personnaliser la couleur des entrées de la navigation principale
 
-![](./assets/_asset/custom/do-1.png)
+**✅ À faire** : Utiliser uniquement la couleur bleu pour les entrées de menu déroulant ou mega menu dans leur état cliqué.
 
-Conserver un fond de couleur blanc derrière les entrées de la navigation principale.
+**❌ À ne pas faire** : Ne pas personnaliser la couleur des entrées menu déroulant ou mega menu lorsqu’elles sont cliquées.
 
+**✅ À faire** : Conserver le fond de couleur blanc du mega menu.
 
+**❌ À ne pas faire** : Ne pas personnaliser ou retirer la couleur de fond du mega menu.
 
-![](./assets/_asset/custom/dont-1.png)
+**✅ À faire** : Conserver les tailles, types et couleurs de typographie des différents libellés en l’état.
 
-Ne pas personnaliser la couleur des entrées de la navigation principale
-
-
-
-![](./assets/_asset/custom/do-2.png)
-
-Utiliser uniquement la couleur bleu pour les entrées de menu déroulant ou mega menu dans leur état cliqué.
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas personnaliser la couleur des entrées menu déroulant ou mega menu lorsqu’elles sont cliquées.
-
-
-
-![](./assets/_asset/custom/do-3.png)
-
-Conserver le fond de couleur blanc du mega menu.
-
-
-
-![](./assets/_asset/custom/dont-3.png)
-
-Ne pas personnaliser ou retirer la couleur de fond du mega menu.
-
-
-
-![](./assets/_asset/custom/do-4.png)
-
-Conserver les tailles, types et couleurs de typographie des différents libellés en l’état.
-
-
-
-![](./assets/_asset/custom/dont-4.png)
-
-Ne pas modifier les tailles, types et couleurs de typographie des différents libellés.
-
-
+**❌ À ne pas faire** : Ne pas modifier les tailles, types et couleurs de typographie des différents libellés.

@@ -1,25 +1,14 @@
+# Accordéon : Design
 
-## Accordéon
+- Un en-tête (obligatoire, correspondant au titre de la section)
 
-L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
+- Un chevron orienté vers le bas (obligatoire, indiquant que le panneau peut s'ouvrir. Il est orienté vers le haut quand le panneau peut se refermer)
 
+- Une zone de contenu libre (obligatoire, masquée par défaut)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
+- Un séparateur (obligatoire)
 
-
-
-![Anatomie de l'accordéon](../_asset/anatomy/anatomy-1.png)
-
-
-
-
-
-
-### Variations
+## Variations
 
 **Groupe d’accordéons**
 
@@ -30,11 +19,11 @@ L’accordéon est un élément d’interaction avec l’interface permettant à
 > [!NOTE]
 > L'utilisation d'accordéons non liés entre eux (seuls et non au sein d’un groupe) reste toutefois possible, permettant l'ouverture de chaque accordéon indépendamment des autres.
 
-#### Tailles
+### Tailles
 
 La largeur de l’accordéon s’adapte à la taille de son conteneur. Toutefois, il est recommandé de ne pas excéder une largeur de 8 colonnes, s’agissant d’un composant de mise en forme de contenu.
 
-#### États
+### États
 
 **État au clic**
 
@@ -47,34 +36,14 @@ L’état au survol correspond au comportement constaté par l’utilisateur lor
 - Lorsque l’accordéon est non cliqué
 - Lorsque l’accordéon est cliqué
 
-#### Personnalisation
+### Personnalisation
 
 Les accordéons ne sont pas personnalisables.
 
+**✅ À faire** : Utiliser uniquement la couleur bleu pour les accordéons.
 
+**❌ À ne pas faire** : Ne pas personnaliser la couleur des accordéons.
 
-![](./assets/_asset/custom/do-1.png)
+**✅ À faire** : Utiliser uniquement la taille de typographie prévue pour l’en-tête des accordéons.
 
-Utiliser uniquement la couleur bleu pour les accordéons.
-
-
-
-![](./assets/_asset/custom/dont-1.png)
-
-Ne pas personnaliser la couleur des accordéons.
-
-
-
-
-
-![](./assets/_asset/custom/do-2.png)
-
-Utiliser uniquement la taille de typographie prévue pour l’en-tête des accordéons.
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas augmenter la taille de typographie de l’en-tête des accordéons.
-
-
+**❌ À ne pas faire** : Ne pas augmenter la taille de typographie de l’en-tête des accordéons.

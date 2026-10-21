@@ -1,25 +1,14 @@
+# Accordéon : Code
 
-## Accordéon
+## HTML
 
-L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Accordéon** est composé de deux parties : son titre qui contient le bouton d'ouverture, et un bloc de contenu libre refermable, dit "collapse".
 Sa structure est la suivante :
 
 - Le conteneur de l'accordéon est une balise `<section>` avec la classe `fr-accordion`.
-- Son titre est contenu dans un niveau d'entête `<hx>`, variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
+- Son titre est contenu dans un niveau d'entête `<hx>` (ou éventuellement `<p>`), variable en fonction de sa hiérarchie dans la page (par défaut h3), et possède la classe `fr-accordion__title`.
 - Un `<button>` est placé dans cette balise `<hx>`, et son libellé constitue le titre.
   - Le bouton doit être de type "button".
   - Le bouton dispose d'un attribut `aria-expanded`, sa valeur [true|false] défini si le collapse est ouvert ou fermé
@@ -30,7 +19,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <section class="fr-accordion">
     <h3 class="fr-accordion__title">
         <button type="button" class="fr-accordion__btn" aria-expanded="false" aria-controls="accordion-1">Libellé accordéon</button>
@@ -41,7 +30,7 @@ Sa structure est la suivante :
 </section>
 ```
 
-#### Groupe d'accordéons
+### Groupe d'accordéons
 
 L'accordéon peut être utilisé en groupe de plusieurs éléments, liés ou non entre eux.
 Les accordéons sont disposés à la suite dans un conteneur.
@@ -51,7 +40,7 @@ Les accordéons sont disposés à la suite dans un conteneur.
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <div class="fr-accordions-group" data-fr-group="true">
   <section class="fr-accordion">
     ...
@@ -62,18 +51,49 @@ Les accordéons sont disposés à la suite dans un conteneur.
 </div>
 ```
 
+---
 
-### JavaScript
+## CSS
+
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire |
+|------|-----|
+| Core | Oui |
+| Accordéon | Oui |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/accordion/accordion.min.css" rel="stylesheet">
+```
+
+### Variante de style
+
+Sur l'accordéon, aucune variation ni accentuation n'est possible.
+
+Quand le JavaScript est activé, le bloc refermable (collapse) reçoit la classe `fr-collapse--expanded` lorsque le bouton lié possède l'attribut `aria-expanded="true"`. C'est cette classe qui ouvre le collapse.
+
+---
+
+## JavaScript
 
 Pour fonctionner le composant accordéon nécessite l'utilisation de JavaScript.
 
-#### Installation du JavaScript
+### Installation du JavaScript
 
 Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/accordion/accordion.module.min.js"></script>
 ```
@@ -82,7 +102,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/accordion/accordion.nomodule.min.js"></script>
@@ -90,7 +110,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-#### Instances
+### Instances
 
 Sur l'accordéon, les éléments suivants sont instanciés :
 
@@ -101,7 +121,7 @@ Sur l'accordéon, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-#### API
+### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -116,9 +136,9 @@ dsfr(elem).collapse.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-##### accordion
+#### accordion
 
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -127,8 +147,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).accordion.node` |
 
-
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
 
 | | |
 |------|-----|
@@ -137,10 +156,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
 
+#### accordionGroup
 
-##### accordionGroup
-
-:::fr-table[current]{valign=top multiline=true}
+**current**
 
 | | |
 |------|-----|
@@ -149,8 +167,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).accordionsGroup.current` |
 
-
-:::fr-table[hasFocus]{valign=top multiline=true}
+**hasFocus**
 
 | | |
 |------|-----|
@@ -159,8 +176,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.hasFocus` |
 
-
-:::fr-table[index]{valign=top multiline=true}
+**index**
 
 | | |
 |------|-----|
@@ -169,8 +185,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.index` <br> `dsfr(elem).accordionsGroup.index = 2` |
 
-
-:::fr-table[isGrouped]{valign=top multiline=true}
+**isGrouped**
 
 | | |
 |------|-----|
@@ -179,8 +194,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).accordionsGroup.isGrouped` <br> `dsfr(elem).accordionsGroup.isGrouped = true` |
 
-
-:::fr-table[length]{valign=top multiline=true}
+**length**
 
 | | |
 |------|-----|
@@ -189,8 +203,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Number |
 | **Exemple** | `dsfr(elem).accordionsGroup.length` |
 
-
-:::fr-table[members]{valign=top multiline=true}
+**members**
 
 | | |
 |------|-----|
@@ -199,8 +212,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).accordionsGroup.members` |
 
-
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -209,10 +221,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).accordionsGroup.node` |
 
+#### accordion
 
-##### accordion
-
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
 
 | | |
 |------|-----|
@@ -221,10 +232,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | true \| false |
 | **Exemple** | `dsfr(elem).accordion.isEnabled = false` |
 
+#### collapseButton
 
-##### collapseButton
-
-:::fr-table[focus]{valign=top multiline=true}
+**focus**
 
 | | |
 |:------|:-----|
@@ -234,8 +244,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapseButton.focus()` |
 
-
-:::fr-table[parent]{valign=top multiline=true}
+**parent**
 
 | | |
 |:-----|:-----|
@@ -244,8 +253,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
 
-
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -254,10 +262,9 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapseButton.node` |
 
+#### collapse
 
-##### collapse
-
-:::fr-table[concea]{valign=top multiline=true}
+**concea**
 
 | | |
 |:-----|:-----|
@@ -267,8 +274,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.conceal()` |
 
-
-:::fr-table[disclose]{valign=top multiline=true}
+**disclose**
 
 | | |
 |:-----|:-----|
@@ -278,8 +284,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).collapse.disclose()` |
 
-
-:::fr-table[isDisclosed]{valign=top multiline=true}
+**isDisclosed**
 
 | | |
 |:-----|:-----|
@@ -288,8 +293,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isDisclosed` |
 
-
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
 
 | | |
 |------|-----|
@@ -298,8 +302,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.isEnabled = false` |
 
-
-:::fr-table[group]{valign=top multiline=true}
+**group**
 
 | | |
 |:-----|:-----|
@@ -308,8 +311,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).collapse.group` |
 
-
-:::fr-table[buttons]{valign=top multiline=true}
+**buttons**
 
 | | |
 |:-----|:-----|
@@ -318,8 +320,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).collapse.buttons` |
 
-
-:::fr-table[focus]{valign=top multiline=true}
+**focus**
 
 | | |
 |:------|:-----|
@@ -329,8 +330,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).collapse.focus()` |
 
-
-:::fr-table[parent]{valign=top multiline=true}
+**parent**
 
 | | |
 |:-----|:-----|
@@ -339,8 +339,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
 
-
-:::fr-table[children]{valign=top multiline=true}
+**children**
 
 | | |
 |:-----|:-----|
@@ -349,8 +348,7 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Array |
 | **Exemple** | `dsfr(elem).children` |
 
-
-:::fr-table[node]{valign=top multiline=true}
+**node**
 
 | | |
 |------|-----|
@@ -359,14 +357,13 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).collapse.node` |
 
+### Événements
 
-#### Événements
-
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](../../demarrage.md).
 
 Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top multiline=true caption=false}
+**événements**
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
@@ -374,4 +371,8 @@ Sur l'accordéon et le groupe d'accordéons, les événements suivants sont disp
 | `dsfr.disclose` | Ouverture de l'élément | Collapse | `data-fr-js-collapse` |
 | `dsfr.click` | Click sur le bouton d'ouverture | CollapseButton | `data-fr-js-collapse-button` |
 
+---
 
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+accordion+)

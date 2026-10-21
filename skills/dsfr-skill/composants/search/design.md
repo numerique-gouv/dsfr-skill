@@ -1,36 +1,22 @@
+# Barre de recherche : Design
 
-## Barre de recherche
+- Un champ (obligatoire)
 
-La barre de recherche est un système de navigation permettant à l'usager d’accéder rapidement à un contenu en lançant une recherche sur un mot clé ou une phrase.
+- Un bouton (obligatoire)
 
+- Un texte d’exemple (obligatoire)
 
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
-
-
-
-![Anatomie de la barre de recherche](../_asset/anatomy/anatomy-1.png)
-
-
-
-
-
-### Variations
+## Variations
 
 La barre de recherche n’a pas de variation.
 
-### Tailles
+## Tailles
 
 La barre de recherche est disponible en 2 tailles :
 
 - MD pour medium
 
-
 - LG pour large
-
 
 La largeur de la barre de recherche s’adapte à la taille de son conteneur.
 
@@ -45,32 +31,16 @@ La largeur de la barre de recherche s’adapte à la taille de son conteneur.
 
 Si vous utilisez le format LG en desktop, le composant sera donc automatiquement redimensionné au format MD.
 
-### États
+## États
 
 La barre de recherche n’est sujette à aucun changement d’état.
 
-### Personnalisation
+## Personnalisation
 
 La barre de recherche n’est pas personnalisable.
 
+**❌ À ne pas faire** : Ne pas personnaliser la couleur du bouton de recherche
 
+**❌ À ne pas faire** : Ne pas personnaliser la couleur du liseré de la barre de recherche.
 
-![](./assets/_asset/custom/dont-1.png)
-
-Ne pas personnaliser la couleur du bouton de recherche
-
-
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas personnaliser la couleur du liseré de la barre de recherche.
-
-
-
-![](./assets/_asset/custom/dont-3.png)
-
-Ne pas personnaliser l’icône du bouton de recherche.
-
-
+**❌ À ne pas faire** : Ne pas personnaliser l’icône du bouton de recherche.

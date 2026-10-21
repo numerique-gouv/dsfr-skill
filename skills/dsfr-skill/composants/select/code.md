@@ -1,19 +1,8 @@
+# Liste déroulante : Code
 
-## Liste déroulante
+## HTML
 
-La liste déroulante est un élément d’interaction avec l’interface permettant à l’usager de choisir un élément dans une liste donnée.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Liste déroulante** permet à l'utilisateur de choisir une option parmi une liste déroulante.
 Sa structure est la suivante :
@@ -29,14 +18,14 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```HTML
+```html
 <div class="fr-select-group">
     <label class="fr-label" for="select-hint">
         Libellé pour liste déroulante
         <span class="fr-hint-text">Texte de description additionnel</span>
     </label>
     <select class="fr-select" aria-describedby="select-hint-messages" id="select-hint" name="select-hint">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -46,15 +35,15 @@ Sa structure est la suivante :
 </div>
 ```
 
-### CSS
+## CSS
 
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top scroll=false}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire |
 |------------|-------------|
@@ -62,16 +51,15 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Form       | Oui         |
 | Select     | Oui         |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/form/form.min.css" rel="stylesheet">
 <link href="dist/component/select/select.min.css" rel="stylesheet">
 ```
 
-#### Variantes d'états
+### Variantes d'états
 
 Les états d'erreur/succès/désactivé sont gérés au niveau du groupe.
 Pour ajouter un état à une liste déroulante, ajoutez une des classes suivantes :
@@ -84,15 +72,15 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 **Exemple de liste déroulante avec erreur**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-select-erreur}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <div class="fr-select-group fr-select-group--error">
     <label class="fr-label" for="select-error">
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-error-messages" id="select-error" name="select-error">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -103,18 +91,17 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </div>
 ```
 
-
 **Exemple de liste déroulante avec succès**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-select-succes}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <div class="fr-select-group fr-select-group--valid">
     <label class="fr-label" for="select-valid">
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-valid-messages" id="select-valid" name="select-valid">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -125,18 +112,17 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </div>
 ```
 
-
 **Exemple de liste déroulante désactivée**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-select-disabled}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <div class="fr-select-group fr-select-group--disabled">
     <label class="fr-label" for="select-disabled">
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-disabled-messages" disabled id="select-disabled" name="select-disabled">
-        <option value="" selected disabled hidden>Sélectionner une option</option>
+        <option value="" selected disabled>Sélectionner une option</option>
         <option value="1">Option 1</option>
         <option value="2">Option 2</option>
         <option value="3">Option 3</option>
@@ -146,8 +132,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </div>
 ```
 
-
-#### Variantes de liste déroulante avec groupe d'options
+### Variantes de liste déroulante avec groupe d'options
 
 L'élément HTML `<optgroup>` est utilisé pour regrouper les options associées dans une liste déroulante.
 
@@ -155,15 +140,15 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
 
 **Exemple de liste déroulante avec groupe d'options**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-select-group}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <div class="fr-select-group">
     <label class="fr-label" for="select-group">
         Libellé pour liste déroulante
     </label>
     <select class="fr-select" aria-describedby="select-group-messages" id="select-group" name="select-group">
-        <option value="" selected disabled hidden>Selectionnez une option</option>
+        <option value="" selected disabled>Selectionnez une option</option>
         <optgroup label="Groupe 1">
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
@@ -180,8 +165,14 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
 </div>
 ```
 
+---
 
+## JavaScript
 
-### Note de version
+Le composant Liste déroulante **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+---
+
+## Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+select+)

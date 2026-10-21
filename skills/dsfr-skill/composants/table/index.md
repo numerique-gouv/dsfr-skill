@@ -1,28 +1,12 @@
 # Tableau
 
-> **Présentation du composant Tableau pour organiser et comparer des données.**
+> Présentation du composant Tableau pour organiser et comparer des données.
 
-## Navigation
-
-- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA
-- [Code](./code.md) - Documentation technique et API
-- [Design](./design.md) - Spécifications design
-- [Exemples](./examples/) - Exemples de code HTML
-
-## Tableau
+Voir aussi : [Design](design.md) · [Code](code.md) · [Accessibilité](accessibilite.md) · [Exemples](exemples.md)
 
 Le tableau permet de présenter une liste structurée de données textuelles et/ou numériques dans le but de simplifier l’analyse et la comparaison d’informations pour l’usager.
 
-
-- Présentation
-- [Démo](./demo/index.md)
-- [Design](./design/index.md)
-- [Code](./code/index.md)
-- [Accessibilité](./accessibility/index.md)
-
-
-
-### Quand utiliser ce composant ?
+## Quand utiliser ce composant ?
 
 Utiliser le tableau pour présenter des données. À titre d’exemple, il peut :
 
@@ -37,7 +21,7 @@ Pour consulter des exemples de vues alternatives aux tableaux, se référer à [
 > [!NOTE]
 > Ce composant tableau n’est pas un tableur, il ne permet pas (sauf développement ad hoc) de réaliser d'opérations avec les données.
 
-### Comment utiliser ce composant ?
+## Comment utiliser ce composant ?
 
 - **Adapter l’usage du tableau à la complexité et/ou au volume de données à présenter**. Lorsque les données sont très simples ou si votre tableau possède moins de 4 lignes ou 3 colonnes, envisagez d’autres formats de présentation.
 - **Insérer des composants au sein de vos tableaux**, selon vos besoin, et parmi ceux autorisés : texte, chiffres, icône, pictogramme, tag, badge, bouton, lien, champ de saisie, infobulle, interrupteur et liste déroulante.
@@ -55,7 +39,7 @@ Pour consulter des exemples de vues alternatives aux tableaux, se référer à [
 - **Permettre la fusion de cellules d’en-tête et de contenu**, de façon verticale et/ou horizontale.
 - **Éviter de détourner l’usage des tableaux**. Ils sont destinés à présenter des données et non à faire de la mise en page.
 
-### Règles éditoriales
+## Règles éditoriales
 
 - **Utiliser des titres de colonnes et, le cas échéant, de lignes, clairs et concis.**
 - **Mettre une majuscule au début des titres de colonnes** et ne pas terminer par un élément de ponctuation (virgule, point ou point-virgule).

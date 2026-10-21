@@ -1,45 +1,23 @@
 # Accordéon
 
-> **Masquer ou révéler du contenu textuel**
+> Masquer ou révéler du contenu textuel
 
-## Navigation
-
-- [Accessibilité](./accessibilite.md) - Guide d'accessibilité RGAA
-- [Code](./code.md) - Documentation technique et API
-- [Design](./design.md) - Spécifications design
-- [Exemples](./examples/) - Exemples de code HTML
-
-## Accordéon
+Voir aussi : [Design](design.md) · [Code](code.md) · [Accessibilité](accessibilite.md) · [Exemples](exemples.md)
 
 L’accordéon est un élément d’interaction avec l’interface permettant à l’usager d'afficher ou de masquer une section de contenu présentée dans une page.
 
-
-- Présentation
-- [Démo](./demo/index.md)
-- [Design](./design/index.md)
-- [Code](./code/index.md)
-- [Accessibilité](./accessibility/index.md)
-
-
-
-### Quand utiliser ce composant ?
+## Quand utiliser ce composant ?
 
 L’accordéon est utilisé pour mettre en forme du contenu dans une page.
 
 > [!WARNING]
 > Son objectif principal étant d’économiser de l’espace, il doit principalement être utilisé au sein de longues pages de contenu.
 
-### Comment utiliser ce composant ?
+## Comment utiliser ce composant ?
 
 - **Alléger des pages de contenus denses** en permettant à l’utilisateur de consulter uniquement ce dont il a besoin.
 
-
-
-![](./assets/_asset/use/dont-1.png)
-
-Ne pas utiliser les accordéons au sein d’une modale. Ils servent à mettre en forme du contenu au sein de longues pages.
-
-
+**❌ À ne pas faire** : Ne pas utiliser les accordéons au sein d’une modale. Ils servent à mettre en forme du contenu au sein de longues pages.
 
 - **Simplifier l’expérience de l’usager** en le guidant dans des parcours complexes.
 
@@ -47,36 +25,16 @@ Ne pas utiliser les accordéons au sein d’une modale. Ils servent à mettre en
 
 - **Privilégier des interactions simples** (bouton ou lien par exemple). L’accordéon n’a pas vocation à intégrer des composants complexes.
 
+**✅ À faire** : Privilégier des interactions simples (bouton ou lien, par exemple) au sein des accordéons.
 
+**❌ À ne pas faire** : Ne pas intégrer des composants trop complexes aux accordéons.
 
-![](./assets/_asset/use/do-1.png)
-
-Privilégier des interactions simples (bouton ou lien, par exemple) au sein des accordéons.
-
-
-
-![](./assets/_asset/use/dont-2.png)
-
-Ne pas intégrer des composants trop complexes aux accordéons.
-
-
-
-### Règles éditoriales
+## Règles éditoriales
 
 - **Rédiger un titre d’en-tête clair, explicite et précis**. L’utilisateur doit comprendre facilement le contenu proposé par l’accordéon.
 
 - **Soigner la mise en forme** de l’accordéon en y ajoutant les types de contenu correspondant à vos besoins. Si le contenu de l’accordéon est trop succinct, il est certainement préférable de le remplacer par une liste ou un simple paragraphe.
 
+**✅ À faire** : Privilégier l’usage de texte ou de liste à puces si le contenu de l’accordéon est trop succinct.
 
-
-![](./assets/_asset/edit/do-1.png)
-
-Privilégier l’usage de texte ou de liste à puces si le contenu de l’accordéon est trop succinct.
-
-
-
-![](./assets/_asset/edit/dont-1.png)
-
-Ne pas utiliser les accordéons pour mettre en forme des contenus très courts.
-
-
+**❌ À ne pas faire** : Ne pas utiliser les accordéons pour mettre en forme des contenus très courts.

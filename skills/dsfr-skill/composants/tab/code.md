@@ -1,19 +1,8 @@
+# Onglet : Code
 
-## Onglet
+## HTML
 
-Le système d’onglets permet de structurer et de présenter plusieurs sections de contenu liées, en affichant une seule section à la fois dans un espace limité.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Onglet** est un élément interactif permettant de basculer entre plusieurs sections de contenu.
 
@@ -35,7 +24,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <div class="fr-tabs">
     <ul class="fr-tabs__list" role="tablist" aria-label="[A modifier | nom du système d'onglet]">
         <li role="presentation">
@@ -60,15 +49,15 @@ Sa structure est la suivante :
 </div>
 ```
 
-### CSS
+## CSS
 
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top multiline=true}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire | Remarque |
 |------------|-------------|----------|
@@ -76,23 +65,22 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Tab        | Oui         |          |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tab/tab.min.css" rel="stylesheet">
 ```
 
-#### Variante avec icônes
+### Variante avec icônes
 
-Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../../../../core/_part/doc/icon/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
+Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée via la **classe utilitaire d'icône** `fr-icon--NOM-ICONE` (voir [Icônes](../../fondamentaux/icon/index.md)), associée à une **classe de positionnement** de l'icône `fr-tag--icon-left`.
 
 **Exemple de variante avec icônes**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-tabs-icons}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <div class="fr-tabs">
     <ul class="fr-tabs__list" role="tablist" aria-label="[A modifier | nom du système d'onglet]">
         <li role="presentation">
@@ -117,21 +105,279 @@ Les onglets peuvent avoir une icône juxtaposée à gauche, elle est ajoutée vi
 </div>
 ```
 
-
-#### Variantes 100% largeur du viewport en mobile
+### Variantes 100% largeur du viewport en mobile
 
 Les onglets peuvent s'afficher em mobile sur la totalité de la largeur du viewport avec l'utilisation de la classe `fr-tabs--viewport-width`.
 
 **Exemple de variante 100% largeur du viewport en mobile**
 
-```HTML
+```html
 <div class="fr-tabs fr-tabs--viewport-width">
     <!-- Contenu des onglets -->
 </div>
 ```
 
+---
 
-### Note de version
+## JavaScript
+
+### Installation du JavaScript
+
+Pour fonctionner, le composant onglet nécessite l'utilisation de JavaScript.
+Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
+
+Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+
+```html
+<script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/tab/tab.module.min.js"></script>
+```
+
+<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
+
+Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
+
+```html
+<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
+<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
+<script type="text/javascript" nomodule src="dist/component/tab/tab.nomodule.min.js"></script>
+```
+
+Une fois le JavaScript chargé, le composant fonctionne automatiquement.
+
+### Instances
+
+Sur l'Onglet, les éléments suivants sont instanciés :
+
+- Le conteneur, via la classe : `fr-tabs`
+- La liste des onglets, via la classe : `fr-tabs__list`
+- L'onglet, via la classe : `fr-tabs__tab`
+- Le panneau d'onglet, via la classe `fr-tabs__panel`
+
+Une fois chargé, le JS ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés.
+
+### API
+
+Il est possible d'interagir avec les instances du composant en JavaScript via une API.
+
+Cette API est disponible depuis la méthode `window.dsfr(instance)` du core.
+
+Exemple :
+
+```js
+const elem = document.getElementById('ID_TAB');
+dsfr(elem).tabsGroup.isEnabled;
+```
+
+L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
+
+#### tabsGroup
+
+**current**
+
+| | |
+|------|-----|
+| **Description** | Retourne l'API de l'onglet ouvert. |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).tabsGroup.current` |
+
+**hasFocus**
+
+| | |
+|------|-----|
+| **Description** | Renvoie vrai si le focus est sur un des éléments du groupe. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsGroup.hasFocus` |
+
+**index**
+
+| | |
+|------|-----|
+| **Description** | Retourne ou modifie l'index de l'onglet courant. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).tabsGroup.index` <br> `dsfr(elem).tabsGroup.index = 2` |
+
+**isGrouped**
+
+| | |
+|------|-----|
+| **Description** | Défini si les onglets du groupe sont liés entre eux ou non. |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsGroup.isGrouped` <br> `dsfr(elem).tabsGroup.isGrouped = true` |
+
+**isEnabled**
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement des onglets est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsGroup.isEnabled = false` |
+
+**length**
+
+| | |
+|------|-----|
+| **Description** | Retourne le nombre d'onglets dans le groupe. |
+| **Type** | property |
+| **Retour** | Number |
+| **Exemple** | `dsfr(elem).tabsGroup.length` |
+
+**members**
+
+| | |
+|------|-----|
+| **Description** | Renvoie un tableau d'objets correspondant aux discloses des onglets du groupe. |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).tabsGroup.members` |
+
+**node**
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabsGroup.node` |
+
+##### tabsList
+
+**isEnabled**
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabsList.isEnabled = false` |
+
+**node**
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabsList.node` |
+
+##### tabButton
+
+**focus**
+
+| | |
+|:------|:-----|
+| **Description** | Replace le focus sur le bouton |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabButton.focus()` |
+
+**isEnabled**
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabButton.isEnabled = false` |
+
+**node**
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabButton.node` |
+
+##### tabPanel
+
+**disclose**
+
+| | |
+|:-----|:-----|
+| **Description** | Ouvre le panneau |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | none |
+| **Exemple** | `dsfr(elem).tabPanel.disclose()` |
+
+**isDisclosed**
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne vrai si le panneau est ouvert |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabPanel.isDisclosed` |
+
+**group**
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne l'API du groupe, ou null s'il n'y a pas de groupe |
+| **Type** | property |
+| **Retour** | object \| null |
+| **Exemple** | `dsfr(elem).tabPanel.group` |
+
+**buttons**
+
+| | |
+|:-----|:-----|
+| **Description** | Retourne un tableau de boutons d'ouverture du panneau |
+| **Type** | property |
+| **Retour** | Array |
+| **Exemple** | `dsfr(elem).tabPanel.buttons` |
+
+**focus**
+
+| | |
+|:------|:-----|
+| **Description** | Replace le focus sur le bouton du panneau |
+| **Type** | function |
+| **Arguments** | none |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabPanel.focus()` |
+
+**isEnabled**
+
+| | |
+|------|-----|
+| **Description** | Défini si le fonctionnement de l'onglet est activé ou non |
+| **Type** | property |
+| **Retour** | Boolean |
+| **Exemple** | `dsfr(elem).tabPanel.isEnabled = false` |
+
+**node**
+
+| | |
+|------|-----|
+| **Description** | Renvoie le noeud HTML de l'élément. |
+| **Type** | property |
+| **Retour** | DOMElement |
+| **Exemple** | `dsfr(elem).tabPanel.node` |
+
+### Événements
+
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](../../demarrage.md).
+
+Sur les onglets, les événements suivants sont disponibles :
+
+**événements**
+
+| Événement | Action | Élément | Attribut |
+|------|------|------|------|
+| `dsfr.conceal` | Fermeture de l'onglet | tab panel | `data-fr-js-tab-panel` |
+| `dsfr.disclose` | Ouverture de l'onglet | tab panel | `data-fr-js-tab-panel` |
+| `dsfr.click` | Click sur le bouton d'ouverture | TabButton | `data-fr-js-tab-button` |
+
+---
+
+## Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+tab+)
-

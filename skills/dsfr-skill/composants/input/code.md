@@ -1,21 +1,10 @@
+# Champ de saisie : Code
 
-## Champ de saisie
-
-Le champ de saisie est un élément d’interaction avec l’interface permettant à l’usager d’entrer du contenu et/ou des données.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
+## HTML
 
 Un **champ de saisie** permet à l'utilisateur de saisir des données. Il existe plusieurs types de champs de saisie en fonction du type de données à saisir.
 
-#### Champ de saisie simple
+### Champ de saisie simple
 
 La structure HTML d'un champ de saisie de base est la suivante :
 
@@ -23,7 +12,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
   - Un intitulé, obligatoire, dans un élément `<label>` de classe `fr-label` et lié au champ via un attribut `for` pour décrire le champ de saisie
   - Une description additionnelle, optionnelle, dans un élément `<span>` de classe `fr-hint-text` à placer dans le `<label>`. Cette description peut être utilisée pour donner des indications sur le format attendu.
   - Un champ `<input>` de classe `fr-input` pour saisir les données. Pour une plus grande zone de saisie, il est possible d'utiliser un élément `<textarea>`.
-  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie
+  - Un message d'erreur/information/avertissement/succès, optionnel, dans un bloc `fr-messages-group`, lié au `aria-describedby` du champ de saisie. Ce message doit être un élément `<p>` avec la classe `fr-message`, et un <span lang="en">modifier</span> `fr-message--error`, `fr-message--info`, `fr-message--warning` ou `fr-message--valid` selon le type de message.
 
 **Exemple de structure simple**
 
@@ -39,7 +28,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
 </div>
 ```
 
-#### Champ de saisie avec bouton
+### Champ de saisie avec bouton
 
 Un champ de saisie peut être associé à un bouton pour déclencher une action. La structure HTML est la suivante :
 
@@ -80,11 +69,20 @@ Un champ de saisie peut être associé à un bouton pour déclencher une action.
 </div>
 ```
 
-#### Groupes de champs de saisie
+### Statut du champ de saisie
 
-Voir la documentation sur les [formulaires](../../../../form/_part/doc/code/index.md).
+Les champs de saisie peuvent avoir différents états pour indiquer à l'utilisateur la validité de sa saisie ou pour fournir des informations contextuelles. Les principaux états sont :
 
-#### Attributs du champs de saisie
+- **Erreur** : Indique que la saisie est incorrecte. La classe `fr-input-group--error` doit être ajoutée au conteneur du champ de saisie. Le message d'erreur doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--error` à l'intérieur du bloc `fr-messages-group`.
+- **Succès** : Indique que la saisie est correcte. La classe `fr-input-group--valid` doit être ajoutée au conteneur du champ de saisie. Le message de succès doit être placé dans un élément `<p>` avec la classe `fr-message fr-message--valid` à l'intérieur du bloc `fr-messages-group`.
+
+Des messages d'information ou d'avertissement peuvent également être utilisés de la même manière, pour fournir des indications supplémentaires à l'utilisateur, via les classes `fr-message--info` ou `fr-message--warning`. Mais ceux-ci n'ont pas d'impact sur le statut du champ et du libellé associé.
+
+### Groupes de champs de saisie
+
+Voir la documentation sur les [formulaires](../form/code.md).
+
+### Attributs du champs de saisie
 
 Les champs de saisie peuvent être enrichis avec des attributs HTML pour améliorer l'accessibilité et l'expérience utilisateur.
 
@@ -102,8 +100,133 @@ Les champs de saisie peuvent être enrichis avec des attributs HTML pour amélio
   - `off` pour désactiver l'autocompletion qui pourrait être ajouté automatiquement par le navigateur.
   - Des valeurs en fonction du type de données. [Voir l'ensemble des valeurs disponibles](https://developer.mozilla.org/fr/docs/Web/HTML/Attributes/autocomplete).
 
+---
 
-### JavaScript
+## CSS
+
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------| ---------|
+| Core       | Oui         |          |
+| Form       | Oui         |          |
+| Input      | Oui         |          |
+| Button     | Non         | Uniquement pour les variations avec bouton associé au champ |
+| Utility    | Non         | Uniquement pour l'ajout d'icône dans le champ de saisie |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/form/form.min.css" rel="stylesheet">
+<link href="dist/component/input/input.min.css" rel="stylesheet">
+```
+
+### Variantes de types
+
+Le type de champ de saisie est défini par l'attribut `type` de l'élément `<input>`. Les types de champs de saisie disponibles sont les suivants :
+
+- `text` : Champ de saisie de texte simple
+- `email` : Champ de saisie d'adresse email
+- `password` : Champ de saisie de mot de passe (privilégier l'utilisation du composant [mot de passe](../password/index.md))
+- `tel` : Champ de saisie de numéro de téléphone
+- `number` : Champ de saisie de nombre
+- `date` : Champ de saisie de date
+- `time` : Champ de saisie d'heure
+- `url` : Champ de saisie d'URL
+- `search` : Champ de saisie de recherche
+
+Suivant le type de champ de saisie, des styles spécifiques peuvent être appliqués par le navigateur.
+
+- Le type `date` ajoute un bouton de sélection de date à droite dans champ de saisie. Cette icône est redéfinie par le DSFR pour utiliser les icônes du DSFR.
+- Le type `search` ajoute un bouton de réinitialisation à droite dans champ de saisie lorsque du texte a été renseigné.
+
+### Variante de champ avec icône
+
+Une icône peut être ajoutée dans le champ de saisie pour apporter une information visuelle supplémentaire. La structure HTML est la suivante :
+
+- La structure du champ de saisie avec icône est similaire à celle du champ de saisie avec bouton, avec un le champ `<input>` dans un conteneur `fr-input-wrap`.
+- L'icône est ajoutée sur ce conteneur avec la classe utilitaire de l'icône souhaitée `fr-icon-NOM-ICON`.
+
+**Exemple de structure avec icône**
+
+```html
+<div class="fr-input-group">
+    <label class="fr-label" for="text-input-icon">
+        Libellé champ de saisie
+        <span class="fr-hint-text">Texte de description additionnel</span>
+    </label>
+    <div class="fr-input-wrap fr-icon-alert-line">
+        <input class="fr-input" aria-describedby="text-input-icon-messages" id="text-input-icon" type="text">
+    </div>
+    <div class="fr-messages-group" id="text-input-icon-messages" aria-live="polite">
+    </div>
+</div>
+```
+
+### Variantes d'états
+
+Le champ de saisie est disponible en plusieurs variantes d'états :
+
+- Le champ en **erreur** : définie par la classe `fr-input-group--error`.
+- Le champ avec **succès** : définie par la classe `fr-input-group--valid`.
+- Le champ **désactivée** : définie par la classe `fr-input-group--disabled` **et** l'attribut `disabled` sur l'élément `<input>`.
+
+**Exemple de champ de saisie en erreur**
+
+```html
+<div class="fr-input-group fr-input-group--error">
+    <label class="fr-label" for="text-input-error">
+        Libellé champ de saisie
+    </label>
+    <input class="fr-input" aria-describedby="text-input-error-messages" id="text-input-error" type="text">
+    <div class="fr-messages-group" id="text-input-error-messages" aria-live="polite">
+        <p class="fr-message fr-message--error" id="text-input-error-message-error">Texte d’erreur</p>
+    </div>
+</div>
+```
+
+**Exemple de champ de saisie avec succès**
+
+```html
+<div class="fr-input-group fr-input-group--valid">
+    <label class="fr-label" for="text-input-valid">
+        Libellé champ de saisie
+    </label>
+    <input class="fr-input" aria-describedby="text-input-valid-messages" id="text-input-valid" type="text">
+    <div class="fr-messages-group" id="text-input-valid-messages" aria-live="polite">
+        <p class="fr-message fr-message--valid" id="text-input-valid-message-valid">Texte de validation</p>
+    </div>
+</div>
+```
+
+**Exemple de champ de saisie désactivé**
+
+```html
+<div class="fr-input-group fr-input-group--disabled">
+    <label class="fr-label" for="text-input-disabled">
+        Libellé champ de saisie
+    </label>
+    <input class="fr-input" aria-describedby="text-input-disabled-messages" disabled id="text-input-disabled" type="text">
+    <div class="fr-messages-group" id="text-input-disabled-messages" aria-live="polite">
+    </div>
+</div>
+```
+
+---
+
+## JavaScript
 
 Le composant Champ de saisie **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
 
+---
+
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+input+)

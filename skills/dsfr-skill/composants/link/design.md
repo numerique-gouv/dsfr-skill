@@ -1,26 +1,12 @@
+# Lien : Design
 
-## Lien
+- Une icône (placée à droite ou à gauche du texte visible ou seule)
 
-Le lien est un système de navigation secondaire qui permet à l’usager de se déplacer au sein d’une même page, entre deux pages d’un même site ou vers un site externe.
+- Un libellé (obligatoire)
 
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- Design
-- [Code](../code/index.md)
-- [Accessibilité](../accessibility/index.md)
-
-
-
-![Anatomie du lien](../_asset/anatomy/anatomy-1.png)
-
-
-
-
-### Variations
+## Variations
 
 **Lien au fil du texte**
-
 
 - **Utiliser ce lien au sein d’un texte**. Il reprend les caractéristiques typographiques de celui-ci (font, couleur, taille) tout en étant souligné. Il peut également être suivi d’une icône (par exemple : lien externe).
 
@@ -30,10 +16,8 @@ Le lien simple se décline en différentes variations :
 
 - Texte seul
 
-
 - Avec une icône à droite
 - Avec une icône à gauche
-
 
 - Icône seule
 - **Utiliser le lien simple en dehors de tout contenu**.
@@ -42,104 +26,65 @@ Le lien simple se décline en différentes variations :
 
 **Lien interne**
 
-
 - **Utiliser le lien interne pour pointer vers d’autres pages d’un même site**.
 
 **Lien externe**
-
 
 - **Utiliser le lien externe pour pointer vers un autre site**, en ouvrant un nouvel onglet ou une nouvelle page dans le navigateur. Le lien externe est matérialisé par une icône obligatoire placée à droite du lien.
 
 **Lien de téléchargement**
 
-
 - **Utiliser le lien de téléchargement pour permettre à l’usager de télécharger un fichier** depuis votre site.
 - **Précéder le nom du document de la mention “Télécharger”.** L’usager doit comprendre l’action qu’il réalise.
 
-
-
-![](./assets/_asset/variation/do-1.png)
-
-Précéder le nom du document de la mention “Télécharger”.
-
-
+**✅ À faire** : Précéder le nom du document de la mention “Télécharger”.
 
 - **Accompagner le lien d’une icône** qui explicite l’action.
 - **Préciser le format et le poids du fichier** de façon systématique.
 - **Indiquer la langue du document** si elle est différente de la langue de la page courante.
 
-
-
-![](./assets/_asset/variation/do-2.png)
-
-Préciser la langue du document si elle est différente de la langue de la page courante.
-
-
+**✅ À faire** : Préciser la langue du document si elle est différente de la langue de la page courante.
 
 **Lien de retour en haut de page**
-
 
 - **Utiliser le retour en haut de page dans les pages de contenu longues** pour éviter à l’usager de trop scroller.
 - **Placer le retour en haut de page à la fin du contenu de la page**, avant le pied de page. Si il y a des blocs de poursuite de lecture (exemple : liens vers d’autres articles), il est conseillé de placer le retour en haut de page avant ces blocs.
 
+**✅ À faire** : Positionner le retour en haut de page avant le maillage.
 
-
-![](./assets/_asset/variation/do-3.png)
-
-Positionner le retour en haut de page avant le maillage.
-
-
-
-![](./assets/_asset/variation/dont-1.png)
-
-Ne pas positionner le retour en haut de page après le maillage.
-
-
+**❌ À ne pas faire** : Ne pas positionner le retour en haut de page après le maillage.
 
 - **Conserver le même emplacement** pour le retour en haut de page sur toutes les pages où vous le proposez. Aligné à gauche avec le contenu par défaut, il peut aussi être centré ou aligné à droite.
 
-
-
-![](./assets/_asset/variation/do-4.png)
-
-Choisir l’un des trois emplacements ci-dessus pour le retour en haut de page. Il doit être harmoniser à travers l’ensemble des pages du site.
-
-
+**✅ À faire** : Choisir l’un des trois emplacements ci-dessus pour le retour en haut de page. Il doit être harmoniser à travers l’ensemble des pages du site.
 
 **Groupe de liens**
 
 - Liste de liens
 
-
 - Liste de liens de téléchargement
-
 
 - Groupe de liens en ligne
 
-
 - **Utiliser un groupe de liens afin de mettre à disposition plusieurs liens consécutivement**, qu’ils soient complémentaires ou substituables.
 
-### Tailles
+## Tailles
 
 Le lien est disponible en trois tailles :
 
 - SM pour small
 
-
 - MD pour medium - taille par défaut
-
 
 - LG pour large
 
-
 - **Adapter la taille de votre lien à votre besoin**.
 
-### États
+## États
 
 **État désactivé**
 
 L’état désactivé indique que l'usager ne peut pas interagir avec le lien.
-
 
 > [!WARNING]
 > N’utiliser cet état que très ponctuellement, pour indiquer à l’usager qu’il doit procéder à une action en amont par exemple.
@@ -148,22 +93,12 @@ L’état désactivé indique que l'usager ne peut pas interagir avec le lien.
 
 L’état au survol correspond au comportement constaté par l’usager lorsqu’il survole le lien avec sa souris.
 
-### Personnalisation
+## Personnalisation
 
 Le lien n’est pas personnalisable.
 
-Toutefois, certains éléments sont optionnels et les icônes peuvent être changées (à l’exception des icônes lien externe et lien de téléchargement) - [voir la structure du composant](#lien).
+Toutefois, certains éléments sont optionnels et les icônes peuvent être changées (à l’exception des icônes lien externe et lien de téléchargement) - voir la structure du composant.
 
+**❌ À ne pas faire** : Ne pas changer la couleur du lien.
 
-
-![](./assets/_asset/custom/dont-1.png)
-
-Ne pas changer la couleur du lien.
-
-
-
-![](./assets/_asset/custom/dont-2.png)
-
-Ne pas supprimer le soulignement du lien.
-
-
+**❌ À ne pas faire** : Ne pas supprimer le soulignement du lien.

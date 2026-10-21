@@ -1,19 +1,8 @@
-
-## Case à cocher
-
-La case à cocher est un élément d’interaction avec l’interface permettant à l’usager de sélectionner une ou plusieurs options dans une liste.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Case à cocher : Accessibilité
 
 Le composant **Case à cocher** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Lorsque le focus est positionné sur le composant&nbsp;:
 
@@ -24,9 +13,9 @@ Dans un groupe de cases à cocher&nbsp;:
 - `Tab`&nbsp;: déplace le focus sur le prochain élément focalisable.
 - `Maj + Tab`&nbsp;: déplace le focus sur l'élément focalisable précédent.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Intitulé pertinent : nom accessible
+### Intitulé pertinent : nom accessible
 
 Une case à cocher doit avoir une **étiquette pertinente**. On doit en comprendre la fonction sans ambiguïté.
 
@@ -48,18 +37,18 @@ La liaison explicite `for`/`id` permet&nbsp;:
 - d’assurer une compatibilité avec l’ensemble des technologies d’assistance (ex. le contrôle vocal),
 - de cocher ou décocher la case à cocher en cliquant sur l’étiquette et ainsi d’étendre la zone de clic.
 
-#### Étiquette visible et accolée
+### Étiquette visible et accolée
 
 L’étiquette est visible et accolée à la case à cocher.
 
-#### État désactivé
+### État désactivé
 
 > [!WARNING]
 > **L’état désactivé d’une case à cocher peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes déficientes visuelles ainsi que les personnes qui ont un handicap cognitif ou mental).
 
 La bordure, la coche et l’étiquette de la case à cocher désactivée sont insuffisamment contrastées. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier).
 
-#### Message d’information, d’avertissement ou d’erreur
+### Message d’information, d’avertissement ou d’erreur
 
 Il existe différentes méthodes pour gérer les messages d’information, d’avertissement ou d’erreur d’un formulaire de manière accessible selon le contexte.
 
@@ -69,21 +58,22 @@ Il est possible d’indiquer l’information, l’avertissement ou l’erreur&nb
 - dans un passage de texte relié au champ de saisie avec l’attribut `aria-describedby`,
 - avec une <span lang="en">live region</span>&nbsp;: `role="alert"`, `role="status"`, `aria-live="assertive", aria-live="polite"` (dans certains contextes uniquement).
 
-#### Champs obligatoires
+### Champs obligatoires
 
 Ajouter une mention visible pour tout le monde au début du formulaire et utiliser l’attribut `required` pour indiquer que la case à cocher est obligatoire.
 
-#### Groupe de cases à cocher
+### Groupe de cases à cocher
 
 - Utiliser des groupes de cases à cocher pour des options liées, en les regroupant dans un élément `<fieldset>` avec une légende `<legend>`.
   - La **légende** doit être explicite et décrire le groupe d'options. Elle ne doit pas être en gras puisqu’elle n’est pas considérée ici comme le titre d’un regroupement de champs mais comme le libellé de l'ensemble d'options.
   - Si le **fieldset contient des messages** d’erreur, d'informations ou de succès, il doit être associé à un attribut `aria-labelledby` pour lier la légende et les messages. Les id des éléments doivent être séparés par un espace. Il faudra également ajouter l’attribut `role="group"` à l’élément `<fieldset>` pour améliorer le rendu des technologies d’assistance.
 
-#### Contrastes de couleurs
+### Contrastes de couleurs
 
 Par défaut, le composant Case à cocher est suffisamment contrasté en thème clair et en thème sombre.
 
-:::fr-table[Contrastes par défaut]{valign=top multiline=true}
+**Contrastes par défaut**
+
 | Thème |  Bordure | Coche | Étiquette |
 |------|-----|-----|-----|
 |**Thème clair**| 14,9:1 | 14,9:1 | 18,1:1 |
@@ -91,8 +81,27 @@ Par défaut, le composant Case à cocher est suffisamment contrasté en thème c
 
 En cas de succès ou d’erreur, le ratio de contraste de la bordure et celui de l’étiquette sont de 5,8 en thème clair et sombre.
 
+---
 
-### Critères RGAA applicables
+## Restitution par les lecteurs d’écran
+
+Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
+
+L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
+- VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;case à cocher non disponible&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;case à cocher désactivée&nbsp;»
+
+La proriété du DOM `indeterminate` est aussi restituée différemment selon les lecteurs d’écran&nbsp;:
+
+- VoiceOver macOS et iOS&nbsp;: «&nbsp;mixé, case à chocé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;case à cocher semi-coché&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;case à cocher indéterminée&nbsp;»
+
+---
+
+## Critères RGAA applicables
 
 - **Couleurs&nbsp;:** 3.1, 3.2, 3.3
 - **Présentation de l’information&nbsp;:** 10.1, 10.2, 10.3, 10.4, 10.5, 10.7, 10.11, 10.12
@@ -100,3 +109,11 @@ En cas de succès ou d’erreur, le ratio de contraste de la bordure et celui de
 - **Navigation&nbsp;:** 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
+---
+
+## Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Spécification HTML – élément input](https://html.spec.whatwg.org/#the-input-element)
+- [Spécification HTML – type checkbox](https://html.spec.whatwg.org/#checkbox-state-(type=checkbox))
+- [Live regions ARIA&nbsp;:bonnes et mauvaises pratiques](https://access42.net/quand-utiliser-live-regions-aria/)

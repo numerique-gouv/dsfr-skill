@@ -1,7 +1,7 @@
 {
   "name": "dsfr-skill",
-  "version": "1.0.0",
-  "description": "Documentation et accessibilité concernant le Design System Français (DSFR), un ensemble de composants et de bonnes pratiques pour créer des interfaces utilisateur conformes aux standards du gouvernement français.",
+  "version": "2.0.0",
+  "description": "Documentation du Système de design de l'État (DSFR) pour agents de développement : composants, fondamentaux, modèles de pages et de formulaires, accessibilité RGAA, HTML officiel et vérificateur de pages.",
   "author": {
     "name": "skelz0r"
   },

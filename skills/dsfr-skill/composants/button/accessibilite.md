@@ -1,28 +1,17 @@
-
-# Bouton
-
-Le bouton est un élément d’interaction avec l’interface permettant à l’usager d’effectuer une action.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Bouton : Accessibilité
 
 Le composant **Bouton** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Lorsque le focus est positionné sur le composant&nbsp;:
 
 - `Entrée`&nbsp;: actionne le bouton.
 - `Espace`&nbsp;: actionne le bouton.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
-#### Intitulé pertinent : nom accessible
+### Intitulé pertinent : nom accessible
 
 Un bouton doit avoir un **intitulé pertinent**. On doit en comprendre la fonction sans ambiguïté.
 
@@ -35,32 +24,22 @@ Son nom accessible est calculé par ordre de priorité à partir de&nbsp;:
 
 **Privilégier le contenu textuel** pour nommer le composant Bouton.
 
+**✅ À faire** : Utiliser un intitulé textuel précis.
 
+**❌ À ne pas faire** : Utiliser un intitulé générique et ambigu.
 
-![Bouton avec intitulé textuel « Afficher les informations »](../_asset/accessibility/do-1.png)
-
-Utiliser un intitulé textuel précis.
-
-
-
-![Bouton avec intitulé textuel « OK »](../_asset/accessibility/dont-1.png)
-
-Utiliser un intitulé générique et ambigu.
-
-
-
-##### Nom visible et nom accessible
+#### Nom visible et nom accessible
 
 En cas d’utilisation des attributs `aria-labelledby` ou `aria-label` sur des boutons textuels, le **nom visible doit être repris dans le nom accessible** afin de répondre aux besoins des personnes qui utilisent la commande vocale.
 
-##### Information complémentaire&nbsp;: description
+#### Information complémentaire&nbsp;: description
 
 Il est possible de compléter et d’expliciter l’intitulé d’un bouton avec une description en utilisant&nbsp;:
 
 - l’attribut `aria-describedby` avec une valeur d’id qui référence un passage de texte&nbsp;;
 - l’attribut `title`.
 
-#### Bouton avec icône seule
+### Bouton avec icône seule
 
 Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend l’intitulé du bouton, peut être ajouté afin d’expliciter le sens de l’icône pour les personnes qui en ont besoin.
 
@@ -69,7 +48,7 @@ Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend 
 >
 > **Limiter l’usage des boutons avec icône seule** et les utiliser uniquement pour les actions récurrentes et facilement identifiables (ex. engrenage pour les paramètres ou loupe pour la recherche).
 
-#### État désactivé
+### État désactivé
 
 > [!CAUTION]
 > **L’état désactivé d’un bouton peut poser des problèmes d’utilisabilité et d’accessibilité pour les personnes handicapées** (personnes aveugles, déficientes visuelles, handicapées motrices qui naviguent au clavier ainsi que les personnes qui ont un handicap cognitif ou mental).
@@ -77,42 +56,34 @@ Dans le cas des **boutons avec icône seule**, un attribut `title`, qui reprend 
 - Le texte des boutons désactivés est insuffisamment contrasté. Il ne s’agit néanmoins pas d’une non-conformité au RGAA (cas particulier).
 - Lorsqu’un bouton est désactivé avec l’attribut disabled, il ne prend pas le focus au clavier.
 
+**❌ À ne pas faire** : Ne pas désactiver un bouton avec une infobulle (<span lang="en">tooltip</span>).
 
+**❌ À ne pas faire** : Ne pas désactiver un bouton de soumission d’un formulaire.
 
-![Bouton désactivé avec une infobulle qui affiche un message d’erreur](../_asset/accessibility/dont-2.png)
-
-Ne pas désactiver un bouton avec une infobulle (<span lang="en">tooltip</span>).
-
-
-
-![Formulaire avec un bouton désactivé](../_asset/accessibility/dont-3.png)
-
-Ne pas désactiver un bouton de soumission d’un formulaire.
-
-
-
-#### Contrastes de couleurs
+### Contrastes de couleurs
 Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le texte des boutons secondaires et tertiaires est insuffisamment contrasté.
 
-##### Bouton primaire
+#### Bouton primaire
 
-:::fr-table[Contrastes du bouton primaire en thème clair et sombre]{valign=top multiline=true caption=false}
+**Contrastes du bouton primaire en thème clair et sombre**
+
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**| 14,9:1 | 4,7:1 |
 |**au survol**| 8,2:1| 7,5:1 |
 |**désactivé**| 2,47:1 | 2,5:1 |
 
-##### Bouton secondaire et tertiaire
+#### Bouton secondaire et tertiaire
 
-:::fr-table[Contrastes du bouton secondaire et tertiaire en thème clair et sombre]{valign=top multiline=true caption=false}
+**Contrastes du bouton secondaire et tertiaire en thème clair et sombre**
+
 | État |  Thème clair | Thème sombre |
 |------|-----|-----|
 |**par défaut**|14,9:1|5,8:1|
 |**au survol**|13,8:1|4,1:1|
 |**désactivé**|3,1:1|3,2:1|
 
-#### Bouton ou lien&nbsp;?
+### Bouton ou lien&nbsp;?
 
 >[!NOTE]
 >Il est nécessaire de distinguer un bouton d’un lien.
@@ -126,8 +97,39 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 
 **Éviter d’utiliser le style du composant Bouton sur les liens et inversement**.
 
+---
 
-### Critères RGAA applicables
+## Restitution par les lecteurs d’écran
+
+Par défaut, les lecteurs d’écran restituent le **nom, la description, l’état et le type**. L’ordre peut varier en fonction des lecteurs d’écran et de leur configuration.
+
+L’attribut `disabled` est restitué différemment selon les lecteurs d’écran&nbsp;:
+
+- VoiceOver macOS et iOS&nbsp;: «&nbsp;estompé&nbsp;»
+- NVDA et JAWS&nbsp;: «&nbsp;non disponible&nbsp;»
+- Narrateur et Talkback &nbsp;: «&nbsp;désactivé&nbsp;»
+
+**#### Versions navigateurs et lecteurs d’écran**
+
+Les tests de restitution ont été effectués en ajoutant le lecteur d’écran intégré à Windows 11 (Narrateur) et le navigateur web Chrome à l’environnement de tests du RGAA.
+
+Versions des navigateurs web&nbsp;:
+
+- Firefox 137
+- Chrome 135
+- Safari 18.4 (sur macOS uniquement)
+- Microsoft Edge 135 (sur Windows 11 uniquement)
+
+Version des lecteurs d’écran&nbsp;:
+- NVDA 2024.4.2
+- JAWS 2024
+- VoiceOver macOS 15.4
+- Narrateur (Windows 11)
+- VoiceOver iOS
+
+---
+
+## Critères RGAA applicables
 
 - **Couleurs** : 3.2, 3.3
 - **Scripts** : 7.1, 7.3
@@ -136,3 +138,9 @@ Le composant Bouton est suffisamment contrasté en thème clair. Au survol, le t
 - **Navigation** : 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
+---
+
+## Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Spécification HTML – élément button](https://html.spec.whatwg.org/#the-button-element)

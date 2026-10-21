@@ -1,19 +1,8 @@
-
-## Modale
-
-La modale est un élément de mise en forme de contenu permettant de concentrer l’attention de l’usager exclusivement sur une tâche ou un élément d’information, sans perdre le contexte de la page en cours.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
+# Modale : Code
 
 ## HTML
 
-### Structure du composant
+## Structure du composant
 
 Le composant **Modale** permet d'afficher du contenu en plein écran.
 
@@ -39,7 +28,7 @@ Sa structure est la suivante :
       - Le contenu de la modale, obligatoire et libre, mais nécessitant l'utilisation de balises adéquates, il n'est pas correcte par exemple de placer du texte directement dans une `<div>`.
     - Le pied de page de la modale, optionnel défini par la classe `fr-modal__footer`, contenant :
       - Un groupe de boutons d'action défini par les classes `fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-lg fr-btns-group--icon-left` pouvant varier en fonction de l'affichage désiré des boutons, contenant :
-        - Soit un bouton primaire ([Bouton](../../../../button/_part/doc/code/index.md)).
+        - Soit un bouton primaire ([Bouton](../button/code.md)).
         - Soit un groupe de boutons hiérarchisé.
 
 > [!NOTE]
@@ -47,9 +36,9 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <button data-fr-opened="false" aria-controls="modal" type="button" class="fr-btn">Modale simple</button>
-<dialog id="modal" class="fr-modal" aria-labelledby="modal-title" aria-modal="true">
+<dialog id="modal" class="fr-modal" aria-labelledby="modal-title">
     <div class="fr-container fr-container--fluid fr-container-md">
         <div class="fr-grid-row fr-grid-row--center">
             <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
@@ -73,16 +62,133 @@ Sa structure est la suivante :
 </dialog>
 ```
 
+---
 
-### JavaScript
+## CSS
 
-#### Installation du JavaScript
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire |
+|------------|-------------|
+| Core       | Oui         |
+| Button     | Oui         |
+| Modal      | Oui         |
+
+**Exemple d'imports CSS**
+
+```html
+<script type="module" src="dist/core/core.module.min.js"></script>
+<script type="module" src="dist/component/button/button.module.min.js"></script>
+<script type="module" src="dist/component/modal/modal.module.min.js"></script>
+```
+
+### Variantes de taille
+
+La modale peut avoir différentes tailles en fonction du nombre de colonnes de la grille qui la compose (Voir [grille](../../fondamentaux/grid/index.md)), sur mobile la modale sera toujours sur 12 colonnes :
+
+- 4 colonnes en LG et 6 colonnes en MD pour une modale SM.
+- Par défaut : 6 colonnes en LG et 8 colonnes en MD pour une modale MD.
+- 8 colonnes en LG et 10 colonnes en MD pour une modale LG.
+
+**Exemples de variantes de taille**
+
+```html
+<div class="fr-col-12 fr-col-md-6 fr-col-lg-4">
+    <!-- Contenu de la grille de la modale SM -->
+</div>
+<div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
+    <!-- Contenu de la grille de la modale MD -->
+</div>
+<div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
+    <!-- Contenu de la grille de la modale LG -->
+</div>
+```
+
+### Variantes avec zone d'action et boutons
+
+La modale avec une **zone d’action** permet de guider l’utilisateur vers des actions attendues. Par défaut elle reprend les éléments de la modale simple auxquels s’ajoute une zone d’action obligatoire, composée soit d’**un bouton primaire**, soit d’**un groupe de boutons hiérarchisé**.
+
+> [!NOTE]
+> Pour les contenus trop longs pour s’afficher dans la surface prévue par la modale, un scroll permet de faire défiler l’intégralité de l'information.
+
+**Exemple de modale avec zone d'action et boutons**
+
+```html
+<button data-fr-opened="false" aria-controls="modal-action" type="button" class="fr-btn">Modale avec zone d'action</button>
+<dialog id="modal-action" class="fr-modal" aria-labelledby="modal-action-title">
+    <div class="fr-container fr-container--fluid fr-container-md">
+        <div class="fr-grid-row fr-grid-row--center">
+            <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
+                <div class="fr-modal__body">
+                    <div class="fr-modal__header">
+                        <button aria-controls="modal-action" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
+                    </div>
+                    <div class="fr-modal__content">
+                        <h2 id="modal-action-title" class="fr-modal__title">
+                            <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
+                            Titre de la modale
+                        </h2>
+                        <p><!-- contenu de la modale --></p>
+                    </div>
+                    <!-- Zone d'action de la modale -->
+                    <div class="fr-modal__footer">
+                        <ul class="fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-lg fr-btns-group--icon-left">
+                            <li>
+                                <button type="button" class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left">Libellé bouton</button>
+                            </li>
+                            <li>
+                                <button type="button" class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left fr-btn--secondary">Libellé bouton</button>
+                            <li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</dialog>
+```
+
+### Variantes avec zone d'action ancré en haut en mobile
+
+La **zone d’action** de la modale peut être placée en haut de la modale sur mobile avec l'utilisation de la classe `fr-modal--top`.
+
+**Exemple de modale avec zone d'action ancré en haut en mobile**
+
+```html
+<dialog id="modal-action-top" class="fr-modal fr-modal--top" aria-labelledby="modal-action-top-title">
+    <!-- Contenu de la modale -->
+</dialog>
+```
+
+### Variantes modale simple non refermable au clic sur le fond
+
+Par défaut la modale se referme au clic sur le fond de la page, il est possible de contourner ce comportement avec l'utilisation de l'attribut `data-fr-concealing-backdrop="false"`.
+
+**Exemple de modale simple non refermable au clic sur le fond**
+
+```html
+<dialog id="modal-backdrop" class="fr-modal" aria-labelledby="modal-backdrop-title" data-fr-concealing-backdrop="false">
+    <!-- Contenu de la modale -->
+</dialog>
+```
+
+---
+
+## JavaScript
+
+### Installation du JavaScript
 
 Pour fonctionner le composant modale nécessite l'utilisation de JavaScript. Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
 
 Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 
-```HTML
+```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 ```
@@ -91,7 +197,7 @@ Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</b
 
 Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
 
-```HTML
+```html
 <script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
 <script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
 <script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
@@ -99,7 +205,7 @@ Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodul
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
 
-#### Instances
+### Instances
 
 Sur la modale, les éléments suivants sont instanciés :
 
@@ -108,7 +214,47 @@ Sur la modale, les éléments suivants sont instanciés :
 
 Une fois chargé, le Js ajoute un attribut `data-fr-js-NOM_INSTANCE="true"` sur chacun des éléments instanciés
 
-#### API
+### Variante de modale sans bouton d'ouverture
+
+**Exemple de modale sans bouton d'ouverture lié**
+
+```html
+<dialog id="modal-without-button" class="fr-modal" aria-labelledby="modal-without-button-title">
+    <!-- Contenu de la modale -->
+</dialog>
+
+<script>
+    // Exemple d'ouverture programmatique sans bouton via l'API du DSFR
+    const modal = document.querySelector('#modal-without-button');
+    window.dsfr(modal).modal.disclose();
+</script>
+```
+
+L'API du DSFR mémorise l'élément qui avait le focus au moment de l'ouverture de la modale. À la fermeture, elle restaure le focus sur cet élément. Si aucun élément ne possédait le focus c'est le lien autour du logo dans l'en-tête qui prend le focus (premier élément de la page après les liens d'évitements).
+
+Vous pouvez modifier ce comportement pour choisir la destination du focus via l'événement dsfr.conceal de la modale :
+
+```js
+modal.addEventListener('dsfr.conceal', (e) => {
+    monElement.focus();
+});
+```
+
+### Variante de modale avec plusieurs boutons d'ouverture liés
+
+**Exemple de modale avec plusieurs boutons d'ouverture liés**
+
+```html
+<button aria-controls="modal-multi-button" data-fr-opened="false" type="button" class="fr-btn">Ouvrir la modale (bouton 1)</button>
+<button aria-controls="modal-multi-button" data-fr-opened="false" type="button" class="fr-btn">Ouvrir la modale (bouton 2)</button>
+<dialog id="modal-multi-button" class="fr-modal" aria-labelledby="modal-multi-button-title">
+    <!-- Contenu de la modale -->
+</dialog>
+```
+
+Quand plusieurs boutons peuvent ouvrir la même modale, l'API du DSFR détecte quel bouton a déclenché l'ouverture. À la fermeture, elle restaure le focus sur cet élément. Si aucun élément ne possédait le focus c'est le lien autour du logo dans l'en-tête qui prend le focus (premier élément de la page après les liens d'évitements).
+
+### API
 
 Il est possible d'interagir avec les instances du composants en JavaScript via une API.
 
@@ -123,9 +269,10 @@ dsfr(elem).modal.disclose();
 
 L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 
-##### modal
+#### modal
 
-:::fr-table[isEnabled]{valign=top multiline=true}
+**isEnabled**
+
 | | |
 |------|-----|
 | **Description** | Défini si le fonctionnement de la modale est activé ou non |
@@ -133,8 +280,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isEnabled = false` |
 
+**conceal**
 
-:::fr-table[conceal]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ferme la modale |
@@ -143,8 +290,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.conceal()` |
 
+**disclose**
 
-:::fr-table[disclose]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Ouvre la modale |
@@ -153,8 +300,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | none |
 | **Exemple** | `dsfr(elem).modal.disclose()` |
 
+**isDisclosed**
 
-:::fr-table[isDisclosed]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne vrai si la modale est ouverte |
@@ -162,8 +309,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modal.isDisclosed` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -171,10 +318,10 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modal.node` |
 
+##### modalButton
 
-###### modalButton
+**focus**
 
-:::fr-table[focus]{valign=top multiline=true}
 | | |
 |:------|:-----|
 | **Description** | Replace le focus sur le bouton |
@@ -183,8 +330,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | Boolean |
 | **Exemple** | `dsfr(elem).modalButton.focus()` |
 
+**parent**
 
-:::fr-table[parent]{valign=top multiline=true}
 | | |
 |:-----|:-----|
 | **Description** | Retourne l'instance du dsfr parente, ici la modale |
@@ -192,8 +339,8 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | object \| null |
 | **Exemple** | `dsfr(elem).parent` |
 
+**node**
 
-:::fr-table[node]{valign=top multiline=true}
 | | |
 |------|-----|
 | **Description** | Renvoie le noeud HTML de l'élément. |
@@ -201,14 +348,13 @@ L'ensemble des propriétés et méthodes disponibles sont définies ci-après :
 | **Retour** | DOMElement |
 | **Exemple** | `dsfr(elem).modalButton.node` |
 
+### Événements
 
-#### Événements
-
-Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](path:/getting-started/developer/javascript).
+Le Système de Design fournit des événements personnalisés pour les actions uniques de la part de certains composants réactifs listés sur la page de l'[API Javascript](../../demarrage.md).
 
 Sur la modale, les événements suivants sont disponibles :
 
-:::fr-table[événements]{valign=top multiline=true caption=false}
+**événements**
 
 | Événement | Action | Élément | Attribut |
 |------|------|------|------|
@@ -216,4 +362,8 @@ Sur la modale, les événements suivants sont disponibles :
 | `dsfr.disclose` | Ouverture de la modale | Modal | `data-fr-js-modal` |
 | `dsfr.click` | Click sur le bouton d'ouverture | ModalButton | `data-fr-js-modal-button` |
 
+---
 
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+modal)

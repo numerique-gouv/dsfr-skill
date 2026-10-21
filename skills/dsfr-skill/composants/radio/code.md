@@ -1,19 +1,8 @@
+# Bouton radio : Code
 
-## Bouton radio
+## HTML
 
-Le bouton radio est un élément d’interaction avec l’interface permettant à l’usager de réaliser un choix unique parmi plusieurs options.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant Bouton radio, ci-après nommé **Radio**, est un élément interactif permettant de sélectionner une seule option parmi un groupe d'options. Il n'est pas utilisé seul, mais toujours dans un ensemble de radios. Un radio seul correspond en fait à une **option**.
 
@@ -26,7 +15,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```HTML
+```html
 <div class="fr-radio-group">
     <input id="radio" type="radio" name="radio" aria-describedby="radio-messages">
     <label class="fr-label" for="radio">
@@ -36,7 +25,7 @@ Sa structure est la suivante :
 </div>
 ```
 
-#### Groupe de radios
+### Groupe de radios
 
 Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble de boutons radio**, pour cela, utilisez un élément `<fieldset>` avec une légende `<legend>`. Cela permet de structurer les options de manière accessible.
 
@@ -48,9 +37,9 @@ Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble
 
 **Exemple de groupe de radios**
 
-:::fr-accordion[Déplier pour voir le code]{id=radios-structure}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <fieldset class="fr-fieldset" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
         Légende pour l’ensemble des éléments
@@ -84,8 +73,7 @@ Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble
 </fieldset>
 ```
 
-
-#### Bouton radio riche
+### Bouton radio riche
 
 Le composant bouton radio propose une variante de bouton radio riche. Cette variante permet d'ajouter une bordure et un pictogramme, optionnel. La différence se caractérise par la classe `fr-radio-rich` et l'ajout d'un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG.
 
@@ -93,7 +81,7 @@ Le regroupement de radios riches se fait de la même manière que pour les radio
 
 **Exemple de bouton radio riche**
 
-```HTML
+```html
 <div class="fr-radio-group fr-radio-rich">
     <input value="1" type="radio" id="radio-rich-1" name="radio-rich">
     <label class="fr-label" for="radio-rich-1">
@@ -109,45 +97,44 @@ Le regroupement de radios riches se fait de la même manière que pour les radio
 </div>
 ```
 
-### CSS
+## CSS
 
-#### Installation du CSS
+### Installation du CSS
 
 Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
 
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](path:/getting-started/developer/get-started#les-css).
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
 
-:::fr-table[Dépendances CSS]{valign=top scroll=false}
+**Dépendances CSS**
 
 | Dépendance | Obligatoire |
 |------------|-------------|
 | Core       | Oui         |
 | Radio      | Oui         |
 
-
 **Exemple d'imports CSS**
 
-```HTML
+```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/radio/radio.min.css" rel="stylesheet">
 ```
 
-#### Variante de taille
+### Variante de taille
 
 Le composant Bouton radio propose une variante de taille pour s'adapter à différents contextes d'utilisation. Pour appliquer une variante de taille, ajoutez une des classes suivantes à l'élément `<div class="fr-radio-group">` :
 
 - Par défaut : Taille MD.
 - `fr-radio-group--sm` : Taille SM.
 
-#### Variantes du radio bouton riche
+### Variantes du radio bouton riche
 
-La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../../../../core/_part/doc/pictogram/index.md) pour plus d'informations.
+La variante de bouton radio riche est définie par la classe `fr-radio-rich`. Pour ajouter un pictogramme, ajoutez un élément `<div>` de classe `fr-radio-rich__pictogram` contenant un pictogramme SVG. Le pictogramme doit être ajouté avec ses 3 parties : `fr-artwork-decorative`, `fr-artwork-minor` et `fr-artwork-major`. La partie mineur peut être accentuée via les classes utilitaires d'artwork `fr-artwork--NOM-COULEUR`, ex : fr-artwork--green-emeraude. Voir la [documentation des pictogrammes](../../fondamentaux/pictogram/index.md) pour plus d'informations.
 
 Il est aussi possible d'utiliser cette variante **sans pictogramme**. Il suffit pour cela de ne pas ajouter l'élément `<div>` de classe `fr-radio-rich__pictogram`.
 
 Les boutons radios riches sont aussi disponibles en taille SM et MD.
 
-#### Variantes d'états
+### Variantes d'états
 
 Les boutons radios étant toujours utilisés en groupe, les états d'erreur/succès sont gérés au niveau du groupe. Pour ajouter un état à un bouton radio, ajoutez une des propriétés suivantes à l'élément `<fieldset class="fr-fieldset">` :
 
@@ -159,9 +146,9 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 **Exemple de groupe de radios avec erreur**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-radios-erreur}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <fieldset class="fr-fieldset fr-fieldset--error" role="group" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
         Légende pour l’ensemble des éléments en erreur
@@ -188,12 +175,11 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </fieldset>
 ```
 
-
 **Exemple de groupe de radios avec succès**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-radios-succes}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <fieldset class="fr-fieldset fr-fieldset--valid" role="group" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
         Légende pour l’ensemble des éléments en succès
@@ -220,12 +206,11 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </fieldset>
 ```
 
-
 **Exemple de groupe de radios désactivés**
 
-:::fr-accordion[Déplier pour voir le code]{id=code-radios-disabled}
+**Déplier pour voir le code**
 
-```HTML
+```html
 <fieldset class="fr-fieldset" disabled role="group" aria-labelledby="radio-legend radio-messages">
     <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
         Légende pour l’ensemble des éléments désactivés
@@ -251,9 +236,14 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 </fieldset>
 ```
 
+---
 
+## JavaScript
 
-### Note de version
+Le composant Bouton radio **ne nécessite pas l'utilisation de JavaScript** pour son fonctionnement de base.
+
+---
+
+## Note de version
 
 [Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+radio+)
-

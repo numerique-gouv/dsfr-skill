@@ -1,31 +1,20 @@
-
-## Pied de page
-
-Le pied de page est un élément de navigation secondaire mis à disposition de l’usager pour qu’il poursuive son parcours. Il propose également des éléments d’information complémentaires.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- [Code](../code/index.md)
-- Accessibilité
-
+# Pied de page : Accessibilité
 
 Le composant **Pied de page** est conçu pour être accessible et respecter les critères du RGAA. Voici les points clés à prendre en compte pour en garantir l’accessibilité.
 
-### Interactions clavier
+## Interactions clavier
 
 Il n'y a aucune interaction spécifique au composant **Pied de page**.
 
-Les interactions clavier sont celles des [liens](../../../../link/_part/doc/accessibility/index.md) contenus dans le pied de page.
+Les interactions clavier sont celles des [liens](../link/accessibilite.md) contenus dans le pied de page.
 
-### Règles d’accessibilité
+## Règles d’accessibilité
 
 Les règles d’accessibilité du composant "Pied de page" découlent de celles des composants qui la compose.
 
 L'élément `<footer>` doit posséder un `role="contentinfo"`.
 
-#### Mention obligatoire
+### Mention obligatoire
 
 Une mention obligatoire de conformité au RGAA doit apparaître sur toutes les pages.
 
@@ -39,12 +28,19 @@ La mention se décline en :
 
 Voir plus d'information sur les obligations légales sur l’[accessibilité des sites publics](https://design.numerique.gouv.fr/accessibilite-numerique/cadre-legal/).
 
-### Contrastes de couleurs
+## Contrastes de couleurs
 
 Le pied de page est suffisamment contrasté en thème clair et en thème sombre.
 
+---
 
-### Critères RGAA applicables
+## Restitution par les lecteurs d’écran
+
+Aucun test de restitution n’est nécessaire pour le composant En-tête.
+
+---
+
+## Critères RGAA applicables
 
 - **Images&nbsp;:** 1.1, 1.2, 1.3
 - **Couleurs&nbsp;:** 3.2, 3.3
@@ -56,3 +52,9 @@ Le pied de page est suffisamment contrasté en thème clair et en thème sombre.
 - **Navigation&nbsp;:** 12.6, 12.8, 12.9
 - **Consultation&nbsp;:** 13.9, 13.11
 
+---
+
+## Références
+
+- [Référentiel général d’amélioration de l’accessibilité (RGAA 4.1.2)](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/)
+- [Élément footer](https://html.spec.whatwg.org/#the-footer-element)

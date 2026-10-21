@@ -1,19 +1,8 @@
+# Alerte : Code
 
-## Alerte
+## HTML
 
-L’alerte est un élément d’indication poussé par l’interface pour relayer une information à l’usager.
-
-
-- [Présentation](../index.md)
-- [Démo](../demo/index.md)
-- [Design](../design/index.md)
-- Code
-- [Accessibilité](../accessibility/index.md)
-
-
-### HTML
-
-#### Structure du composant
+### Structure du composant
 
 Le composant **Alerte** est utilisé pour afficher des messages contextuels comme des informations, avertissements, erreurs ou succès. Il est composé de trois éléments principaux :
 
@@ -26,7 +15,7 @@ Le composant Alerte utilise des classes spécifiques pour définir son type (inf
 
 **Exemple de structure HTML**
 
-```HTML
+```html
 <div class="fr-alert">
   <h3 class="fr-alert__title">Titre de l'alerte</h3>
   <p>Description de l'alerte</p>
@@ -34,7 +23,7 @@ Le composant Alerte utilise des classes spécifiques pour définir son type (inf
 </div>
 ```
 
-#### Déclinaisons d'alertes
+### Déclinaisons d'alertes
 
 Le composant Alerte propose plusieurs variations en fonction du type de message :
 
@@ -52,7 +41,7 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 **Exemple de structure HTML avec des déclinaisons**
 
-```HTML
+```html
 <div class="fr-alert fr-alert--error">
   <h3 class="fr-alert__title">Erreur critique</h3>
   <p>Une erreur est survenue, veuillez réessayer plus tard.</p>
@@ -60,7 +49,7 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 </div>
 ```
 
-#### Taille des alertes
+### Taille des alertes
 
 Le composant Alerte peut être utilisé avec différentes tailles :
 
@@ -74,7 +63,7 @@ Les tailles sont définies par l'ajout des classes :
 
 **Exemple de structure HTML avec taille SM**
 
-```HTML
+```html
 <div class="fr-alert fr-alert--success fr-alert--sm">
   <h3 class="fr-alert__title">Succès</h3>
   <p>Votre demande a été traitée avec succès.</p>
@@ -82,12 +71,55 @@ Les tailles sont définies par l'ajout des classes :
 </div>
 ```
 
+---
 
-### JavaScript
+## CSS
+
+### Installation du CSS
+
+Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
+
+Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+
+**Dépendances CSS**
+
+| Dépendance | Obligatoire | Remarque |
+|------------|-------------|----------|
+| Core       | Oui         |          |
+| Alert      | Oui         |          |
+| Button     | Non         | Uniquement pour la version refermable |
+| Utility    | Non         | Uniquement pour l'ajout d'icône custom |
+
+**Exemple d'imports CSS**
+
+```html
+<link href="dist/core/core.min.css" rel="stylesheet">
+<link href="dist/component/alert/alert.min.css" rel="stylesheet">
+```
+
+### Variantes de style
+
+L'alerte dispose des variations visuelles suivantes en fonction du type de message :
+
+- `fr-alert--info` : pour un message informatif (bleu)
+- `fr-alert--warning` : pour un message d'avertissement (jaune)
+- `fr-alert--error` : pour un message d'erreur (rouge)
+- `fr-alert--success` : pour un message de succès (vert)
+
+Chaque type d'alerte se distingue par une couleur de fond et une icône spécifique.
+
+Les tailles d'alerte sont définies par :
+
+- `fr-alert--sm` pour les petites alertes, qui ont une hauteur réduite et un espacement intérieur plus petit.
+- La taille est médium par défaut.
+
+---
+
+## JavaScript
 
 Le composant Alerte nécessite un JavaScript minimal pour la gestion de la fermeture de l'alerte. En cliquant sur le bouton de fermeture, l'alerte est retirée du DOM grâce à un événement JavaScript. Le DSFR ne gère pas cette fonctionnalité car trop dépendante de la technologie utilisée.
 
-#### Fermeture de l'alerte
+### Fermeture de l'alerte
 
 Le bouton de fermeture doit être lié à une fonction JavaScript pour supprimer l'alerte du DOM. Voici un exemple de code en javascript vanilla pour gérer la suppression de l'alerte :
 
@@ -99,3 +131,8 @@ document.querySelector('.fr-alert__close').addEventListener('click', function() 
 
 Dans l'exemple HTML fourni, cette fonction est déjà intégrée directement dans l'attribut `onclick` du bouton de fermeture.
 
+---
+
+## Note de version
+
+[Voir les évolutions sur github](https://github.com/GouvernementFR/dsfr/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+alert+)
