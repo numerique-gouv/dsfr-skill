@@ -121,7 +121,7 @@ Le workflow `Sync DSFR` fait la même chose chaque lundi (ou à la demande, avec
 
 ## Évals
 
-[`evals/`](evals/) contient 11 prompts types (page de connexion, formulaire en erreur, modale, en-tête avec navigation, composant inexistant…) et un runner qui fait générer le HTML par un agent puis le vérifie. Voir [`evals/README.md`](evals/README.md).
+[`evals/`](evals/) contient 10 prompts types (page de connexion, formulaire en erreur, modale, en-tête avec navigation, composant inexistant…) et un runner qui fait générer le HTML par un agent puis le vérifie. Voir [`evals/README.md`](evals/README.md).
 
 ## Licence
 
