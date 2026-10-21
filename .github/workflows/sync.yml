@@ -41,4 +41,6 @@ jobs:
             Régénération automatique de `skills/dsfr-skill` depuis `@gouvfr/dsfr@${{ steps.sync.outputs.version }}`.
 
             À relire : les règles de `SKILL.md` et `demarrage.md` restent-elles vraies avec cette version (imports, structure du header et du footer, nouvelles classes) ? Lire le [CHANGELOG du DSFR](https://github.com/GouvernementFR/dsfr/blob/main/CHANGELOG.md).
+
+            Avant de merger : ajouter une entrée à `CHANGELOG.md` et monter la `version` du plugin dans `.claude-plugin/plugin.json` et `marketplace.json`.
           delete-branch: true

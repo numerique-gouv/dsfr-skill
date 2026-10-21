@@ -115,6 +115,8 @@ Le script télécharge le paquet `@gouvfr/dsfr`, qui contient à la fois la docu
 
 Pour modifier les consignes du skill, éditer les templates de `ressources/` puis relancer la synchronisation.
 
+Tout changement visible par les utilisateurs du skill (contenu, consignes, vérificateur, installation, nouvelle version du DSFR) s'accompagne d'une entrée dans [`CHANGELOG.md`](CHANGELOG.md) et de la montée de `version` dans `.claude-plugin/plugin.json` et `marketplace.json`.
+
 Le workflow `Sync DSFR` fait la même chose chaque lundi (ou à la demande, avec une version au choix) et ouvre une pull request quand le résultat change. Il demande d'autoriser GitHub Actions à créer des pull requests (Settings > Actions > General). Sur les pull requests créées avec le jeton du workflow, le workflow `Check` attend une approbation : cliquer sur « Approve workflows to run » dans la pull request.
 
 ## Évals
