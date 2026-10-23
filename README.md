@@ -1,5 +1,14 @@
 # DSFR Skill pour agents IA
 
+> [!CAUTION]
+> **Ce skill est réservé aux sites et applications de l'État.**
+>
+> Le DSFR porte l'identité graphique de l'État (Marianne, bloc marque, couleurs, typographie). Ses [modalités d'utilisation](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md) en limitent l'usage aux sites en .gouv.fr et aux applications mobiles des services de l'État ; les opérateurs de l'État doivent en plus obtenir l'agrément de leur ministère de tutelle.
+>
+> Que le code soit public ne vous autorise pas à l'utiliser ailleurs. Toute utilisation hors de ce cadre (site non homologué, site privé, imitation d'un service public) peut créer une confusion avec un service public officiel et exposer son auteur à des sanctions pénales, notamment au titre de l'article 433-13 du code pénal.
+>
+> Le skill demande aux agents de vérifier que le projet relève de l'État et de refuser sinon.
+
 Skill qui donne aux agents de développement (Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot…) la documentation du [Système de design de l'État](https://www.systeme-de-design.gouv.fr/) (DSFR) : tous les composants documentés, les fondamentaux (grille, couleurs, typographie, icônes…), les modèles de pages et de formulaires, les règles d'accessibilité RGAA et le HTML officiel de chaque variante.
 
 Le contenu est généré depuis le paquet npm `@gouvfr/dsfr` à une version précise (voir [`VERSION.md`](skills/dsfr-skill/VERSION.md)). Le skill suit le format ouvert `SKILL.md` et se trouve dans [`skills/dsfr-skill/`](skills/dsfr-skill/).
