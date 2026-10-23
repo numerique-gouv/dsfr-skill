@@ -7,9 +7,16 @@ description: Système de design de l'État français (DSFR) 1.15.4 - 51 composan
 
 Documentation officielle convertie depuis `@gouvfr/dsfr@1.15.4`. Les classes et la structure HTML changent d'une version à l'autre : lire le fichier du composant avant d'écrire son HTML, ne pas se fier à sa mémoire.
 
-Le DSFR est réservé aux sites en .gouv.fr et aux applications de l'État (conditions d'utilisation du DSFR) : pour un autre projet, le signaler avant de l'utiliser.
-
 Dans un projet existant, partir de son intégration du DSFR : version installée (`package.json`, `node_modules/@gouvfr/dsfr`, dossier `dist` copié), chemins des assets (dont `artwork/` pour les pictogrammes), gabarits et composants déjà écrits. Si la version installée n'est pas 1.15.4, le signaler : les classes et la structure peuvent différer de cette documentation. Elle prime alors : reprendre le balisage des composants déjà présents dans le projet, et pour un nouveau composant vérifier dans le [CHANGELOG du DSFR](https://github.com/GouvernementFR/dsfr/blob/main/CHANGELOG.md) que ses classes existent dans cette version avant de suivre `exemples.md` ; proposer la montée de version plutôt que de mélanger deux versions.
+
+## Usage réservé à l'État
+
+Le DSFR porte l'identité graphique de l'État. Ses [modalités d'utilisation](https://github.com/GouvernementFR/dsfr/blob/main/doc/legal/cgu.md) le réservent aux sites en .gouv.fr et aux applications mobiles des services de l'État (et des opérateurs agréés par leur ministère de tutelle). Hors de ce cadre, il peut créer une confusion avec un service public officiel, réprimée par l'article 433-13 du code pénal.
+
+- Avant de produire une interface, vérifier que le projet relève de l'État : domaine en .gouv.fr, dépôt ou organisation d'une administration, service public de l'État nommé dans la demande. Si le contexte ne permet pas de le savoir, rappeler en une phrase que le DSFR est réservé à l'État, puis continuer.
+- Pour un projet qui n'en relève pas (site privé, association, collectivité territoriale, projet personnel), ne pas utiliser le DSFR : l'expliquer et proposer un autre système de design.
+- Refuser toute demande qui imite un service public sans en être un : faux site administratif, page de paiement ou de collecte de données aux couleurs de l'État, copie d'un site officiel.
+- Répondre aux questions sur le DSFR ou auditer un site existant reste possible.
 
 ## Règles
 
