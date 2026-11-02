@@ -29,18 +29,29 @@ jobs:
           node scripts/sync.mjs ${VERSION:+"$VERSION"}
           node scripts/check-links.mjs
           echo "version=$(grep -oE '@gouvfr/dsfr@[0-9.]+' skills/dsfr-skill/VERSION.md | cut -d@ -f3)" >> "$GITHUB_OUTPUT"
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          branch: sync/dsfr-${{ steps.sync.outputs.version }}
-          commit-message: |
-            Sync the skill with DSFR ${{ steps.sync.outputs.version }}
-
-            Output of scripts/sync.mjs ${{ steps.sync.outputs.version }}.
-          title: Sync the skill with DSFR ${{ steps.sync.outputs.version }}
-          body: |
+      - name: Open the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.sync.outputs.version }}
+          BODY: |
             Régénération automatique de `skills/dsfr-skill` depuis `@gouvfr/dsfr@${{ steps.sync.outputs.version }}`.
 
             À relire : les règles de `SKILL.md` et `demarrage.md` restent-elles vraies avec cette version (imports, structure du header et du footer, nouvelles classes) ? Lire le [CHANGELOG du DSFR](https://github.com/GouvernementFR/dsfr/blob/main/CHANGELOG.md).
 
             Avant de merger : ajouter une entrée à `CHANGELOG.md` et monter la `version` du plugin dans `.claude-plugin/plugin.json` et `marketplace.json`.
-          delete-branch: true
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to sync"
+            exit 0
+          fi
+          branch="sync/dsfr-$VERSION"
+          title="Sync the skill with DSFR $VERSION"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add -A
+          git commit -m "$title" -m "Output of scripts/sync.mjs $VERSION."
+          git push --force origin "$branch"
+          if [ -z "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
+            gh pr create --head "$branch" --title "$title" --body "$BODY"
+          fi
