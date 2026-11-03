@@ -1,6 +1,6 @@
 ---
 name: dsfr-skill
-description: Système de design de l'État français (DSFR) 1.15.4 - 51 composants, fondamentaux (grille, couleurs, typographie, icônes, espacements), modèles de pages et de formulaires, règles d'accessibilité RGAA, avec le HTML officiel. À utiliser pour créer, modifier ou auditer l'interface d'un site ou service public français, écrire du HTML avec des classes `fr-*`, ou quand l'utilisateur mentionne le DSFR, le design system de l'État, systeme-de-design.gouv.fr, Marianne, le RGAA ou un site en .gouv.fr. Also use for French government design system / DSFR / RGAA questions in English.
+description: Système de design de l'État français (DSFR) 1.15.4 en HTML et CSS - 51 composants, fondamentaux (grille, couleurs, typographie, icônes, espacements), modèles de pages et de formulaires, accessibilité de chaque composant, avec le HTML officiel et les classes `fr-*`. À utiliser pour créer, modifier ou vérifier le HTML d'un site ou service de l'État, sans framework ou avec un moteur de gabarits, quand l'utilisateur mentionne le DSFR, le design system de l'État, systeme-de-design.gouv.fr, Marianne ou un site en .gouv.fr, ou quand le projet charge `@gouvfr/dsfr`. Pour un projet React avec `@codegouvfr/react-dsfr`, ou pour un audit de conformité RGAA complet, préférer un skill dédié s'il est installé (react-dsfr, rgaa). Also use for French government design system / DSFR questions in English.
 ---
 
 # DSFR 1.15.4

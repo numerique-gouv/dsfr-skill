@@ -2,6 +2,10 @@
 
 Ce fichier liste les changements de chaque version du plugin (`version` de `.claude-plugin/plugin.json` et `marketplace.json`). Le mettre à jour dans la même pull request que tout changement visible par les utilisateurs du skill : contenu, consignes, vérificateur, installation, ou nouvelle version du DSFR.
 
+## 2.0.1
+
+- Description du skill recentrée sur le HTML et le CSS : elle ne se déclenche plus sur le seul mot RGAA et renvoie vers un skill dédié pour React (`@codegouvfr/react-dsfr`) ou pour un audit de conformité RGAA, afin de cohabiter avec les skills `react-dsfr` et `rgaa` d'etalab-ia/skills.
+
 ## 2.0.0
 
 Le skill est régénéré depuis le paquet npm `@gouvfr/dsfr@1.15.4`, au lieu de la branche `main` du dépôt DSFR d'octobre 2025.

@@ -74,12 +74,14 @@ Le skill est actif si votre agent répond avec précision à des questions sur l
 
 ## Utilisation
 
-Le skill se déclenche dès qu'on parle de DSFR, de RGAA, de site en .gouv.fr ou de classes `fr-*` :
+Le skill se déclenche dès qu'on parle de DSFR, de site en .gouv.fr ou de classes `fr-*`. Il vise le HTML et le CSS : pour un projet React avec `@codegouvfr/react-dsfr`, ou pour un audit de conformité RGAA complet, sa description renvoie vers un skill dédié s'il est installé (`react-dsfr`, `rgaa` du dépôt [etalab-ia/skills](https://github.com/etalab-ia/skills)).
+
+Exemples de demandes :
 
 ```
 "Fais-moi une page de connexion DSFR"
 "Ajoute un formulaire avec gestion des erreurs conforme au DSFR"
-"Audite cette page : respecte-t-elle le DSFR et le RGAA ?"
+"Audite cette page : respecte-t-elle le DSFR ?"
 ```
 
 Pour auditer une page, l'agent s'appuie sur [`audit.md`](skills/dsfr-skill/audit.md) et sur un vérificateur sans dépendance, utilisable aussi à la main :
