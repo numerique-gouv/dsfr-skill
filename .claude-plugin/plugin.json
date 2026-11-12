@@ -1,6 +1,6 @@
 {
   "name": "dsfr-skill",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Documentation du Système de design de l'État (DSFR) pour agents de développement : composants, fondamentaux, modèles de pages et de formulaires, accessibilité RGAA, HTML officiel et vérificateur de pages.",
   "author": {
     "name": "skelz0r"

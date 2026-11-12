@@ -14,17 +14,7 @@ Le composant **Case à cocher**, ci-après nommée **Checkbox**, est un élémen
 
 **Exemple de structure HTML simple**
 
-```html
-<div class="fr-checkbox-group">
-    <input id="checkbox" type="checkbox" aria-describedby="checkbox-messages">
-    <label class="fr-label" for="checkbox">
-        Libellé checkbox
-        <span class="fr-hint-text">Description optionnelle</span>
-    </label>
-    <div class="fr-messages-group" id="checkbox-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Case à cocher avec texte d’aide](exemples.md#case-à-cocher-avec-texte-daide)
 
 ### Groupe de checkboxes
 
@@ -80,9 +70,7 @@ Pour **regrouper plusieurs checkboxes liées**, utilisez un élément `<fieldset
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -91,8 +79,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Form       | Oui         |
 | Checkbox   | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -139,31 +125,11 @@ Dans le cas d'utilisation d'un groupe de checkboxes, ces états sont définis su
 
 **Erreur**
 
-```html
-<div class="fr-checkbox-group fr-checkbox-group--error">
-    <input id="checkbox-error" type="checkbox" aria-describedby="checkbox-messages-error">
-    <label class="fr-label" for="checkbox-error">
-        Libellé checkbox avec erreur
-    </label>
-    <div class="fr-messages-group" id="checkbox-messages-error" aria-live="polite">
-        <p class="fr-message fr-message--error">Texte d’erreur</p>
-    </div>
-</div>
-```
+Balises officielles : [Case à cocher seule avec erreur](exemples.md#case-à-cocher-seule-avec-erreur)
 
 **Succès**
 
-```html
-<div class="fr-checkbox-group fr-checkbox-group--valid">
-    <input id="checkbox-valid" type="checkbox" aria-describedby="checkbox-messages-valid">
-    <label class="fr-label" for="checkbox-valid">
-        Libellé checkbox avec succès
-    </label>
-    <div class="fr-messages-group" id="checkbox-messages-valid" aria-live="polite">
-        <p class="fr-message fr-message--valid">Texte de succès</p>
-    </div>
-</div>
-```
+Balises officielles : [Case à cocher seule, validée](exemples.md#case-à-cocher-seule-validée)
 
 **Désactivé**
 

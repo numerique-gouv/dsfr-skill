@@ -53,9 +53,7 @@ Sa structure est la suivante :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -67,8 +65,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | checkbox   | Oui         |          |
 | Password   | Oui         |          |
 | Link       | Non         | Uniquement pour le lien de récupération du mot de passe |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -92,28 +88,7 @@ Pour ajouter un état de validation à un message, ajoutez une des classes suiva
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-password">
-    <label class="fr-password__label fr-label" for="password-validation-input">
-        Mot de passe
-    </label>
-    <div class="fr-input-wrap">
-        <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="password-validation-input-messages" aria-required="true" name="password" value="x8A@" autocomplete="new-password" id="password-validation-input" type="password">
-    </div>
-    <div class="fr-messages-group" id="password-validation-input-messages" aria-live="polite">
-        <p class="fr-message">Votre mot de passe doit contenir :</p>
-        <p class="fr-message fr-message--error" data-fr-valid="validé" data-fr-error="en erreur">12 caractères minimum</p>
-        <p class="fr-message fr-message--valid" data-fr-valid="validé" data-fr-error="en erreur">1 caractère spécial minimum</p>
-        <p class="fr-message fr-message--valid" data-fr-valid="validé" data-fr-error="en erreur">1 chiffre minimum</p>
-    </div>
-    <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
-        <input aria-label="Afficher le mot de passe" id="password-validation-show" type="checkbox">
-        <label class="fr--password__checkbox fr-label" for="password-validation-show">
-            Afficher
-        </label>
-    </div>
-</div>
-```
+Balises officielles : [Mot de passe après validation](exemples.md#mot-de-passe-après-validation)
 
 ### Variante de mot de passe de connexion
 
@@ -123,27 +98,7 @@ Le composant mot de passe peut être utilisé dans un contexte de connexion et p
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-password">
-    <label class="fr-password__label fr-label" for="password-connexion-input">
-        Mot de passe
-    </label>
-    <div class="fr-input-wrap">
-        <input class="fr-password__input fr-input" autocapitalize="off" autocorrect="off" aria-describedby="password-connexion-input-messages" aria-required="true" name="password" autocomplete="current-password" id="password-connexion-input" type="password">
-    </div>
-    <div class="fr-messages-group" id="password-connexion-input-messages" aria-live="polite">
-    </div>
-    <div class="fr-password__checkbox fr-checkbox-group fr-checkbox-group--sm">
-        <input aria-label="Afficher le mot de passe" id="password-connexion-show" type="checkbox">
-        <label class="fr--password__checkbox fr-label" for="password-connexion-show">
-            Afficher
-        </label>
-    </div>
-    <p>
-        <a href="[À MODIFIER - url de la page de récupération]" class="fr-link">Mot de passe oublié ?</a>
-    </p>
-</div>
-```
+Balises officielles : [Mot de passe de connexion](exemples.md#mot-de-passe-de-connexion)
 
 ---
 
@@ -151,21 +106,11 @@ Le composant mot de passe peut être utilisé dans un contexte de connexion et p
 
 ### Installation du JavaScript
 
-Pour fonctionner, le composant mot de passe nécessite l'utilisation de JavaScript.
-Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/password/password.module.min.js"></script>
-```
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/password/password.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

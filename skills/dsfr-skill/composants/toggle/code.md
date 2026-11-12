@@ -17,15 +17,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```html
-<div class="fr-toggle">
-    <input type="checkbox" class="fr-toggle__input" id="toggle" aria-describedby="toggle-messages toggle-hint">
-    <label class="fr-toggle__label" for="toggle" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
-    <p class="fr-hint-text" id="toggle-hint">Texte de description additionnel</p>
-    <div class="fr-messages-group" id="toggle-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple avec bouton + texte d’aide](exemples.md#toggle-simple-avec-bouton--texte-daide)
 
 ### Groupe d'interrupteurs
 
@@ -85,9 +77,7 @@ Pour **regrouper plusieurs interrupteurs liées**, utilisez un élément `<field
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -96,8 +86,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Form       | Oui         |
 | Toggle     | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -111,14 +99,7 @@ Il est conseillé d’afficher un statut sous l'interrupteur pour signifier text
 
 **Exemple de variante d’interrupteur avec statut**
 
-```html
-<div class="fr-toggle">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-status" aria-describedby="toggle-status-messages">
-    <label class="fr-toggle__label" for="toggle-status" data-fr-checked-label="Activé" data-fr-unchecked-label="Désactivé">Libellé de l'interrupteur</label>
-    <div class="fr-messages-group" id="toggle-status-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple avec bouton](exemples.md#toggle-simple-avec-bouton)
 
 ### Variante d’interrupteurs avec séparateur
 
@@ -126,14 +107,7 @@ Il est possible d’afficher un séparateur horizontal sous l’interrupteur, av
 
 **Exemple de variante d’interrupteur avec séparateur**
 
-```html
-<div class="fr-toggle fr-toggle--border-bottom">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-label-left" aria-describedby="toggle-label-left-messages">
-    <label class="fr-toggle__label" for="toggle-label-left">Libellé de l'interrupteur</label>
-    <div class="fr-messages-group" id="toggle-label-left-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple avec bouton + état + séparateur](exemples.md#toggle-simple-avec-bouton--état--séparateur)
 
 ### Variantes d'états
 
@@ -155,38 +129,15 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
 
 **Erreur**
 
-```html
-<div class="fr-toggle fr-toggle--error">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-error" aria-describedby="toggle-error-messages">
-    <label class="fr-toggle__label" for="toggle-error">Libellé de l'interrupteur avec erreur</label>
-    <div class="fr-messages-group" id="toggle-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error" id="toggle-error-message-error">Texte d’erreur obligatoire</p>
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple en erreur](exemples.md#toggle-simple-en-erreur)
 
 **Succès**
 
-```html
-<div class="fr-toggle fr-toggle--valid">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-valid" aria-describedby="toggle-valid-messages">
-    <label class="fr-toggle__label" for="toggle-valid">Libellé de l'interrupteur avec succès</label>
-    <div class="fr-messages-group" id="toggle-valid-messages" aria-live="polite">
-        <p class="fr-message fr-message--valid" id="toggle-valid-message-valid">Texte de validation</p>
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple valide](exemples.md#toggle-simple-valide)
 
 **Désactivé**
 
-```html
-<div class="fr-toggle">
-    <input type="checkbox" class="fr-toggle__input" id="toggle-disabled" disabled aria-describedby="toggle-disabled-messages">
-    <label class="fr-toggle__label" for="toggle-disabled">Libellé de l'interrupteur désactivé</label>
-    <div class="fr-messages-group" id="toggle-disabled-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Toggle simple avec bouton](exemples.md#toggle-simple-avec-bouton)
 
 **Exemple de variante d'état au niveau du groupe**
 
@@ -275,24 +226,11 @@ Dans le cas d'utilisation d'un groupe d’interrupteurs, ces états sont défini
 
 ### Installation du JavaScript
 
-Pour fonctionner le composant interrupteur nécessite l'utilisation de JavaScript uniquement pour la variante avec état affiché.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/toggle/toggle.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/toggle/toggle.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

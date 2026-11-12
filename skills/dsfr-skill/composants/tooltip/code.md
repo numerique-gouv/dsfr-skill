@@ -21,14 +21,7 @@ L’infobulle au survol se compose des éléments suivants :
 
 **Exemple de structure HTML**
 
-```html
-<a class="fr-link" aria-describedby="tooltip-1" href="[à modifier]">
-    Exemple
-</a>
-<span class="fr-tooltip fr-placement" id="tooltip-1" role="tooltip">
-    Lorem [...] elit ut.
-</span>
-```
+Balises officielles : [Information contextuelle](exemples.md#information-contextuelle)
 
 #### Déclenchement au clic
 
@@ -46,14 +39,7 @@ L’infobulle au clic se compose des éléments suivants :
 
 **Exemple de structure HTML**
 
-```html
-<button class="fr-btn--tooltip fr-btn" type="button" aria-describedby="tooltip-2">
-    Information contextuelle
-</button>
-<span class="fr-tooltip fr-placement" id="tooltip-2" role="tooltip">
-    Lorem [...] elit ut.
-</span>
-```
+Balises officielles : [Infobulle](exemples.md#infobulle)
 
 ---
 
@@ -61,9 +47,7 @@ L’infobulle au clic se compose des éléments suivants :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -74,14 +58,10 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Button     | Non         | Pour la version avec ouverture au clic |
 | Link       | Non         | Pour la version avec ouverture au survol |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/tooltip/tooltip.min.css" rel="stylesheet">
 ```
-
----
 
 ## JavaScript
 
@@ -89,23 +69,11 @@ L'infobulle est un composant qui nécessite l'importation de fichiers JavaScript
 
 ### Installation du JavaScript
 
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/tooltip/tooltip.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/tooltip/tooltip.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

@@ -39,39 +39,7 @@ Un bouton radio seul ne fait pas sens, il doit **toujours être dans un ensemble
 
 **Déplier pour voir le code**
 
-```html
-<fieldset class="fr-fieldset" aria-labelledby="radio-legend radio-messages">
-    <legend class="fr-fieldset__legend--regular fr-fieldset__legend" id="radio-legend">
-        Légende pour l’ensemble des éléments
-    </legend>
-    <div class="fr-fieldset__element">
-        <div class="fr-radio-group">
-            <input value="1" type="radio" id="radio-1" name="radio">
-            <label class="fr-label" for="radio-1">
-                Libellé bouton radio
-            </label>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-radio-group">
-            <input value="2" type="radio" id="radio-2" name="radio">
-            <label class="fr-label" for="radio-2">
-                Libellé bouton radio
-            </label>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-radio-group">
-            <input value="3" type="radio" id="radio-3" name="radio">
-            <label class="fr-label" for="radio-3">
-                Libellé bouton radio
-            </label>
-        </div>
-    </div>
-    <div class="fr-messages-group" id="radio-messages" aria-live="polite">
-    </div>
-</fieldset>
-```
+Balises officielles : [Ensemble de boutons radio](exemples.md#ensemble-de-boutons-radio)
 
 ### Bouton radio riche
 
@@ -101,9 +69,7 @@ Le regroupement de radios riches se fait de la même manière que pour les radio
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -111,8 +77,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 |------------|-------------|
 | Core       | Oui         |
 | Radio      | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">

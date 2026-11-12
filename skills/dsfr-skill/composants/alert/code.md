@@ -41,13 +41,7 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 **Exemple de structure HTML avec des déclinaisons**
 
-```html
-<div class="fr-alert fr-alert--error">
-  <h3 class="fr-alert__title">Erreur critique</h3>
-  <p>Une erreur est survenue, veuillez réessayer plus tard.</p>
-  <button title="Masquer le message" onclick="const alert = this.parentNode; alert.parentNode.removeChild(alert)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-</div>
-```
+Balises officielles : [Alerte ajoutée dynamiquement (type)](exemples.md#alerte-ajoutée-dynamiquement-type)
 
 ### Taille des alertes
 
@@ -77,9 +71,7 @@ Les tailles sont définies par l'ajout des classes :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -89,8 +81,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Alert      | Oui         |          |
 | Button     | Non         | Uniquement pour la version refermable |
 | Utility    | Non         | Uniquement pour l'ajout d'icône custom |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">

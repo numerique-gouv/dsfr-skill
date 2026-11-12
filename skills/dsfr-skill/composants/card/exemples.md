@@ -1,6 +1,6 @@
 # Carte : exemples officiels
 
-Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uniques dans la page qui les reprend. Les extraits de plus de 4 ko sont dans des fichiers à part.
+Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uniques dans la page qui les reprend. L’alternative d’une image (attribut `alt`) doit toujours être présente : vide si l’image est illustrative, renseignée si elle porte du sens. Les extraits de plus de 4 ko sont dans des fichiers à part.
 
 ### Carte verticale md, taille par défaut
 
@@ -18,7 +18,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -40,7 +40,7 @@ dans une grille sur 3 à 4 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -62,7 +62,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -82,7 +82,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -103,7 +103,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -123,7 +123,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -143,7 +143,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -163,7 +163,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -183,7 +183,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -205,7 +205,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -227,7 +227,7 @@ dans une grille sur 3 à 4 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -249,7 +249,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -270,7 +270,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -290,7 +290,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -324,7 +324,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-32x9" src="../../../example/img/placeholder.32x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -344,7 +344,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-3x2" src="../../../example/img/placeholder.3x2.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -364,7 +364,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-4x3" src="../../../example/img/placeholder.4x3.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -384,7 +384,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-1x1" src="../../../example/img/placeholder.1x1.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -404,7 +404,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-3x4" src="../../../example/img/placeholder.3x4.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -424,7 +424,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-2x3" src="../../../example/img/placeholder.2x3.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -444,7 +444,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
         <ul class="fr-badges-group">
             <li>
@@ -480,7 +480,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -511,7 +511,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -535,7 +535,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -559,7 +559,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -583,7 +583,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -610,7 +610,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -645,7 +645,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -680,7 +680,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -715,7 +715,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -750,7 +750,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -785,7 +785,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -820,7 +820,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -840,7 +840,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -860,7 +860,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -881,7 +881,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -902,7 +902,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -923,7 +923,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -944,7 +944,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -965,7 +965,7 @@ dans une grille sur 6 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -997,7 +997,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1031,7 +1031,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1065,7 +1065,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1099,7 +1099,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1133,7 +1133,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1170,7 +1170,7 @@ dans une grille sur 6 à 8 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1207,7 +1207,7 @@ dans une grille sur 4 à 6 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1244,7 +1244,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1286,7 +1286,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1328,7 +1328,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1370,7 +1370,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1412,7 +1412,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1454,7 +1454,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1496,7 +1496,7 @@ dans une grille sur 8 à 12 colonnes en version desktop
     <div class="fr-card__header">
         <div class="fr-card__img">
             <img class="fr-responsive-img fr-ratio-32x9" src="../../../example/img/placeholder.32x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-            <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
         </div>
     </div>
 </div>
@@ -1504,24 +1504,24 @@ dans une grille sur 8 à 12 colonnes en version desktop
 
 ### Grilles de cartes verticales
 
-Extrait complet : [exemples/grilles-de-cartes-verticales-1.html](exemples/grilles-de-cartes-verticales-1.html) (8 ko)
+Extrait complet : [exemples/grilles-de-cartes-verticales-1.html](exemples/grilles-de-cartes-verticales-1.html) (7 ko)
 
 ### Grilles de cartes verticales sm
 
-Extrait complet : [exemples/grilles-de-cartes-verticales-sm-2.html](exemples/grilles-de-cartes-verticales-sm-2.html) (9 ko)
+Extrait complet : [exemples/grilles-de-cartes-verticales-sm-2.html](exemples/grilles-de-cartes-verticales-sm-2.html) (7 ko)
 
 ### Grilles de cartes verticales lg
 
-Extrait complet : [exemples/grilles-de-cartes-verticales-lg-3.html](exemples/grilles-de-cartes-verticales-lg-3.html) (8 ko)
+Extrait complet : [exemples/grilles-de-cartes-verticales-lg-3.html](exemples/grilles-de-cartes-verticales-lg-3.html) (7 ko)
 
 ### Grilles de cartes horizontales
 
-Extrait complet : [exemples/grilles-de-cartes-horizontales-4.html](exemples/grilles-de-cartes-horizontales-4.html) (8 ko)
+Extrait complet : [exemples/grilles-de-cartes-horizontales-4.html](exemples/grilles-de-cartes-horizontales-4.html) (7 ko)
 
 ### Grilles de cartes horizontales sm
 
-Extrait complet : [exemples/grilles-de-cartes-horizontales-sm-5.html](exemples/grilles-de-cartes-horizontales-sm-5.html) (9 ko)
+Extrait complet : [exemples/grilles-de-cartes-horizontales-sm-5.html](exemples/grilles-de-cartes-horizontales-sm-5.html) (7 ko)
 
 ### Grilles de cartes horizontales lg
 
-Extrait complet : [exemples/grilles-de-cartes-horizontales-lg-6.html](exemples/grilles-de-cartes-horizontales-lg-6.html) (9 ko)
+Extrait complet : [exemples/grilles-de-cartes-horizontales-lg-6.html](exemples/grilles-de-cartes-horizontales-lg-6.html) (7 ko)

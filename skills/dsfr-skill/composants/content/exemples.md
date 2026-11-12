@@ -1,6 +1,6 @@
 # Contenu médias : exemples officiels
 
-Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uniques dans la page qui les reprend. Les extraits de plus de 4 ko sont dans des fichiers à part.
+Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uniques dans la page qui les reprend. L’alternative d’une image (attribut `alt`) doit toujours être présente : vide si l’image est illustrative, renseignée si elle porte du sens. Les extraits de plus de 4 ko sont dans des fichiers à part.
 
 ### Média image edito
 
@@ -8,7 +8,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1585" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-16x9" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -23,7 +23,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media fr-content-media--sm" id="media-1590" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-16x9" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -38,7 +38,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media fr-content-media--lg" id="media-1595" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-16x9" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -53,7 +53,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1600" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-32x9" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -68,7 +68,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1605" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-16x9" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -83,7 +83,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1610" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-3x2" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -98,7 +98,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1615" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-4x3" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -113,7 +113,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1620" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-1x1" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -128,7 +128,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1625" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-3x4" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -143,7 +143,7 @@ Extraits de code des pages d'exemple du DSFR 1.15.4. Les `id` sont à rendre uni
 <figure role="group" class="fr-content-media" id="media-1630" aria-label="Description / Source">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-ratio-2x3" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">
         Description / Source
@@ -583,7 +583,7 @@ Les exemples suivants sont dépréciés, ne pas utiliser comme référence Pour 
 <figure class="fr-content-media" role="group" aria-label="© Légende de l‘image">
     <div class="fr-content-media__img">
         <img class="fr-responsive-img fr-responsive-img--4x3" src="../../../example/img/placeholder.16x9.png" alt="[À MODIFIER - vide ou texte alternatif de l’image]" />
-        <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
+
     </div>
     <figcaption class="fr-content-media__caption">© Légende de l‘image</figcaption>
 </figure>

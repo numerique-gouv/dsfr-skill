@@ -13,11 +13,7 @@ Le composant **Mise en exergue** permet de mettre en évidence des informations 
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-highlight">
-    <p>Lorem [...] elit ut.</p>
-</div>
-```
+Balises officielles : [Exergue taille md](exemples.md#exergue-taille-md)
 
 ---
 
@@ -25,9 +21,7 @@ Le composant **Mise en exergue** permet de mettre en évidence des informations 
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -35,8 +29,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 |------------|-------------|
 | Core       | Oui         |
 | Highlight  | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -53,11 +45,7 @@ Le texte de la mise en exergue peut être de différentes tailles :
 
 **Exemple de texte de différentes tailles**
 
-```html
-<div class="fr-highlight">
-  <p class="fr-text--lg">Lorem [...] elit ut.</p>
-</div>
-```
+Balises officielles : [Exergue taille lg](exemples.md#exergue-taille-lg)
 
 ### Variantes d'accentuation
 
@@ -65,11 +53,7 @@ Le composant Mise en exergue est accentuable, permettant le changement de la cou
 
 **Exemple de structure accentuée**
 
-```html
-<div class="fr-highlight fr-highlight--green-emeraude">
-    <p>Lorem [...] elit ut.</p>
-</div>
-```
+Balises officielles : [Exergue accentué](exemples.md#exergue-accentué)
 
 ## JavaScript
 

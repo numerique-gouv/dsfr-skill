@@ -86,9 +86,7 @@ Dans le cas d'un fichier audio, la structure est similaire à celle d'une vidéo
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -97,8 +95,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |          |
 | Content    | Oui         |          |
 | Link       | Non         | Si ajout de liens dans la description du média |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -166,22 +162,11 @@ Un fallback JS est prévu pour la **gestion des ratios** sur les navigateurs ne 
 
 ### Installation du JavaScript
 
-Pour fonctionner correctement, le fichier JS du core doit être importé.
-L'import doit se faire en fin de page, avant la fermeture du body, et de préférence avec le fichier minifié, car plus léger.
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.min.js"></script>
 ```
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/core/core.legacy.min.js"></script>
-```
-
-Une fois le fichier JS importé, la gestion des ratios est automatiquement prise en charge par le navigateur.
-
----
 
 ## Note de version
 

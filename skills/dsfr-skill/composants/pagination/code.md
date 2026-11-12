@@ -21,75 +21,13 @@ Sa structure comprend les éléments suivants :
 
 **Exemple de structure HTML**
 
-```html
-<nav role="navigation" class="fr-pagination" aria-label="pagination">
-    <ul class="fr-pagination__list">
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--first" title="Première page" aria-disabled="true" role="link">
-                Première page
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--prev fr-pagination__link--lg-label" title="Page précédente" aria-disabled="true" role="link">
-                Page précédente
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link" aria-current="page" title="Page 1">
-                1
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link" href="#" title="Page 2">
-                2
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 3">
-                3
-            </a>
-        </li>
-        <li>
-            <span class="fr-pagination__link fr-hidden fr-unhidden-lg">
-                …
-            </span>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 130">
-                130
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-hidden fr-unhidden-lg" href="#" title="Page 131">
-                131
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link" href="#" title="Page 132">
-                132
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--next fr-pagination__link--lg-label" id="pagination-6519" href="#" title="Page suivante">
-                Page suivante
-            </a>
-        </li>
-        <li>
-            <a class="fr-pagination__link fr-pagination__link--last" href="#" title="Dernière page">
-                Dernière page
-            </a>
-        </li>
-    </ul>
-</nav>
-```
+Balises officielles : [Pagination première page](exemples.md#pagination-première-page)
 
 ## CSS
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -98,14 +36,10 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Pagination | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/pagination/pagination.min.css" rel="stylesheet">
 ```
-
----
 
 ## JavaScript
 

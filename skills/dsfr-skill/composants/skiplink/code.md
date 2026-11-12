@@ -20,26 +20,7 @@ Le composant **Liens d'évitement** permet aux utilisateurs de naviguer rapideme
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-skiplinks">
-    <nav role="navigation" aria-label="Accès rapide" class="fr-container">
-        <ul class="fr-skiplinks__list">
-            <li>
-                <a class="fr-link" href="#content">Contenu</a>
-            </li>
-            <li>
-                <a class="fr-link" href="#header-navigation">Menu</a>
-            </li>
-            <li>
-                <a class="fr-link" href="#header-search">Recherche</a>
-            </li>
-            <li>
-                <a class="fr-link" href="#footer">Pied de page</a>
-            </li>
-        </ul>
-    </nav>
-</div>
-```
+Balises officielles : [Titre éditorialisé](exemples.md#titre-éditorialisé)
 
 ---
 
@@ -47,9 +28,7 @@ Le composant **Liens d'évitement** permet aux utilisateurs de naviguer rapideme
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -59,15 +38,11 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Link       | Oui         |
 | Skiplink   | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/link/link.min.css" rel="stylesheet">
 <link href="dist/component/skiplink/skiplink.min.css" rel="stylesheet">
 ```
-
----
 
 ## JavaScript
 

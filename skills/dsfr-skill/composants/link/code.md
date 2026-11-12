@@ -11,11 +11,7 @@ Le composant **Lien** est un élément interactif permettant de naviguer vers un
 
 **Exemple de structure HTML**
 
-```html
-<a href="#" class="fr-link">
-  Libellé lien
-</a>
-```
+Balises officielles : [Lien seul](exemples.md#lien-seul)
 
 ### Lien externe
 
@@ -24,11 +20,7 @@ L'ajout d'un attribut `rel="noopener external"` sera aussi recommandé pour des 
 
 **Exemple de lien externe**
 
-```html
-<a href="#" target="_blank" rel="noopener external" title="Libellé lien - nouvelle fenêtre" class="fr-link">
-  Libellé lien
-</a>
-```
+Balises officielles : [Lien seul](exemples.md#lien-seul)
 
 ### Lien de téléchargement
 
@@ -92,9 +84,7 @@ Les liens peuvent être regroupés pour former des ensembles de navigation. Le g
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -103,8 +93,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |             |
 | Link       | Oui         |             |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
