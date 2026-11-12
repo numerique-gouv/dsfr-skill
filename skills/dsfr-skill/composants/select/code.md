@@ -18,30 +18,13 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```html
-<div class="fr-select-group">
-    <label class="fr-label" for="select-hint">
-        Libellé pour liste déroulante
-        <span class="fr-hint-text">Texte de description additionnel</span>
-    </label>
-    <select class="fr-select" aria-describedby="select-hint-messages" id="select-hint" name="select-hint">
-        <option value="" selected disabled>Sélectionner une option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-    </select>
-    <div class="fr-messages-group" id="select-hint-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Liste déroulante avec texte de description](exemples.md#liste-déroulante-avec-texte-de-description)
 
 ## CSS
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -50,8 +33,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Form       | Oui         |
 | Select     | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -74,63 +55,19 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-select-group fr-select-group--error">
-    <label class="fr-label" for="select-error">
-        Libellé pour liste déroulante
-    </label>
-    <select class="fr-select" aria-describedby="select-error-messages" id="select-error" name="select-error">
-        <option value="" selected disabled>Sélectionner une option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-    </select>
-    <div class="fr-messages-group" id="select-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error" id="select-error-message-error">Texte d’erreur obligatoire</p>
-    </div>
-</div>
-```
+Balises officielles : [Liste déroulante erreur](exemples.md#liste-déroulante-erreur)
 
 **Exemple de liste déroulante avec succès**
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-select-group fr-select-group--valid">
-    <label class="fr-label" for="select-valid">
-        Libellé pour liste déroulante
-    </label>
-    <select class="fr-select" aria-describedby="select-valid-messages" id="select-valid" name="select-valid">
-        <option value="" selected disabled>Sélectionner une option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-    </select>
-    <div class="fr-messages-group" id="select-valid-messages" aria-live="polite">
-        <p class="fr-message fr-message--valid" id="select-valid-message-valid">Texte de validation</p>
-    </div>
-</div>
-```
+Balises officielles : [Liste déroulante valide](exemples.md#liste-déroulante-valide)
 
 **Exemple de liste déroulante désactivée**
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-select-group fr-select-group--disabled">
-    <label class="fr-label" for="select-disabled">
-        Libellé pour liste déroulante
-    </label>
-    <select class="fr-select" aria-describedby="select-disabled-messages" disabled id="select-disabled" name="select-disabled">
-        <option value="" selected disabled>Sélectionner une option</option>
-        <option value="1">Option 1</option>
-        <option value="2">Option 2</option>
-        <option value="3">Option 3</option>
-    </select>
-    <div class="fr-messages-group" id="select-disabled-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Liste déroulante désactivée](exemples.md#liste-déroulante-désactivée)
 
 ### Variantes de liste déroulante avec groupe d'options
 
@@ -142,28 +79,7 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-select-group">
-    <label class="fr-label" for="select-group">
-        Libellé pour liste déroulante
-    </label>
-    <select class="fr-select" aria-describedby="select-group-messages" id="select-group" name="select-group">
-        <option value="" selected disabled>Selectionnez une option</option>
-        <optgroup label="Groupe 1">
-            <option value="1">Option 1</option>
-            <option value="2">Option 2</option>
-            <option value="3">Option 3</option>
-        </optgroup>
-        <optgroup label="Groupe 2">
-            <option value="5">Option 5</option>
-            <option value="6">Option 6</option>
-            <option value="7">Option 7</option>
-        </optgroup>
-    </select>
-    <div class="fr-messages-group" id="select-group-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Liste déroulante par défaut](exemples.md#liste-déroulante-par-défaut)
 
 ---
 

@@ -16,42 +16,13 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-```html
-<fieldset class="fr-segmented">
-    <legend class="fr-segmented__legend">
-        Légende
-        <span class="fr-hint-text">Description additionnelle</span>
-    </legend>
-    <div class="fr-segmented__elements">
-        <div class="fr-segmented__element">
-            <input value="1" type="radio" id="segmented-1" name="segmented">
-            <label class="fr-label" for="segmented-1">
-                Libellé
-            </label>
-        </div>
-        <div class="fr-segmented__element">
-            <input value="2" checked type="radio" id="segmented-2" name="segmented">
-            <label class="fr-label" for="segmented-2">
-                Libellé
-            </label>
-        </div>
-        <div class="fr-segmented__element">
-            <input value="3" type="radio" id="segmented-3" name="segmented">
-            <label class="fr-label" for="segmented-3">
-                Libellé
-            </label>
-        </div>
-    </div>
-</fieldset>
-```
+Balises officielles : [Contrôle segmenté avec texte d'aide](exemples.md#contrôle-segmenté-avec-texte-daide)
 
 ## CSS
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -61,8 +32,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Form       | Oui         |          |
 | Segmented  | Oui         |          |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -123,33 +92,7 @@ Les libellés des segment du contrôle segmenté peuvent avoir une icône juxtap
 
 **Déplier pour voir le code**
 
-```html
-<fieldset class="fr-segmented">
-    <legend class="fr-segmented__legend">
-        Légende
-    </legend>
-    <div class="fr-segmented__elements">
-        <div class="fr-segmented__element">
-            <input value="1" type="radio" id="segmented-icon-1" name="segmented-icon">
-            <label class="fr-icon-road-map-line fr-label" for="segmented-icon-1">
-                Libellé
-            </label>
-        </div>
-        <div class="fr-segmented__element">
-            <input value="2" checked type="radio" id="segmented-icon-2" name="segmented-icon">
-            <label class="fr-icon-road-map-line fr-label" for="segmented-icon-2">
-                Libellé
-            </label>
-        </div>
-        <div class="fr-segmented__element">
-            <input value="3" type="radio" id="segmented-icon-3" name="segmented-icon">
-            <label class="fr-icon-road-map-line fr-label" for="segmented-icon-3">
-                Libellé
-            </label>
-        </div>
-    </div>
-</fieldset>
-```
+Balises officielles : [Contrôle segmenté avec icônes](exemples.md#contrôle-segmenté-avec-icônes)
 
 ---
 
@@ -159,23 +102,11 @@ Le composant Contrôle segmenté nécessite l'utilisation de JavaScript pour son
 
 ### Installation du JavaScript
 
-Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/segmented/segmented.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/segmented/segmented.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le comportement fonctionne automatiquement.

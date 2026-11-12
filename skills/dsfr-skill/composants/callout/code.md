@@ -17,13 +17,7 @@ Le composant **Mise en avant** permet de mettre en évidence des informations im
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-callout">
-  <h3 class="fr-callout__title">Titre de la mise en avant</h3>
-  <p class="fr-callout__text">Contenu de la mise en avant.</p>
-  <button type="button" class="fr-btn">Libellé bouton</button>
-</div>
-```
+Balises officielles : [Mise en avant avec titre, bouton et texte](exemples.md#mise-en-avant-avec-titre-bouton-et-texte)
 
 ---
 
@@ -31,9 +25,7 @@ Le composant **Mise en avant** permet de mettre en évidence des informations im
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -43,8 +35,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Callout    | Oui         |          |
 | Button     | Non         | Uniquement si ajout d'un bouton à l'intérieur |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">

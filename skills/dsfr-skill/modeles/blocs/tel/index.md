@@ -2,7 +2,7 @@
 
 > Champ de saisie de numéro de téléphone avec validation
 
-Voir aussi : [Exemples](exemples.md)
+Voir aussi : [Extraits](extraits.md) · [Exemples](exemples.md)
 
 Le bloc fonctionnel de “demande d’un numéro de téléphone” permet d’aider un utilisateur à saisir un numéro de téléphone.
 
@@ -26,18 +26,7 @@ Le champ téléphone est composé :
     </div>
 </div>
 </div>
-
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="tel-1">
-        Numéro de téléphone
-        <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
-    </label>
-    <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
-    </div>
-</div>
-```
+Extrait de code : [Structure](extraits.md#structure)
 
 **Avec erreur :**
 
@@ -56,19 +45,7 @@ Le champ téléphone est composé :
     </div>
 </div>
 </div>
-
-```html
-<div class="fr-input-group fr-input-group--error">
-    <label class="fr-label" for="tel-1">
-        Numéro de téléphone
-        <span class="fr-hint-text">Format attendu : (+33) 5 36 49 68 27</span>
-    </label>
-    <input class="fr-input" autocomplete="tel" aria-describedby="tel-1-message-error" id="tel-1422" type="tel">
-    <div class="fr-messages-group" aria-live="polite" id="tel-1-messages">
-        <p class="fr-message fr-message--error">Le format de numéro de téléphone saisie n’est pas valide. Le format attendu est : (+33) 5 36 49 68 27</p>
-    </div>
-</div>
-```
+Extrait de code : [Structure](extraits.md#structure-1)
 
 ## Bonnes pratiques
 

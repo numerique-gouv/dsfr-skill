@@ -16,17 +16,7 @@ La structure HTML d'un champ de saisie de base est la suivante :
 
 **Exemple de structure simple**
 
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="text-input">
-        Libellé champ de saisie
-        <span class="fr-hint-text">Texte de description additionnel</span>
-    </label>
-    <input class="fr-input" aria-describedby="input-messages" id="text-input" type="text">
-    <div class="fr-messages-group" id="input-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Champ avec texte additionnel](exemples.md#champ-avec-texte-additionnel)
 
 ### Champ de saisie avec bouton
 
@@ -39,35 +29,11 @@ Un champ de saisie peut être associé à un bouton pour déclencher une action.
 
 **Exemple de structure avec bouton d'envoi**
 
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="text-input-button">
-        Libellé champ de saisie
-    </label>
-    <div class="fr-input-wrap fr-input-wrap--addon">
-        <input class="fr-input" aria-describedby="text-input-button-messages" id="text-input-button" type="text">
-        <button type="button" class="fr-btn">Envoyer</button>
-    </div>
-    <div class="fr-messages-group" id="text-input-button-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Combo champ + bouton d'envoi](exemples.md#combo-champ--bouton-denvoi)
 
 **Exemple de structure avec bouton d'action**
 
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="text-input-action">
-        Libellé champ de saisie
-    </label>
-    <div class="fr-input-wrap fr-input-wrap--action">
-        <input class="fr-input" aria-describedby="text-input-action-messages" id="text-input-action" type="text">
-        <button type="button" class="fr-btn fr-icon-delete-line fr-btn--secondary">Supprimer le champ</button>
-    </div>
-    <div class="fr-messages-group" id="text-input-action-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Combo champ + bouton d'action](exemples.md#combo-champ--bouton-daction)
 
 ### Statut du champ de saisie
 
@@ -106,9 +72,7 @@ Les champs de saisie peuvent être enrichis avec des attributs HTML pour amélio
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -119,8 +83,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Input      | Oui         |          |
 | Button     | Non         | Uniquement pour les variations avec bouton associé au champ |
 | Utility    | Non         | Uniquement pour l'ajout d'icône dans le champ de saisie |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -156,19 +118,7 @@ Une icône peut être ajoutée dans le champ de saisie pour apporter une informa
 
 **Exemple de structure avec icône**
 
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="text-input-icon">
-        Libellé champ de saisie
-        <span class="fr-hint-text">Texte de description additionnel</span>
-    </label>
-    <div class="fr-input-wrap fr-icon-alert-line">
-        <input class="fr-input" aria-describedby="text-input-icon-messages" id="text-input-icon" type="text">
-    </div>
-    <div class="fr-messages-group" id="text-input-icon-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Champ avec icône personalisée](exemples.md#champ-avec-icône-personalisée)
 
 ### Variantes d'états
 
@@ -180,44 +130,15 @@ Le champ de saisie est disponible en plusieurs variantes d'états :
 
 **Exemple de champ de saisie en erreur**
 
-```html
-<div class="fr-input-group fr-input-group--error">
-    <label class="fr-label" for="text-input-error">
-        Libellé champ de saisie
-    </label>
-    <input class="fr-input" aria-describedby="text-input-error-messages" id="text-input-error" type="text">
-    <div class="fr-messages-group" id="text-input-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error" id="text-input-error-message-error">Texte d’erreur</p>
-    </div>
-</div>
-```
+Balises officielles : [Champ en erreur avec texte d'erreur](exemples.md#champ-en-erreur-avec-texte-derreur)
 
 **Exemple de champ de saisie avec succès**
 
-```html
-<div class="fr-input-group fr-input-group--valid">
-    <label class="fr-label" for="text-input-valid">
-        Libellé champ de saisie
-    </label>
-    <input class="fr-input" aria-describedby="text-input-valid-messages" id="text-input-valid" type="text">
-    <div class="fr-messages-group" id="text-input-valid-messages" aria-live="polite">
-        <p class="fr-message fr-message--valid" id="text-input-valid-message-valid">Texte de validation</p>
-    </div>
-</div>
-```
+Balises officielles : [Champ valide avec texte de succès](exemples.md#champ-valide-avec-texte-de-succès)
 
 **Exemple de champ de saisie désactivé**
 
-```html
-<div class="fr-input-group fr-input-group--disabled">
-    <label class="fr-label" for="text-input-disabled">
-        Libellé champ de saisie
-    </label>
-    <input class="fr-input" aria-describedby="text-input-disabled-messages" disabled id="text-input-disabled" type="text">
-    <div class="fr-messages-group" id="text-input-disabled-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Champ désactivé](exemples.md#champ-désactivé)
 
 ---
 

@@ -22,31 +22,7 @@ Le bandeau de cookies est composé des éléments suivants :
 
 **Exemple de structure de bandeau**
 
-```html
-<div class="fr-consent-banner">
-    <h2 class="fr-h6">À propos des cookies sur nomdusite.gouv.fr</h2>
-    <div class="fr-consent-banner__content">
-        <p class="fr-text--sm">Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="">Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.</p>
-    </div>
-    <ul class="fr-consent-banner__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-sm">
-        <li>
-            <button class="fr-btn" title="Autoriser tous les cookies">
-                Tout accepter
-            </button>
-        </li>
-        <li>
-            <button class="fr-btn" title="Refuser tous les cookies">
-                Tout refuser
-            </button>
-        </li>
-        <li>
-            <button class="fr-btn fr-btn--secondary" data-fr-opened="false" aria-controls="consent-modal" title="Personnaliser les cookies">
-                Personnaliser
-            </button>
-        </li>
-    </ul>
-</div>
-```
+Balises officielles : [Gestionnaire de consentement](exemples.md#gestionnaire-de-consentement)
 
 ### Structure de la modale de gestion des cookies
 
@@ -292,9 +268,7 @@ Le placeholder est composé des éléments suivants :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -307,8 +281,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Radio      | Oui         |
 | Modal      | Oui         |
 | Consent    | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -332,22 +304,11 @@ Le composant Gestionnaire de consentement utilise le JavaScript du composant [Mo
 
 ### Installation du JavaScript
 
-Pour fonctionner, la modale de gestion des cookies nécessite l'utilisation de JavaScript.
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

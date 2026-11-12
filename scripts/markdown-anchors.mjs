@@ -1,27 +1,37 @@
-export function headingAnchors (markdown) {
-  const anchors = new Set()
+export function headingAnchor (heading) {
+  return heading
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/[*`]/g, '')
+    .replace(/(^|[^\p{L}\p{N}])_+|_+(?=[^\p{L}\p{N}]|$)/gu, '$1')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{M}\p{N}\p{Pc} -]/gu, '')
+    .replace(/ /g, '-')
+}
+
+export function headingAnchorsInOrder (markdown) {
+  const entries = []
   const occurrences = new Map()
+  const seen = new Set()
 
   for (const [, heading] of markdown.replace(/```[\s\S]*?```/g, '').matchAll(/^#{1,6} +(.+?) *#*$/gm)) {
-    const base = heading
-      .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
-      .replace(/[*`]/g, '')
-      .replace(/(^|[^\p{L}\p{N}])_+|_+(?=[^\p{L}\p{N}]|$)/gu, '$1')
-      .toLowerCase()
-      .replace(/[^\p{L}\p{M}\p{N}\p{Pc} -]/gu, '')
-      .replace(/ /g, '-')
+    const base = headingAnchor(heading)
     let anchor = base
 
-    while (anchors.has(anchor)) {
+    while (seen.has(anchor)) {
       const count = (occurrences.get(base) || 0) + 1
       occurrences.set(base, count)
       anchor = `${base}-${count}`
     }
 
-    anchors.add(anchor)
+    seen.add(anchor)
+    entries.push({ heading, anchor })
   }
 
-  return anchors
+  return entries
+}
+
+export function headingAnchors (markdown) {
+  return new Set(headingAnchorsInOrder(markdown).map((entry) => entry.anchor))
 }
 
 export function markdownLinks (markdown) {

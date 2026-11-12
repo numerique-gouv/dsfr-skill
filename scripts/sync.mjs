@@ -5,13 +5,25 @@ import { cpSync, existsSync, mkdirSync, mkdtempSync, readdirSync, readFileSync, 
 import { tmpdir } from 'node:os'
 import { dirname, join, posix, relative, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { headingAnchors, markdownLinks } from './markdown-anchors.mjs'
+import { headingAnchor, headingAnchors, headingAnchorsInOrder, markdownLinks } from './markdown-anchors.mjs'
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const skillRoot = join(repositoryRoot, 'skills', 'dsfr-skill')
 const generatedDirectories = ['composants', 'fondamentaux', 'modeles', 'reference']
 let outputRoot = skillRoot
 const largeSnippetSize = 4000
+
+// Commentaire générique répété dans les pages d'exemple : la règle est énoncée
+// une seule fois en tête de chaque exemples.md (genericExampleNotes).
+const repeatedComments = [
+  /<!-- L’alternative de l’image \(attribut alt\) doit toujours être présente[^>]*-->/g
+]
+const genericExampleNotes = 'Les `id` sont à rendre uniques dans la page qui les reprend. L’alternative d’une image (attribut `alt`) doit toujours être présente : vide si l’image est illustrative, renseignée si elle porte du sens.'
+
+// Gabarits d'installation repris de demarrage.md ; chaque code.md ne garde que
+// ses dépendances et les chemins propres au composant.
+const cssInstallNote = (target) => `Les styles du composant et de ses dépendances s'importent dans le \`<head>\`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](${relative(dirname(target), join(skillRoot, 'demarrage.md'))}).`
+const jsInstallNote = (target) => `Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](${relative(dirname(target), join(skillRoot, 'demarrage.md'))}). Imports par composant (core + composant) :`
 
 const subPages = [
   { source: 'index.md', target: 'index.md', label: 'Présentation' },
@@ -45,7 +57,8 @@ function main () {
 
     outputRoot = join(dirname(packageRoot), 'skill')
 
-    for (const topic of topics) writeTopic(topic, pathMap, version)
+    const writtenTopics = topics.map((topic) => writeTopic(topic, pathMap, version))
+    dedupeCodeFences(writtenTopics)
 
     writeReference(packageRoot, version)
     writeTemplates(topics, version)
@@ -221,39 +234,271 @@ function writeTopic (topic, pathMap, version) {
   const largeSnippets = []
   const examples = topic.exampleFiles.flatMap((file) => extractExamples(file, topic.exampleFiles.length > 1 ? variantName(file) : null, largeSnippets))
   const title = topic.frontmatter.title || topic.name
+  const isModel = topic.kind === 'page' || topic.kind === 'bloc'
+  const written = { exemples: null, code: null }
 
   for (const page of topic.pages) {
     const markdown = readFileSync(page.source, 'utf8')
     const isPresentation = page.target.endsWith('index.md')
     const heading = isPresentation ? `# ${title}` : `# ${title} : ${page.label.replace(/\.md$/, '')}`
     const intro = isPresentation && topic.frontmatter.shortDescription ? `\n\n> ${topic.frontmatter.shortDescription}` : ''
-    const body = convertMarkdown(markdown, { source: page.source, target: join(skillRoot, page.target), pathMap, keepIntro: isPresentation })
-    const siblings = isPresentation ? siblingIndex(topic, page, examples.length > 0) : ''
+    let body = convertMarkdown(markdown, { source: page.source, target: join(skillRoot, page.target), pathMap, keepIntro: isPresentation })
+    let modelSnippets = []
+    if (isPresentation && isModel) ({ body, snippets: modelSnippets } = splitModelSnippets(body, title))
+    if (page.target.endsWith('code.md')) body = compactInstallSections(body, join(skillRoot, page.target))
+    const hasExamples = examples.length > 0 || modelSnippets.length > 0
+    const siblings = isPresentation ? siblingIndex(topic, page, hasExamples, modelSnippets.length > 0) : ''
 
     writeOutput(page.target, `${heading}${intro}\n\n${siblings}${body}`)
+    if (page.target.endsWith('code.md')) written.code = { target: page.target, content: `${heading}${intro}\n\n${siblings}${body}` }
+    if (isPresentation && isModel && modelSnippets.length > 0) {
+      const sections = modelSnippets.map((snippet) => `## ${snippet.heading}\n\n${snippet.fence}`)
+      const content = [`# ${title} : extraits de la documentation`, `Extraits de code de la documentation du DSFR ${version}. ${genericExampleNotes}`, ...sections].join('\n\n')
+      const target = posix.join(topic.directory, 'extraits.md')
+      writeOutput(target, content)
+    }
   }
 
-  if (examples.length === 0) return
+  if (examples.length === 0) return written
 
   for (const snippet of largeSnippets) writeOutput(posix.join(topic.directory, snippet.path), snippet.code)
 
   const content = [
     `# ${title} : exemples officiels`,
-    `Extraits de code des pages d'exemple du DSFR ${version}. Les \`id\` sont à rendre uniques dans la page qui les reprend. Les extraits de plus de ${largeSnippetSize / 1000} ko sont dans des fichiers à part.`,
+    `Extraits de code des pages d'exemple du DSFR ${version}. ${genericExampleNotes} Les extraits de plus de ${largeSnippetSize / 1000} ko sont dans des fichiers à part.`,
     ...examples
   ].join('\n\n')
 
   writeOutput(posix.join(topic.directory, 'exemples.md'), content)
+  written.exemples = { target: posix.join(topic.directory, 'exemples.md'), content }
+  return written
 }
 
-function siblingIndex (topic, presentation, hasExamples) {
+function siblingIndex (topic, presentation, hasExamples, hasExtraits = false) {
   const others = topic.pages.filter((page) => page !== presentation).map((page) => `[${page.label.replace(/\.md$/, '')}](${posix.basename(page.target)})`)
+  if (hasExtraits) others.push('[Extraits](extraits.md)')
   if (hasExamples) others.push('[Exemples](exemples.md)')
   return others.length > 0 ? `Voir aussi : ${others.join(' · ')}\n\n` : ''
 }
 
 function variantName (file) {
   return dirname(file).split('/').slice(-1)[0]
+}
+
+// Les modèles (pages et blocs) mêlent présentation et gabarits dans leur doc
+// source. Les blocs de code partent dans extraits.md ; la présentation garde
+// le texte et un lien vers l'extrait.
+function splitModelSnippets (body, title) {
+  const lines = body.split('\n')
+  const kept = []
+  const snippets = []
+  let heading = title
+  let inFence = false
+  let fence = []
+  let fenceLanguage = 'html'
+  // Reproduit la déduplication de headingAnchors pour que les liens générés
+  // pointent vers les mêmes ancres que le vérificateur de liens.
+  const assignedAnchors = new Set()
+  const occurrences = new Map()
+
+  const flushFence = () => {
+    const code = stripRepeatedComments(fence.join('\n')).trimEnd()
+    const base = headingAnchor(heading)
+    let anchor = base
+    while (assignedAnchors.has(anchor)) {
+      const count = (occurrences.get(base) || 0) + 1
+      occurrences.set(base, count)
+      anchor = `${base}-${count}`
+    }
+    assignedAnchors.add(anchor)
+    snippets.push({ heading, anchor, fence: `\`\`\`${fenceLanguage}\n${code}\n\`\`\`` })
+    // La légende « **Extrait de code** » du document source fait double emploi
+    // avec le lien vers extraits.md.
+    while (kept.length > 0 && kept.at(-1).trim() === '') kept.pop()
+    if (kept.at(-1)?.trim() === '**Extrait de code**') kept.pop()
+    kept.push(`Extrait de code : [${heading}](extraits.md#${anchor})`)
+    fence = []
+  }
+
+  for (const line of lines) {
+    if (/^\s*```/.test(line)) {
+      if (!inFence) {
+        inFence = true
+        fenceLanguage = line.trim().replace(/^```/, '') || 'html'
+        continue
+      }
+      inFence = false
+      if (fenceLanguage === 'html' && fence.length > 0) flushFence()
+      else kept.push(`\`\`\`${fenceLanguage}`, ...fence, '```')
+      continue
+    }
+    if (inFence) {
+      fence.push(line)
+      continue
+    }
+    const headingMatch = line.match(/^#{1,6} +(.+?) *#*$/)
+    if (headingMatch) heading = headingMatch[1].replace(/\*\*/g, '')
+    kept.push(line)
+  }
+
+  return { body: kept.join('\n'), snippets }
+}
+
+// Les sections « Installation du CSS/JavaScript » répètent le même texte dans
+// chaque composant. On garde les dépendances et les chemins propres au
+// composant ; le texte commun vit dans demarrage.md.
+function compactInstallSections (body, target) {
+  const lines = body.split('\n')
+  const output = []
+  let inFence = false
+  let section = null
+  let sectionLines = []
+
+  const flushSection = () => {
+    if (section === null) return
+    output.push(...compactInstallSection(section, sectionLines, target))
+    section = null
+    sectionLines = []
+  }
+
+  for (const line of lines) {
+    if (/^\s*```/.test(line)) inFence = !inFence
+    const heading = !inFence && line.match(/^(#{2,4}) (.+)$/)
+    if (heading) {
+      flushSection()
+      const level = heading[1].length
+      const text = heading[2].trim()
+      if (text === 'Installation du CSS' || text === 'Installation du JavaScript') {
+        section = { line, level, kind: text.endsWith('CSS') ? 'css' : 'js' }
+        continue
+      }
+    }
+    if (section !== null) {
+      sectionLines.push(line)
+      continue
+    }
+    output.push(line)
+  }
+  flushSection()
+  return output.join('\n')
+}
+
+function compactInstallSection (section, lines, target) {
+  const content = lines.join('\n')
+  const fences = [...content.matchAll(/```html\n([\s\S]*?)```/g)].map((match) => match[0])
+  const kept = [section.line, '']
+
+  if (section.kind === 'css') {
+    kept.push(cssInstallNote(target), '')
+    const table = content.match(/\| Dépendance[\s\S]*?(?=\n\n|$)/)
+    if (table) kept.push('**Dépendances CSS**', '', table[0].trim(), '')
+    const imports = fences.find((fence) => fence.includes('.css'))
+    if (imports) kept.push(imports, '')
+  } else {
+    kept.push(jsInstallNote(target), '')
+    const moduleImport = fences.find((fence) => fence.includes('type="module"'))
+    if (moduleImport) kept.push(moduleImport, '')
+    const closing = lines.filter((line) => /^Une fois le JavaScript chargé/.test(line.trim()))
+    if (closing.length > 0) kept.push(closing.at(-1), '')
+  }
+
+  return kept
+}
+
+// Un exemple de code.md dont la structure de classes existe déjà dans
+// exemples.md est remplacé par un lien vers la variante officielle. La
+// comparaison ignore ids, libellés et attributs : seuls les classes comptent.
+function dedupeCodeFences (writtenTopics) {
+  for (const written of writtenTopics) {
+    if (!written?.code || !written?.exemples) continue
+    const exampleEntries = exampleEntriesOf(written)
+    if (exampleEntries.length === 0) continue
+
+    const lines = written.code.content.split('\n')
+    const output = []
+    let inFence = false
+    let fence = []
+    let replaced = 0
+
+    const flushFence = () => {
+      const code = fence.join('\n')
+      const signature = classSignature(code)
+      const match = signature && exampleEntries.find((entry) => entry.signature === signature)
+      if (match) {
+        output.push(`Balises officielles : [${match.heading}](exemples.md#${match.anchor})`)
+        replaced += 1
+      } else {
+        output.push('```html', ...fence, '```')
+      }
+      fence = []
+    }
+
+    for (const line of lines) {
+      if (/^\s*```/.test(line)) {
+        if (!inFence) {
+          inFence = line.trim() === '```html'
+          if (!inFence) output.push(line)
+          continue
+        }
+        inFence = false
+        flushFence()
+        continue
+      }
+      if (inFence) fence.push(line)
+      else output.push(line)
+    }
+
+    if (replaced > 0) {
+      written.code.content = output.join('\n')
+      writeOutput(written.code.target, written.code.content)
+    }
+  }
+}
+
+function exampleEntriesOf (written) {
+  const content = written.exemples.content
+  const events = []
+  const anchors = headingAnchorsInOrder(content)
+  // Associe chaque ancre à sa position dans le fichier (les ancres sont
+  // produites dans l'ordre du document, en ignorant les blocs de code).
+  const prose = content.replace(/```[\s\S]*?```/g, (block) => ' '.repeat(block.length))
+  let cursor = 0
+  for (const entry of anchors) {
+    const pattern = new RegExp(`^#{1,6} +${entry.heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')} *#*$`, 'm')
+    const found = prose.slice(cursor).search(pattern)
+    if (found === -1) continue
+    events.push({ index: cursor + found, type: 'heading', entry })
+    cursor += found + 1
+  }
+  for (const fence of content.matchAll(/```html\n([\s\S]*?)```/g)) {
+    events.push({ index: fence.index, type: 'fence', code: fence[1] })
+  }
+  events.sort((a, b) => a.index - b.index)
+
+  const entries = []
+  let current = null
+  for (const event of events) {
+    if (event.type === 'heading') current = event.entry
+    else if (current) {
+      const signature = classSignature(event.code)
+      if (signature) entries.push({ heading: current.heading, anchor: current.anchor, signature })
+    }
+  }
+  return entries
+}
+
+function classSignature (html) {
+  return [...html.matchAll(/class="([^"]*)"/g)]
+    .flatMap((match) => match[1].split(/\s+/))
+    .filter((name) => name.startsWith('fr-'))
+    .sort()
+    .join(' ')
+}
+
+function stripRepeatedComments (code) {
+  let stripped = code
+  for (const pattern of repeatedComments) stripped = stripped.replace(pattern, '')
+  return stripped.replace(/[ \t]+$/gm, '').replace(/\n{3,}/g, '\n\n')
 }
 
 function writeOutput (relativePath, content) {
@@ -403,7 +648,7 @@ function extractExamples (file, variant, largeSnippets) {
   let group = null
 
   for (const match of body.matchAll(snippetPattern)) {
-    const code = decodeEntities(match[2]).trimEnd()
+    const code = stripRepeatedComments(decodeEntities(match[2])).trimEnd()
     const language = match[1].match(/language-([\w-]+)/)?.[1] || 'html'
     const zone = body.slice(previousEnd, match.index)
     const { groupHeading, title, titleEnd } = exampleHeadings(zone)

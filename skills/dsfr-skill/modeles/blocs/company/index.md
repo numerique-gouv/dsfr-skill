@@ -2,7 +2,7 @@
 
 > Bloc de saisie des données relatives à une société
 
-Voir aussi : [Exemples](exemples.md)
+Voir aussi : [Extraits](extraits.md) · [Exemples](exemples.md)
 
 La demande de renseignement sur la société permet d’aider un utilisateur à saisir ses renseignements concernant sa société.
 
@@ -40,29 +40,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-**Extrait de code**
-
-```html
-<fieldset class="fr-fieldset" aria-label="SIRET de l'entreprise" id="siret-1632-fieldset" aria-labelledby="siret-1632-fieldset-messages">
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label for="siret-1-input" class="fr-label">
-                Numéro de SIRET
-            </label>
-            <input class="fr-input" aria-describedby="siret-1-messages" name="siret" type="text" id="siret-1-input">
-            <div class="fr-messages-group" id="siret-1-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-mt-n1v fr-fieldset__element">
-        <a class="fr-link" target="_blank" rel="noopener" title="Annuaire des entreprises - nouvelle fenêtre" href="https://annuaire-entreprises.data.gouv.fr/">
-            Annuaire des entreprises
-        </a>
-    </div>
-    <div class="fr-messages-group" id="siret-1632-fieldset-messages" aria-live="polite">
-    </div>
-</fieldset>
-```
+Extrait de code : [Structure](extraits.md#structure)
 
 **Demande d’une adresse de siège social**
 
@@ -173,103 +151,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-**Extrait de code**
-
-```html
-<fieldset class="fr-fieldset" id="address-1649-fieldset" aria-labelledby="address-1649-fieldset-messages">
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1642">
-                Dénomination
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1642-messages" name="name" id="address-item-1642" type="text">
-            <div class="fr-messages-group" id="address-item-1642-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1643">
-                Adresse
-                <span class="fr-hint-text">Numéro et voie</span>
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1643-messages" name="address-line1" id="address-item-1643" type="text">
-            <div class="fr-messages-group" id="address-item-1643-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1644">
-                Complément d’adresse (optionnel)
-                <span class="fr-hint-text">Bâtiment, immeuble, escalier et numéro d’appartement</span>
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1644-messages" name="address-line2" id="address-item-1644" type="text">
-            <div class="fr-messages-group" id="address-item-1644-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1645">
-                Lieu-dit, commune déléguée ou boîte postale
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1645-messages" name="address-level3" id="address-item-1645" type="text">
-            <div class="fr-messages-group" id="address-item-1645-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element fr-fieldset__element--inline fr-fieldset__element--postal">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1646">
-                Code postal
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1646-messages" name="postal-code" id="address-item-1646" type="text">
-            <div class="fr-messages-group" id="address-item-1646-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element fr-fieldset__element--inline@md fr-fieldset__element--inline-grow">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1647">
-                Ville ou commune
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1647-messages" name="address-level2" id="address-item-1647" type="text">
-            <div class="fr-messages-group" id="address-item-1647-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="address-item-1648">
-                Cedex
-            </label>
-            <input class="fr-input" aria-describedby="address-item-1648-messages" name="business-postal-code" id="address-item-1648" type="text">
-            <div class="fr-messages-group" id="address-item-1648-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-select-group">
-            <label for="country-select-1" class="fr-label">
-                Pays
-            </label>
-            <select class="fr-select" aria-describedby="country-select-1-messages" id="country-select-1" autocomplete="country" name="country">
-                <option value="" selected disabled hidden>Sélectionner une option</option>
-                <option value="FR">France</option>
-                <option value="DE">Allemagne</option>
-                <option value="IT">Italie</option>
-                <option value="ES">Espagne</option>
-                <option value="GB">Royaume-Uni</option>
-            </select>
-            <div class="fr-messages-group" id="country-select-1-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-messages-group" id="address-1649-fieldset-messages" aria-live="polite">
-    </div>
-</fieldset>
-```
+Extrait de code : [Structure](extraits.md#structure-1)
 
 **Demande d’un type de société**
 
@@ -305,35 +187,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-**Extrait de code**
-
-```html
-<fieldset class="fr-fieldset" aria-label="Type de société" id="company-structure-1652-fieldset" aria-labelledby="company-structure-1652-fieldset-messages">
-    <div class="fr-fieldset__element">
-        <div class="fr-select-group">
-            <label for="company-structure-select" class="fr-label">
-                Type de société
-            </label>
-            <select class="fr-select" aria-describedby="company-structure-select-messages" id="company-structure-select" name="structure">
-                <option value="" selected disabled hidden>Sélectionner une option</option>
-                <option value="EI">Entrepreneur individuel (EI)</option>
-                <option value="EURL">Entreprise unipersonnelle à responsabilité limitée (EURL)</option>
-                <option value="SARL">Société à responsabilité limitée (SARL)</option>
-                <option value="SASU">Société par actions simplifiée unipersonnelle (SASU)</option>
-                <option value="SAS">Société par actions simplifiée (SAS)</option>
-                <option value="SA">Société anonyme (SA)</option>
-                <option value="SNC">Société en nom collectif (SNC)</option>
-                <option value="SCS">Société en commandite simple (SCS)</option>
-                <option value="SCA">Société en commandite par actions (SCA)</option>
-            </select>
-            <div class="fr-messages-group" id="company-structure-select-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-messages-group" id="company-structure-1652-fieldset-messages" aria-live="polite">
-    </div>
-</fieldset>
-```
+Extrait de code : [Structure](extraits.md#structure-2)
 
 **Demande d’un représentant moral**
 
@@ -393,54 +247,7 @@ Ce bloc se compose de :
 </fieldset>
 </div>
 
-**Extrait de code**
-
-```html
-<fieldset class="fr-fieldset" aria-label="Représentant moral de l'entreprise" id="representative-1661-fieldset" aria-labelledby="representative-1661-fieldset-messages">
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="input-usual-name-1664">
-                Nom d'usage
-            </label>
-            <input class="fr-input" spellcheck="false" aria-describedby="input-usual-name-1664-messages" name="usual-name" id="input-usual-name-1664" type="text">
-            <div class="fr-messages-group" id="input-usual-name-1664-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="input-birth-name-1665">
-                Nom de naissance
-            </label>
-            <input class="fr-input" spellcheck="false" aria-describedby="input-birth-name-1665-messages" name="birth-name" id="input-birth-name-1665" type="text">
-            <div class="fr-messages-group" id="input-birth-name-1665-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label" for="input-firstname-1667">
-                Prénom
-            </label>
-            <input class="fr-input" spellcheck="false" autocomplete="given-name" aria-describedby="input-firstname-1667-messages" name="given-name" id="input-firstname-1667" type="text">
-            <div class="fr-messages-group" id="input-firstname-1667-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-fieldset__element">
-        <div class="fr-input-group">
-            <label class="fr-label">
-                Fonction(s) dans la société
-            </label>
-            <input class="fr-input" aria-describedby="input-position-1-messages" name="position" type="text">
-            <div class="fr-messages-group" id="input-position-1-messages" aria-live="polite">
-            </div>
-        </div>
-    </div>
-    <div class="fr-messages-group" id="representative-1661-fieldset-messages" aria-live="polite">
-    </div>
-</fieldset>
-```
+Extrait de code : [Structure](extraits.md#structure-3)
 
 ## Accessibilité
 

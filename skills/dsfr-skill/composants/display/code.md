@@ -101,9 +101,7 @@ Voici un exemple de code pour utiliser le composant **Paramètre d'affichage** 
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -115,8 +113,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Radio      | Oui         |
 | Scheme     | Oui         |
 | Display    | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -141,8 +137,7 @@ Ce composant est aussi dépendant du **core** et de la **modale**.
 
 ### Installation du JavaScript
 
-Pour fonctionner correctement, les scripts JavaScript du paramètre d'affichage, du core, de scheme, et de la modale doivent être importés.
-L'import doit se faire avant la fermeture du body, et de préférence avec le fichier minifié, car plus léger.
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
@@ -150,10 +145,6 @@ L'import doit se faire avant la fermeture du body, et de préférence avec le fi
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 <script type="module" src="dist/component/display/display.module.min.js"></script>
 ```
-
-<small>NB : Il est aussi possible d'importer le JavaScript global du DSFR `dsfr.module.min.js`.</small>
-
-La gestion du thème ne fonctionne pas sur Internet Explorer 11 qui ne supporte pas les variables CSS.
 
 ### Instances
 

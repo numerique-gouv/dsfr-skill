@@ -18,31 +18,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<figure class="fr-quote fr-quote--column">
-    <blockquote cite="[À MODIFIER - https://lien-vers-la-source.fr]">
-        <p>« Lorem [...] elit ut. »</p>
-    </blockquote>
-    <figcaption>
-        <p class="fr-quote__author">Auteur</p>
-        <ul class="fr-quote__source">
-            <li>
-                <cite>Ouvrage</cite>
-            </li>
-            <li>Détail 1</li>
-            <li>Détail 2</li>
-            <li>Détail 3</li>
-            <li>
-                <a href="">Détail 4</a>
-            </li>
-        </ul>
-        <div class="fr-quote__image">
-            <img class="fr-responsive-img" src="../../../example/img/placeholder.1x1.png" alt="" />
-            <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance -->
-        </div>
-    </figcaption>
-</figure>
-```
+Balises officielles : [Citation avec image](exemples.md#citation-avec-image)
 
 ---
 
@@ -50,9 +26,7 @@ Sa structure est la suivante :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -60,8 +34,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 |------------|-------------|
 | Core       | Oui         |
 | Quote      | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">

@@ -42,54 +42,7 @@ Il est constitué d'un élément HTML `<header>` de classe `fr-header`, avec l'a
 
 **Déplier pour voir le code**
 
-```html
-<header role="banner" class="fr-header">
-    <div class="fr-header__body">
-        <div class="fr-container">
-            <div class="fr-header__body-row">
-                <div class="fr-header__brand fr-enlarge-link">
-                    <div class="fr-header__brand-top">
-                        <div class="fr-header__logo">
-                            <a href="/" title="Accueil - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                                <p class="fr-logo">
-                                    Intitulé
-                                    <br>officiel
-                                </p>
-                            </a>
-                        </div>
-                        <div class="fr-header__navbar">
-                            <button data-fr-opened="false" aria-controls="modal-header" title="Menu" type="button" id="button-header" class="fr-btn--menu fr-btn">Menu</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="fr-header__menu fr-modal" id="modal-header" aria-labelledby="button-header">
-        <div class="fr-container">
-            <button aria-controls="modal-header" title="Fermer" type="button" id="button-2168" class="fr-btn--close fr-btn">Fermer</button>
-            <div class="fr-header__menu-links">
-            </div>
-            <nav class="fr-nav" role="navigation" aria-label="Menu principal">
-                <ul class="fr-nav__list">
-                    <li class="fr-nav__item">
-                        <a type="link" href="#" class="fr-nav__link">accès direct</a>
-                    </li>
-                    <li class="fr-nav__item">
-                        <a type="link" href="#" class="fr-nav__link">accès direct</a>
-                    </li>
-                    <li class="fr-nav__item">
-                        <a type="link" href="#" class="fr-nav__link">accès direct</a>
-                    </li>
-                    <li class="fr-nav__item">
-                        <a type="link" href="#" class="fr-nav__link">accès direct</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
-```
+Balises officielles : [Header minimal](exemples.md#header-minimal)
 
 ---
 
@@ -97,9 +50,7 @@ Il est constitué d'un élément HTML `<header>` de classe `fr-header`, avec l'a
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -115,8 +66,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Translate  | Non         | Si utilisation d'un sélecteur de langue |
 | Modal      | Non         | Si utilisation d'un des 4 éléments précédents, qui s'ouvrent dans une modale en mobile |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/logo/logo.min.css" rel="stylesheet">
@@ -131,34 +80,7 @@ Le composant en-tête peut être utilisé sans navigation.
 
 **Déplier pour voir le code**
 
-```html
-<header role="banner" class="fr-header">
-    <div class="fr-header__body">
-        <div class="fr-container">
-            <div class="fr-header__body-row">
-                <div class="fr-header__brand fr-enlarge-link">
-                    <div class="fr-header__brand-top">
-                        <div class="fr-header__logo">
-                            <p class="fr-logo">
-                                Intitulé
-                                <br>officiel
-                            </p>
-                        </div>
-                    </div>
-                    <div class="fr-header__service">
-                        <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                            <p class="fr-header__service-title">
-                                Nom du site / service
-                            </p>
-                        </a>
-                        <p class="fr-header__service-tagline">baseline - précisions sur l‘organisation</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-```
+Balises officielles : [Header sans navigation](exemples.md#header-sans-navigation)
 
 ### Variante avec une liste de raccourcis
 
@@ -168,59 +90,7 @@ Le composant en-tête peut être utilisé avec une liste de raccourcis.
 
 **Déplier pour voir le code**
 
-```html
-<header role="banner" class="fr-header">
-    <div class="fr-header__body">
-        <div class="fr-container">
-            <div class="fr-header__body-row">
-                <div class="fr-header__brand fr-enlarge-link">
-                    <div class="fr-header__brand-top">
-                        <div class="fr-header__logo">
-                            <p class="fr-logo">
-                                Intitulé
-                                <br>officiel
-                            </p>
-                        </div>
-                        <div class="fr-header__navbar">
-                            <button data-fr-opened="false" aria-controls="modal-nav" title="Menu" type="button" id="button-menu" class="fr-btn--menu fr-btn">Menu</button>
-                        </div>
-                    </div>
-                    <div class="fr-header__service">
-                        <a href="/" title="Accueil - [À MODIFIER - Nom du site / service] - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                            <p class="fr-header__service-title">
-                                Nom du site / service
-                            </p>
-                        </a>
-                        <p class="fr-header__service-tagline">baseline - précisions sur l‘organisation</p>
-                    </div>
-                </div>
-                <div class="fr-header__tools">
-                    <div class="fr-header__tools-links">
-                        <ul class="fr-btns-group">
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--team fr-btn">Contact</a>
-                            </li>
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--briefcase fr-btn">Espace recruteur</a>
-                            </li>
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--account fr-btn">Espace particulier</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="fr-header__menu fr-modal" id="modal-nav" aria-labelledby="button-menu">
-        <div class="fr-container">
-            <button aria-controls="modal-nav" title="Fermer" type="button" id="button-2188" class="fr-btn--close fr-btn">Fermer</button>
-            <div class="fr-header__menu-links">
-            </div>
-        </div>
-    </div>
-</header>
-```
+Balises officielles : [Header sans navigation avec une liste de raccourcis](exemples.md#header-sans-navigation-avec-une-liste-de-raccourcis)
 
 ### Variante avec selecteur de langues
 
@@ -584,64 +454,7 @@ Dans le cadre de l'utilisation du DSFR dans un contexte de Single-page applicati
 
 **Déplier pour voir le code**
 
-```html
-<header role="banner" class="fr-header">
-    <div class="fr-header__body">
-        <div class="fr-container">
-            <div class="fr-header__body-row">
-                <div class="fr-header__brand fr-enlarge-link">
-                    <div class="fr-header__brand-top">
-                        <div class="fr-header__logo">
-                            <a href="/" title="Accueil - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)">
-                                <p class="fr-logo">
-                                    Intitulé
-                                    <br>officiel
-                                </p>
-                            </a>
-                        </div>
-                        <div class="fr-header__navbar">
-                            <button data-fr-opened="false" aria-controls="modal-menu" title="Menu" type="button" id="button-menu" class="fr-btn--menu fr-btn">Menu</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="fr-header__tools">
-                    <div class="fr-header__tools-links">
-                        <ul class="fr-btns-group">
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--team fr-btn">Contact</a>
-                            </li>
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--briefcase fr-btn">Espace recruteur</a>
-                            </li>
-                            <li>
-                                <a href="[url - à modifier]" class="fr-btn--account fr-btn">Espace particulier</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="fr-header__menu fr-modal" id="modal-menu" aria-labelledby="button-menu">
-        <div class="fr-container">
-            <button aria-controls="modal-menu" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
-            <div class="fr-header__menu-links">
-                <ul class="fr-btns-group">
-                    <li>
-                        <a href="[url - à modifier]" class="fr-btn--team fr-btn fr-btn">Contact</a>
-                    </li>
-                    <li>
-                        <a href="[url - à modifier]" class="fr-btn--briefcase fr-btn fr-btn">Espace recruteur</a>
-                    </li>
-                    <li>
-                        <a href="[url - à modifier]" class="fr-btn--account fr-btn fr-btn">Espace particulier</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-```
+Balises officielles : [Header avec raccourcis dupliqués, pour Angular, React et Vue](exemples.md#header-avec-raccourcis-dupliqués-pour-angular-react-et-vue)
 
 ### Variante deuil national
 
@@ -661,36 +474,13 @@ En dehors de la version minimal, les versions avec navigation, avec liens d'acc�
 
 ### Installation du JavaScript
 
-Pour fonctionner correctement, le JavaScript du composant et de ses dépendances doivent être importés. L'import doit se faire à la fin de la page, avant la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-**Dépendances JS**
-
-| Dépendance | Obligatoire |
-|------------|-------------|
-| Core       | Oui         |
-| Navigation | Oui         |
-| Modal      | Oui         |
-| Header     | Oui         |
-
-**Exemple d'imports JavaScript**
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/navigation/navigation.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 <script type="module" src="dist/component/header/header.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, des fichiers legacy, en version nomodule ES5, peuvent aussi être importés :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/navigation/navigation.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></
-<script type="text/javascript" nomodule src="dist/component/header/header.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

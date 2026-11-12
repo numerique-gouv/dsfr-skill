@@ -20,20 +20,7 @@ Sa structure comprend les éléments suivants :
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-notice fr-notice--info">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <div>
-                <h2 class="fr-notice__title">Titre du bandeau reprenant le type d'information importante</h2>
-                <p class="fr-notice__desc">Texte de description</p>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </div>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Bandeau d'information cas max](exemples.md#bandeau-dinformation-cas-max)
 
 ---
 
@@ -41,9 +28,7 @@ Sa structure comprend les éléments suivants :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -52,8 +37,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |          |
 | notice     | Oui         |          |
 | Button     | Non         | Uniquement sur la variation refermable |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -66,18 +49,7 @@ Le composant Bandeau d'information importante peut comporter un bouton de fermet
 
 **Exemple de variante avec bouton de fermeture**
 
-```html
-<div class="fr-notice fr-notice--info">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Titre du bandeau</span>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Bandeau d'information avec bouton fermer](exemples.md#bandeau-dinformation-avec-bouton-fermer)
 
 ### Variante avec avec icône personnalisée
 
@@ -115,54 +87,15 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 **Exemple de structure HTML du bandeau d'information**
 
-```html
-<div class="fr-notice fr-notice--info">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Titre du bandeau d'information</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Bandeau d'information cas max](exemples.md#bandeau-dinformation-cas-max)
 
 **Exemple de structure HTML du bandeau d'avertissement**
 
-```html
-<div class="fr-notice fr-notice--warning">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Titre du bandeau d'avertissement</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Bandeau d'avertissement](exemples.md#bandeau-davertissement)
 
 **Exemple de structure HTML du bandeau d'alerte**
 
-```html
-<div class="fr-notice fr-notice--alert">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Titre du bandeau d'alerte</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Bandeau d'alerte](exemples.md#bandeau-dalerte)
 
 ### Déclinaisons de bandeaux vigilance météo
 
@@ -182,54 +115,15 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 **Exemple de structure HTML du bandeau Vigilance météo orange**
 
-```html
-<div class="fr-notice fr-notice--weather-orange">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Vigilance météo orange</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Vigilance météo orange](exemples.md#vigilance-météo-orange)
 
 **Exemple de structure HTML du bandeau Vigilance météo rouge**
 
-```html
-<div class="fr-notice fr-notice--weather-red">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Vigilance météo rouge</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Vigilance météo rouge](exemples.md#vigilance-météo-rouge)
 
 **Exemple de structure HTML du bandeau Vigilance météo violette**
 
-```html
-<div class="fr-notice fr-notice--weather-purple">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Vigilance météo violette</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Vigilance météo violette](exemples.md#vigilance-météo-violette)
 
 ### Déclinaisons de bandeaux d'alertes
 
@@ -249,54 +143,15 @@ Ces variations sont définies par l'ajout de classes correspondantes sur le cont
 
 **Exemple de structure HTML du bandeau Alerte attentat**
 
-```html
-<div class="fr-notice fr-notice--attack">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Attentat en cours</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Alerte attentat](exemples.md#alerte-attentat)
 
 **Exemple de structure HTML du bandeau Appel à témoins**
 
-```html
-<div class="fr-notice fr-notice--witness">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Appel à témoins</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Appel à témoins](exemples.md#appel-à-témoins)
 
 **Exemple de structure HTML du bandeau Alerte technologique**
 
-```html
-<div class="fr-notice fr-notice--cyberattack">
-    <div class="fr-container">
-        <div class="fr-notice__body">
-            <p>
-                <span class="fr-notice__title">Cyber-attaque</span>
-                <span class="fr-notice__desc">Texte de description lorem ipsum sit consectetur adipiscing.</span>
-                <a title="Lien de consultation - nouvelle fenêtre" href="#" target="_blank" rel="noopener external" class="fr-notice__link">Lien de consultation</a>
-            </p>
-            <button title="Masquer le message" onclick="const notice = this.parentNode.parentNode.parentNode; notice.parentNode.removeChild(notice)" type="button" class="fr-btn--close fr-btn">Masquer le message</button>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Alerte technologique](exemples.md#alerte-technologique)
 
 ---
 

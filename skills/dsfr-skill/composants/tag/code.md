@@ -19,9 +19,7 @@ Sa structure est la suivante :
 
 **Exemple de Tag non cliquable**
 
-```html
-<p class="fr-tag">Libellé tag non cliquable</p>
-```
+Balises officielles : [Tag non cliquable sans icône](exemples.md#tag-non-cliquable-sans-icône)
 
 #### Tag cliquable
 
@@ -44,9 +42,7 @@ Sa structure est la suivante :
 
 **Exemple de Tag activable**
 
-```html
-<button type="button" class="fr-tag" aria-pressed="false">Libellé tag activable</button>
-```
+Balises officielles : [Tag non cliquable sans icône](exemples.md#tag-non-cliquable-sans-icône)
 
 #### Tag supprimable
 
@@ -56,9 +52,7 @@ Sa structure est la suivante :
 
 **Exemple de Tag supprimable**
 
-```html
-<button class="fr-tag fr-tag--dismiss" type="button" aria-label="Retirer [À MODIFIER - le filtre Libellé tag supprimable]">Libellé tag supprimable</button>
-```
+Balises officielles : [Tag supprimable](exemples.md#tag-supprimable-1)
 
 #### Groupe de tags
 
@@ -84,9 +78,7 @@ Les tags peuvent être utilisés à plusieurs dans des groupes de tags `fr-tags-
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -95,8 +87,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |          |
 | Tag        | Oui         |          |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -151,9 +141,7 @@ Le tag cliquable est accentuable, permettant le changement de la couleur de fond
 
 **Exemple de variante accentuée**
 
-```html
-<a class="fr-tag fr-tag--green-emeraude" href="#">Libellé tag cliquable accentué</a>
-```
+Balises officielles : [Tag cliquable accentué](exemples.md#tag-cliquable-accentué)
 
 ### Variantes de taille du groupe de tag
 
@@ -236,24 +224,11 @@ Le groupe de tag est disponible en deux variantes de tailles :
 
 ### Installation du JavaScript
 
-Pour fonctionner, le composant Tag nécessite l'utilisation de JavaScript pour les tags activables supprimables.
-Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/tag/tag.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/tag/tag.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.
