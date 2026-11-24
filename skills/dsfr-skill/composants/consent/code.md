@@ -22,7 +22,31 @@ Le bandeau de cookies est composé des éléments suivants :
 
 **Exemple de structure de bandeau**
 
-Balises officielles : [Gestionnaire de consentement](exemples.md#gestionnaire-de-consentement)
+```html
+<div class="fr-consent-banner">
+    <h2 class="fr-h6">À propos des cookies sur nomdusite.gouv.fr</h2>
+    <div class="fr-consent-banner__content">
+        <p class="fr-text--sm">Bienvenue ! Nous utilisons des cookies pour améliorer votre expérience et les services disponibles sur ce site. Pour en savoir plus, visitez la page <a href="">Données personnelles et cookies</a>. Vous pouvez, à tout moment, avoir le contrôle sur les cookies que vous souhaitez activer.</p>
+    </div>
+    <ul class="fr-consent-banner__buttons fr-btns-group fr-btns-group--right fr-btns-group--inline-reverse fr-btns-group--inline-sm">
+        <li>
+            <button class="fr-btn" title="Autoriser tous les cookies">
+                Tout accepter
+            </button>
+        </li>
+        <li>
+            <button class="fr-btn" title="Refuser tous les cookies">
+                Tout refuser
+            </button>
+        </li>
+        <li>
+            <button class="fr-btn fr-btn--secondary" data-fr-opened="false" aria-controls="consent-modal" title="Personnaliser les cookies">
+                Personnaliser
+            </button>
+        </li>
+    </ul>
+</div>
+```
 
 ### Structure de la modale de gestion des cookies
 

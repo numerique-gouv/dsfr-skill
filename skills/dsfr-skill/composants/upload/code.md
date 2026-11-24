@@ -65,7 +65,7 @@ Afin de pouvoir sélectionner plusieurs fichiers, il faut ajouter l'attribut `mu
 
 **Exemple de variante d'ajout de fichiers multiples**
 
-Balises officielles : [Bouton upload 1 seul fichier](exemples.md#bouton-upload-1-seul-fichier)
+Balises officielles : [Bouton upload fichiers multiples](exemples.md#bouton-upload-fichiers-multiples)
 
 ### Variante d'ajout de fichier désactivé
 
