@@ -29,7 +29,19 @@ Un champ de saisie peut être associé à un bouton pour déclencher une action.
 
 **Exemple de structure avec bouton d'envoi**
 
-Balises officielles : [Combo champ + bouton d'envoi](exemples.md#combo-champ--bouton-denvoi)
+```html
+<div class="fr-input-group">
+    <label class="fr-label" for="text-input-button">
+        Libellé champ de saisie
+    </label>
+    <div class="fr-input-wrap fr-input-wrap--addon">
+        <input class="fr-input" aria-describedby="text-input-button-messages" id="text-input-button" type="text">
+        <button type="button" class="fr-btn">Envoyer</button>
+    </div>
+    <div class="fr-messages-group" id="text-input-button-messages" aria-live="polite">
+    </div>
+</div>
+```
 
 **Exemple de structure avec bouton d'action**
 

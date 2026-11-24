@@ -79,7 +79,7 @@ Si vous disposez d’une longue liste d’options, les groupes d’options assoc
 
 **Déplier pour voir le code**
 
-Balises officielles : [Liste déroulante par défaut](exemples.md#liste-déroulante-par-défaut)
+Balises officielles : [Liste déroulante avec groupe d'options](exemples.md#liste-déroulante-avec-groupe-doptions)
 
 ---
 

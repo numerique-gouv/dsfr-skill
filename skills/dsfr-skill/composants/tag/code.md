@@ -42,7 +42,7 @@ Sa structure est la suivante :
 
 **Exemple de Tag activable**
 
-Balises officielles : [Tag non cliquable sans icône](exemples.md#tag-non-cliquable-sans-icône)
+Balises officielles : [Tag sélectionnable](exemples.md#tag-sélectionnable-1)
 
 #### Tag supprimable
 

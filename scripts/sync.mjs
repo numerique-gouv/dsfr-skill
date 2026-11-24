@@ -405,9 +405,6 @@ function compactInstallSection (section, lines, target) {
   return kept
 }
 
-// Un exemple de code.md dont la structure de classes existe déjà dans
-// exemples.md est remplacé par un lien vers la variante officielle. La
-// comparaison ignore ids, libellés et attributs : seuls les classes comptent.
 function dedupeCodeFences (writtenTopics) {
   for (const written of writtenTopics) {
     if (!written?.code || !written?.exemples) continue
@@ -422,7 +419,7 @@ function dedupeCodeFences (writtenTopics) {
 
     const flushFence = () => {
       const code = fence.join('\n')
-      const signature = classSignature(code)
+      const signature = exampleSignature(code)
       const match = signature && exampleEntries.find((entry) => entry.signature === signature)
       if (match) {
         output.push(`Balises officielles : [${match.heading}](exemples.md#${match.anchor})`)
@@ -480,19 +477,34 @@ function exampleEntriesOf (written) {
   for (const event of events) {
     if (event.type === 'heading') current = event.entry
     else if (current) {
-      const signature = classSignature(event.code)
+      const signature = exampleSignature(event.code)
       if (signature) entries.push({ heading: current.heading, anchor: current.anchor, signature })
     }
   }
   return entries
 }
 
-function classSignature (html) {
-  return [...html.matchAll(/class="([^"]*)"/g)]
-    .flatMap((match) => match[1].split(/\s+/))
-    .filter((name) => name.startsWith('fr-'))
-    .sort()
-    .join(' ')
+const idReferenceAttributes = new Set(['aria-controls', 'aria-labelledby', 'aria-describedby'])
+const meaningfulAttributes = new Set(['disabled', 'hidden', 'multiple', 'open', 'readonly', 'rel', 'required', 'selected', 'target'])
+const semanticElements = new Set(['optgroup'])
+
+function exampleSignature (html) {
+  const classes = []
+  const attributes = []
+  for (const [, tagName, tagAttributes] of html.matchAll(/<([a-zA-Z][\w-]*)([^>]*)>/g)) {
+    if (semanticElements.has(tagName.toLowerCase())) attributes.push(`<${tagName.toLowerCase()}>`)
+    for (const [, rawName, doubleQuoted, singleQuoted, unquoted] of tagAttributes.matchAll(/([a-zA-Z_:][\w:.-]*)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+)))?/g)) {
+      const name = rawName.toLowerCase()
+      const value = doubleQuoted ?? singleQuoted ?? unquoted ?? ''
+      if (name === 'class') classes.push(...value.split(/\s+/).filter((className) => className.startsWith('fr-')))
+      else if (name === 'type') attributes.push(`type=${value}`)
+      else if (name.startsWith('data-fr-') && !name.startsWith('data-fr-analytics')) attributes.push(name)
+      else if (meaningfulAttributes.has(name)) attributes.push(name)
+      else if (name.startsWith('aria-') && !idReferenceAttributes.has(name)) attributes.push(name)
+    }
+  }
+  if (classes.length === 0) return ''
+  return [...classes, ...attributes].sort().join(' ')
 }
 
 function stripRepeatedComments (code) {

@@ -20,7 +20,7 @@ L'ajout d'un attribut `rel="noopener external"` sera aussi recommandé pour des 
 
 **Exemple de lien externe**
 
-Balises officielles : [Lien seul](exemples.md#lien-seul)
+Balises officielles : [Lien externe](exemples.md#lien-externe)
 
 ### Lien de téléchargement
 

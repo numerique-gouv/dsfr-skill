@@ -17,7 +17,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML simple**
 
-Balises officielles : [Toggle simple avec bouton + texte d’aide](exemples.md#toggle-simple-avec-bouton--texte-daide)
+Balises officielles : [Toggle simple avec bouton + état + texte d’aide](exemples.md#toggle-simple-avec-bouton--état--texte-daide)
 
 ### Groupe d'interrupteurs
 
@@ -99,7 +99,7 @@ Il est conseillé d’afficher un statut sous l'interrupteur pour signifier text
 
 **Exemple de variante d’interrupteur avec statut**
 
-Balises officielles : [Toggle simple avec bouton](exemples.md#toggle-simple-avec-bouton)
+Balises officielles : [Toggle simple avec bouton + état](exemples.md#toggle-simple-avec-bouton--état)
 
 ### Variante d’interrupteurs avec séparateur
 
@@ -107,7 +107,14 @@ Il est possible d’afficher un séparateur horizontal sous l’interrupteur, av
 
 **Exemple de variante d’interrupteur avec séparateur**
 
-Balises officielles : [Toggle simple avec bouton + état + séparateur](exemples.md#toggle-simple-avec-bouton--état--séparateur)
+```html
+<div class="fr-toggle fr-toggle--border-bottom">
+    <input type="checkbox" class="fr-toggle__input" id="toggle-label-left" aria-describedby="toggle-label-left-messages">
+    <label class="fr-toggle__label" for="toggle-label-left">Libellé de l'interrupteur</label>
+    <div class="fr-messages-group" id="toggle-label-left-messages" aria-live="polite">
+    </div>
+</div>
+```
 
 ### Variantes d'états
 
@@ -137,7 +144,7 @@ Balises officielles : [Toggle simple valide](exemples.md#toggle-simple-valide)
 
 **Désactivé**
 
-Balises officielles : [Toggle simple avec bouton](exemples.md#toggle-simple-avec-bouton)
+Balises officielles : [Toggle simple disabled avec bouton](exemples.md#toggle-simple-disabled-avec-bouton)
 
 **Exemple de variante d'état au niveau du groupe**
 
