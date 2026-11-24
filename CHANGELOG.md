@@ -2,6 +2,10 @@
 
 Ce fichier liste les changements de chaque version du plugin (`version` de `.claude-plugin/plugin.json` et `marketplace.json`). Le mettre à jour dans la même pull request que tout changement visible par les utilisateurs du skill : contenu, consignes, vérificateur, installation, ou nouvelle version du DSFR.
 
+## 2.1.1
+
+- La déduplication de `code.md` ne remplace plus un exemple que s'il est un vrai doublon d'une variante d'`exemples.md` : en plus des classes `fr-*`, la comparaison tient compte des attributs `data-fr-*` (hors analytics), `aria-*` (hors références d'id), `type`, des attributs d'état et de navigation (`disabled`, `multiple`, `target`, `rel`…) et de `<optgroup>`. Les exemples de l'interrupteur avec statut (`data-fr-checked-label` / `data-fr-unchecked-label`) renvoient vers les variantes « + état », l'interrupteur désactivé vers la variante désactivée, le lien externe vers « Lien externe », la liste déroulante groupée vers « avec groupe d'options » ; 3 exemples sans équivalent exact sont rétablis (consentement, champ + bouton, interrupteur avec séparateur). 77 des 80 remplacements restent.
+
 ## 2.1.0
 
 Réduction de la masse de documentation lue par les agents, sans perte de contenu : tout est corrigé dans le générateur (`scripts/sync.mjs`) et les gabarits (`ressources/`), donc reconduit à chaque montée de version du DSFR.
