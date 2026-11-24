@@ -2,6 +2,22 @@
 
 Ce fichier liste les changements de chaque version du plugin (`version` de `.claude-plugin/plugin.json` et `marketplace.json`). Le mettre à jour dans la même pull request que tout changement visible par les utilisateurs du skill : contenu, consignes, vérificateur, installation, ou nouvelle version du DSFR.
 
+## 2.1.0
+
+Réduction de la masse de documentation lue par les agents, sans perte de contenu : tout est corrigé dans le générateur (`scripts/sync.mjs`) et les gabarits (`ressources/`), donc reconduit à chaque montée de version du DSFR.
+
+### Contenu
+
+- Les modèles de pages et de blocs suivent le découpage des composants : la présentation reste dans `index.md`, les gabarits HTML de la documentation partent dans un nouveau fichier `extraits.md` lié depuis `index.md`. `modeles/pages/response/index.md` passe de 50 à 7 Ko, `register` de 45 à 5 Ko.
+- Dans `code.md`, un exemple dont la structure de classes existe déjà dans `exemples.md` est remplacé par un lien vers la variante officielle (80 exemples dédupliqués) ; le HTML vit une seule fois. Les exemples de structure propres au composant sont conservés.
+- Les sections « Installation du CSS » et « Installation du JavaScript » ne répètent plus le texte commun : elles gardent les dépendances et les chemins propres au composant et renvoient à `demarrage.md`.
+- Le commentaire générique sur l'alternative d'image, répété dans les extraits, est énoncé une seule fois en tête de chaque `exemples.md` et `extraits.md`.
+
+### Consignes
+
+- Règle 2 : renvoi vers `scripts/verifier.mjs` (ou `grep -x` pour une classe isolée) plutôt que la lecture des registres `reference/classes.txt` et `reference/icones.md`.
+- Table de routage : `code.md` décrit les classes, dépendances et API ; le balisage est dans `exemples.md` ; les modèles pointent vers `index.md` (règles) et `extraits.md` / `exemples.md` (gabarits).
+
 ## 2.0.1
 
 - Description du skill recentrée sur le HTML et le CSS : elle ne se déclenche plus sur le seul mot RGAA et renvoie vers un skill dédié pour React (`@codegouvfr/react-dsfr`) ou pour un audit de conformité RGAA, afin de cohabiter avec les skills `react-dsfr` et `rgaa` d'etalab-ia/skills.

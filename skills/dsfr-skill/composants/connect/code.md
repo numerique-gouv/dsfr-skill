@@ -19,45 +19,15 @@ Pour plus de clarté, le bouton FranceConnect peut être accompagné de la phras
 
 **Structure HTML du bouton FranceConnect**
 
-```html
-<div class="fr-connect-group">
-    <button class="fr-connect" type="button">
-        <span class="fr-connect__login">S’identifier avec</span>
-        <span class="fr-connect__brand">FranceConnect</span>
-    </button>
-    <p>
-        <a href="https://franceconnect.gouv.fr/" target="_blank" rel="noopener" title="Qu’est-ce que FranceConnect ? - nouvelle fenêtre">Qu’est-ce que FranceConnect ?</a>
-    </p>
-</div>
-```
+Balises officielles : [Bouton FranceConnect](exemples.md#bouton-franceconnect)
 
 **Structure HTML du bouton FranceConnect+**
 
-```html
-<div class="fr-connect-group">
-    <button class="fr-connect fr-connect--plus" type="button">
-        <span class="fr-connect__login">S’identifier avec</span>
-        <span class="fr-connect__brand">FranceConnect</span>
-    </button>
-    <p>
-        <a href="https://franceconnect.gouv.fr/france-connect-plus" target="_blank" rel="noopener" title="Qu’est-ce que FranceConnect+ ? - nouvelle fenêtre">Qu’est-ce que FranceConnect+ ?</a>
-    </p>
-</div>
-```
+Balises officielles : [Bouton FranceConnect+](exemples.md#bouton-franceconnect-1)
 
 **Structure HTML du bouton ProConnect**
 
-```html
-<div class="fr-connect-group">
-    <button class="fr-connect fr-connect--pro" type="button">
-        <span class="fr-connect__login">S’identifier avec</span>
-        <span class="fr-connect__brand">ProConnect</span>
-    </button>
-    <p>
-        <a href="https://proconnect.gouv.fr/" target="_blank" rel="noopener" title="Qu’est-ce que ProConnect ? - nouvelle fenêtre">Qu’est-ce que ProConnect ?</a>
-    </p>
-</div>
-```
+Balises officielles : [Bouton ProConnect](exemples.md#bouton-proconnect)
 
 ---
 
@@ -65,9 +35,7 @@ Pour plus de clarté, le bouton FranceConnect peut être accompagné de la phras
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -76,18 +44,9 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Connect    | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/connect/connect.min.css" rel="stylesheet">
-```
-
-Une version <span lang="en">**standalone**</span> du bouton FranceConnect est également disponible, permettant de l'utiliser **en dehors du DSFR**.
-Ce fichier CSS comprend le minimum requis du core du DSFR et le style du bouton FranceConnect.
-
-```html
-<link href="standalone/component/connect/connect.standalone.min.css" rel="stylesheet">
 ```
 
 ### Variantes de style

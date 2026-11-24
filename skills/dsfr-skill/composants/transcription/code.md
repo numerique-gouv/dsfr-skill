@@ -29,37 +29,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-transcription">
-    <button type="button" class="fr-transcription__btn" aria-expanded="false" aria-controls="fr-transcription-collapse">Transcription</button>
-    <div class="fr-collapse" id="fr-transcription-collapse">
-        <div class="fr-transcription__footer">
-            <div class="fr-transcription__actions-group">
-                <button aria-controls="fr-transcription-modal" aria-label="Agrandir la transcription" data-fr-opened="false" type="button" class="fr-btn--fullscreen fr-btn">Agrandir</button>
-            </div>
-        </div>
-        <div id="fr-transcription-modal" class="fr-modal" aria-labelledby="fr-transcription-modal-title">
-            <div class="fr-container fr-container--fluid fr-container-md">
-                <div class="fr-grid-row fr-grid-row--center">
-                    <div class="fr-col-12 fr-col-md-10 fr-col-lg-8">
-                        <div class="fr-modal__body">
-                            <div class="fr-modal__header">
-                                <button aria-controls="fr-transcription-modal" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
-                            </div>
-                            <div class="fr-modal__content">
-                                <h1 id="fr-transcription-modal-title" class="fr-modal__title">
-                                    Titre de la transcription
-                                </h1>
-                                <!-- Contenu de la transcription -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Transcription avec zone d’action](exemples.md#transcription-avec-zone-daction)
 
 ---
 
@@ -67,9 +37,7 @@ Sa structure est la suivante :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -80,8 +48,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Modal      | Oui         |
 | Transcription | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/button/button.min.css" rel="stylesheet">
@@ -89,41 +55,16 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 <link href="dist/component/transcription/transcription.min.css" rel="stylesheet">
 ```
 
----
-
 ## JavaScript
 
 ### Installation du JavaScript
 
-Le composant Transcription nécessite l'utilisation de JavaScript pour fonctionner correctement. Son comportement de déplié le contenu utilise le fonctionnement du collapse du core, et il utilise le composant [Modal](../modal/index.md) pour ouvrir le contenu en grand.
-
-Son import doit se faire à la fin de la page, avant la fermeture de la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-**Dépendances JS**
-
-| Dépendance | Obligatoire |
-|------------|-------------|
-| Core       | Oui         |
-| Modal      | Oui         |
-| Transcription | Oui         |
-
-**Exemple d'imports JavaScript**
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
 <script type="module" src="dist/component/transcription/transcription.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/transcription/transcription.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

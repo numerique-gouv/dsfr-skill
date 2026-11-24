@@ -2,7 +2,7 @@
 
 > Champ de saisie pour adresse électronique
 
-Voir aussi : [Exemples](exemples.md)
+Voir aussi : [Extraits](extraits.md) · [Exemples](exemples.md)
 
 Le bloc fonctionnel de “demande d’adresse électronique” permet d’aider un utilisateur à saisir une adresse électronique (=adresse email).
 
@@ -26,17 +26,7 @@ Ce bloc utilise un champ de saisie classique et s’adapte en fonction du contex
 </div>
 </div>
 
-**Extrait de code**
-
-```html
-<div class="fr-input-group">
-    <label class="fr-label" for="email-1">
-        Adresse électronique
-        <span class="fr-hint-text">Format attendu : nom@example.com</span>
-    </label>
-    <input class="fr-input" name="email" autocomplete="on" id="email-1" type="email">
-</div>
-```
+Extrait de code : [Structure](extraits.md#structure)
 
 Le bloc de demande d’adresse électronique aide à la saisie de l’adresse électronique pour l’utilisateur car :
 

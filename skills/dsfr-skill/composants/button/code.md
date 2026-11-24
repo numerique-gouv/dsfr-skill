@@ -11,11 +11,7 @@ Le composant **Bouton** est un élément interactif permettant de déclencher de
 
 **Exemple de structure HTML**
 
-```html
-<button class="fr-btn" type="button">
-    Libellé bouton
-</button>
-```
+Balises officielles : [Bouton simple](exemples.md#bouton-simple)
 
 ### Groupes de boutons
 
@@ -45,9 +41,7 @@ Un groupe est dit **hiérarchisé** s'il dispose d'un bouton primaire et de bout
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -56,8 +50,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |             |
 | Button     | Oui         |             |
 | Utility    | Non         | Uniquement pour l'ajout d'icône |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -128,9 +120,7 @@ Dans le cas d'un groupe de boutons, le positionnement de l'icône des boutons pe
 
 **Exemples de variantes d'icônes**
 
-```html
-<button type="button" class="fr-btn fr-icon-checkbox-circle-line fr-btn--icon-left">Bouton avec icône</button>
-```
+Balises officielles : [Bouton icon à gauche](exemples.md#bouton-icon-à-gauche)
 
 ### Variante désactivé
 
@@ -169,23 +159,11 @@ Cette fonctionnalité permet de d'adapter automatiquement la taille des boutons 
 
 ### Installation du JavaScript
 
-Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/button/button.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/button/button.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, la classe `fr-btn--equisized` fonctionne automatiquement.

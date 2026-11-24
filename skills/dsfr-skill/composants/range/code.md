@@ -24,30 +24,13 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-range-group">
-    <label for="range-1" class="fr-label">
-        Libellé
-        <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
-    </label>
-    <div class="fr-range">
-        <span class="fr-range__output" aria-hidden="true">50</span>
-        <input id="range-1" name="range" type="range" max="100" value="50" aria-describedby="range-messages">
-        <span class="fr-range__min" aria-hidden="true">0</span>
-        <span class="fr-range__max" aria-hidden="true">100</span>
-    </div>
-    <div class="fr-messages-group" id="range-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Curseur simple](exemples.md#curseur-simple)
 
 ## CSS
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -55,8 +38,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 |------------|-------------|
 | Core       | Oui         |
 | Range      | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -128,23 +109,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-range-group fr-range-group--error">
-    <label for="range-error" class="fr-label">
-        Libellé
-        <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
-    </label>
-    <div class="fr-range">
-        <span class="fr-range__output" aria-hidden="true">50</span>
-        <input id="range-error" name="range-error" type="range" max="100" value="50" aria-describedby="range-error-messages">
-        <span class="fr-range__min" aria-hidden="true">0</span>
-        <span class="fr-range__max" aria-hidden="true">100</span>
-    </div>
-    <div class="fr-messages-group" id="range-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error" id="range-error-message-error">Valeur sélectionnée impossible</p>
-    </div>
-</div>
-```
+Balises officielles : [Curseur avec erreur](exemples.md#curseur-avec-erreur)
 
 **Exemple de curseur avec succès**
 
@@ -172,22 +137,7 @@ Un message d'erreur ou de succès doit être ajouté dans un bloc `fr-messages-g
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-range-group fr-range-group--disabled">
-    <label for="range-disabled" class="fr-label">
-        Libellé
-        <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
-    </label>
-    <div class="fr-range">
-        <span class="fr-range__output" aria-hidden="true">20</span>
-        <input id="range-disabled" name="range-disabled" type="range" max="100" value="20" disabled aria-describedby="range-disabled-messages">
-        <span class="fr-range__min" aria-hidden="true">0</span>
-        <span class="fr-range__max" aria-hidden="true">100</span>
-    </div>
-    <div class="fr-messages-group" id="range-disabled-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Curseur désactivé](exemples.md#curseur-désactivé)
 
 ### Variante de curseur double
 
@@ -195,23 +145,7 @@ Le curseur double permet de disposer de deux poignées de selection pour les val
 
 **Exemple de curseur double**
 
-```html
-<div class="fr-range-group">
-    <label id="range-double-label" class="fr-label">
-        Libellé
-        <span class="fr-hint-text">Texte de description additionnel, valeur de 0 à 100.</span>
-    </label>
-    <div class="fr-range fr-range--double">
-        <span class="fr-range__output" aria-hidden="true">25 - 75</span>
-        <input id="range-double" name="range-double" type="range" aria-label="Valeur minimale" aria-labelledby="range-double range-double-label" max="100" value="25" aria-describedby="range-double-messages">
-        <input id="range-double-2" name="range-double-2" type="range" aria-label="Valeur maximale" aria-labelledby="range-double-2 range-double-label" max="100" value="75" aria-describedby="range-double-messages">
-        <span class="fr-range__min" aria-hidden="true">0</span>
-        <span class="fr-range__max" aria-hidden="true">100</span>
-    </div>
-    <div class="fr-messages-group" id="range-double-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Curseur double avec valeurs min et max](exemples.md#curseur-double-avec-valeurs-min-et-max)
 
 ---
 
@@ -219,24 +153,11 @@ Le curseur double permet de disposer de deux poignées de selection pour les val
 
 ### Installation du JavaScript
 
-Pour fonctionner, le composant curseur nécessite l'utilisation de JavaScript.
-Chaque composant utilisant JavaScript possède un fichier JS spécifique et requiert le fichier JS du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/range/range.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/range/range.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

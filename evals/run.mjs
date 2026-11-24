@@ -91,7 +91,7 @@ function runAgent (testCase) {
 
 function officialExampleClasses () {
   const examples = readdirSync(skillRoot, { recursive: true })
-    .filter((path) => /(^|\/)exemples(\.md$|\/)/.test(path))
+    .filter((path) => /(^|\/)(exemples(\.md$|\/)|extraits\.md$)/.test(path))
     .map((path) => readFileSync(join(skillRoot, path), 'utf8'))
   return new Set(examples.flatMap((text) => [...text.matchAll(/class="([^"]*)"/g)].flatMap((match) => match[1].split(/\s+/))))
 }

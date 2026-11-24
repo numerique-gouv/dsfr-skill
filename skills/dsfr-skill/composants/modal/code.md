@@ -36,31 +36,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<button data-fr-opened="false" aria-controls="modal" type="button" class="fr-btn">Modale simple</button>
-<dialog id="modal" class="fr-modal" aria-labelledby="modal-title">
-    <div class="fr-container fr-container--fluid fr-container-md">
-        <div class="fr-grid-row fr-grid-row--center">
-            <div class="fr-col-12 fr-col-md-8 fr-col-lg-6">
-                <div class="fr-modal__body">
-                    <div class="fr-modal__header">
-                        <button aria-controls="modal" title="Fermer" type="button" class="fr-btn--close fr-btn">Fermer</button>
-                    </div>
-                    <div class="fr-modal__content">
-                        <h2 id="modal-title" class="fr-modal__title">
-                            <span class="fr-icon-arrow-right-line fr-icon--lg" aria-hidden="true"></span>
-                            Titre de la modale
-                        </h2>
-                        <p>
-                          <!-- contenu de la modale -->
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</dialog>
-```
+Balises officielles : [Modale simple](exemples.md#modale-simple)
 
 ---
 
@@ -68,9 +44,7 @@ Sa structure est la suivante :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -79,14 +53,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Button     | Oui         |
 | Modal      | Oui         |
-
-**Exemple d'imports CSS**
-
-```html
-<script type="module" src="dist/core/core.module.min.js"></script>
-<script type="module" src="dist/component/button/button.module.min.js"></script>
-<script type="module" src="dist/component/modal/modal.module.min.js"></script>
-```
 
 ### Variantes de taille
 
@@ -184,23 +150,11 @@ Par défaut la modale se referme au clic sur le fond de la page, il est possible
 
 ### Installation du JavaScript
 
-Pour fonctionner le composant modale nécessite l'utilisation de JavaScript. Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/modal/modal.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule href="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/modal/modal.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

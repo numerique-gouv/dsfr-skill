@@ -21,7 +21,7 @@ Le DSFR porte l'identité graphique de l'État. Ses [modalités d'utilisation](h
 ## Règles
 
 1. Partir du balisage de `exemples.md` du composant et l'adapter, plutôt que de l'écrire de mémoire.
-2. Ne jamais inventer de classe : toute classe `fr-*` doit figurer dans `reference/classes.txt`, toute icône dans `reference/icones.md`.
+2. Ne jamais inventer de classe : toute classe `fr-*` doit figurer dans `reference/classes.txt`, toute icône dans `reference/icones.md`. Ne pas lire ces registres en entier : vérifier une page avec `node scripts/verifier.mjs page.html`, ou une classe isolée avec `grep -x 'fr-ma-classe' reference/classes.txt`.
 3. Rendre les `id` uniques dans la page : les exemples réutilisent les mêmes. Chaque `aria-controls`, `aria-labelledby`, `aria-describedby` et `for` doit pointer vers un `id` existant.
 4. Sans DSFR installé dans le projet, charger le CDN versionné (`@gouvfr/dsfr@1.15.4`), jamais `@gouvfr/dsfr` sans version.
 5. Un seul bouton primaire par groupe d'actions, les autres en secondaire ou tertiaire.
@@ -35,12 +35,12 @@ Le DSFR porte l'identité graphique de l'État. Ses [modalités d'utilisation](h
 |---|---|
 | Créer une page (imports, squelette, thème, JS, frameworks) | [demarrage.md](demarrage.md) |
 | Quand utiliser un composant, règles éditoriales | `composants/<nom>/index.md` |
-| HTML, classes, dépendances CSS, API et événements JS | `composants/<nom>/code.md` |
+| Classes, dépendances CSS, API et événements JS | `composants/<nom>/code.md` |
 | Clavier, ARIA, critères RGAA | `composants/<nom>/accessibilite.md` |
 | Anatomie, variantes, tailles, états | `composants/<nom>/design.md` |
 | HTML officiel prêt à adapter | `composants/<nom>/exemples.md` |
 | Grille, couleurs, typographie, espacements, icônes | `fondamentaux/<nom>/` |
-| Pages complètes et blocs de formulaire | `modeles/pages/<nom>/`, `modeles/blocs/<nom>/` |
+| Pages complètes et blocs de formulaire : règles dans `index.md`, gabarits dans `extraits.md` et `exemples.md` | `modeles/pages/<nom>/`, `modeles/blocs/<nom>/` |
 | Auditer une page existante | [audit.md](audit.md) et `node scripts/verifier.mjs page.html` |
 
 Les fichiers `exemples.md` sont longs : lister les variantes avec `grep -n '^###' composants/<nom>/exemples.md` puis ne lire que la section utile.

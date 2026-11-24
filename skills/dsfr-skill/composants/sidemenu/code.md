@@ -114,9 +114,7 @@ Le menu latéral peut contenir jusqu'à trois niveaux d’arborescence et permet
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -124,8 +122,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 |------------|-------------|
 | Core       | Oui         |
 | Sidemenu   | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -175,24 +171,11 @@ On peut également le rendre fixe avec l'utilisation de la classe `fr-sidemenu--
 
 ### Installation du JavaScript
 
-Pour fonctionner le composant menu latéral nécessite l'utilisation de JavaScript.
-Chaque composant utilisant javascript possède un fichier Js spécifique et requiert le fichier Js du core.
-
-Il est donc nécessaire d'importer ces fichiers à la fin de la page (avant `</body>`) :
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/sidemenu/sidemenu.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/sidemenu/sidemenu.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

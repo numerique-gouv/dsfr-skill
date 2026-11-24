@@ -120,9 +120,7 @@ Le composant **Lettre d'information et Réseaux Sociaux** est composé de :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -135,8 +133,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Input      | Non         | Uniquement pour la variation avec champ de saisie |
 | Alert      | Non         | Uniquement pour ajouter une alerte de confirmation |
 | Utility    | Non         | Uniquement pour l'ajout d'icône custom |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">

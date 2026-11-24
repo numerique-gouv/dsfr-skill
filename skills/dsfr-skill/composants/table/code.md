@@ -30,95 +30,7 @@ Le composant **Tableau** permet de présenter des données tabulaires. Sa struct
 
 **Déplier pour voir le code**
 
-```html
-<div class="fr-table">
-    <div class="fr-table__wrapper">
-        <div class="fr-table__container">
-            <div class="fr-table__content">
-                <table>
-                    <caption>
-                        Titre du tableau (caption)
-                    </caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                th0
-                            </th>
-                            <th scope="col">
-                                th1
-                            </th>
-                            <th scope="col">
-                                th2
-                            </th>
-                            <th scope="col">
-                                th3
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                            <td>
-                                Lorem [...] elit ut.
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Tableau MD (défaut)](exemples.md#tableau-md-défaut)
 
 ---
 
@@ -126,9 +38,7 @@ Le composant **Tableau** permet de présenter des données tabulaires. Sa struct
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -142,20 +52,9 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Pagination | Non         | Uniquement pour ajouter une pagination dans le footer du tableau |
 | Segmented  | Non         | Uniquement pour ajouter un contrôle segmenté dans le header du tableau |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/table/table.min.css" rel="stylesheet">
-```
-
-<small>NB: Il est aussi possible d'importer le CSS global du DSFR `dsfr.min.css`.</small>
-
-Pour une compatibilité avec Internet Explorer 11, les fichiers legacy peuvent également être ajoutés :
-
-```html
-<link href="dist/core/core.legacy.min.css" rel="stylesheet">
-<link href="dist/component/table/table.legacy.min.css" rel="stylesheet">
 ```
 
 ### Comportement du tableau
@@ -536,19 +435,7 @@ Ce comportement peut être désactivé en ajoutant la classe `fr-cell--multiline
 
 **Exemple de tableau avec retour à la ligne automatique**
 
-```html
-<div class="fr-table">
-    <div class="fr-table__wrapper">
-        <div class="fr-table__container">
-            <div class="fr-table__content">
-                <table class="fr-cell--multiline">
-                    <!-- Contenu de tableau avec retour à la ligne automatique -->
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-```
+Balises officielles : [Exemple de tableau avec retour à la ligne automatique dans une cellule](exemples.md#exemple-de-tableau-avec-retour-à-la-ligne-automatique-dans-une-cellule)
 
 ---
 
@@ -558,35 +445,12 @@ Un script est disponible pour ajouter des fonctionnalités interactives au table
 
 ### Installation du JavaScript
 
-Pour fonctionner le composant tableau nécessite l'utilisation de JavaScript.
-
-Le JavaScript du composant et de ses dépendances doivent être importés. L'import doit se faire à la fin de la page, avant la balise `</body>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-**Dépendances JS**
-
-| Dépendance | Obligatoire | Remarque |
-|------------|-------------|----------|
-| Core       | Oui         |          |
-| checkbox   | Non         | Uniquement pour la version avec lignes sélectionnables |
-| Table      | Oui         |          |
-
-**Exemple d'imports JS**
+Le composant s'initialise au chargement du JavaScript du DSFR : [démarrage](../../demarrage.md). Imports par composant (core + composant) :
 
 ```html
 <script type="module" src="dist/core/core.module.min.js"></script>
 <script type="module" src="dist/component/checkbox/checkbox.module.min.js"></script>
 <script type="module" src="dist/component/table/table.module.min.js"></script>
-```
-
-<small>NB: Il est aussi possible d'importer le Js global du DSFR `dsfr.module.min.js`</small>
-
-Pour fonctionner sur Internet Explorer 11, un fichier legacy, en version nomodule ES5, peut aussi être importé :
-
-```html
-<script type="text/javascript" nomodule src="dist/legacy/legacy.nomodule.min.js" ></script>
-<script type="text/javascript" nomodule src="dist/core/core.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/checkbox/checkbox.nomodule.min.js"></script>
-<script type="text/javascript" nomodule src="dist/component/table/table.nomodule.min.js"></script>
 ```
 
 Une fois le JavaScript chargé, le composant fonctionne automatiquement.

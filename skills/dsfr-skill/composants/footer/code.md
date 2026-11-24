@@ -39,62 +39,7 @@ Le composant **Pied de page** est constitué d'un élément `<footer>` de classe
 
 **Déplier pour voir le code**
 
-```html
-<footer class="fr-footer" role="contentinfo">
-    <div class="fr-container">
-        <div class="fr-footer__body">
-            <div class="fr-footer__brand fr-enlarge-link">
-                <a id="footer-brand-link-6954" title="Retour à l’accueil du site - Nom de l’entité (ministère, secrétariat d‘état, gouvernement)" href="/">
-                    <p class="fr-logo">
-                        Intitulé
-                        <br>officiel
-                    </p>
-                </a>
-            </div>
-            <div class="fr-footer__content">
-                <p class="fr-footer__content-desc">Lorem [...] elit ut.</p>
-                <ul class="fr-footer__content-list">
-                    <li class="fr-footer__content-item">
-                        <a title="info.gouv.fr - nouvelle fenêtre" href="https://info.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">info.gouv.fr</a>
-                    </li>
-                    <li class="fr-footer__content-item">
-                        <a title="service-public.gouv.fr - nouvelle fenêtre" href="https://service-public.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">service-public.gouv.fr</a>
-                    </li>
-                    <li class="fr-footer__content-item">
-                        <a title="legifrance.gouv.fr - nouvelle fenêtre" href="https://legifrance.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">legifrance.gouv.fr</a>
-                    </li>
-                    <li class="fr-footer__content-item">
-                        <a title="data.gouv.fr - nouvelle fenêtre" href="https://data.gouv.fr" target="_blank" rel="noopener external" class="fr-footer__content-link">data.gouv.fr</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="fr-footer__bottom">
-            <ul class="fr-footer__bottom-list">
-                <li class="fr-footer__bottom-item">
-                    <a href="[url - à modifier]" class="fr-footer__bottom-link">Plan du site</a>
-                </li>
-                <li class="fr-footer__bottom-item">
-                    <a href="[url - à modifier]" class="fr-footer__bottom-link">Accessibilité : non/partiellement/totalement conforme</a>
-                </li>
-                <li class="fr-footer__bottom-item">
-                    <a href="[url - à modifier]" class="fr-footer__bottom-link">Mentions légales</a>
-                </li>
-                <li class="fr-footer__bottom-item">
-                    <a href="[url - à modifier]" class="fr-footer__bottom-link">Données personnelles</a>
-                </li>
-                <li class="fr-footer__bottom-item">
-                    <a href="[url - à modifier]" class="fr-footer__bottom-link">Gestion des cookies</a>
-                </li>
-            </ul>
-            <div class="fr-footer__bottom-copy">
-                <p>Sauf mention explicite de propriété intellectuelle détenue par des tiers, les contenus de ce site sont proposés sous <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" rel="noopener external" title="Licence etalab - nouvelle fenêtre">licence etalab-2.0</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-```
+Balises officielles : [Pied de page minimal](exemples.md#pied-de-page-minimal)
 
 **Exemple de structure complète**
 Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, et un bloc de logos partenaires, en plus du contenu minimal.
@@ -350,9 +295,7 @@ Cet exemple inclut un bloc de navigation, un bloc-marque avec logo opérateur, e
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -362,15 +305,11 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Logo       | Oui         |
 | Footer     | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/logo/logo.min.css" rel="stylesheet">
 <link href="dist/component/footer/footer.min.css" rel="stylesheet">
 ```
-
----
 
 ## JavaScript
 

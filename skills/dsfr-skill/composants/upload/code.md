@@ -24,16 +24,7 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-upload-group">
-    <label class="fr-label" for="file-upload">
-        Ajouter un fichier
-        <span class="fr-hint-text">Indication : taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
-    </label>
-    <input class="fr-upload" aria-describedby="file-upload-messages" type="file" id="file-upload" name="file-upload">
-    <div class="fr-messages-group" id="file-upload-messages" aria-live="polite"></div>
-</div>
-```
+Balises officielles : [Bouton upload 1 seul fichier](exemples.md#bouton-upload-1-seul-fichier)
 
 > [!NOTE]
 > L'ajout d'un attribut `accept` sur l'`<input>` permet de restreindre les formats de fichiers sélectionnables par l'usager. Il est recommandé d'utiliser cet attribut pour indiquer les formats attendus (par exemple, `accept=".jpg,.png,.pdf"`). Cet attribut ne peut se substituer à la validation côté serveur, mais il améliore l'expérience utilisateur en filtrant les fichiers proposés.
@@ -44,9 +35,7 @@ Sa structure est la suivante :
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -55,8 +44,6 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Form       | Oui         |
 | Upload     | Oui         |
-
-**Exemple d'imports CSS**
 
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
@@ -70,18 +57,7 @@ Le composant Ajout de fichier peut être affiché en état d'erreur avec l'utili
 
 **Exemple de variante d'ajout de fichier avec erreur**
 
-```html
-<div class="fr-upload-group fr-upload-group--error">
-    <label class="fr-label" for="file-upload-with-error">
-        Ajouter un fichier
-        <span class="fr-hint-text">Indication : taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
-    </label>
-    <input class="fr-upload" aria-describedby="file-upload-with-error-messages" type="file" id="file-upload-with-error" name="file-upload-with-error">
-    <div class="fr-messages-group" id="file-upload-with-error-messages" aria-live="polite">
-        <p class="fr-message fr-message--error">Format de fichier non supporté</p>
-    </div>
-</div>
-```
+Balises officielles : [Bouton upload avec erreur](exemples.md#bouton-upload-avec-erreur)
 
 ### Variante d'ajout de fichiers multiples
 
@@ -89,17 +65,7 @@ Afin de pouvoir sélectionner plusieurs fichiers, il faut ajouter l'attribut `mu
 
 **Exemple de variante d'ajout de fichiers multiples**
 
-```html
-<div class="fr-upload-group">
-    <label class="fr-label" for="file-upload-multiple">
-        Ajouter des fichiers
-        <span class="fr-hint-text">Indication : taille maximale : 500 Mo. Formats supportés : jpg, png, pdf. Plusieurs fichiers possibles. Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
-    </label>
-    <input class="fr-upload" aria-describedby="file-upload-multiple-messages" multiple type="file" id="file-upload-multiple" name="file-upload-multiple">
-    <div class="fr-messages-group" id="file-upload-multiple-messages" aria-live="polite">
-    </div>
-</div>
-```
+Balises officielles : [Bouton upload 1 seul fichier](exemples.md#bouton-upload-1-seul-fichier)
 
 ### Variante d'ajout de fichier désactivé
 

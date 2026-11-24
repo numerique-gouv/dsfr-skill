@@ -18,26 +18,13 @@ Sa structure est la suivante :
 
 **Exemple de structure HTML**
 
-```html
-<div class="fr-stepper">
-    <h2 class="fr-stepper__title">
-        Titre de l’étape en cours
-        <span class="fr-stepper__state">Étape 1 sur 3</span>
-    </h2>
-    <div class="fr-stepper__steps" data-fr-current-step="1" data-fr-steps="3"></div>
-    <p class="fr-stepper__details">
-        <span class="fr-text--bold">Étape suivante :</span> Titre de la prochaine étape
-    </p>
-</div>
-```
+Balises officielles : [Exemple d'indicateur d'étape 1 sur 3](exemples.md#exemple-dindicateur-détape-1-sur-3)
 
 ## CSS
 
 ### Installation du CSS
 
-Pour fonctionner correctement le style CSS du composant et de ses dépendances doivent être importés. L'import doit se faire avant le contenu de la page dans la partie `<head>`, et de préférence avec les fichiers minifiés, car plus légers.
-
-Il est possible d'importer les fichiers CSS avec un niveau de granularité adapté à vos besoins. Voir le découpage des fichiers CSS du DSFR dans la [documentation dédiée](../../demarrage.md).
+Les styles du composant et de ses dépendances s'importent dans le `<head>`, de préférence en fichiers minifiés. Import global ou par composant : [démarrage](../../demarrage.md).
 
 **Dépendances CSS**
 
@@ -46,14 +33,10 @@ Il est possible d'importer les fichiers CSS avec un niveau de granularité adapt
 | Core       | Oui         |
 | Stepper    | Oui         |
 
-**Exemple d'imports CSS**
-
 ```html
 <link href="dist/core/core.min.css" rel="stylesheet">
 <link href="dist/component/stepper/stepper.min.css" rel="stylesheet">
 ```
-
----
 
 ## JavaScript
 
